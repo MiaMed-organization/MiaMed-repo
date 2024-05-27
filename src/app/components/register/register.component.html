@@ -1,0 +1,113 @@
+<div class="background-image">
+    <form [formGroup]="registerForm" (ngSubmit)="submitDetails()">
+      <p-card header="Kayıt ol" [style]="{  width: '500px', 'border-radius': '40px' ,'padding': '0rem 3rem' }">
+        <div class="field">
+          <label for="fullName">Ad Soyad</label>
+          <input
+            type="text"
+            pInputText
+            formControlName="fullName"
+            class="w-full"
+            name="fullName"
+            placeholder="Ad Soyad"
+          />
+          <small
+            *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)"
+            class="block p-error"
+          >
+            <div *ngIf="fullName.errors?.['required']">Bu alan zorunludur.</div>
+            <div *ngIf="fullName.errors?.['pattern']">Ad soyad bilgisi geçerli değil.</div>
+          </small>
+        </div>
+        
+        <div class="field">
+          <label for="userName">Kullanıcı Adı</label>
+          <input
+            type="text"
+            pInputText
+            formControlName="userName"
+            class="w-full"
+            name="userName"
+            placeholder="Kullanıcı Adı"
+          />
+          <small
+            *ngIf="userName.invalid && (userName.dirty || userName.touched)"
+            class="block p-error"
+          >
+            <div *ngIf="userName.errors?.['required']">Bu alan zorunludur.</div>
+          </small>
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            pInputText
+            formControlName="email"
+            class="w-full"
+            name="email"
+            placeholder="E-mail adresi"
+          />
+          <small
+            *ngIf="email.invalid && (email.dirty || email.touched)"
+            class="block p-error"
+          >
+            <div *ngIf="email.errors?.['required']">Bu alan zorunludur.</div>
+            <div *ngIf="email.errors?.['email']">Email bilgisi geçerli değil.</div>
+          </small>
+        </div>
+        <div class="field">
+          <label for="password">Şifre</label>
+          <input
+            type="password"
+            pInputText
+            formControlName="password"
+            class="w-full"
+            name="password"
+            placeholder="Şifre"
+          />
+          <small
+            *ngIf="password.invalid && (password.dirty || password.touched)"
+            class="block p-error"
+          >
+            <div *ngIf="password.errors?.['required']">Bu alan zorunludur.</div>
+          </small>
+        </div>
+        <div class="field">
+          <label for="confirmPassword">Şifre Doğrulama</label>
+          <input
+            type="password"
+            pInputText
+            formControlName="confirmPassword"
+            class="w-full"
+            name="confirmPassword"
+            placeholder="Şifre Doğrulama"
+          />
+          <small
+            *ngIf="
+              confirmPassword.invalid &&
+              (confirmPassword.dirty || confirmPassword.touched)
+            "
+            class="block p-error"
+          >
+            <div *ngIf="confirmPassword.errors?.['required']">
+              Bu alan zorunludur.
+            </div>
+          </small>
+          <small
+            class="block p-error"
+            *ngIf="registerForm.errors?.['passwordMismatch'] && confirmPassword.valid && password.valid"
+          >
+            Şifreler Eşleşmiyor.
+          </small>
+        </div>
+        <p-button
+          label="Kayıt ol"
+          styleClass="w-full"
+          [disabled]="registerForm.invalid"
+          type="submit"
+        ></p-button> 
+        <div class="mt-2">Hesabın var mı?<a routerLink="/login"> Giriş yap</a></div>
+      </p-card> 
+    </form>
+    </div> 
+    

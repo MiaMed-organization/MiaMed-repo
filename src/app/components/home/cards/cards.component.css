@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.card-avatar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.card-text h2 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.card-text span,
+i {
+    font-size: 0.8rem;
+}

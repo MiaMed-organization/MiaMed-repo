@@ -1,0 +1,14 @@
+
+
+.text-center {
+    text-align: center;
+}
+
+.user-name {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.login-info{
+    font-weight: 500;
+}

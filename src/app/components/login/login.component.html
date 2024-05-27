@@ -1,0 +1,41 @@
+<div class="background-image">
+    <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+      <p-card [style]="{  width: '500px', 'border-radius': '40px' ,'padding': '0rem 3rem' }">
+        <div class="field">
+          <div class="text-center">
+            <p-image src="../../../assets/images/pp_user.jpeg" alt="Image" width="70" />
+            <p class="user-name mb-0">Dr. İsim Soyisim</p>
+            <small>Hoşgeldiniz!</small>
+          </div>
+        </div>
+        <div class="field mt-5">
+          <label for="userName" class="login-info">Kullanıcı Adı</label>
+          <input type="text" pInputText formControlName="userName" class="w-full" id="userName" name="userName" placeholder="Kullanıcı Adı" />
+          <small *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="block p-error">
+            <div *ngIf="userName.errors?.['required']">Bu alan zorunludur.</div>
+          </small>
+        </div>
+  
+        <div class="field">
+          <label for="password" class="login-info">Şifre</label>
+          <input type="password" pInputText formControlName="password" class="w-full" id="password" name="password"
+            placeholder="Şifre" />
+  
+          <small *ngIf="password.invalid && (password.dirty || password.touched)" class="block p-error">
+            <div *ngIf="password.errors?.['required']">Bu alan zorunludur.</div>
+          </small>
+        </div>
+        <div class="field">
+          <p-checkbox formControlName="clarificationText" value="clarification-text" inputId="ct" />
+          <small for="ct" class="ml-2"><a style="color: rgb(134, 83, 170);">Aydınlatma metnini</a> okudum</small>
+  
+          <small *ngIf="clarificationText.invalid && (clarificationText.dirty || clarificationText.touched)" class="block p-error">
+            <div *ngIf="clarificationText.errors?.['required']">Bu alan zorunludur.</div>
+          </small>
+        </div>
+  
+        <p-button label="Giriş" type="submit" styleClass="w-full" [disabled]="loginForm.invalid"></p-button>
+        <div class="mt-3">Üye değil misiniz? <a routerLink="/register">Kayıt ol</a></div>
+      </p-card>
+    </form>
+  </div>

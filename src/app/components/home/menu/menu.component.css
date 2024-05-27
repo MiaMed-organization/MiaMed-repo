@@ -1,0 +1,101 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-container {
+    box-shadow: 0 0px 8px  rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.avatar-button {
+    font-size: 0.1rem; 
+    padding: 0rem; 
+}
+
+
+p-sidebar{
+    z-index: -1;
+}
+
+.sidebar-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.avatar-wrapper {
+    padding-top: 5rem !important;
+    position: relative;
+    display: inline-block;
+}
+
+.avatar-icon {
+    position: absolute;
+    display: flex;
+    margin: 0;
+    bottom: 0; /* Sol alt köşeye yerleştirmek için */
+    right: 0; /* Sol alt köşeye yerleştirmek için */
+    background-color: rgb(27, 150, 58); /* İkonun arkaplan rengini belirleyin, isteğe bağlı */
+    border-radius: 50%; /* İkonun etrafında bir daire oluşturun, isteğe bağlı */
+    padding: 0.3rem; /* İkonun etrafında biraz boşluk bırakın, isteğe bağlı */
+    font-size: 0.4rem;
+    font-weight: bolder;
+    color: white; /* İkonun rengini belirleyin */
+
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.head h4, .head p {
+    margin: 0; /* Varsayılan margin değerlerini sıfırlar */
+    padding: 0; /* Varsayılan padding değerlerini sıfırlar */
+}
+
+/* İhtiyaca göre aralarına belirli bir boşluk eklemek için */
+.head h4 {
+    margin-bottom: 0.5rem; /* Örneğin, h4 ile p arasına 0.5rem boşluk ekler */
+}
+
+.head p{
+    font-size: 0.8rem;
+}
+
+:host ::ng-deep .p-avatar{ 
+    border: 3px solid white; 
+}
+
+.sidebar-items .availability{
+    background-color: rgb(241, 241, 241, 0.5);
+    padding: 0.3rem 0 1.3rem 1.3rem;
+}
+
+
+:host ::ng-deep .p-dropdown{ 
+    width: 16rem;
+}
+
+.sidebar-menu {
+    list-style-type: none; /* Bullet noktalarını kaldırmak için */
+    padding-left: 0; /* Sol boşluğu sıfırlamak için */
+    margin-left: 1rem; /* Soldan hizalama sağlamak için */
+  }
+  
+  .sidebar-menu li {
+    display: flex;
+    align-items: center; /* İkon ve metni aynı hizaya getirmek için */
+    padding: 0.6rem 5rem 0.6rem 0.3rem;
+    /* border: 1px solid red;
+    border-radius: 1rem */
+  }
+ 
