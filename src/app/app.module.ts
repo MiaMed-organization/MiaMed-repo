@@ -33,6 +33,7 @@ import { CommonModule } from '@angular/common';
 import { OverviewComponent } from './components/home/overview/overview.component';
 import { UpcomingAppointmentComponent } from './components/home/upcoming-appointment/upcoming-appointment.component';
 import { ChartModule } from 'primeng/chart';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { ChartModule } from 'primeng/chart';
     RatingModule,
     CommonModule,
     TagModule,
-    ChartModule
+    ChartModule,
+    TabViewModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

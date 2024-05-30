@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-overview',
-  templateUrl: './overview.component.html',
-  styleUrl: './overview.component.css'
+    selector: 'app-overview',
+    templateUrl: './overview.component.html',
+    styleUrls: ['./overview.component.css'] // Değişiklik: styleUrls kullanılacak
 })
 export class OverviewComponent implements OnInit {
-  basicData: any;
-
-    basicOptions: any;
+    revenue: any;
+    RevenueOptions: any;
+    appointments: any; // Yeni alan: appointments
+    AppointmentsOptions: any; // Yeni alan: AppointmentsOptions
 
     ngOnInit() {
         const documentStyle = getComputedStyle(document.documentElement);
@@ -16,20 +17,20 @@ export class OverviewComponent implements OnInit {
         const textColorSecondary = documentStyle.getPropertyValue('--text-color-secondary');
         const surfaceBorder = documentStyle.getPropertyValue('--surface-border');
 
-        this.basicData = {
-            labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        this.revenue = {
+            labels: ['P', 'S', 'Ç', 'P', 'C', 'C', 'P'],
             datasets: [
                 {
-                    label: 'Sales',
-                    data: [540, 325, 702, 620],
-                    backgroundColor: ['rgba(255, 159, 64, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)'],
-                    borderColor: ['rgb(255, 159, 64)', 'rgb(75, 192, 192)', 'rgb(54, 162, 235)', 'rgb(153, 102, 255)'],
-                    borderWidth: 1
+                    label: 'Ödemeler',
+                    data: [540, 325, 702, 620, 100, 400, 703],
+                    backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                    borderColor: 'rgb(255, 159, 64)',
+                    borderWidth: 1,
                 }
             ]
         };
 
-        this.basicOptions = {
+        this.RevenueOptions = {
             plugins: {
                 legend: {
                     labels: {
@@ -59,5 +60,51 @@ export class OverviewComponent implements OnInit {
                 }
             }
         };
+
+        // Yeni kodlar başlangıcı
+        this.appointments = {
+            labels: ['P', 'S', 'Ç', 'P', 'C', 'C', 'P'],
+            datasets: [
+                {
+                    label: 'Randevular',
+                    data: [30, 40, 25, 50, 45, 60, 40],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)', // Örnek renk
+                    borderColor: 'rgb(54, 162, 235)', // Örnek renk
+                    borderWidth: 1,
+                }
+            ]
+        };
+
+        this.AppointmentsOptions = {
+            plugins: {
+                legend: {
+                    labels: {
+                        color: textColor // Örnek renk
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: textColorSecondary // Örnek renk
+                    },
+                    grid: {
+                        color: surfaceBorder, // Örnek renk
+                        drawBorder: false
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: textColorSecondary // Örnek renk
+                    },
+                    grid: {
+                        color: surfaceBorder, // Örnek renk
+                        drawBorder: false
+                    }
+                }
+            }
+        };
+        // Yeni kodlar bitişi
     }
 }

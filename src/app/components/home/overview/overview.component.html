@@ -1,3 +1,19 @@
 <div class="card">
-    <p-chart type="bar" [data]="basicData" [options]="basicOptions" />
+    <div class="flex align-items-center justify-content-between">
+        <h4 class="ml-2 my-0">Haftalık Özet</h4>
+        <p class="text-sm mr-2">Mart 14 - Mart 21</p>
+    </div>
+
+    <div>
+        <p-tabView>
+            <p-tabPanel header="Ödemeler">
+                <p-chart type="bar" [data]="revenue" [options]="RevenueOptions" />
+            </p-tabPanel>
+            <p-tabPanel header="Randevular">
+                <p-chart type="bar" [data]="appointments" [options]="AppointmentsOptions" />
+            </p-tabPanel>
+         
+        </p-tabView>
+    </div>
+   
 </div>

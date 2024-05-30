@@ -14,7 +14,7 @@ body {
 
 .cards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 .custom-card {
