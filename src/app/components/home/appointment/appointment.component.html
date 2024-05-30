@@ -1,0 +1,50 @@
+<div class="card">
+  <p-table [value]="patients" [tableStyle]="{'min-width': '30rem', 'max-width':'40rem'}">
+    <ng-template pTemplate="caption" class="caption">
+      <div class="flex align-items-center justify-content-between">
+        Randevular
+        <div >
+          <p-dropdown [options]="dateOptions" [(ngModel)]="selectedDateOption" optionLabel="label" class="text-xs "
+            placeholder="Zaman aralığı seçin" [style]="{'min-width': '8rem', 'width': '100%'}">
+          </p-dropdown>
+        </div>
+      </div>
+
+    </ng-template>
+
+    <ng-template pTemplate="body" let-patients>
+      <tr>
+
+        <td>
+          <img [src]="'../../../assets/images/' + patients.image" [alt]="patients.name" width="40"
+            class="rounded-img shadow-4 " />
+        </td>
+        <td class="m-0 p-0">
+          <p class="text-primary text-xs m-0">{{patients.appointmentId}}</p>
+          <p class="text-bold text-sm m-0 p-0">{{patients.name}}</p>
+        </td>
+
+        <td class="m-0 p-0">
+          <p class="text-sm m-0">{{patients.appointmentDate}}</p>
+          <div class="text-xs tag text-white">{{patients.visitType}}</div>
+        </td>
+        <td>
+          <div class="buttons">
+            <button class="border-1 border-green-500 mr-2 p-1">
+              <i class="pi pi-check text-xs text-green-500"></i>
+            </button>
+            <button class="border-1 border-red-500 p-1">
+              <i class="pi pi-times text-xs text-red-500"></i>
+            </button>
+          </div>
+        </td>
+
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="summary">
+      <div class="flex align-items-center justify-content-between">
+        Toplamda {{patients ? patients.length : 0 }} randevunuz var.
+      </div>
+    </ng-template>
+  </p-table>
+</div>

@@ -1,36 +1,79 @@
-body{
+* {
     margin: 0;
-    padding: 0;
 }
 
-.navbar-container {
-    box-shadow: 0 0px 8px  rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0;
+body {
+    overflow: hidden;
+}
+
+nav {
+    height: 67px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 67px);
+}
+
+.sidebar-container {
+    display: flex;
+    width: 6.5rem;
+    position: relative;
+}
+
+.sidebar-container aside {
+    width: 0;
+    overflow-y: auto;
+    transition: all 0.5s;
+    position: absolute;
     left: 0;
-    width: 100%;
-    z-index: 1000; 
+    top: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+.container .slim-body {
+    width: 6.5rem;
+    background-color: #124BAC;
+    height: 100%;
+    transition: all 0.5s;
+}
+
+
+.sidebar-container:hover aside {
+    width: 19rem;
+}
+
+.sidebar-container:hover .slim-body {
+    width: 19rem;
+}
+
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+    padding: 1rem;
+    transition: margin-left 0.5s;
+}
+
+.sidebar-container:hover + .main-content {
+    margin-left: 19rem;
+}
+
+.sidebar-menu li {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 5rem 0.6rem 0.3rem;
 }
 
 .avatar-button {
-    font-size: 0.1rem; 
-    padding: 0rem; 
-}
-
-
-p-sidebar{
-    z-index: -1;
-}
-
-.sidebar-content{
-    display: flex;
-    justify-content: center;
-    flex-direction: column; 
-    align-items: center;
+    font-size: 0.1rem;
+    padding: 0rem;
 }
 
 .avatar-wrapper {
-    padding-top: 5rem !important;
+    padding-top: 3rem;
     position: relative;
     display: inline-block;
 }
@@ -39,63 +82,62 @@ p-sidebar{
     position: absolute;
     display: flex;
     margin: 0;
-    bottom: 0; /* Sol alt köşeye yerleştirmek için */
-    right: 0; /* Sol alt köşeye yerleştirmek için */
-    background-color: rgb(27, 150, 58); /* İkonun arkaplan rengini belirleyin, isteğe bağlı */
-    border-radius: 50%; /* İkonun etrafında bir daire oluşturun, isteğe bağlı */
-    padding: 0.3rem; /* İkonun etrafında biraz boşluk bırakın, isteğe bağlı */
+    bottom: 0;
+    right: 0;
+    background-color: rgb(27, 150, 58);
+    border-radius: 50%;
+    padding: 0.3rem;
     font-size: 0.4rem;
     font-weight: bolder;
-    color: white; /* İkonun rengini belirleyin */
-
+    color: white;
 }
 
-.head{
+.head {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.head h4, .head p {
-    margin: 0; /* Varsayılan margin değerlerini sıfırlar */
-    padding: 0; /* Varsayılan padding değerlerini sıfırlar */
+
+.head h4,
+.head p {
+    margin: 0;
+    padding: 0;
 }
 
-/* İhtiyaca göre aralarına belirli bir boşluk eklemek için */
 .head h4 {
-    margin-bottom: 0.5rem; /* Örneğin, h4 ile p arasına 0.5rem boşluk ekler */
+    margin-bottom: 0.5rem;
 }
 
-.head p{
+.head p {
     font-size: 0.8rem;
 }
 
-:host ::ng-deep .p-avatar{ 
-    border: 3px solid white; 
+:host ::ng-deep .p-avatar {
+    border: 3px solid white;
 }
 
-.sidebar-items .availability{
+.sidebar-items .availability {
     background-color: rgb(241, 241, 241, 0.5);
     padding: 0.3rem 0 1.3rem 1.3rem;
 }
 
-
-:host ::ng-deep .p-dropdown{ 
+:host ::ng-deep .p-dropdown {
     width: 16rem;
 }
 
 .sidebar-menu {
-    list-style-type: none; /* Bullet noktalarını kaldırmak için */
-    padding-left: 0; /* Sol boşluğu sıfırlamak için */
-    margin-left: 1rem; /* Soldan hizalama sağlamak için */
-  }
-  
-  .sidebar-menu li {
-    display: flex;
-    align-items: center; /* İkon ve metni aynı hizaya getirmek için */
-    padding: 0.6rem 5rem 0.6rem 0.3rem;
-    /* border: 1px solid red;
-    border-radius: 1rem */
-  }
- 
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 1rem;
+}
+
+.slimbar-menu {
+    list-style-type: none;
+    color: white;
+}
+
+.slimbar-menu i {
+    font-size: 20px;
+}

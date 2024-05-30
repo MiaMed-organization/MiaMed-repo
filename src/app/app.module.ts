@@ -24,7 +24,15 @@ import { SidebarModule } from 'primeng/sidebar';
 import { BadgeModule } from 'primeng/badge';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { CardsComponent } from './components/home/cards/cards.component'; // ngModel için gerekliimport { FormsModule } from '@angular/forms'; // ngModel için gerekli
+import { CardsComponent } from './components/home/cards/cards.component';
+import { AppointmentComponent } from './components/home/appointment/appointment.component'; // ngModel için gerekliimport { FormsModule } from '@angular/forms'; // ngModel için gerekli
+import { TableModule } from 'primeng/table';
+import { TagModule } from 'primeng/tag';
+import { RatingModule } from 'primeng/rating';
+import { CommonModule } from '@angular/common';
+import { OverviewComponent } from './components/home/overview/overview.component';
+import { UpcomingAppointmentComponent } from './components/home/upcoming-appointment/upcoming-appointment.component';
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
@@ -33,7 +41,10 @@ import { CardsComponent } from './components/home/cards/cards.component'; // ngM
     RegisterComponent,
     HomeComponent,
     MenuComponent,
-    CardsComponent
+    CardsComponent,
+    AppointmentComponent,
+    OverviewComponent,
+    UpcomingAppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +64,12 @@ import { CardsComponent } from './components/home/cards/cards.component'; // ngM
     SidebarModule,
     BadgeModule,
     DropdownModule,
-    FormsModule
+    FormsModule,
+    TableModule,
+    RatingModule,
+    CommonModule,
+    TagModule,
+    ChartModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

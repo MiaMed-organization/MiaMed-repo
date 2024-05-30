@@ -1,61 +1,80 @@
-<div>
+<nav>
     <div class="navbar-container">
-        <p-menubar>
-            <ng-template pTemplate="start">
-                <div class="flex align-items-center">
-                    <img src="../../../assets/images/ss_logo.png" height="25rem" class="mr-6 ml-2 mt-2" />
-                    <p-button (click)="sidebarVisible = true" icon="pi pi-align-justify" [text]="true" />
-                </div>
-            </ng-template>
-
-            <ng-template pTemplate="end">
-                <div class="flex align-items-center gap-2">
-                    <input type="text" pInputText placeholder="Ara.. " class="w-8rem sm:w-auto" />
-                    <p-avatar image="../../../assets/images/pp_user.jpeg" shape="circle" size="large"></p-avatar>
-                    <p-menu #avatarMenu [model]="avatarMenuItems" [popup]="true" />
-                    <p-button (click)="avatarMenu.toggle($event); toggleMenu()" class="avatar-button"
-                        severity="secondary" [text]="true" [rounded]="true"
-                        icon="{{ isMenuOpen ? 'pi pi-angle-up' : 'pi pi-angle-down' }}" />
-                </div>
-            </ng-template>
-        </p-menubar>
+      <p-menubar>
+          <ng-template pTemplate="start">
+              <div class="flex align-items-center">
+                  <img src="../../../assets/images/ss_logo.png" height="25rem" class="mr-6 ml-2 " />
+                  <!-- <p-button (click)="sidebarVisible = true" icon="pi pi-align-justify" [text]="true" /> -->
+              </div>
+          </ng-template>
+  
+          <ng-template pTemplate="end">
+              <div class="flex align-items-center gap-2">
+                  <input type="text" pInputText placeholder="Ara.. " class="w-8rem sm:w-auto" />
+                  <p-avatar image="../../../assets/images/pp_user.jpeg" shape="circle" size="large"></p-avatar>
+                  <p-menu #avatarMenu [model]="avatarMenuItems" [popup]="true" />
+                  <p-button (click)="avatarMenu.toggle($event); toggleMenu()" class="avatar-button"
+                      severity="secondary" [text]="true" [rounded]="true"
+                      icon="{{ isMenuOpen ? 'pi pi-angle-up' : 'pi pi-angle-down' }}" />
+              </div>
+          </ng-template>
+      </p-menubar>
     </div>
-
-    <div class="card flex justify-content-center">
-        <p-sidebar #sidebarRef [(visible)]="sidebarVisible" [modal]="false" styleClass="w-19rem" [showCloseIcon]="false">
-          <div class="sidebar-content">
-      
-            <div class="head mb-5">
-              <div class="avatar-wrapper mb-2">
-                <p-avatar image="../../../assets/images/pp_user.jpeg" styleClass="mr-2 w-7rem h-auto sidebar-pp-image" shape="circle" size="xlarge"></p-avatar>
-                <i class="pi pi-check avatar-icon"></i>
-              </div>
-      
-              <h4>Dr Edalin Hendry</h4>
-              <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
+  </nav>
+  
+  <section class="container">
+    <div class="sidebar-container">
+      <aside>
+        <div class="card flex justify-content-center container">
+          <div #sidebarRef styleClass="custom-sidebar " >
+            <div class="sidebar-content bg-white h-full">
+                <div class="head mb-5">
+                    <div class="avatar-wrapper mb-2">
+                        <p-avatar image="../../../assets/images/pp_user.jpeg" styleClass="mr-2 w-7rem h-auto sidebar-pp-image" shape="circle" size="xlarge"></p-avatar>
+                        <i class="pi pi-check avatar-icon"></i>
+                    </div>
+                    <h4>Dr Edalin Hendry</h4>
+                    <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
+                </div>
+  
+                <div class="sidebar-items">
+                    <div class="availability card w-19rem">
+                        <p class="mt-4 text-sm font-semibold mb-1">Müsaitlik Durumu <span class="text-sm text-red-500"> *</span></p>
+                        <p-dropdown 
+                            [options]="availability" 
+                            [(ngModel)]="selectedAvailability" 
+                            optionLabel="name" 
+                            placeholder="Müsaitlik durumunuzu giriniz"/>
+                    </div>
+  
+                    <div class="card flex mt-3">
+                        <ul class="sidebar-menu">
+                            <li *ngFor="let item of sidebarItems" class="mb-2">
+                                <i [class]="item.icon" class="pr-3"></i> {{ item.label }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-      
-            <div class="sidebar-items">
-              <div class="availability card w-19rem">
-                <p class="mt-4 text-sm font-semibold">Müsaitlik Durumu <span class="text-sm text-red-500"> *</span></p>
-                <p-dropdown 
-                  [options]="availability" 
-                  [(ngModel)]="selectedAvailability" 
-                  optionLabel="name" 
-                  placeholder="Müsaitlik durumunuzu giriniz"/>
-              </div>
-      
-              <div class="card flex mt-2">
-                <ul class="sidebar-menu">
-                  <li *ngFor="let item of sidebarItems" class="mb-2">
-                    <i [class]="item.icon" class="pr-3"></i> {{ item.label }}
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
           </div>
-        </p-sidebar>
+        </div>
+      </aside>
+  
+      <div class="slim-body card">
+        <p-avatar image="../../../assets/images/pp_user.jpeg" styleClass="mr-2 w-4rem h-auto sidebar-pp-image" shape="circle" class="ml-3 flex mt-5"></p-avatar>
+        <div class="card flex mt-6">
+          <ul class="slimbar-menu justify-content-center align-items-center">
+              <li *ngFor="let item of sidebarItems" class="mb-4">
+                  <i [class]="item.icon" class="pr-3"></i>
+              </li>
+          </ul>
+        </div>
       </div>
-      
-</div>
+    </div>
+  
+    <div class="main-content">
+      <app-cards></app-cards>
+      <app-appointment></app-appointment>
+    </div>
+  </section>
+  

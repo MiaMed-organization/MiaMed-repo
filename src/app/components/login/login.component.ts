@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { AuthService } from '../../services/auth.service';
 import { Observer } from 'rxjs';
+import { Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -21,8 +22,14 @@ export class LoginComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private router: Router,
-    private msgService: MessageService
-  ) { }
+    private msgService: MessageService,
+    private renderer: Renderer2
+  ) {
+    this.renderer.setStyle(document.body, 'background', 'url("../../../assets/images/bg_miamed.jpeg")');
+    this.renderer.setStyle(document.body, 'background-size', 'cover');
+    this.renderer.setStyle(document.body, 'background-repeat', 'no-repeat');
+    this.renderer.setStyle(document.body, 'background-attachment', 'fixed');
+   }
 
   get userName() {
     return this.loginForm.controls['userName'];
