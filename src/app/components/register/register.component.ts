@@ -5,6 +5,7 @@ import { MessageService } from 'primeng/api';
 import { User } from '../../interfaces/auth';
 import { AuthService } from '../../services/auth.service';
 import { passwordMatchValidator } from '../../shared/password-match.directive';
+import { Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -27,8 +28,14 @@ export class RegisterComponent {
     private fb: FormBuilder,
     private authService: AuthService,
     private messageService: MessageService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private renderer: Renderer2
+  ) { 
+    this.renderer.setStyle(document.body, 'background', 'url("../../../assets/images/bg_miamed.jpeg")');
+    this.renderer.setStyle(document.body, 'background-size', 'cover');
+    this.renderer.setStyle(document.body, 'background-repeat', 'no-repeat');
+    this.renderer.setStyle(document.body, 'background-attachment', 'fixed');
+  }
 
   get fullName() {
     return this.registerForm.controls['fullName'];
