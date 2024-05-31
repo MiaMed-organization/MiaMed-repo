@@ -15,8 +15,8 @@ export class MenuComponent {
   avatarMenuItems: MenuItem[] | undefined;
   sidebarVisible: boolean = false;
   isMenuOpen: boolean = false;
-  selectedAvailability: Availability | undefined; // Uygun veri tipini kullanın
-  availability: Availability[] | undefined; // Örnek veri, gerçek veri ile değiştirin
+  selectedAvailability: Availability | undefined; 
+  availability: Availability[] | undefined; 
   sidebarItems: MenuItem[] | undefined;
 
 

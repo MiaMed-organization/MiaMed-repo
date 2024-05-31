@@ -6,6 +6,13 @@
       "email": "oz@hotmail.com",
       "password": "123",
       "userName": "öz"
+    },
+    {
+      "id": "f3d8",
+      "fullName": "test",
+      "email": "test@hotmail.com",
+      "password": "123",
+      "userName": "test"
     }
   ]
 }

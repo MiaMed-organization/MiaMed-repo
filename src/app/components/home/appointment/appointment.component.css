@@ -9,13 +9,11 @@
     background-color: white !important;
 }
 
-/* İmajın kenarlarını yuvarlayan sınıf */
 .rounded-img {
     border-radius: 10px;
   }
   
   
-  /* patients.name metnini bold yapan sınıf */
   .text-bold {
     font-weight: bold;
   }
