@@ -1,0 +1,75 @@
+.card {
+    margin-top: 0.7rem;
+    padding: 0 !important;
+}
+
+.card hr {
+    border: none;
+    height: 1px;
+    background-color: #0EA5E9
+}
+
+.card .background-img {
+    width: 240px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.patient-img {
+    left: 0;
+    margin-left: 0.6rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    height: auto;
+    width: 40px;
+    border: none;
+    border-radius: 15px;
+}
+
+.patient-info p{
+    font-size: small;
+}
+
+i {
+    margin-top: 2px;
+}
+
+button {
+    padding: 0.7rem;
+    background-color: white;
+}
+
+button:hover {
+    background-color: transparent;
+    color: white;
+    transition: 0.5s;
+}
+
+:host {
+    ::ng-deep .p-card .p-card-body {
+        padding: 0.6rem 1rem 0.6rem 0.6rem;
+    }
+   
+}
+
+:host {
+    ::ng-deep .p-card .p-card-content
+    {
+        padding: 0rem ;
+    }
+   
+}
+:host {
+    ::ng-deep .p-card .p-card-footer 
+    {
+        padding: 0rem ;
+    }
+   
+}
+
+
+
+

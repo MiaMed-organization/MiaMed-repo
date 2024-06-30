@@ -10,7 +10,7 @@ import { PatientsService } from '../../../services/patients.service';
 export class AppointmentComponent implements OnInit{
      patients!: Patients[];
      dateOptions: any[] = [];
-    selectedDateOption: any;
+     selectedDateOption: any;
 
      constructor(private patientsService: PatientsService) {}
 

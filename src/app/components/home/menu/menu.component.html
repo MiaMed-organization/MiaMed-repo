@@ -75,10 +75,16 @@
 
     <div class="main-content">
         <app-cards></app-cards>
-        <div class="flex column">
-            <app-appointment></app-appointment>
-            <app-overview class="ml-3"></app-overview>
+        <div class="flex">
+            <div class="column">
+                <app-appointment></app-appointment>
+            </div>
+            <div class="column ml-3">
+                <app-overview></app-overview>
+                <app-upcoming-appointment ></app-upcoming-appointment>
+            </div>
         </div>
-        <!-- <app-upcoming-appointment></app-upcoming-appointment> -->
     </div>
+    
+    
 </section>
