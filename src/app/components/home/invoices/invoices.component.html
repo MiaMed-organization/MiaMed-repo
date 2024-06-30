@@ -1,0 +1,51 @@
+<div class="card">
+    <p-table [value]="patients" [tableStyle]="{'min-width': '30rem', 'max-width':'40rem'}">
+      <ng-template pTemplate="caption" class="caption">
+        <div class="flex align-items-center justify-content-between">
+          Son Faturalar
+          <div class="showAll">
+            <a routerLink="/" class="text-primary text-sm font-normal">
+              Hepsini göster
+          </a>
+          </div>
+        </div>
+  
+      </ng-template>
+  
+      <ng-template pTemplate="body" let-patients>
+      
+        <tr>
+          <td>
+            <img [src]="'../../../assets/images/' + patients.image" [alt]="patients.name" width="30"
+              class="rounded-img shadow-4 " />
+          </td>
+          <td class="m-0 p-0">
+            <p class="patient-name text-sm m-0 p-0">{{patients.name}}</p>
+            <p class="text-primary text-xs m-0">{{patients.appointmentId}}</p>
+            
+          </td>
+  
+          <td class="m-0 p-0 ml-3">
+            <p class=" text-xs m-0 p-0 mr-3">Ücret</p>
+            <p class="text-sm mb-0 mt-0 ">${{patients.fee}}</p>
+          </td>
+
+          <td class="m-0 p-0">
+            <p class=" text-xs m-0 p-0">Ödeme Tarihi</p>
+            <p class="text-sm m-0 ">{{patients.paidDate}}</p>
+          </td>
+
+          <td>
+            <div class="view">
+              <button class="border-none mr-2 p-2 surface-300">
+                <i class="pi pi-eye text-black-500"></i>
+              </button>
+            
+            </div>
+          </td>
+  
+        </tr>
+      </ng-template>
+     
+    </p-table>
+  </div>

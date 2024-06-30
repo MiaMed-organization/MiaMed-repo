@@ -1,0 +1,46 @@
+.card{
+    padding: 0rem 0.5rem 0rem 0.5rem;
+    border: 0.4px solid rgb(230, 230, 230);
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+}
+
+.card tr:hover{
+    background-color: rgb(240, 252, 255);
+  }
+
+.card .showAll a:hover{
+    color: black;
+    transition: color 0.2s;
+
+}
+
+.card tr .view button{
+    border-radius: 50%;
+}  
+
+.card tr .view button:hover{
+    background-color: #0e82fd !important;
+    color: white;
+    transition: 0.5s;
+} 
+
+.caption{
+    background-color: white !important;
+}
+
+.rounded-img {
+    border-radius: 10px;
+  }
+  
+  
+.patient-name{
+    font-weight: 600;
+}
+
+:host {
+    ::ng-deep .p-card .p-card-body {
+        padding: 0rem;
+    }
+   
+}

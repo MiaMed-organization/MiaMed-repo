@@ -8,7 +8,7 @@ export interface Patients {
     location?: string;
     patientId?: string;
     fee?: number;
-    paidDate?: Date;
+    paidDate?: string;
     email?: string;
     phoneNumber?: string;
     callingType?: string;

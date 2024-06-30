@@ -34,6 +34,7 @@ import { OverviewComponent } from './components/home/overview/overview.component
 import { UpcomingAppointmentComponent } from './components/home/upcoming-appointment/upcoming-appointment.component';
 import { ChartModule } from 'primeng/chart';
 import { TabViewModule } from 'primeng/tabview';
+import { InvoicesComponent } from './components/home/invoices/invoices.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TabViewModule } from 'primeng/tabview';
     CardsComponent,
     AppointmentComponent,
     OverviewComponent,
-    UpcomingAppointmentComponent
+    UpcomingAppointmentComponent,
+    InvoicesComponent
   ],
   imports: [
     BrowserModule,
