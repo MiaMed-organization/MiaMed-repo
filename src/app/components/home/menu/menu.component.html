@@ -4,7 +4,6 @@
             <ng-template pTemplate="start">
                 <div class="flex align-items-center">
                     <img src="../../../assets/images/ss_logo.png" height="25rem" class="mr-6 ml-2 " />
-                    <!-- <p-button (click)="sidebarVisible = true" icon="pi pi-align-justify" [text]="true" /> -->
                 </div>
             </ng-template>
 
@@ -26,7 +25,7 @@
     <div class="sidebar-container">
         <aside>
             <div class="card flex justify-content-center container">
-                <div #sidebarRef styleClass="custom-sidebar ">
+                <div #sidebarRef styleClass="custom-sidebar">
                     <div class="sidebar-content bg-white h-full">
                         <div class="head mb-5">
                             <div class="avatar-wrapper mb-2">
@@ -49,7 +48,8 @@
 
                             <div class="card flex mt-3">
                                 <ul class="sidebar-menu">
-                                    <li *ngFor="let item of sidebarItems" class="mb-2">
+                                    <li *ngFor="let item of sidebarItems" (click)="setActiveItem(item)"
+                                        [class.active]="item.label === activeItem" class="mb-2">
                                         <i [class]="item.icon" class="pr-3"></i> {{ item.label }}
                                     </li>
                                 </ul>
@@ -88,6 +88,4 @@
             </div>
         </div>
     </div>
-    
-    
 </section>

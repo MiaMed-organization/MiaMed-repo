@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { authGuard } from './guards/auth.guard';
+import { DoctorsComponent } from './components/pages/doctors/doctors.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
     path: 'home',
     component: HomeComponent,
     canActivate: [authGuard]
+  },
+  {
+    path: 'doctors',
+    component: DoctorsComponent,
   },
   {
     path: '', redirectTo: 'home', pathMatch: 'full'

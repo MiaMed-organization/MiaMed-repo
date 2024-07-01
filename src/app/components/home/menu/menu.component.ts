@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-
+import { Router } from '@angular/router'; 
 interface Availability {
   name: string;
   code: string;
@@ -11,14 +11,16 @@ interface Availability {
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
-export class MenuComponent {
+export class MenuComponent implements OnInit {
   avatarMenuItems: MenuItem[] | undefined;
   sidebarVisible: boolean = false;
   isMenuOpen: boolean = false;
   selectedAvailability: Availability | undefined; 
   availability: Availability[] | undefined; 
   sidebarItems: MenuItem[] | undefined;
+  activeItem: string = '';
 
+  constructor(private router: Router) {}
 
   ngOnInit() {
 
@@ -48,50 +50,30 @@ export class MenuComponent {
 
     this.sidebarItems = [
       {
-        label: 'Dashboard',
+        label: 'Ana Menü',
         icon: 'pi pi-home'
       },
       {
-        label: 'Doctors',
+        label: 'Doktorlar',
         icon: 'pi pi-address-book',
-        items: [
-          {
-            label: 'Map Grid',
-          },
-          {
-            label: 'Map List',
-          }
-        ]
+        routerLink: ['/doctors']
+        
       },
 
       {
-        label: 'Search Doctor',
+        label: 'Doktor Ara',
         icon: 'pi pi-search-plus',
-        items: [
-          {
-            label: 'Search-1',
-          },
-          {
-            label: 'Search-2',
-          }
-        ]
+        
       },
 
       {
-        label: 'Doctor Profile',
+        label: 'Doktor Profili',
         icon: 'pi pi-user',
-        items: [
-          {
-            label: 'Profile-1',
-          },
-          {
-            label: 'Profile-2',
-          }
-        ]
+       
       },
 
       {
-        label: 'Booking',
+        label: 'Randevular',
         icon: 'pi pi-book'
       },
 
@@ -101,23 +83,29 @@ export class MenuComponent {
       },
 
       {
-        label: 'Chat',
+        label: 'Mesaj',
         icon: 'pi pi-comment'
       },
 
       {
-        label: 'Profile Settings',
+        label: 'Profil Ayarları',
         icon: 'pi pi-cog'
       },
 
       {
-        label: 'Change Password',
+        label: 'Şifre Değiştir',
         icon: 'pi pi-key'
       },
     ];
 
   }
 
+  setActiveItem(item: MenuItem) {
+    this.activeItem = item.label;
+    if (item.routerLink) {
+        this.router.navigate(item.routerLink);
+    }
+}
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }

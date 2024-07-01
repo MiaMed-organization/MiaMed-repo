@@ -10,7 +10,7 @@
   }
 
 .card .showAll a:hover{
-    color: black;
+    color: black !important;
     transition: color 0.2s;
 
 }

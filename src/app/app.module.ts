@@ -35,6 +35,9 @@ import { UpcomingAppointmentComponent } from './components/home/upcoming-appoint
 import { ChartModule } from 'primeng/chart';
 import { TabViewModule } from 'primeng/tabview';
 import { InvoicesComponent } from './components/home/invoices/invoices.component';
+import { DoctorsComponent } from './components/pages/doctors/doctors.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { GmapComponent } from './components/pages/gmap/gmap.component'
 
 @NgModule({
   declarations: [
@@ -47,7 +50,9 @@ import { InvoicesComponent } from './components/home/invoices/invoices.component
     AppointmentComponent,
     OverviewComponent,
     UpcomingAppointmentComponent,
-    InvoicesComponent
+    InvoicesComponent,
+    DoctorsComponent,
+    GmapComponent
   ],
   imports: [
     BrowserModule,
@@ -73,7 +78,8 @@ import { InvoicesComponent } from './components/home/invoices/invoices.component
     CommonModule,
     TagModule,
     ChartModule,
-    TabViewModule
+    TabViewModule,
+    GoogleMapsModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

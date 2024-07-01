@@ -21,15 +21,38 @@
 .buttons button{
    background-color: white;
    border-radius: 50%;
+   margin: 0;
 }
 
 .tag{
     background-color: #14B8A6;
     border-radius: 5px;
-    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+    padding: 0.1rem 0.3rem 0.2rem 0.3rem;
     display: inline-block;
 }
 
 .card tr:hover{
   background-color: rgb(240, 252, 255);
+}
+
+.buttons .button-check{
+  color:#14B8A6;
+  border: 1px solid #14B8A6;
+}
+
+.buttons .button-times{
+  color: red;
+  border: 1px solid red;
+}
+
+.buttons .button-check:hover {
+     background-color: #14B8A6 !important;
+     color: white;
+     transition: 0.5s; 
+}
+
+.buttons .button-times:hover {
+  background-color:red !important;
+  color: white;
+  transition: 0.5s; 
 }
