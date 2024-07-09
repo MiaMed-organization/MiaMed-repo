@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+  }
+  
+  .doctors-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  .map-container {
+    flex: 1;
+    background-color: #e0e0e0; 
+  }
+  
+  .doctor-card {
+    margin-bottom: 20px;
+  }
+  
+
+  

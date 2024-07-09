@@ -11,7 +11,7 @@ export class DoctorsService {
       {
         id: '1',
         name: 'Dr. Ruby Perrin',
-        image: 'patient1.jpeg',
+        image: 'doctor1.jpeg',
         availability: '22 Mart Cuma',
         price: 300,
         location: 'Florida, USA',
@@ -27,7 +27,7 @@ export class DoctorsService {
       {
         id: '2',
         name: 'Dr. John Doe',
-        image: 'patient2.jpeg',
+        image: 'doctor2.jpeg',
         availability: '23 Mart Cumartesi',
         price: 500,
         location: 'New York, USA',
@@ -43,7 +43,7 @@ export class DoctorsService {
       {
         id: '3',
         name: 'Dr. Jane Smith',
-        image: 'patient3.jpeg',
+        image: 'doctor3.jpeg',
         availability: '24 Mart Pazar',
         price: 400,
         location: 'California, USA',
@@ -59,7 +59,7 @@ export class DoctorsService {
       {
         id: '4',
         name: 'Dr. Alan Brown',
-        image: 'patient4.jpeg',
+        image: 'doctor4.jpeg',
         availability: '25 Mart Pazartesi',
         price: 700,
         location: 'Texas, USA',
@@ -75,7 +75,7 @@ export class DoctorsService {
       {
         id: '5',
         name: 'Dr. Emily White',
-        image: 'patient5.jpeg',
+        image: 'doctor5.jpeg',
         availability: '26 Mart Salı',
         price: 350,
         location: 'Nevada, USA',
@@ -91,7 +91,7 @@ export class DoctorsService {
       {
         id: '6',
         name: 'Dr. Sarah Green',
-        image: 'patient6.jpeg',
+        image: 'doctor6.jpeg',
         availability: '27 Mart Çarşamba',
         price: 450,
         location: 'Washington, USA',
@@ -107,7 +107,7 @@ export class DoctorsService {
       {
         id: '7',
         name: 'Dr. Michael Blue',
-        image: 'patient7.jpeg',
+        image: 'doctor7.jpeg',
         availability: '28 Mart Perşembe',
         price: 600,
         location: 'Oregon, USA',
@@ -123,7 +123,7 @@ export class DoctorsService {
       {
         id: '8',
         name: 'Dr. David Black',
-        image: 'patient8.jpeg',
+        image: 'doctor8.jpeg',
         availability: '29 Mart Cuma',
         price: 800,
         location: 'Arizona, USA',
@@ -139,7 +139,7 @@ export class DoctorsService {
       {
         id: '9',
         name: 'Dr. Nancy Red',
-        image: 'patient9.jpeg',
+        image: 'doctor9.jpeg',
         availability: '30 Mart Cumartesi',
         price: 500,
         location: 'Colorado, USA',
@@ -155,7 +155,7 @@ export class DoctorsService {
       {
         id: '10',
         name: 'Dr. Steven Purple',
-        image: 'patient10.jpeg',
+        image: 'doctor10.jpeg',
         availability: '31 Mart Pazar',
         price: 650,
         location: 'Utah, USA',

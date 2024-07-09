@@ -1,24 +1,35 @@
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdzI0eYe9xY3rVEfqzRUFJm1fNxDm1qz8"></script>
-
 <div class="container">
-    <div class="map-container">
-      <!-- Harita bileşeni burada yer alacak -->
-    </div>
-    <div class="doctors-container">
-      <div *ngFor="let doctor of doctors" class="doctor-card">
-        <img [src]="doctor.image" alt="{{ doctor.name }}" class="doctor-image">
+  <div class="doctors-container">
+
+    <div *ngFor="let doctor of doctors" class="doctor-card">
+      <p-card header="Simple Card">
+        <img [src]="'../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name" width="80"
+            class="rounded-img shadow-4 " />
+
         <div class="doctor-info">
-          <h2>{{ doctor.name }}</h2>
-          <p><strong>Field:</strong> {{ doctor.field }}</p>
-          <p><strong>Location:</strong> {{ doctor.location }}</p>
-          <p><strong>Availability:</strong> {{ doctor.availability }}</p>
-          <p><strong>Languages:</strong> {{ doctor.languages }}</p>
-          <p><strong>Price:</strong> {{ doctor.price }}</p>
-          <p><strong>Rating:</strong> {{ doctor.rating }}</p>
-          <p><strong>Feedback:</strong> {{ doctor.feedback }}</p>
-          <p><strong>Recommended:</strong> {{ doctor.recommended }}%</p>
+          <h5 class="">{{ doctor.name }}</h5>
+          <p>{{ doctor.field }}</p>
+          <p>{{ doctor.location }}</p>
+          <p>{{ doctor.availability }}</p>
+          <p>{{ doctor.languages }}</p>
+          <p>{{ doctor.price }}</p>
+          <p>{{ doctor.rating }}</p>
+          <p>{{ doctor.feedback }}</p>
+          <p>{{ doctor.recommended }}%</p>
         </div>
-      </div>
+
+        <ng-template pTemplate="footer">
+          <div class="flex gap-3 mt-1">
+            <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full" />
+            <p-button label="Save" class="w-full" styleClass="w-full" />
+          </div>
+        </ng-template>
+      </p-card>
+
+
     </div>
   </div>
-  
+  <div class="map-container">
+    <!-- This area is reserved for the map -->
+  </div>
+</div>
