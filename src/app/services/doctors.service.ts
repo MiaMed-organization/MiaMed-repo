@@ -11,9 +11,10 @@ export class DoctorsService {
       {
         id: '1',
         name: 'Dr. Ruby Perrin',
-        image: 'doctor1.jpeg',
+        image: 'doctor-01.jpg',
         availability: '22 Mart Cuma',
-        price: 300,
+        minPrice: 300,
+        maxPrice: 500,
         location: 'Florida, USA',
         languages: 'German',
         rating: 4,
@@ -27,9 +28,10 @@ export class DoctorsService {
       {
         id: '2',
         name: 'Dr. John Doe',
-        image: 'doctor2.jpeg',
+        image: 'doctor-02.jpg',
         availability: '23 Mart Cumartesi',
-        price: 500,
+        minPrice: 800,
+        maxPrice: 1000,
         location: 'New York, USA',
         languages: 'English',
         rating: 5,
@@ -43,9 +45,10 @@ export class DoctorsService {
       {
         id: '3',
         name: 'Dr. Jane Smith',
-        image: 'doctor3.jpeg',
+        image: 'doctor-03.jpg',
         availability: '24 Mart Pazar',
-        price: 400,
+        minPrice: 100,
+        maxPrice: 300,
         location: 'California, USA',
         languages: 'Spanish',
         rating: 3,
@@ -59,9 +62,10 @@ export class DoctorsService {
       {
         id: '4',
         name: 'Dr. Alan Brown',
-        image: 'doctor4.jpeg',
+        image: 'doctor-04.jpg',
         availability: '25 Mart Pazartesi',
-        price: 700,
+        minPrice: 700,
+        maxPrice: 800,
         location: 'Texas, USA',
         languages: 'French',
         rating: 4,
@@ -75,9 +79,10 @@ export class DoctorsService {
       {
         id: '5',
         name: 'Dr. Emily White',
-        image: 'doctor5.jpeg',
+        image: 'doctor-05.jpg',
         availability: '26 Mart Salı',
-        price: 350,
+        minPrice: 800,
+        maxPrice: 950,
         location: 'Nevada, USA',
         languages: 'Italian',
         rating: 2,
@@ -91,9 +96,10 @@ export class DoctorsService {
       {
         id: '6',
         name: 'Dr. Sarah Green',
-        image: 'doctor6.jpeg',
+        image: 'doctor-06.jpg',
         availability: '27 Mart Çarşamba',
-        price: 450,
+        minPrice: 150,
+        maxPrice: 300,
         location: 'Washington, USA',
         languages: 'Portuguese',
         rating: 5,
@@ -107,9 +113,10 @@ export class DoctorsService {
       {
         id: '7',
         name: 'Dr. Michael Blue',
-        image: 'doctor7.jpeg',
+        image: 'doctor-07.jpg',
         availability: '28 Mart Perşembe',
-        price: 600,
+        minPrice: 400,
+        maxPrice: 500,
         location: 'Oregon, USA',
         languages: 'Russian',
         rating: 3,
@@ -123,9 +130,10 @@ export class DoctorsService {
       {
         id: '8',
         name: 'Dr. David Black',
-        image: 'doctor8.jpeg',
+        image: 'doctor-08.jpg',
         availability: '29 Mart Cuma',
-        price: 800,
+        minPrice: 300,
+        maxPrice: 500,
         location: 'Arizona, USA',
         languages: 'Japanese',
         rating: 4,
@@ -139,9 +147,10 @@ export class DoctorsService {
       {
         id: '9',
         name: 'Dr. Nancy Red',
-        image: 'doctor9.jpeg',
+        image: 'doctor-09.jpg',
         availability: '30 Mart Cumartesi',
-        price: 500,
+        minPrice: 900,
+        maxPrice: 1500,
         location: 'Colorado, USA',
         languages: 'Korean',
         rating: 5,
@@ -155,9 +164,10 @@ export class DoctorsService {
       {
         id: '10',
         name: 'Dr. Steven Purple',
-        image: 'doctor10.jpeg',
+        image: 'doctor-10.jpg',
         availability: '31 Mart Pazar',
-        price: 650,
+        minPrice: 650,
+        maxPrice: 800,
         location: 'Utah, USA',
         languages: 'Chinese',
         rating: 2,
@@ -168,10 +178,48 @@ export class DoctorsService {
         icon: 'pi-eye',
         clinicImage: 'clinic10.jpeg'
       },
+      {
+        id: '11',
+        name: 'Dr. Julia Washington',
+        image: 'doctor-11.jpg',
+        availability: '28 Mart Pazar',
+        minPrice: 650,
+        maxPrice: 800,
+        location: 'Utah, USA',
+        languages: 'Chinese',
+        rating: 4,
+        feedback: 10,
+        recommended: 35,
+        field: 'Psikiyatri',
+        services: 'Ruh sağlığı muayenesi',
+        icon: 'pi-eye',
+        clinicImage: 'clinic11.jpeg'
+      },
+      {
+        id: '12',
+        name: 'Dr. Shaun Aponte',
+        image: 'doctor-12.jpg',
+        availability: '31 Eylül Pazar',
+        minPrice: 950,
+        maxPrice: 1200,
+        location: 'Utah, USA',
+        languages: 'Turkish',
+        rating: 5,
+        feedback: 30,
+        recommended: 57,
+        field: 'Diş Hekimi',
+        services: 'Dolgu',
+        icon: 'pi-heart',
+        clinicImage: 'clinic12.jpeg'
+      },
     ];
   }
 
   getDoctors() {
     return Promise.resolve(this.getDoctorsData());
+  }
+
+  getDoctorCount(): number {
+    return this.getDoctorsData().length;
   }
 }

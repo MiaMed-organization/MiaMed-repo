@@ -1,35 +1,62 @@
 <div class="container">
-  <div class="doctors-container">
+  <div class="left-side">
+    <div class="header-container flex justify-content-between align-items-center ml-2 mr-4">
+      <p class="font-medium ">{{ doctorCount }} Doktor bulundu</p>
+      <div class="dropdown-container flex align-items-center">
+        <p-dropdown [options]="sort" [(ngModel)]="sortedBy" optionLabel="name"
+          placeholder="Şuna göre sırala"></p-dropdown>
 
-    <div *ngFor="let doctor of doctors" class="doctor-card">
-      <p-card header="Simple Card">
-        <img [src]="'../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name" width="80"
-            class="rounded-img shadow-4 " />
+        <button id="gridButton" class="icon-button active" (click)="activateButton('gridButton')">
+          <i class="pi pi-th-large"></i>
+        </button>
+        <button id="listButton" class="icon-button" (click)="activateButton('listButton')">
+          <i class="pi pi-list"></i>
+        </button>
+      </div>
+    </div>
+    <div class="doctors-container ">
+      <div *ngFor="let doctor of doctors" class="doctor-card">
+        <p-card>
+          <img [src]="'../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name" width="140"
+            class="rounded-img shadow-2" />
+          <div class="doctor-info">
 
-        <div class="doctor-info">
-          <h5 class="">{{ doctor.name }}</h5>
-          <p>{{ doctor.field }}</p>
-          <p>{{ doctor.location }}</p>
-          <p>{{ doctor.availability }}</p>
-          <p>{{ doctor.languages }}</p>
-          <p>{{ doctor.price }}</p>
-          <p>{{ doctor.rating }}</p>
-          <p>{{ doctor.feedback }}</p>
-          <p>{{ doctor.recommended }}%</p>
-        </div>
+            <div class="name-container">
+              <a class="text-lg font-semibold mt-3">{{ doctor.name }}</a>
+              <i class="fas fa-check-circle verified"></i>
+            </div>
 
-        <ng-template pTemplate="footer">
-          <div class="flex gap-3 mt-1">
-            <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full" />
-            <p-button label="Save" class="w-full" styleClass="w-full" />
+            <p class="font-light my-2 text-sm">{{ doctor.field }}</p>
+
+            <div class="card flex">
+              <p-rating [(ngModel)]=" doctor.rating " [readonly]="true" [cancel]="false" />
+              <span class="font-light text-xs ml-1 mt-1">({{ doctor.feedback }})</span>
+            </div>
+
+            <p class="font-light mb-3 mt-4 text-sm">
+              <i class="pi pi-map-marker"></i> Konum, {{ doctor.location }}
+            </p>
+
+            <p class="font-light my-3 text-sm">
+              <i class="pi pi-clock"></i> Müsaitlik, {{ doctor.availability }}
+            </p>
+
+            <p class="font-light my-3 text-sm">
+              <i class="pi pi-money-bill"></i> Ücret, ${{ doctor.minPrice }} - ${{doctor.maxPrice}}
+            </p>
+
           </div>
-        </ng-template>
-      </p-card>
-
-
+          <ng-template pTemplate="footer">
+            <div class="flex gap-3 ">
+              <p-button label="Profili Görüntüle" [outlined]="true"/>
+              <p-button label="Randevu Al" />
+            </div>
+          </ng-template>
+        </p-card>
+      </div>
     </div>
   </div>
-  <div class="map-container">
+  <div class="right-side">
     <!-- This area is reserved for the map -->
   </div>
 </div>

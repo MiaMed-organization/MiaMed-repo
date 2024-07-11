@@ -8,7 +8,8 @@ export interface Doctors {
     icon?:string;
     location?: string;
     languages?: string;
-    price?: number;
+    minPrice?: number;
+    maxPrice?:number;
     rating?: number;
     email?: string;
     feedback?: number;
