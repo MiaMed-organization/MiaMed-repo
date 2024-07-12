@@ -6,11 +6,6 @@ body {
     overflow: hidden;
 }
 
-nav {
-    height: 67px;
-    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
-}
-
 .container {
     display: flex;
     height: calc(100vh - 67px);
@@ -32,9 +27,14 @@ nav {
     position: relative;
 }
 
+.sidebar-content{
+    background-color: #124BAC;
+    color: white;
+}
+
 .sidebar-container aside {
     width: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
     transition: all 0.5s;
     position: absolute;
     left: 0;
@@ -65,11 +65,11 @@ nav {
     align-items: flex-start;
     padding: 1rem;
     transition: margin-left 0.5s;
-    margin-left: 6.5rem;
+    margin-left: 1.5rem;
 }
 
 .sidebar-container:hover + .main-content {
-    margin-left: 19rem;
+    margin-left: 15rem;
 }
 
 .sidebar-menu li {
@@ -130,7 +130,7 @@ nav {
 }
 
 .sidebar-items .availability {
-    background-color: rgb(241, 241, 241, 0.5);
+    background-color: rgba(80, 130, 204, 0.5);
     padding: 0.3rem 0 1.3rem 1.3rem;
 }
 
@@ -145,7 +145,7 @@ nav {
 }
 
 .sidebar-items .sidebar-menu li:hover{
-    background-color: rgba(211, 211, 211, 0.5);
+    background-color: rgba(80, 130, 204, 0.5);
     border: none;
     border-radius: 10px;
     transition: 0.2s;

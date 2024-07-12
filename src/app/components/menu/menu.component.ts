@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Router } from '@angular/router'; 
+
 interface Availability {
   name: string;
   code: string;
@@ -12,9 +13,7 @@ interface Availability {
   styleUrl: './menu.component.css'
 })
 export class MenuComponent implements OnInit {
-  avatarMenuItems: MenuItem[] | undefined;
   sidebarVisible: boolean = false;
-  isMenuOpen: boolean = false;
   selectedAvailability: Availability | undefined; 
   availability: Availability[] | undefined; 
   sidebarItems: MenuItem[] | undefined;
@@ -23,19 +22,6 @@ export class MenuComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
-
-    this.avatarMenuItems = [
-      {
-        label: 'Settings',
-        icon: 'pi pi-cog'
-      },
-      {
-        label: 'Logout',
-        icon: 'pi pi-sign-out',
-        routerLink: ['../login']
-
-      }
-    ];
 
     this.availability = [
       {
@@ -106,7 +92,5 @@ export class MenuComponent implements OnInit {
         this.router.navigate(item.routerLink);
     }
 }
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+ 
 }

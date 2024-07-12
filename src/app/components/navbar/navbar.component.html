@@ -1,0 +1,23 @@
+<nav>
+    <div class="navbar-container">
+        <p-menubar>
+            <ng-template pTemplate="start">
+                <div class="flex align-items-center">
+                    <i class="pi pi-align-justify mb-2 ml-2"></i>
+                    <img src="../../../assets/images/ss_logo.png" height="25rem" class="mr-6 ml-3" />
+                </div>
+            </ng-template>
+
+            <ng-template pTemplate="end">
+                <div class="flex align-items-center gap-2">
+                    <input type="text" pInputText placeholder="Ara.. " class="w-8rem sm:w-auto" />
+                    <p-avatar image="../../../assets/images/pp_user.jpeg" shape="circle" size="large"></p-avatar>
+                    <p-menu #avatarMenu [model]="avatarMenuItems" [popup]="true" />
+                    <p-button (click)="avatarMenu.toggle($event); toggleMenu()" class="avatar-button"
+                        severity="secondary" [text]="true" [rounded]="true"
+                        icon="{{ isMenuOpen ? 'pi pi-angle-up' : 'pi pi-angle-down' }}" />
+                </div>
+            </ng-template>
+        </p-menubar>
+    </div>
+</nav>

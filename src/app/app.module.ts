@@ -19,7 +19,7 @@ import { CheckboxModule } from 'primeng/checkbox';
 import { MenubarModule } from 'primeng/menubar';
 import { AvatarModule } from 'primeng/avatar';
 import { MenuModule } from 'primeng/menu';
-import { MenuComponent } from './components/home/menu/menu.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { SidebarModule } from 'primeng/sidebar';
 import { BadgeModule } from 'primeng/badge';
 import { DropdownModule } from 'primeng/dropdown';
@@ -37,7 +37,8 @@ import { TabViewModule } from 'primeng/tabview';
 import { InvoicesComponent } from './components/home/invoices/invoices.component';
 import { DoctorsComponent } from './components/pages/doctors/doctors.component';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { GmapComponent } from './components/pages/gmap/gmap.component'
+import { GmapComponent } from './components/pages/gmap/gmap.component';
+import { NavbarComponent } from './components/navbar/navbar.component'
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { GmapComponent } from './components/pages/gmap/gmap.component'
     UpcomingAppointmentComponent,
     InvoicesComponent,
     DoctorsComponent,
-    GmapComponent
+    GmapComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
