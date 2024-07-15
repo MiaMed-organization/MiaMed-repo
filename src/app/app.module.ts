@@ -38,7 +38,7 @@ import { InvoicesComponent } from './components/home/invoices/invoices.component
 import { DoctorsComponent } from './components/pages/doctors/doctors.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { GmapComponent } from './components/pages/gmap/gmap.component';
-import { NavbarComponent } from './components/navbar/navbar.component'
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,7 @@ import { NavbarComponent } from './components/navbar/navbar.component'
     InvoicesComponent,
     DoctorsComponent,
     GmapComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

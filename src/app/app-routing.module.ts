@@ -25,7 +25,7 @@ const routes: Routes = [
     component: DoctorsComponent,
   },
   {
-    path: '', redirectTo: 'home', pathMatch: 'full'
+    path: '', redirectTo: '/home', pathMatch: 'full'
   },
 
   { path: '**', component: LoginComponent }

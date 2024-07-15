@@ -3,8 +3,8 @@
         <p-menubar>
             <ng-template pTemplate="start">
                 <div class="flex align-items-center">
-                    <i class="pi pi-align-justify mb-2 ml-2"></i>
-                    <img src="../../../assets/images/ss_logo.png" height="25rem" class="mr-6 ml-3" />
+                    <i [class]="isMenuOpen ? 'pi pi-times mb-2 ml-2 menu-icon' : 'pi pi-align-justify mb-2 ml-2 menu-icon'"  (click)="toggleSidebar()"></i>
+                    <img src="../../../assets/images/ss_logo.png" height="25rem" class="mr-6 ml-3" alt="Ana sayfa" (click)="goToHome()"/>
                 </div>
             </ng-template>
 

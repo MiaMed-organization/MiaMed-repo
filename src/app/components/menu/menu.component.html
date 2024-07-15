@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <section class="container">
-    <div class="sidebar-container">
+    <div class="sidebar-container" [class.sidebar-open]="sidebarOpen">
         <aside>
             <div class="card flex justify-content-center container">
                 <div #sidebarRef styleClass="custom-sidebar">
@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <div class="main-content">
+    <div class="main-content" [class.sidebar-open]="sidebarOpen">
         <app-cards></app-cards>
         <div class="flex">
             <div class="column">
@@ -59,7 +59,7 @@
             </div>
             <div class="column ml-3">
                 <app-overview></app-overview>
-                <app-upcoming-appointment ></app-upcoming-appointment>
+                <app-upcoming-appointment></app-upcoming-appointment>
             </div>
             <div class="column ml-3">
                 <app-invoices></app-invoices>

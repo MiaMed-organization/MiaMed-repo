@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Router } from '@angular/router'; 
+import { SidebarService } from '../../services/sidebar.service';
 
 interface Availability {
   name: string;
@@ -18,8 +19,10 @@ export class MenuComponent implements OnInit {
   availability: Availability[] | undefined; 
   sidebarItems: MenuItem[] | undefined;
   activeItem: string = '';
+  sidebarOpen = false;
 
-  constructor(private router: Router) {}
+
+  constructor(private router: Router, private sidebarService: SidebarService) {}
 
   ngOnInit() {
 
@@ -84,6 +87,11 @@ export class MenuComponent implements OnInit {
       },
     ];
 
+
+    this.sidebarService.sidebarOpen$.subscribe(open => {
+      this.sidebarOpen = open;
+    });
+  
   }
 
   setActiveItem(item: MenuItem) {
