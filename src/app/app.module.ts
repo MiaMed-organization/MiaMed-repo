@@ -39,6 +39,7 @@ import { DoctorsComponent } from './components/pages/doctors/doctors.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { GmapComponent } from './components/pages/gmap/gmap.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { TooltipDirective } from './directives/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     DoctorsComponent,
     GmapComponent,
     NavbarComponent,
+    TooltipDirective,
   ],
   imports: [
     BrowserModule,

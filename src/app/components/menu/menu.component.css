@@ -154,10 +154,41 @@ body {
 .slimbar-menu {
     list-style-type: none;
     color: white;
+    
 }
 
 .slimbar-menu i {
     font-size: 20px;
+}
+
+.slimbar-menu li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.slimbar-menu li::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 100%; /* İkonun sağında */
+    margin-left: 10px; /* İkon ile tooltip arasındaki boşluk */
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    white-space: nowrap;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-50%);
+    transition: opacity 0.2s, visibility 0.2s;
+}
+
+.slimbar-menu li:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 .main-content .cards,
