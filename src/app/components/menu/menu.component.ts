@@ -40,7 +40,8 @@ export class MenuComponent implements OnInit {
     this.sidebarItems = [
       {
         label: 'Ana Menü',
-        icon: 'pi pi-home'
+        icon: 'pi pi-home',
+        routerLink: ['/home']
       },
       {
         label: 'Doktorlar',

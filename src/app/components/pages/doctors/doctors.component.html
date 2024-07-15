@@ -19,8 +19,14 @@
     <div class="doctors-container ">
       <div *ngFor="let doctor of doctors" class="doctor-card">
         <p-card>
-          <img [src]="'../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name" width="140"
-            class="rounded-img shadow-2" />
+          <div class="img-container">
+            <a>
+              <img [src]="'../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name"
+              class="rounded-img shadow-1" />
+            </a>
+            
+          </div>
+          
           <div class="doctor-info">
 
             <div class="name-container">
