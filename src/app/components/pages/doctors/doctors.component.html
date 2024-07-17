@@ -3,15 +3,15 @@
 <div class="container">
   <div class="left-side">
     <div class="header-container flex justify-content-between align-items-center ml-2 mr-4">
-      <p class="font-medium ">{{ doctorCount }} Doktor bulundu</p>
+      <p class="font-semibold text-m ">{{ doctorCount }} Doktor bulundu</p>
+      
       <div class="dropdown-container flex align-items-center">
-        <p-dropdown [options]="sort" [(ngModel)]="sortedBy" optionLabel="name"
-          placeholder="Şuna göre sırala"></p-dropdown>
+        <p-dropdown [options]="sort" [(ngModel)]="sortedBy" optionLabel="name" [style]="{'width':'180px'}" placeholder="Şuna göre sırala"></p-dropdown>
 
-        <button id="gridButton" class="icon-button"  [ngClass]="{'active': viewMode === 'grid'}" (click)="activateButton('grid')">
+        <button id="gridButton" class="icon-button" [ngClass]="{'active': viewMode === 'grid'}" (click)="activateButton('grid')">
           <i class="pi pi-th-large"></i>
         </button>
-        <button id="listButton" class="icon-button"  [ngClass]="{'active': viewMode === 'list'}" (click)="activateButton('list')">
+        <button id="listButton" class="icon-button" [ngClass]="{'active': viewMode === 'list'}" (click)="activateButton('list')">
           <i class="pi pi-list"></i>
         </button>
       </div>

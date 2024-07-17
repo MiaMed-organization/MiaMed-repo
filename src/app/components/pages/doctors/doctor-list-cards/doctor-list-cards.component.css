@@ -1,20 +1,20 @@
-.doctor-card-container {
+.list-card-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    max-width: 1200px;
 }
 
 .img-container {
-    width: 100%;
+    flex: 1;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-right: 20px;
 }
 
 .img-container img {
@@ -25,8 +25,8 @@
 }
 
 .doctor-info {
-    flex: 1;
-    padding-right: 10px;
+    flex: 2;
+    padding-right: 20px;
 }
 
 .name-container {
@@ -35,7 +35,7 @@
 }
 
 .clinic-images img {
-    max-width: 35px;
+    max-width: 30px;
     height: auto;
     border-radius: 0.3rem;
     margin-right: 5px;
@@ -51,39 +51,67 @@
 }
 
 .doctor-details {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
+    max-width: 180px;
+    min-width: 150px;
 }
 
 .button-container {
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
+    flex-direction: column;
+    align-items:center;
+    gap: 5px;
     margin-top: 10px;
+    width: 100%;
 }
 
 :host {
-    ::ng-deep .p-card {
-        width: 100%;
+    ::ng-deep .p-button {
+        width: 180px;
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 10px 15px;
+        border-radius: 4px;
     }
 }
 
-:host {
-    ::ng-deep .p-card .p-card-body {
-        padding: 1rem;
+@media (max-width: 1200px) {
+    .img-container img {
+        max-width: 200px; /* Orta ekranlar için boyut düzenlemesi */
     }
 }
 
-:host {
-    ::ng-deep .p-card .p-card-footer {
-        padding: 0;
+@media (max-width: 768px) {
+    .list-card-container {
+        flex-direction: column; /* Küçük ekranlarda alt alta sıralanması için eklendi */
+        align-items: center !important;
+        min-width: 430px;
     }
-}
 
-:host {
-    ::ng-deep .p-card .p-card-footer .p-button {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
+    .img-container {
+        margin-right: 0; /* Küçük ekranlarda margin sıfırlamak için eklendi */
+        margin-bottom: 10px; /* Küçük ekranlarda aralık eklemek için eklendi */
     }
+
+    .img-container img {
+        max-width: 200px; /* Küçük ekranlar için boyut düzenlemesi */
+    }
+
+    .doctor-info {
+        margin-bottom: 10px; /* Küçük ekranlarda aralık eklemek için eklendi */
+        align-self: center !important;
+    }
+
+    .doctor-details {
+        max-width: 100%; /* Küçük ekranlarda tam genişlik için eklendi */
+        align-items: center;
+    }
+
+   
 }

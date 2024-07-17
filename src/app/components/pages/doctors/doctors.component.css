@@ -1,3 +1,4 @@
+/* doctor.component.css */
 .container {
   display: flex;
   width: 100%;
@@ -5,14 +6,20 @@
 }
 
 .left-side {
-  flex: 3;
+  flex: 2.5;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin-right: 10px;
 }
 
 .right-side {
-  flex: 1;
+  flex: 1.5;
   background-color: #e0e0e0;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: flex 0.3s ease;
 }
 
 .header-container {
@@ -39,10 +46,10 @@
 .doctors-list {
   display: flex;
   flex-direction: column; /* Alt alta dizilimi sağlar */
-  gap: 20px; /* Kartlar arasındaki boşluk */
   flex: 1;
   padding: 20px;
   overflow: auto;
+  align-items: flex-end;
 }
 
 .doctor-card {
@@ -65,17 +72,75 @@
   color: #fff;
   border: 1px solid #007bff;
   border-radius: 5px;
-  padding: 0.4rem;
+  padding: 0.35rem;
 }
 
 .icon-button:hover {
   border: 1px solid #007bff;
   border-radius: 5px;
-  padding: 0.4rem;
+  padding: 0.35rem;
   color: #007bff;
   transition: border-color 0.4s, color 0.4s;
 }
 
 .icon-button.active:hover {
   color: #fff;
+}
+
+:host{
+  ::ng-deep .p-dropdown .p-inputtext{
+    font-size: 14px;
+    padding: 0.55rem;
+  }
+}
+
+/*responsive*/
+@media (max-width: 1200px) {
+  .right-side {
+    flex: 1;
+  }
+  
+  .left-side {
+    flex: 3;
+  }
+}
+
+@media (max-width: 992px) {
+  .right-side {
+    flex: 0.8;
+  }
+
+  .left-side {
+    flex: 3.2;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Küçük ekranlarda dikey düzen */
+  }
+
+  .right-side {
+    flex: 1;
+    max-width: 100%;
+  }
+
+  .left-side {
+    flex: 1;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  .header-container {
+    font-size: small;
+    flex-direction: column; 
+    align-items:flex-end !important; 
+  }
+
+  :host{
+    ::ng-deep .p-dropdown .p-inputtext{
+      font-size: 12px;
+      padding: 0.45rem;
+    }
+  }
 }

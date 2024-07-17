@@ -1,3 +1,11 @@
+.grid-card-container {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+}
 
 .img-container{
     width: 100%;
@@ -29,35 +37,15 @@
      color: #007bff;
   }
   
-
-  :host {
-    ::ng-deep .p-card  {
-      max-width: 300px;
-    }
-  }
-
-  :host {
-    ::ng-deep .p-card .p-card-body {
-      padding: 0.7rem;
-    }
-  }
-  
-  :host {
-    ::ng-deep .p-card .p-card-content {
-      padding: 0.8rem 0;
-    }
-  }
-  
-  :host {
-    ::ng-deep .p-card .p-card-footer {
-      padding: 0 0 0.5rem 0.3rem;
-    }
-  
-  }
-  
   :host{
-    ::ng-deep .p-card .p-card-footer .p-button{
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
-    }
+    ::ng-deep .p-button {
+      width: 180px;
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-align: center;
+      padding: 10px 15px;
+      border-radius: 4px;
+  }
   }
