@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Doctors } from '../../../../interfaces/doctors';
+
 
 @Component({
   selector: 'app-doctor-list-cards',
@@ -6,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './doctor-list-cards.component.css'
 })
 export class DoctorListCardsComponent {
+  @Input() doctor!: Doctors;
 
 }

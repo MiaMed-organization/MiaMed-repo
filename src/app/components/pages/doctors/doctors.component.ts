@@ -18,6 +18,8 @@ export class DoctorsComponent implements OnInit{
 
   sortedBy: Sort | undefined;
   sort: Sort[] | undefined; 
+  
+  viewMode: 'grid' | 'list' = 'grid';
 
   constructor(private doctorsService: DoctorsService){}
 
@@ -47,14 +49,9 @@ export class DoctorsComponent implements OnInit{
         }
     ];
 
-    this.activateButton('gridButton');
   }
 
-  activateButton(buttonId: string): void {
-    const buttons = document.querySelectorAll('.icon-button');
-    buttons.forEach(button => {
-      button.classList.remove('active');
-    });
-    document.getElementById(buttonId)?.classList.add('active');
+  activateButton(viewMode: 'grid' | 'list'): void {
+    this.viewMode = viewMode;
   }
 }

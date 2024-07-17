@@ -1,1 +1,48 @@
-<p>doctor-list-cards works!</p>
+<p-card>
+    <div class="doctor-card-container">
+        <div class="img-container">
+            <a>
+                <img [src]="'../../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name"
+                    class="rounded-img shadow-1" />
+            </a>
+        </div>
+        <div class="doctor-info">
+            <div class="name-container">
+                <a class="text-lg font-semibold mt-3">{{ doctor.name }}</a>
+            </div>
+            <p class="font-light my-2 text-sm">{{ doctor.field }}</p>
+            <p class="font-light my-2 text-sm text-cyan-500">
+                <i [ngClass]="['pi', doctor.icon]" class="mr-1"></i> {{doctor.department}}
+            </p>
+            <div class="card flex">
+                <p-rating [(ngModel)]=" doctor.rating " [readonly]="true" [cancel]="false" />
+                <span class="font-light text-xs ml-1 mt-1">({{ doctor.feedback }})</span>
+            </div>
+            <p class="font-light mb-3 mt-4 text-sm">
+                <i class="pi pi-map-marker"></i> Konum, {{ doctor.location }}
+            </p>
+            <div class="clinic-images">
+                <img *ngFor="let image of doctor.clinicImages" [src]="'../../../../../assets/images/clinics/' + image"
+                    [alt]="doctor.name" class="clinic-image" />
+            </div>
+            <div class="services font-light text-sm">
+                <span>{{doctor.services}}</span>
+            </div>
+        </div>
+        <div class="doctor-details">
+            <p class="font-light my-3 text-sm">
+                <i class="pi pi-thumbs-up"></i> Öneri, %{{ doctor.recommended }}
+            </p>
+            <p class="font-light my-3 text-sm">
+                <i class="pi pi-comment"></i> Yorum, {{ doctor.feedback }}
+            </p>
+            <p class="font-light my-3 text-sm">
+                <i class="pi pi-money-bill"></i> Ücret, ${{ doctor.minPrice }} - ${{doctor.maxPrice}}
+            </p>
+            <div class="button-container">
+                <p-button label="Profili Görüntüle" [outlined]="true" class="profile-button"></p-button>
+                <p-button label="Randevu Al" class="appointment-button"></p-button>
+            </div>
+        </div>
+    </div>
+</p-card>

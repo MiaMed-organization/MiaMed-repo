@@ -40,6 +40,7 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { GmapComponent } from './components/pages/gmap/gmap.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TooltipDirective } from './directives/tooltip.directive';
+import { DoctorGridCardComponent } from './components/pages/doctors/doctor-grid-card/doctor-grid-card.component';
 import { DoctorListCardsComponent } from './components/pages/doctors/doctor-list-cards/doctor-list-cards.component';
 
 @NgModule({
@@ -57,8 +58,9 @@ import { DoctorListCardsComponent } from './components/pages/doctors/doctor-list
     DoctorsComponent,
     GmapComponent,
     NavbarComponent,
-    TooltipDirective,
     DoctorListCardsComponent,
+    TooltipDirective,
+    DoctorGridCardComponent,
   ],
   imports: [
     BrowserModule,

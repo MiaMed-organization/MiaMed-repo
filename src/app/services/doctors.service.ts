@@ -7,7 +7,7 @@ import { Doctors } from '../interfaces/doctors';
 export class DoctorsService {
 
   getDoctorsData(): Doctors[] {
-    return[
+    return [
       {
         id: '1',
         name: 'Dr. Ruby Perrin',
@@ -23,7 +23,8 @@ export class DoctorsService {
         field: 'Kalp Hastalıkları',
         services: 'Kalp muayenesi',
         icon: 'pi-heart',
-        clinicImage: 'clinic1.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Kardiyoloji'
       },
       {
         id: '2',
@@ -40,7 +41,8 @@ export class DoctorsService {
         field: 'Deri Hastalıkları',
         services: 'Cilt muayenesi',
         icon: 'pi-chart-bar',
-        clinicImage: 'clinic2.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Dermatoloji'
       },
       {
         id: '3',
@@ -57,7 +59,8 @@ export class DoctorsService {
         field: 'Göz Hastalıkları',
         services: 'Göz muayenesi',
         icon: 'pi-eye',
-        clinicImage: 'clinic3.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Göz Hastalıkları'
       },
       {
         id: '4',
@@ -74,7 +77,8 @@ export class DoctorsService {
         field: 'Diş Hekimliği',
         services: 'Diş muayenesi',
         icon: 'pi-heart',
-        clinicImage: 'clinic4.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Diş Hekimliği'
       },
       {
         id: '5',
@@ -91,7 +95,8 @@ export class DoctorsService {
         field: 'Ortopedi',
         services: 'Kemik muayenesi',
         icon: 'pi-chart-bar',
-        clinicImage: 'clinic5.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Ortopedi'
       },
       {
         id: '6',
@@ -108,7 +113,8 @@ export class DoctorsService {
         field: 'Nöroloji',
         services: 'Beyin muayenesi',
         icon: 'pi-heart',
-        clinicImage: 'clinic6.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Nöroloji'
       },
       {
         id: '7',
@@ -125,7 +131,8 @@ export class DoctorsService {
         field: 'KBB',
         services: 'Kulak Burun Boğaz muayenesi',
         icon: 'pi-eye',
-        clinicImage: 'clinic7.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'KBB'
       },
       {
         id: '8',
@@ -142,7 +149,8 @@ export class DoctorsService {
         field: 'Plastik Cerrahi',
         services: 'Estetik muayenesi',
         icon: 'pi-chart-bar',
-        clinicImage: 'clinic8.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Plastik Cerrahi'
       },
       {
         id: '9',
@@ -159,7 +167,8 @@ export class DoctorsService {
         field: 'Pediatri',
         services: 'Çocuk muayenesi',
         icon: 'pi-heart',
-        clinicImage: 'clinic9.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Pediatri'
       },
       {
         id: '10',
@@ -176,7 +185,8 @@ export class DoctorsService {
         field: 'Psikiyatri',
         services: 'Ruh sağlığı muayenesi',
         icon: 'pi-eye',
-        clinicImage: 'clinic10.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Psikiyatri'
       },
       {
         id: '11',
@@ -193,7 +203,8 @@ export class DoctorsService {
         field: 'Psikiyatri',
         services: 'Ruh sağlığı muayenesi',
         icon: 'pi-eye',
-        clinicImage: 'clinic11.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Psikiyatri'
       },
       {
         id: '12',
@@ -210,7 +221,8 @@ export class DoctorsService {
         field: 'Diş Hekimi',
         services: 'Dolgu',
         icon: 'pi-heart',
-        clinicImage: 'clinic12.jpeg'
+        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
+        department: 'Diş Hekimi'
       },
     ];
   }

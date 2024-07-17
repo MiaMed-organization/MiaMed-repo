@@ -8,59 +8,22 @@
         <p-dropdown [options]="sort" [(ngModel)]="sortedBy" optionLabel="name"
           placeholder="Şuna göre sırala"></p-dropdown>
 
-        <button id="gridButton" class="icon-button active" (click)="activateButton('gridButton')">
+        <button id="gridButton" class="icon-button"  [ngClass]="{'active': viewMode === 'grid'}" (click)="activateButton('grid')">
           <i class="pi pi-th-large"></i>
         </button>
-        <button id="listButton" class="icon-button" (click)="activateButton('listButton')">
+        <button id="listButton" class="icon-button"  [ngClass]="{'active': viewMode === 'list'}" (click)="activateButton('list')">
           <i class="pi pi-list"></i>
         </button>
       </div>
     </div>
-    <div class="doctors-container ">
+    <div [ngClass]="{'doctors-grid': viewMode === 'grid', 'doctors-list': viewMode === 'list'}">
       <div *ngFor="let doctor of doctors" class="doctor-card">
-        <p-card>
-          <div class="img-container">
-            <a>
-              <img [src]="'../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name"
-              class="rounded-img shadow-1" />
-            </a>
-            
-          </div>
-          
-          <div class="doctor-info">
-
-            <div class="name-container">
-              <a class="text-lg font-semibold mt-3">{{ doctor.name }}</a>
-              <i class="fas fa-check-circle verified"></i>
-            </div>
-
-            <p class="font-light my-2 text-sm">{{ doctor.field }}</p>
-
-            <div class="card flex">
-              <p-rating [(ngModel)]=" doctor.rating " [readonly]="true" [cancel]="false" />
-              <span class="font-light text-xs ml-1 mt-1">({{ doctor.feedback }})</span>
-            </div>
-
-            <p class="font-light mb-3 mt-4 text-sm">
-              <i class="pi pi-map-marker"></i> Konum, {{ doctor.location }}
-            </p>
-
-            <p class="font-light my-3 text-sm">
-              <i class="pi pi-clock"></i> Müsaitlik, {{ doctor.availability }}
-            </p>
-
-            <p class="font-light my-3 text-sm">
-              <i class="pi pi-money-bill"></i> Ücret, ${{ doctor.minPrice }} - ${{doctor.maxPrice}}
-            </p>
-
-          </div>
-          <ng-template pTemplate="footer">
-            <div class="flex gap-3 ">
-              <p-button label="Profili Görüntüle" [outlined]="true"/>
-              <p-button label="Randevu Al" />
-            </div>
-          </ng-template>
-        </p-card>
+        <ng-container *ngIf="viewMode === 'grid'; else listView">
+          <app-doctor-grid-card [doctor]="doctor"></app-doctor-grid-card>
+        </ng-container>
+        <ng-template #listView>
+          <app-doctor-list-cards [doctor]="doctor"></app-doctor-list-cards>
+        </ng-template>
       </div>
     </div>
   </div>

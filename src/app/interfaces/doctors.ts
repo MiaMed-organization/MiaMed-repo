@@ -9,11 +9,12 @@ export interface Doctors {
     location?: string;
     languages?: string;
     minPrice?: number;
+    department?: string;
     maxPrice?:number;
     rating?: number;
     email?: string;
     feedback?: number;
     recommended?: number;
     services?: string;
-    clinicImage?: string;
+    clinicImages: string[];
 }
