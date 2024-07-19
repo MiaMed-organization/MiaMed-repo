@@ -5,6 +5,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { authGuard } from './guards/auth.guard';
 import { DoctorsComponent } from './components/pages/doctors/doctors.component';
+import { SearchComponent } from './components/pages/search/search.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'doctors',
     component: DoctorsComponent,
+  },
+  {
+    path: 'search',
+    component: SearchComponent,
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'

@@ -4,29 +4,41 @@
   <div class="left-side">
     <div class="header-container flex justify-content-between align-items-center ml-2 mr-4">
       <p class="font-semibold text-m ">{{ doctorCount }} Doktor bulundu</p>
-      
-      <div class="dropdown-container flex align-items-center">
-        <p-dropdown [options]="sort" [(ngModel)]="sortedBy" optionLabel="name" [style]="{'width':'180px'}" placeholder="Şuna göre sırala"></p-dropdown>
 
-        <button id="gridButton" class="icon-button" [ngClass]="{'active': viewMode === 'grid'}" (click)="activateButton('grid')">
+      <div class="dropdown-container flex align-items-center">
+        <p-dropdown [options]="sort" [(ngModel)]="sortedBy" optionLabel="name" [style]="{'width':'180px'}"
+          placeholder="Şuna göre sırala"></p-dropdown>
+
+        <button id="gridButton" class="icon-button" [ngClass]="{'active': viewMode === 'grid'}"
+          (click)="activateButton('grid')">
           <i class="pi pi-th-large"></i>
         </button>
-        <button id="listButton" class="icon-button" [ngClass]="{'active': viewMode === 'list'}" (click)="activateButton('list')">
+
+        <button id="listButton" class="icon-button" [ngClass]="{'active': viewMode === 'list'}"
+          (click)="activateButton('list')">
           <i class="pi pi-list"></i>
         </button>
+
       </div>
     </div>
+
     <div [ngClass]="{'doctors-grid': viewMode === 'grid', 'doctors-list': viewMode === 'list'}">
+
       <div *ngFor="let doctor of doctors" class="doctor-card">
+
         <ng-container *ngIf="viewMode === 'grid'; else listView">
           <app-doctor-grid-card [doctor]="doctor"></app-doctor-grid-card>
         </ng-container>
+
         <ng-template #listView>
           <app-doctor-list-cards [doctor]="doctor"></app-doctor-list-cards>
         </ng-template>
+
       </div>
+
     </div>
   </div>
+
   <div class="right-side">
     <!-- This area is reserved for the map -->
   </div>

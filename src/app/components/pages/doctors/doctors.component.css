@@ -36,11 +36,12 @@
 
 .doctors-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* İki sütun oluşturur */
-  gap: 20px; /* Kartlar arasındaki boşluk */
+  grid-template-columns: repeat(3, 1fr); /* İki sütun oluşturur */
+  gap: 10px; /* Kartlar arasındaki boşluk */
   flex: 1;
-  padding: 20px;
+  padding-right: 20px;
   overflow: auto;
+  justify-items: flex-end;
 }
 
 .doctors-list {

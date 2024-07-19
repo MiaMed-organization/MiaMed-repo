@@ -42,6 +42,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { DoctorGridCardComponent } from './components/pages/doctors/doctor-grid-card/doctor-grid-card.component';
 import { DoctorListCardsComponent } from './components/pages/doctors/doctor-list-cards/doctor-list-cards.component';
+import { SearchComponent } from './components/pages/search/search.component';
+import { SearchFilterComponent } from './components/pages/search/search-filter/search-filter.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { DoctorListCardsComponent } from './components/pages/doctors/doctor-list
     DoctorListCardsComponent,
     TooltipDirective,
     DoctorGridCardComponent,
+    SearchComponent,
+    SearchFilterComponent,
   ],
   imports: [
     BrowserModule,

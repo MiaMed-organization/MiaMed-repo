@@ -87,11 +87,11 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .list-card-container {
         flex-direction: column; /* Küçük ekranlarda alt alta sıralanması için eklendi */
         align-items: center !important;
-        min-width: 430px;
+        min-width: 350px;
     }
 
     .img-container {

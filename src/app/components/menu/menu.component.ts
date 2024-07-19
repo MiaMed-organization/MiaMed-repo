@@ -53,6 +53,7 @@ export class MenuComponent implements OnInit {
       {
         label: 'Doktor Ara',
         icon: 'pi pi-search-plus',
+        routerLink: ['/search']
         
       },
 
