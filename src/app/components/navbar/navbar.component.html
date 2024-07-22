@@ -9,8 +9,11 @@
             </ng-template>
 
             <ng-template pTemplate="end">
+
                 <div class="flex align-items-center gap-2">
-                    <input type="text" pInputText placeholder="Ara.. " class="w-8rem sm:w-auto" />
+
+                    <input type="text" pInputText placeholder="Ara.. "/>
+
                     <p-avatar image="../../../assets/images/pp_user.jpeg" shape="circle" size="large"></p-avatar>
                     <p-menu #avatarMenu [model]="avatarMenuItems" [popup]="true" />
                     <p-button (click)="avatarMenu.toggle($event); toggleMenu()" class="avatar-button"

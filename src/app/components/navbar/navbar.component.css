@@ -11,3 +11,43 @@ nav {
    color: rgb(92, 92, 255);
    transition: color 0.5s;
 }
+
+.navbar-container input[pInputText] {
+   width: 250px;
+   transition: width 0.3s ease;
+ }
+ 
+ .avatar-button {
+   transition: font-size 0.3s ease, width 0.3s ease;
+ }
+ 
+ @media (max-width: 768px) {
+   .navbar-container input[pInputText] {
+     width: 140px; 
+   }
+ 
+   .navbar-container input[pInputText] {
+     font-size: 14px; 
+   }
+ 
+   .avatar-button {
+     font-size: 14px; 
+   }
+
+ }
+ 
+ @media (max-width: 480px) {
+   .navbar-container input[pInputText] {
+     width: 100px; 
+   }
+ 
+   .navbar-container input[pInputText] {
+     font-size: 12px; 
+   }
+ 
+   .avatar-button {
+     font-size: 12px; 
+   }
+ 
+ }
+ 
