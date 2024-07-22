@@ -87,7 +87,7 @@
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 480px) {
     .list-card-container {
         flex-direction: column; /* Küçük ekranlarda alt alta sıralanması için eklendi */
         align-items: center !important;

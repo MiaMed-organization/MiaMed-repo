@@ -129,7 +129,7 @@ export class DoctorsService {
         feedback: 28,
         recommended: 75,
         field: 'KBB',
-        services: 'Kulak Burun Boğaz muayenesi',
+        services: 'Kulak Muayenesi',
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'KBB'
@@ -183,7 +183,7 @@ export class DoctorsService {
         feedback: 12,
         recommended: 55,
         field: 'Psikiyatri',
-        services: 'Ruh sağlığı muayenesi',
+        services: 'Dolgu',
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Psikiyatri'
@@ -201,7 +201,7 @@ export class DoctorsService {
         feedback: 10,
         recommended: 35,
         field: 'Psikiyatri',
-        services: 'Ruh sağlığı muayenesi',
+        services: 'Diş Beyazlatma',
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Psikiyatri'
