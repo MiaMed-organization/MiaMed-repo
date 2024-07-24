@@ -11,15 +11,6 @@ body {
   height: calc(100vh - 67px); 
 }
 
-.menu {
-  flex-shrink: 0;
-  transition: width 0.3s;
-}
-
-.menu.sidebar-open {
-  width: 19rem;
-}
-
 .main-content {
   flex-grow: 1;
   display: flex;

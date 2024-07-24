@@ -1,8 +1,21 @@
-/* doctor.component.css */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden; /* Taşmayı engellemek için eklendi */
+}
+
+.content-container {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* Taşmayı engellemek için eklendi */
+}
+
 .container {
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - var(--navbar-height));
+  overflow: hidden; /* Taşmayı engellemek için eklendi */
 }
 
 .left-side {
@@ -11,6 +24,7 @@
   flex-direction: column;
   width: 100%;
   margin-right: 10px;
+  overflow-y: auto; /* Taşmayı engellemek için eklendi */
 }
 
 .right-side {
@@ -18,8 +32,10 @@
   background-color: #e0e0e0;
   height: 100%;
   padding: 10px;
+  margin-top: 0.2rem;
   box-sizing: border-box;
   transition: flex 0.3s ease;
+  overflow-y: auto; /* Taşmayı engellemek için eklendi */
 }
 
 .header-container {
@@ -36,22 +52,20 @@
 
 .doctors-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* İki sütun oluşturur */
-  gap: 10px; /* Kartlar arasındaki boşluk */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   flex: 1;
   padding-right: 10px;
   padding-left: 10px;
   overflow: auto;
-  justify-items: flex-end;
 }
 
 .doctors-list {
   display: flex;
-  flex-direction: column; /* Alt alta dizilimi sağlar */
+  flex-direction: column;
   flex: 1;
   padding: 20px;
   overflow: auto;
-  align-items: flex-end;
 }
 
 .doctor-card {
@@ -89,16 +103,15 @@
   color: #fff;
 }
 
-
 .pagination-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
-  position: sticky; /* Sayfalandırmayı sabitler */
-  bottom: 0; /* Sayfanın altına sabitler */
-  background-color: white; /* Arkaplan rengini beyaz yapar */
-  padding: 10px 0; /* Üst ve alt boşluk ekler */
+  margin: 5px 0;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  padding: 10px 0;
 }
 
 .pagination-container button {
@@ -121,8 +134,8 @@
   font-size: 1.2em;
 }
 
-:host{
-  ::ng-deep .p-dropdown .p-inputtext{
+:host {
+  ::ng-deep .p-dropdown .p-inputtext {
     font-size: 14px;
     padding: 0.55rem;
   }
@@ -151,7 +164,7 @@
 
 @media (max-width: 700px) {
   .container {
-    flex-direction: column; /* Küçük ekranlarda dikey düzen */
+    flex-direction: column;
   }
 
   .right-side {
@@ -159,7 +172,7 @@
     justify-self: center;
     min-width: 500px;
     min-height: 450px;
-    order: -1; /* En üste taşır */
+    order: -1;
     margin: 20px 10px;
   }
 
@@ -171,24 +184,24 @@
 
   .header-container {
     font-size: small;
-    flex-direction: column; 
-    align-items:flex-end !important; 
+    flex-direction: column;
+    align-items: flex-end !important;
   }
   
   .doctors-grid {
-    grid-template-columns: repeat(2, 1fr); /* İki sütun oluşturur */
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  :host{
-    ::ng-deep .p-dropdown .p-inputtext{
+  :host {
+    ::ng-deep .p-dropdown .p-inputtext {
       font-size: 12px;
       padding: 0.45rem;
     }
   }
 }
 
-@media  (max-width: 480px) {
-  .doctors-grid{
+@media (max-width: 480px) {
+  .doctors-grid {
     grid-template-columns: 1fr;
   }
 }

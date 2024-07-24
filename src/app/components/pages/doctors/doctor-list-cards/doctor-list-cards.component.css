@@ -7,7 +7,8 @@
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
-    position: relative; /* Position relative for bookmark */
+    position: relative;
+    /* Position relative for bookmark */
 }
 
 .img-container {
@@ -16,12 +17,13 @@
     display: flex;
     justify-content: center;
     margin-right: 20px;
-    position: relative; /* Position relative for bookmark */
+    position: relative;
+    /* Position relative for bookmark */
 }
 
 .img-container img {
     width: 100%;
-    height: auto;
+    max-height: 170px;
     border-radius: 4px;
     transition: transform 0.6s ease-in-out;
 }
@@ -53,15 +55,18 @@
     background-color: green;
     color: white;
     transition: color 0.4s;
- }
+}
 
 @keyframes moveBookmark {
     0% {
         transform: translateX(0);
     }
+
     50% {
-        transform: translateX(-10px); /* Sola hareket */
+        transform: translateX(-10px);
+        /* Sola hareket */
     }
+
     100% {
         transform: translateX(0);
     }
@@ -105,7 +110,7 @@
 .button-container {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     gap: 5px;
     margin-top: 10px;
     width: 100%;
@@ -126,33 +131,40 @@
 
 @media (max-width: 1200px) {
     .img-container img {
-        max-width: 200px; /* Orta ekranlar için boyut düzenlemesi */
+        max-width: 200px;
+        /* Orta ekranlar için boyut düzenlemesi */
     }
 }
 
 @media (max-width: 480px) {
     .list-card-container {
-        flex-direction: column; /* Küçük ekranlarda alt alta sıralanması için eklendi */
+        flex-direction: column;
+        /* Küçük ekranlarda alt alta sıralanması için eklendi */
         align-items: center !important;
         min-width: 350px;
     }
 
     .img-container {
-        margin-right: 0; /* Küçük ekranlarda margin sıfırlamak için eklendi */
-        margin-bottom: 10px; /* Küçük ekranlarda aralık eklemek için eklendi */
+        margin-right: 0;
+        /* Küçük ekranlarda margin sıfırlamak için eklendi */
+        margin-bottom: 10px;
+        /* Küçük ekranlarda aralık eklemek için eklendi */
     }
 
     .img-container img {
-        max-width: 200px; /* Küçük ekranlar için boyut düzenlemesi */
+        max-width: 200px;
+        /* Küçük ekranlar için boyut düzenlemesi */
     }
 
     .doctor-info {
-        margin-bottom: 10px; /* Küçük ekranlarda aralık eklemek için eklendi */
+        margin-bottom: 10px;
+        /* Küçük ekranlarda aralık eklemek için eklendi */
         align-self: center !important;
     }
 
     .doctor-details {
-        max-width: 100%; /* Küçük ekranlarda tam genişlik için eklendi */
+        max-width: 100%;
+        /* Küçük ekranlarda tam genişlik için eklendi */
         align-items: center;
     }
 }
