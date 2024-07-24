@@ -28,6 +28,7 @@ body {
     width: 6.5rem;
     position: relative;
     margin-top: 0.2rem;
+    z-index: 3;
 }
 
 .sidebar-container aside {
@@ -186,4 +187,14 @@ body {
 
 .sidebar-menu li.active:hover {
     background-color: blue !important;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Griden neredeyse transparan */
+    z-index: 2;
 }

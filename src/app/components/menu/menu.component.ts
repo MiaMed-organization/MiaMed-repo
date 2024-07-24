@@ -20,7 +20,7 @@ export class MenuComponent implements OnInit {
   sidebarItems: MenuItem[] | undefined;
   activeItem: string = '';
   sidebarOpen = false;
-
+  overlayVisible = false;
 
   constructor(private router: Router, private sidebarService: SidebarService) {}
 
@@ -89,9 +89,12 @@ export class MenuComponent implements OnInit {
       },
     ];
 
-
     this.sidebarService.sidebarOpen$.subscribe(open => {
       this.sidebarOpen = open;
+    });
+
+    this.sidebarService.overlayVisible$.subscribe(visible => {
+      this.overlayVisible = visible;
     });
   
   }
@@ -101,6 +104,9 @@ export class MenuComponent implements OnInit {
     if (item.routerLink) {
         this.router.navigate(item.routerLink);
     }
-}
- 
+  }
+
+  closeSidebar() {
+    this.sidebarService.closeSidebar();
+  }
 }

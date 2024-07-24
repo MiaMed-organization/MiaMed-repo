@@ -1,51 +1,53 @@
 <section class="container">
+    <div class="overlay" *ngIf="overlayVisible" (click)="closeSidebar()"></div>
     <div class="sidebar-container" [class.sidebar-open]="sidebarOpen">
-        <aside>
-            <div class="card flex justify-content-center container">
-                <div #sidebarRef styleClass="custom-sidebar">
-                    <div class="sidebar-content h-full">
-                        <div class="head mb-5">
-                            <div class="avatar-wrapper mb-2">
-                                <p-avatar image="../../../assets/images/pp_user.jpeg"
-                                    styleClass="mr-2 w-7rem h-auto sidebar-pp-image" shape="circle"
-                                    size="xlarge"></p-avatar>
-                            </div>
-                            <h4>Dr Edalin Hendry</h4>
-                            <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
-                        </div>
-
-                        <div class="sidebar-items">
-                            <div class="availability card w-19rem">
-                                <p class="mt-4 text-sm font-semibold mb-1">Müsaitlik Durumu <span
-                                        class="text-sm text-red-500"> *</span></p>
-                                <p-dropdown [options]="availability" [(ngModel)]="selectedAvailability"
-                                    optionLabel="name" placeholder="Müsaitlik durumunuzu giriniz" />
-                            </div>
-
-                            <div class="card flex mt-3">
-                                <ul class="sidebar-menu">
-                                    <li *ngFor="let item of sidebarItems" (click)="setActiveItem(item)"
-                                        [class.active]="item.label === activeItem" class="mb-2">
-                                        <i [class]="item.icon" class="pr-3"></i> {{ item.label }}
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+      <aside>
+        <div class="card flex justify-content-center container">
+          <div #sidebarRef styleClass="custom-sidebar">
+            <div class="sidebar-content h-full">
+              <div class="head mb-5">
+                <div class="avatar-wrapper mb-2">
+                  <p-avatar image="../../../assets/images/pp_user.jpeg"
+                      styleClass="mr-2 w-7rem h-auto sidebar-pp-image" shape="circle"
+                      size="xlarge"></p-avatar>
                 </div>
-            </div>
-        </aside>
-
-        <div class="slim-body card">
-            <p-avatar image="../../../assets/images/pp_user.jpeg" styleClass="mr-2 w-4rem h-auto sidebar-pp-image"
-                shape="circle" class="ml-3 flex mt-5"></p-avatar>
-            <div class="card flex mt-6">
-                <ul class="slimbar-menu justify-content-center align-items-center">
-                    <li *ngFor="let item of sidebarItems" class="mb-4" [appTooltip]="item.label" (click)="setActiveItem(item)">
-                        <i [class]="item.icon" class="pr-3"></i>
+                <h4>Dr Edalin Hendry</h4>
+                <p>BDS, MDS - Oral & Maxillofacial Surgery</p>
+              </div>
+  
+              <div class="sidebar-items">
+                <div class="availability card w-19rem">
+                  <p class="mt-4 text-sm font-semibold mb-1">Müsaitlik Durumu <span
+                      class="text-sm text-red-500"> *</span></p>
+                  <p-dropdown [options]="availability" [(ngModel)]="selectedAvailability"
+                      optionLabel="name" placeholder="Müsaitlik durumunuzu giriniz" />
+                </div>
+  
+                <div class="card flex mt-3">
+                  <ul class="sidebar-menu">
+                    <li *ngFor="let item of sidebarItems" (click)="setActiveItem(item)"
+                        [class.active]="item.label === activeItem" class="mb-2">
+                      <i [class]="item.icon" class="pr-3"></i> {{ item.label }}
                     </li>
-                </ul>
+                  </ul>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </aside>
+  
+      <div class="slim-body card">
+        <p-avatar image="../../../assets/images/pp_user.jpeg" styleClass="mr-2 w-4rem h-auto sidebar-pp-image"
+            shape="circle" class="ml-3 flex mt-5"></p-avatar>
+        <div class="card flex mt-6">
+          <ul class="slimbar-menu justify-content-center align-items-center">
+            <li *ngFor="let item of sidebarItems" class="mb-4" [appTooltip]="item.label" (click)="setActiveItem(item)">
+              <i [class]="item.icon" class="pr-3"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+  
