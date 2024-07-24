@@ -29,6 +29,7 @@ body {
     position: relative;
     margin-top: 0.1rem;
     z-index: 3;
+    transition: width 0.5s;
 }
 
 .sidebar-container aside {
@@ -40,6 +41,7 @@ body {
     top: 0;
     height: 100%;
     z-index: 1;
+    transition: width 0.5s;
 }
 
 .container .slim-body {
@@ -47,6 +49,7 @@ body {
     background-color: #124BAC;
     height: 100%;
     transition: all 0.5s;
+    transition: width 0.5s;
 }
 
 .sidebar-content {
@@ -157,28 +160,6 @@ body {
     margin: 10px 0;
 }
 
-.slimbar-menu li::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 100%;
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #333;
-    color: white;
-    white-space: nowrap;
-    border-radius: 4px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-50%);
-    transition: opacity 0.2s, visibility 0.2s;
-}
-
-.slimbar-menu li:hover::after {
-    opacity: 1;
-    visibility: visible;
-}
-
 .sidebar-menu li.active {
     background-color: blue;
     color: white;
@@ -197,4 +178,10 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Griden neredeyse transparan */
     z-index: 2;
+}
+
+@media (max-width: 620px) {
+    .slim-body {
+        display: none; /* Slimbar'ı gizler */
+    }
 }

@@ -42,7 +42,7 @@
             shape="circle" class="ml-3 flex mt-5"></p-avatar>
         <div class="card flex mt-6">
           <ul class="slimbar-menu justify-content-center align-items-center">
-            <li *ngFor="let item of sidebarItems" class="mb-4" [appTooltip]="item.label" (click)="setActiveItem(item)">
+            <li *ngFor="let item of sidebarItems" class="mb-4" pTooltip="{{ item.label }}" tooltipEvent="hover" (click)="setActiveItem(item)">
               <i [class]="item.icon" class="pr-3"></i>
             </li>
           </ul>

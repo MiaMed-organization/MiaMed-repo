@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Router } from '@angular/router'; 
 import { SidebarService } from '../../services/sidebar.service';
+import { TooltipModule } from 'primeng/tooltip';
 
 interface Availability {
   name: string;
@@ -102,12 +103,25 @@ export class MenuComponent implements OnInit {
   setActiveItem(item: MenuItem) {
     this.activeItem = item.label;
     if (item.routerLink) {
-        this.router.navigate(item.routerLink);
+        this.router.navigate(item.routerLink).then(() => {
+            setTimeout(() => {
+                this.closeSidebar(); // Sayfa değişiminden sonra sidebar'ı kapat
+            }, 300); // 300ms gecikme ekleyerek animasyonun tamamlanmasını sağla
+        });
     }
-  }
+
+    // Tooltip'in görünürlüğünü kaldırmak için clicked sınıfını ekle/kaldır
+    const slimbarItems = document.querySelectorAll('.slimbar-menu li');
+    slimbarItems.forEach(el => el.classList.remove('clicked'));
+    const currentItem = Array.from(slimbarItems).find(el => el.textContent.trim() === item.label);
+    if (currentItem) {
+        currentItem.classList.add('clicked');
+    }
+}
 
   closeSidebar() {
     this.sidebarService.closeSidebar();
+    this.overlayVisible = false;
   }
   
 }
