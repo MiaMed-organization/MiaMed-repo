@@ -5,7 +5,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { authGuard } from './guards/auth.guard';
 import { DoctorsComponent } from './components/pages/doctors/doctors.component';
-import { SearchComponent } from './components/pages/search/search.component';
+import { SearchComponent } from './components/pages/doctor-search/search/search.component';
+import { ExtendedSearchComponent } from './components/pages/doctor-search/extended-search/extended-search.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'search',
     component: SearchComponent,
+  },
+  {
+    path: 'extended-search',
+    component: ExtendedSearchComponent,
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'

@@ -1,0 +1,45 @@
+<p-card>
+
+    <div class="card-header">
+        <span class="font-semibold text-sm">Arama Filtreleri</span>
+    </div>
+
+    <div class="filter-container">
+
+        <div class="card flex justify-content-center mb-3">
+            <p-calendar 
+            [(ngModel)]="selectedDate" 
+            placeholder="Tarih seçin" 
+            dateFormat="dd/mm/yy" 
+            [minDate]="minDate" 
+            [showIcon]="true" 
+            [iconDisplay]="'input'"
+            ></p-calendar>
+        </div>
+
+        <div class="filter-group mb-3 ">
+            <label class="font-semibold text-sm">Cinsiyet</label>
+
+            <div class="mt-1 text-xs">
+                <p-checkbox name="gender" value="Erkek" [(ngModel)]="selectedGenders" label="Erkek"></p-checkbox>
+            </div>
+            <div class="mt-1 text-xs">
+                <p-checkbox name="gender" value="Kadın" [(ngModel)]="selectedGenders"
+                    label="Kadın"></p-checkbox>
+            </div>
+        </div>
+
+        <div class="filter-group">
+            <label class="font-semibold text-sm">Uzmanlık</label>
+
+                <div *ngFor="let field of fields" class="mt-1 text-xs">
+                    <p-checkbox [name]="field.name" [value]="field.value" [(ngModel)]="selectedFields"
+                        [label]="field.label"></p-checkbox>
+                </div>
+        </div>
+
+        <div class="button-container">
+            <p-button label="Filtrele" (click)="search()"></p-button>
+        </div>
+    </div>
+</p-card>

@@ -1,0 +1,85 @@
+:host ::ng-deep .p-card {
+    width: 260px;
+    margin: auto;
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.card-header{
+    width: 100%;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 0.5rem;
+    padding-left: 0.8rem;
+}
+
+.date-picker {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.date-picker .p-datepicker{
+    scale: 0.3;
+}
+
+:host {
+    ::ng-deep .p-button {
+        width: 180px;
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 10px 15px;
+        border-radius: 4px;
+    }
+}
+
+:host{
+    ::ng-deep .p-inputtext{
+      padding: 0.5rem 0.5rem;
+    }
+  }  
+
+:host ::ng-deep .p-checkbox-label {
+    margin-left: 8px;
+}
+
+
+:host ::ng-deep .p-container {
+    margin-top: 10px;
+}
+
+:host ::ng-deep .p-card .p-card-body{
+   padding: 0.5rem !important;
+}
+
+:host ::ng-deep .p-card .p-card-content {
+    padding: 0.5rem 0;
+}
+
+:host ::ng-deep .p-datepicker table td {
+    padding: 0rem;
+}
+
+:host ::ng-deep .p-link {
+    font-size: 0.9rem;
+}
+
+:host ::ng-deep .p-datepicker table {
+    font-size: 0.85rem;
+}
+
+

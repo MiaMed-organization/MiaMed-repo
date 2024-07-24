@@ -42,8 +42,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { DoctorGridCardComponent } from './components/pages/doctors/doctor-grid-card/doctor-grid-card.component';
 import { DoctorListCardsComponent } from './components/pages/doctors/doctor-list-cards/doctor-list-cards.component';
-import { SearchComponent } from './components/pages/search/search.component';
-import { SearchFilterComponent } from './components/pages/search/search-filter/search-filter.component';
+import { SearchComponent } from './components/pages/doctor-search/search/search.component';
+import { SearchFilterComponent } from './components/pages/doctor-search/search/search-filter/search-filter.component';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { CalendarModule } from 'primeng/calendar';
+import { ExtendedSearchComponent } from './components/pages/doctor-search/extended-search/extended-search.component';
+import { ExtendedSearchFilterComponent } from './components/pages/doctor-search/extended-search/extended-search-filter/extended-search-filter.component';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -65,6 +70,8 @@ import { SearchFilterComponent } from './components/pages/search/search-filter/s
     DoctorGridCardComponent,
     SearchComponent,
     SearchFilterComponent,
+    ExtendedSearchComponent,
+    ExtendedSearchFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +98,10 @@ import { SearchFilterComponent } from './components/pages/search/search-filter/s
     TagModule,
     ChartModule,
     TabViewModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    FloatLabelModule,
+    CalendarModule,
+    BreadcrumbModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

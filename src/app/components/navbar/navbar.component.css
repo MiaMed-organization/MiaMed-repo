@@ -21,6 +21,12 @@ nav {
    transition: font-size 0.3s ease, width 0.3s ease;
  }
  
+ :host{
+  ::ng-deep .p-inputtext{
+    padding: 0.5rem 0.5rem;
+  }
+}
+
  @media (max-width: 768px) {
    .navbar-container input[pInputText] {
      width: 140px; 

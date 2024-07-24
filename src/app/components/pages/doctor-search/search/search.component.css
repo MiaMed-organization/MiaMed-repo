@@ -1,0 +1,28 @@
+.content-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-filter-container {
+  margin-right: 10px; /* Aradaki boşluğu ayarlamak için */
+  padding-top: 20px;
+  padding-left: 50px;
+}
+
+.doctor-cards-container{
+    display: flex;
+    flex-direction: column; /* Alt alta dizilimi sağlar */
+    padding: 20px;
+    gap: 10px;
+    overflow: auto;
+    /* align-items:center; */
+    flex: 1;
+  }
+
+:host ::ng-deep .p-breadcrumb{
+  border: none;
+}
+
+:host ::ng-deep .p-component{
+  font-size: 0.9rem;
+}
