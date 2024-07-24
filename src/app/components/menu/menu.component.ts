@@ -109,4 +109,5 @@ export class MenuComponent implements OnInit {
   closeSidebar() {
     this.sidebarService.closeSidebar();
   }
+  
 }

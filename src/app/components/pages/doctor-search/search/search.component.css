@@ -1,28 +1,65 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+app-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+app-menu {
+  position: fixed;
+  top: var(--navbar-height);
+  bottom: 0;
+  width: 200px; /* Menü genişliğini ayarlayın */
+  z-index: 1000;
+}
+
+.page-container {
+  margin-top: var(--navbar-height);
+  margin-left: 200px; /* Menü genişliği ile aynı */
+  padding: 20px;
+  flex: 1;
+  overflow: auto;
+  height: calc(100vh - var(--navbar-height));
+}
+
 .content-container {
   display: flex;
   justify-content: center;
+  overflow: auto;
 }
 
 .search-filter-container {
-  margin-right: 10px; /* Aradaki boşluğu ayarlamak için */
+  margin-right: 10px;
   padding-top: 20px;
-  padding-left: 50px;
+  padding-left: 5px;
 }
 
-.doctor-cards-container{
-    display: flex;
-    flex-direction: column; /* Alt alta dizilimi sağlar */
-    padding: 20px;
-    gap: 10px;
-    overflow: auto;
-    /* align-items:center; */
-    flex: 1;
-  }
+.doctor-cards-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  overflow: auto;
+  flex: 1;
+}
 
-:host ::ng-deep .p-breadcrumb{
+:host ::ng-deep .p-breadcrumb {
   border: none;
 }
 
-:host ::ng-deep .p-component{
+:host ::ng-deep .p-component {
   font-size: 0.9rem;
 }
