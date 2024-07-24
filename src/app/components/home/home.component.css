@@ -1,5 +1,45 @@
-.container {
-  display: flex;
-  flex-direction: column;
+* {
+  margin: 0;
 }
 
+body {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 67px); 
+}
+
+.menu {
+  flex-shrink: 0;
+  transition: width 0.3s;
+}
+
+.menu.sidebar-open {
+  width: 19rem;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  overflow-y: auto; 
+  margin-left: 5.5rem; 
+}
+
+.main-content.sidebar-open {
+  margin-left: 19rem;
+}
+
+.main-content .cards,
+.main-content .app-appointment,
+.main-content .app-overview {
+  margin-bottom: 1rem;
+}
+
+.app-appointment {
+  flex-grow: 1;
+}

@@ -1,5 +1,3 @@
-<app-navbar ></app-navbar>
-
 <section class="container">
     <div class="sidebar-container" [class.sidebar-open]="sidebarOpen">
         <aside>
@@ -47,23 +45,6 @@
                         <i [class]="item.icon" class="pr-3"></i>
                     </li>
                 </ul>
-            </div>
-        </div>
-    </div>
-
-        
-    <div class="main-content" [class.sidebar-open]="sidebarOpen">
-        <app-cards></app-cards>
-        <div class="flex">
-            <div class="column">
-                <app-appointment></app-appointment>
-            </div>
-            <div class="column ml-3">
-                <app-overview></app-overview>
-                <app-upcoming-appointment></app-upcoming-appointment>
-            </div>
-            <div class="column ml-3">
-                <app-invoices></app-invoices>
             </div>
         </div>
     </div>

@@ -1,3 +1,23 @@
+<app-navbar></app-navbar>
+
 <div class="container">
     <app-menu class="menu"></app-menu>
+    
+    <div class="main-content">
+        <app-cards></app-cards>
+        <div class="flex">
+            <div class="column">
+                <app-appointment></app-appointment>
+            </div>
+            <div class="column ml-3">
+                <app-overview></app-overview>
+                <app-upcoming-appointment></app-upcoming-appointment>
+            </div>
+            <div class="column ml-3">
+                <app-invoices></app-invoices>
+            </div>
+        </div>
+    </div>
+
+    
 </div>
