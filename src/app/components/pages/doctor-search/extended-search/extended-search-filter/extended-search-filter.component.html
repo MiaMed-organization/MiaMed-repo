@@ -1,1 +1,114 @@
-<p>extended-search-filter works!</p>
+<p-card>
+    <div class="card-header">
+        <span class="font-semibold text-sm">Arama Filtreleri</span>
+    </div>
+
+    <div class="filter-container">
+
+        <div class="filter-group mb-3 ">
+            <label class="font-semibold text-sm">Cinsiyet</label>
+
+            <div class="mt-1 text-xs">
+                <p-checkbox name="gender" value="Erkek" [(ngModel)]="selectedGenders" label="Erkek"></p-checkbox>
+            </div>
+            <div class="mt-1 text-xs">
+                <p-checkbox name="gender" value="Kadın" [(ngModel)]="selectedGenders" label="Kadın"></p-checkbox>
+            </div>
+        </div>
+
+        <!-- Available Day Filter -->
+        <div class="filter-group mb-3">
+            <label class="font-semibold text-sm">Müsaitlik Zamanı</label>
+
+            <div *ngFor="let day of availableDays" class="mt-1 text-xs">
+                <p-checkbox [name]="day" [value]="day" [(ngModel)]="selectedAvailableDays" [label]="day"></p-checkbox>
+            </div>
+        </div>
+
+        <div class="filter-group mb-3">
+            <label class="font-semibold text-sm">Ücret</label>
+
+            <div class="card flex flex-column align-items-center">
+                <div class="flex justify-content-between w-full">
+                    <span>${{ minPrice }}</span>
+                    <span>${{ maxPrice }}</span>
+                </div>
+
+                <p-slider [(ngModel)]="rangeValues" [range]="true" styleClass="w-14rem mt-2 mb-2"
+                    (onChange)="updatePriceRange()"></p-slider>
+
+                <div class="text-center">
+                    Ücret: <span class="font-medium"> ${{ rangeValues[0] }} - ${{ rangeValues[1] }}</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="filter-group mb-3">
+            <label class="font-semibold text-sm">Uzmanlık</label>
+
+            <div *ngFor="let field of fields" class="mt-1 text-xs">
+                <p-checkbox [name]="field.name" [value]="field.value" [(ngModel)]="selectedFields"
+                    [label]="field.label"></p-checkbox>
+            </div>
+        </div>
+
+        <!-- Experience Filter -->
+        <div class="filter-group mb-3">
+            <label class="font-semibold text-sm">Deneyim</label>
+
+            <div class="mt-1 text-xs">
+                <p-checkbox name="experience" value="1-5" [(ngModel)]="selectedExperience" label="1-5 Yıl"></p-checkbox>
+            </div>
+            <div class="mt-1 text-xs">
+                <p-checkbox name="experience" value="5-10" [(ngModel)]="selectedExperience"
+                    label="5-10 Yıl"></p-checkbox>
+            </div>
+            <div class="mt-1 text-xs">
+                <p-checkbox name="experience" value="10+" [(ngModel)]="selectedExperience" label="10+ Yıl"></p-checkbox>
+            </div>
+        </div>
+
+        <!-- Consultation Filter -->
+        <div class="filter-group mb-3">
+            <label class="font-semibold text-sm">Online Danışmanlık</label>
+
+            <div *ngFor="let consultation of consultationTypes" class="mt-1 text-xs">
+                <p-checkbox [name]="consultation.type" [value]="consultation.type" [(ngModel)]="selectedConsultations"
+                    [label]="consultation.type">
+                </p-checkbox>
+
+            </div>
+
+        </div>
+
+        <div class="filter-group mb-3 ">
+            <label class="font-semibold text-sm">Değerlendirme</label>
+
+            <div *ngFor="let rating of ratings" class="mt-1 text-xs flex align-items-center">
+                <p-checkbox [value]="rating" [(ngModel)]="selectedRatings" binary="true"></p-checkbox>
+                <p-rating [ngModel]="rating" [readonly]="true" [cancel]="false"></p-rating>
+            </div>
+
+        </div>
+
+        <div class="filter-group mb-3">
+            <label class="font-semibold text-sm">Diller</label>
+
+            <div *ngFor="let language of languages" class="mt-1 text-xs">
+                <p-checkbox [name]="language" [value]="language" [(ngModel)]="selectedLanguages" binary="true"
+                    [label]="language"></p-checkbox>
+            </div>
+
+        </div>
+
+        <div class="button-container">
+
+            <p-button label="Filtrele"></p-button>
+            <p-button label="Resetle"></p-button>
+
+        </div>
+
+
+    </div>
+</p-card>

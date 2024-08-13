@@ -16,15 +16,21 @@ export class DoctorsService {
         minPrice: 300,
         maxPrice: 500,
         location: 'Florida, USA',
-        languages: 'German',
-        rating: 4,
+        languages: ['Türkçe', 'İngilizce', 'Almanca'],
+        rating: 30,
         feedback: 24,
         recommended: 90,
         field: 'Kalp Hastalıkları',
         services: 'Kalp muayenesi',
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Kardiyoloji'
+        department: 'Kardiyoloji',
+        availableDay: 'Bugün',
+        experience: 10,
+        consultation: [
+          { type: 'Görüntülü Görüşme', icon: 'pi-video' },
+          { type: 'Mesajlaşma', icon: 'pi-comment' }
+        ]
       },
       {
         id: '2',
@@ -34,15 +40,21 @@ export class DoctorsService {
         minPrice: 800,
         maxPrice: 1000,
         location: 'New York, USA',
-        languages: 'English',
-        rating: 5,
+        languages: ['İngilizce'],
+        rating: 40,
         feedback: 30,
         recommended: 85,
         field: 'Deri Hastalıkları',
-        services: 'Cilt muayenesi',
+        services: 'KBB',
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Dermatoloji'
+        department: 'Dermatoloji',
+        availableDay: 'Yarın',
+        experience: 8,
+        consultation: [
+          { type: 'Sesli Görüşme', icon: 'pi-microphone' },
+          { type: 'Mesajlaşma', icon: 'pi-comment' }
+        ]
       },
       {
         id: '3',
@@ -52,15 +64,21 @@ export class DoctorsService {
         minPrice: 100,
         maxPrice: 300,
         location: 'California, USA',
-        languages: 'Spanish',
-        rating: 3,
+        languages: ['Türkçe', 'İngilizce'],
+        rating: 15,
         feedback: 20,
         recommended: 70,
-        field: 'Göz Hastalıkları',
+        field: 'Pediatri',
         services: 'Göz muayenesi',
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Göz Hastalıkları'
+        department: 'Göz Hastalıkları',
+        availableDay: 'Haftaiçi',
+        experience: 5,
+        consultation: [
+          { type: 'Görüntülü Görüşme', icon: 'pi-video' },
+          { type: 'Sesli Görüşme', icon: 'pi-microphone' }
+        ]
       },
       {
         id: '4',
@@ -70,15 +88,21 @@ export class DoctorsService {
         minPrice: 700,
         maxPrice: 800,
         location: 'Texas, USA',
-        languages: 'French',
-        rating: 4,
+        languages: ['İngilizce', 'Çince'],
+        rating: 20,
         feedback: 40,
         recommended: 95,
-        field: 'Diş Hekimliği',
+        field: 'Pediatri',
         services: 'Diş muayenesi',
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Diş Hekimliği'
+        department: 'Diş Hekimliği',
+        availableDay: 'Ay içerisinde',
+        experience: 7,
+        consultation: [
+          { type: 'Görüntülü Görüşme', icon: 'pi-video' },
+          { type: 'Mesajlaşma', icon: 'pi-comment' }
+        ]
       },
       {
         id: '5',
@@ -88,15 +112,22 @@ export class DoctorsService {
         minPrice: 800,
         maxPrice: 950,
         location: 'Nevada, USA',
-        languages: 'Italian',
-        rating: 2,
+        languages: ['İngilizce'],
+        rating: 50,
         feedback: 15,
         recommended: 60,
-        field: 'Ortopedi',
+        field: 'Pediatri',
         services: 'Kemik muayenesi',
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Ortopedi'
+        department: 'Ortopedi',
+        availableDay: 'Bugün',
+        experience: 3,
+        consultation: [
+          { type: 'Görüntülü Görüşme', icon: 'pi-video' },
+          { type: 'Sesli Görüşme', icon: 'pi-microphone' },
+          { type: 'Mesajlaşma', icon: 'pi-comment' }
+        ]
       },
       {
         id: '6',
@@ -106,15 +137,21 @@ export class DoctorsService {
         minPrice: 150,
         maxPrice: 300,
         location: 'Washington, USA',
-        languages: 'Portuguese',
-        rating: 5,
+        languages: ['Almanca', 'İngilizce'],
+        rating: 25,
         feedback: 35,
         recommended: 88,
         field: 'Nöroloji',
         services: 'Beyin muayenesi',
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Nöroloji'
+        department: 'Nöroloji',
+        availableDay: 'Yarın',
+        experience: 9,
+        consultation: [
+          { type: 'Sesli Görüşme', icon: 'pi-microphone' },
+          { type: 'Mesajlaşma', icon: 'pi-comment' }
+        ]
       },
       {
         id: '7',
@@ -124,15 +161,21 @@ export class DoctorsService {
         minPrice: 400,
         maxPrice: 500,
         location: 'Oregon, USA',
-        languages: 'Russian',
-        rating: 3,
+        languages: ['İngilizce', 'Türkçe'],
+        rating: 10,
         feedback: 28,
         recommended: 75,
         field: 'KBB',
         services: 'Kulak Muayenesi',
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'KBB'
+        department: 'KBB',
+        availableDay: 'Haftaiçi',
+        experience: 6,
+        consultation: [
+          { type: 'Görüntülü Görüşme', icon: 'pi-video' },
+          { type: 'Mesajlaşma', icon: 'pi-comment' }
+        ]
       },
       {
         id: '8',
@@ -142,15 +185,21 @@ export class DoctorsService {
         minPrice: 300,
         maxPrice: 500,
         location: 'Arizona, USA',
-        languages: 'Japanese',
-        rating: 4,
+        languages: ['Türkçe'],
+        rating: 18,
         feedback: 22,
         recommended: 80,
         field: 'Plastik Cerrahi',
         services: 'Estetik muayenesi',
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Plastik Cerrahi'
+        department: 'Plastik Cerrahi',
+        availableDay: 'Ay içerisinde',
+        experience: 4,
+        consultation: [
+          { type: 'Görüntülü Görüşme', icon: 'pi-video' },
+          { type: 'Sesli Görüşme', icon: 'pi-microphone' }
+        ]
       },
       {
         id: '9',
@@ -160,15 +209,21 @@ export class DoctorsService {
         minPrice: 900,
         maxPrice: 1500,
         location: 'Colorado, USA',
-        languages: 'Korean',
-        rating: 5,
+        languages: [ 'Türkçe', 'İngilizce'],
+        rating: 9,
         feedback: 50,
         recommended: 99,
         field: 'Pediatri',
         services: 'Çocuk muayenesi',
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Pediatri'
+        department: 'Pediatri',
+        availableDay: 'Bugün',
+        experience: 10,
+        consultation: [
+          { type: 'Sesli Görüşme', icon: 'pi-microphone' },
+          { type: 'Mesajlaşma', icon: 'pi-comment' }
+        ]
       },
       {
         id: '10',
@@ -178,52 +233,23 @@ export class DoctorsService {
         minPrice: 650,
         maxPrice: 800,
         location: 'Utah, USA',
-        languages: 'Chinese',
-        rating: 2,
+        languages: ['Çince'],
+        rating: 5,
         feedback: 12,
         recommended: 55,
-        field: 'Psikiyatri',
+        field: 'Pediatri',
         services: 'Dolgu',
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Psikiyatri'
-      },
-      {
-        id: '11',
-        name: 'Dr. Julia Washington',
-        image: 'doctor-11.jpg',
-        availability: '28 Mart Pazar',
-        minPrice: 650,
-        maxPrice: 800,
-        location: 'Utah, USA',
-        languages: 'Chinese',
-        rating: 4,
-        feedback: 10,
-        recommended: 35,
-        field: 'Psikiyatri',
-        services: 'Diş Beyazlatma',
-        icon: 'pi-eye',
-        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Psikiyatri'
-      },
-      {
-        id: '12',
-        name: 'Dr. Shaun Aponte',
-        image: 'doctor-12.jpg',
-        availability: '31 Eylül Pazar',
-        minPrice: 950,
-        maxPrice: 1200,
-        location: 'Utah, USA',
-        languages: 'Turkish',
-        rating: 5,
-        feedback: 30,
-        recommended: 57,
-        field: 'Diş Hekimi',
-        services: 'Dolgu',
-        icon: 'pi-heart',
-        clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Diş Hekimi'
-      },
+        department: 'Psikiyatri',
+        availableDay: 'Yarın',
+        experience: 2,
+        consultation: [
+          { type: 'Görüntülü Görüşme', icon: 'pi-video' },
+          { type: 'Sesli Görüşme', icon: 'pi-microphone' },
+          { type: 'Mesajlaşma', icon: 'pi-comment' }
+        ]
+      }
     ];
   }
 

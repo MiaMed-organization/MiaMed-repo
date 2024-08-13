@@ -49,6 +49,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { ExtendedSearchComponent } from './components/pages/doctor-search/extended-search/extended-search.component';
 import { ExtendedSearchFilterComponent } from './components/pages/doctor-search/extended-search/extended-search-filter/extended-search-filter.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+import { SliderModule } from 'primeng/slider';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     GoogleMapsModule,
     FloatLabelModule,
     CalendarModule,
-    BreadcrumbModule
+    BreadcrumbModule,
+    SliderModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
