@@ -12,20 +12,30 @@ export class ExtendedSearchFilterComponent implements OnInit {
   selectedAvailableDays: string[] = [];
   selectedExperience: string[] = [];
   selectedConsultations: string[] = [];
+  selectedLanguages: string[] = [];
+  selectedRatings: number[] = [];
 
   rangeValues: number[] = [20, 80];
   minPrice: number = 10;
   maxPrice: number = 10000;
 
   ratings: number[] = [5, 4, 3, 2, 1];
-  selectedRatings: number[] = [];
 
   languages: string[] = []; // Servisten gelen tüm diller
-  selectedLanguages: string[] = []; // Seçilen diller
-  
   fields: { name: string, value: string, label: string }[] = [];
   availableDays: string[] = [];
   consultationTypes: { type: string, icon: string }[] = [];
+
+  sections = {
+    gender: true,
+    availability: true,
+    fee: true,
+    specialty: true,
+    experience: true,
+    consultation: true,
+    rating: true,
+    language: true
+  };
 
   constructor(private doctorsService: DoctorsService) {}
 
@@ -75,5 +85,21 @@ export class ExtendedSearchFilterComponent implements OnInit {
   updatePriceRange() {
     // Slider'daki seçilmiş aralıkları güncelleyebilirsiniz.
     this.rangeValues = [...this.rangeValues]; 
+  }
+
+  toggleSection(section: string) {
+    this.sections[section] = !this.sections[section];
+    console.log(this.sections[section]);  // Bu satır ile değeri kontrol edebilirsiniz
+  }
+  
+  resetFilters() {
+    this.selectedGenders = [];
+    this.selectedFields = [];
+    this.selectedAvailableDays = [];
+    this.selectedExperience = [];
+    this.selectedConsultations = [];
+    this.selectedRatings = [];
+    this.selectedLanguages = [];
+    this.rangeValues = [20, 80];
   }
 }

@@ -4,111 +4,144 @@
     </div>
 
     <div class="filter-container">
-
-        <div class="filter-group mb-3 ">
-            <label class="font-semibold text-sm">Cinsiyet</label>
-
-            <div class="mt-1 text-xs">
-                <p-checkbox name="gender" value="Erkek" [(ngModel)]="selectedGenders" label="Erkek"></p-checkbox>
-            </div>
-            <div class="mt-1 text-xs">
-                <p-checkbox name="gender" value="Kadın" [(ngModel)]="selectedGenders" label="Kadın"></p-checkbox>
-            </div>
-        </div>
-
-        <!-- Available Day Filter -->
+        <!-- Gender Filter -->
         <div class="filter-group mb-3">
-            <label class="font-semibold text-sm">Müsaitlik Zamanı</label>
-
-            <div *ngFor="let day of availableDays" class="mt-1 text-xs">
-                <p-checkbox [name]="day" [value]="day" [(ngModel)]="selectedAvailableDays" [label]="day"></p-checkbox>
+            <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('gender')">
+                <label class="font-semibold text-sm">Cinsiyet</label>
+                <i [ngClass]="['pi', sections.gender ? 'pi-angle-up' : 'pi-angle-down']"></i>
             </div>
-        </div>
-
-        <div class="filter-group mb-3">
-            <label class="font-semibold text-sm">Ücret</label>
-
-            <div class="card flex flex-column align-items-center">
-                <div class="flex justify-content-between w-full">
-                    <span>${{ minPrice }}</span>
-                    <span>${{ maxPrice }}</span>
+            <div *ngIf="sections.gender">
+                <div class="mt-1 text-xs">
+                    <p-checkbox name="gender" value="Erkek" [(ngModel)]="selectedGenders" label="Erkek"></p-checkbox>
                 </div>
-
-                <p-slider [(ngModel)]="rangeValues" [range]="true" styleClass="w-14rem mt-2 mb-2"
-                    (onChange)="updatePriceRange()"></p-slider>
-
-                <div class="text-center">
-                    Ücret: <span class="font-medium"> ${{ rangeValues[0] }} - ${{ rangeValues[1] }}</span>
+                <div class="mt-1 text-xs">
+                    <p-checkbox name="gender" value="Kadın" [(ngModel)]="selectedGenders" label="Kadın"></p-checkbox>
                 </div>
             </div>
         </div>
 
-
+        <!-- Availability Filter -->
         <div class="filter-group mb-3">
-            <label class="font-semibold text-sm">Uzmanlık</label>
+            <div class="flex justify-content-between items-center cursor-pointer"
+                (click)="toggleSection('availability')">
+                <label class="font-semibold text-sm">Müsaitlik Zamanı</label>
+                <i [ngClass]="['pi', sections.availability ? 'pi-angle-up' : 'pi-angle-down']"></i>
+            </div>
+            <div *ngIf="sections.availability">
+                <div *ngFor="let day of availableDays" class="mt-1 text-xs">
+                    <p-checkbox [name]="day" [value]="day" [(ngModel)]="selectedAvailableDays"
+                        [label]="day"></p-checkbox>
+                </div>
+            </div>
+        </div>
 
-            <div *ngFor="let field of fields" class="mt-1 text-xs">
-                <p-checkbox [name]="field.name" [value]="field.value" [(ngModel)]="selectedFields"
-                    [label]="field.label"></p-checkbox>
+        <!-- Consultation Fee Filter -->
+        <div class="filter-group mb-3">
+            <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('fee')">
+                <label class="font-semibold text-sm">Ücret</label>
+                <i [ngClass]="['pi', sections.fee ? 'pi-angle-up' : 'pi-angle-down']"></i>
+            </div>
+            <div *ngIf="sections.fee">
+                <div class="card flex flex-column align-items-center">
+                    <div class="flex justify-content-between w-full">
+                        <span>${{ minPrice }}</span>
+                        <span>${{ maxPrice }}</span>
+                    </div>
+                    <p-slider [(ngModel)]="rangeValues" [range]="true" styleClass="w-14rem mt-2 mb-2"
+                        (onChange)="updatePriceRange()"></p-slider>
+                    <div class="text-center">
+                        Ücret: <span class="font-medium"> ${{ rangeValues[0] }} - ${{ rangeValues[1] }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specialty Filter -->
+        <div class="filter-group mb-3">
+            <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('specialty')">
+                <label class="font-semibold text-sm">Uzmanlık</label>
+                <i [ngClass]="['pi', sections.specialty ? 'pi-angle-up' : 'pi-angle-down']"></i>
+            </div>
+            <div *ngIf="sections.specialty">
+                <div *ngFor="let field of fields" class="mt-1 text-xs">
+                    <p-checkbox [name]="field.name" [value]="field.value" [(ngModel)]="selectedFields"
+                        [label]="field.label"></p-checkbox>
+                </div>
             </div>
         </div>
 
         <!-- Experience Filter -->
         <div class="filter-group mb-3">
-            <label class="font-semibold text-sm">Deneyim</label>
-
-            <div class="mt-1 text-xs">
-                <p-checkbox name="experience" value="1-5" [(ngModel)]="selectedExperience" label="1-5 Yıl"></p-checkbox>
+            <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('experience')">
+                <label class="font-semibold text-sm">Deneyim</label>
+                <i [ngClass]="['pi', sections.experience ? 'pi-angle-up' : 'pi-angle-down']"></i>
             </div>
-            <div class="mt-1 text-xs">
-                <p-checkbox name="experience" value="5-10" [(ngModel)]="selectedExperience"
-                    label="5-10 Yıl"></p-checkbox>
-            </div>
-            <div class="mt-1 text-xs">
-                <p-checkbox name="experience" value="10+" [(ngModel)]="selectedExperience" label="10+ Yıl"></p-checkbox>
+            <div *ngIf="sections.experience">
+                <div class="mt-1 text-xs">
+                    <p-checkbox name="experience" value="1-5" [(ngModel)]="selectedExperience"
+                        label="1-5 Yıl"></p-checkbox>
+                </div>
+                <div class="mt-1 text-xs">
+                    <p-checkbox name="experience" value="5-10" [(ngModel)]="selectedExperience"
+                        label="5-10 Yıl"></p-checkbox>
+                </div>
+                <div class="mt-1 text-xs">
+                    <p-checkbox name="experience" value="10+" [(ngModel)]="selectedExperience"
+                        label="10+ Yıl"></p-checkbox>
+                </div>
             </div>
         </div>
 
-        <!-- Consultation Filter -->
+        <!-- Online Consultation Filter -->
         <div class="filter-group mb-3">
-            <label class="font-semibold text-sm">Online Danışmanlık</label>
-
-            <div *ngFor="let consultation of consultationTypes" class="mt-1 text-xs">
-                <p-checkbox [name]="consultation.type" [value]="consultation.type" [(ngModel)]="selectedConsultations"
-                    [label]="consultation.type">
-                </p-checkbox>
-
+            <div class="flex justify-content-between items-center cursor-pointer"
+                (click)="toggleSection('consultation')">
+                <label class="font-semibold text-sm">Online Danışmanlık</label>
+                <i [ngClass]="['pi', sections.consultation ? 'pi-angle-up' : 'pi-angle-down']"></i>
             </div>
-
-        </div>
-
-        <div class="filter-group mb-3 ">
-            <label class="font-semibold text-sm">Değerlendirme</label>
-
-            <div *ngFor="let rating of ratings" class="mt-1 text-xs flex align-items-center">
-                <p-checkbox [value]="rating" [(ngModel)]="selectedRatings" binary="true"></p-checkbox>
-                <p-rating [ngModel]="rating" [readonly]="true" [cancel]="false"></p-rating>
+            <div *ngIf="sections.consultation">
+                <div *ngFor="let consultation of consultationTypes" class="mt-1 text-xs">
+                    <p-checkbox [name]="consultation.type" [value]="consultation.type"
+                        [(ngModel)]="selectedConsultations" [label]="consultation.type">
+                    </p-checkbox>
+                </div>
             </div>
-
         </div>
 
         <div class="filter-group mb-3">
-            <label class="font-semibold text-sm">Diller</label>
-
-            <div *ngFor="let language of languages" class="mt-1 text-xs">
-                <p-checkbox [name]="language" [value]="language" [(ngModel)]="selectedLanguages" binary="true"
-                    [label]="language"></p-checkbox>
+            <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('rating')">
+                <label class="font-semibold text-sm">Değerlendirme</label>
+                <i [ngClass]="['pi', sections.rating ? 'pi-angle-up' : 'pi-angle-down']"></i>
             </div>
-
+            <div *ngIf="sections.rating">
+                <div *ngFor="let rating of ratings" class="mt-1 text-xs flex align-items-center">
+                    <p-checkbox [value]="rating" [(ngModel)]="selectedRatings">
+                    </p-checkbox>
+                    <p-rating [ngModel]="rating" [readonly]="true" [cancel]="false" class="ml-1">
+                    </p-rating>
+                </div>
+            </div>
         </div>
 
+
+        <!-- Language Filter -->
+        <div class="filter-group mb-3">
+            <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('language')">
+                <label class="font-semibold text-sm">Diller</label>
+                <i [ngClass]="['pi', sections.language ? 'pi-angle-up' : 'pi-angle-down']"></i>
+            </div>
+            <div *ngIf="sections.language">
+                <div *ngFor="let language of languages" class="mt-1 text-xs">
+                    <p-checkbox [value]="language" [(ngModel)]="selectedLanguages" [label]="language">
+                    </p-checkbox>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
         <div class="button-container">
-
-            <p-button label="Filtrele"></p-button>
-            <p-button label="Resetle"></p-button>
-
+            <p-button label="Filtrele" [outlined]="true"></p-button>
+            <p-button label="Resetle" (click)="resetFilters()"></p-button>
         </div>
-
-
     </div>
 </p-card>
