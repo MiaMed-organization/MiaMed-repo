@@ -50,6 +50,8 @@ import { ExtendedSearchComponent } from './components/pages/doctor-search/extend
 import { ExtendedSearchFilterComponent } from './components/pages/doctor-search/extended-search/extended-search-filter/extended-search-filter.component';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { SliderModule } from 'primeng/slider';
+import { ExtendedCardComponent } from './components/pages/doctor-search/extended-search/extended-card/extended-card.component';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,7 @@ import { SliderModule } from 'primeng/slider';
     SearchFilterComponent,
     ExtendedSearchComponent,
     ExtendedSearchFilterComponent,
+    ExtendedCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -103,7 +106,8 @@ import { SliderModule } from 'primeng/slider';
     FloatLabelModule,
     CalendarModule,
     BreadcrumbModule,
-    SliderModule
+    SliderModule,
+    PaginatorModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

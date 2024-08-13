@@ -1,0 +1,240 @@
+.list-card-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    position: relative;
+    /* Position relative for bookmark */
+}
+
+.img-container {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    position: relative; /* Heart ikonunu img-container içinde konumlandırmak için relative */
+}
+
+.img-container img {
+    width: 100%;
+    max-height: 170px;
+    border-radius: 4px;
+    transition: transform 0.6s ease-in-out;
+}
+
+.img-container:hover img {
+    transform: scale(1.1);
+}
+
+.heart-icon {
+    position: absolute; /* Konumu img-container içinde sabitlemek için absolute */
+    top: 10px; /* Üstten 10px boşluk */
+    right: 35px; /* Sağdan 10px boşluk */
+    color: black;
+    background-color: white;
+    border-radius: 50%; /* Yuvarlak köşe */
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.heart-icon:hover {
+    color: red;
+    transition: color 0.4s;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.name-container i {
+    color: green;
+    margin-left: 5px;
+}
+
+.name-container a:hover {
+    color: #007bff;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+}
+
+.rating-box {
+    display: flex;
+    align-items: center;
+    background-color: #f0a500;
+    /* Arka plan rengi (görseldeki gibi) */
+    color: white;
+    padding: 3px 8px;
+    border-radius: 5px;
+    /* Yuvarlatılmış köşeler */
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 8px;
+    /* Değerlendirme metniyle aradaki boşluk */
+}
+
+.rating-box i {
+    margin-right: 4px;
+    /* Yıldız ile rating arasında boşluk */
+}
+
+.feedback-text {
+    color: #555;
+    /* Değerlendirme metninin rengi */
+    font-size: 14px;
+}
+
+.available-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .available-today {
+    background-color: #d4edda; /* Yeşil arka plan (Bugün) */
+    color: #155724; /* Koyu yeşil yazı rengi */
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-left: 8px;
+    font-weight: bold;
+  }
+  
+  .available-tomorrow {
+    background-color: #e6be5b; /* Turuncu arka plan (Yarın) */
+    color: #8a6d3b; /* Koyu turuncu yazı rengi */
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin-left: 8px;
+    font-weight: bold;
+  }
+  
+  .available-other {
+    background-color: #f8d7da; /* Kırmızı arka plan (Diğer günler) */
+    color: #721c24; /* Koyu kırmızı yazı rengi */
+    padding: 5px 10px;
+    border-radius: 12px;
+    margin-left: 8px;
+    font-weight: bold;
+  }
+@keyframes moveBookmark {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-10px);
+        /* Sola hareket */
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.doctor-info {
+    flex: 2;
+    padding-right: 20px;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+}
+
+.clinic-images img {
+    max-width: 30px;
+    height: auto;
+    border-radius: 0.3rem;
+    margin-right: 5px;
+}
+
+.services {
+    border: 1px solid #cccccc;
+    display: inline-block;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.doctor-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 180px;
+    min-width: 150px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+:host {
+    ::ng-deep .p-button {
+        width: 180px;
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 10px 15px;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .img-container img {
+        max-width: 200px;
+        /* Orta ekranlar için boyut düzenlemesi */
+    }
+}
+
+@media (max-width: 480px) {
+    .list-card-container {
+        flex-direction: column;
+        /* Küçük ekranlarda alt alta sıralanması için eklendi */
+        align-items: center !important;
+        min-width: 350px;
+    }
+
+    .img-container {
+        margin-right: 0;
+        /* Küçük ekranlarda margin sıfırlamak için eklendi */
+        margin-bottom: 10px;
+        /* Küçük ekranlarda aralık eklemek için eklendi */
+    }
+
+    .img-container img {
+        max-width: 200px;
+        /* Küçük ekranlar için boyut düzenlemesi */
+    }
+
+    .doctor-info {
+        margin-bottom: 10px;
+        /* Küçük ekranlarda aralık eklemek için eklendi */
+        align-self: center !important;
+    }
+
+    .doctor-details {
+        max-width: 100%;
+        /* Küçük ekranlarda tam genişlik için eklendi */
+        align-items: center;
+    }
+}

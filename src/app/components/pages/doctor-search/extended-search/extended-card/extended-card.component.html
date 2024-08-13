@@ -1,0 +1,69 @@
+<div>
+    <div class="list-card-container">
+        <div class="img-container">
+            <a>
+                <img [src]="'../../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name"
+                    class="rounded-img shadow-1" />
+            </a>
+            <i class="pi pi-heart heart-icon"></i>
+        </div>
+        <div class="doctor-info">
+
+            <div class="name-container">
+                <a class="text-lg font-semibold">{{ doctor.name }}</a>
+                <i class="fas fa-check-circle verified"></i>
+            </div>
+
+            <p class="font-light my-1 text-xs">{{ doctor.field }}</p>
+
+            <p class="font-light mb-2 text-xs">
+                <i class="pi pi-map-marker"></i> Konum, {{ doctor.location }}
+            </p>
+
+            <p class="font-light mb-2 text-xs">
+                <i class="pi pi-verified"></i> Deneyim, {{ doctor.experience }} yıl
+            </p>
+
+            <div class="rating-container mt-5">
+                <span class="rating-box">
+                    <i class="pi pi-star"></i>
+                    {{ doctor.rating }}
+                </span>
+                <span class="feedback-text">
+                    ({{ doctor.feedback }} değerlendirme)
+                </span>
+            </div>
+
+        </div>
+
+        <div class="doctor-details mr-2">
+
+            <p class="font-light my-1 text-xs available-container">
+                <i class="pi pi-clock"></i>
+                <span [ngClass]="{
+                    'available-today': doctor.availableDay === 'Bugün',
+                    'available-tomorrow': doctor.availableDay === 'Yarın',
+                    'available-other': doctor.availableDay !== 'Bugün' && doctor.availableDay !== 'Yarın'
+                  }">
+                  {{ doctor.availableDay }} müsait
+                </span>
+              </p>
+              
+
+
+            <p class="font-light my-1 text-xs">
+                <i class="pi pi-thumbs-up"></i> {{ doctor.recommended }}%
+            </p>
+           
+            <p class="font-light my-1 text-xs">
+                <i class="pi pi-money-bill"></i> ${{ doctor.minPrice }} - ${{doctor.maxPrice}}
+            </p>
+
+            <div class="button-container">
+                <p-button label="Profile Git" [outlined]="true" class="profile-button"></p-button>
+                <p-button label="Randevu Al" class="appointment-button"></p-button>
+            </div>
+
+        </div>
+    </div>
+</div>

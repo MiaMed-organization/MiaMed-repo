@@ -56,18 +56,6 @@
    transition: color 0.4s;
 }
 
-@keyframes moveBookmark {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-4px); /* Sola hareket */
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .name-container {
   display: flex;
   align-items: center;
@@ -81,6 +69,18 @@
 
 .name-container a:hover {
   color: #007bff;
+}
+
+@keyframes moveBookmark {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4px); /* Sola hareket */
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 :host {

@@ -28,9 +28,11 @@
         </div>
 
         <div class="doctor-cards-container">
-          <div *ngFor="let doctor of doctors" class="doctor-card">
+          <div *ngFor="let doctor of paginatedDoctors" class="doctor-card">
             <app-doctor-list-cards [doctor]="doctor"></app-doctor-list-cards>
           </div>
+
+          <p-paginator [rows]="5" [totalRecords]="doctors.length" (onPageChange)="paginate($event)"></p-paginator>
         </div>
       </div>
     </div>

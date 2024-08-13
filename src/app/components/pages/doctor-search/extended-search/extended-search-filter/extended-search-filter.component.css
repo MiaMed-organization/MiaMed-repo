@@ -100,7 +100,7 @@
 }
 
 :host ::ng-deep .p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
-    color: yellow;
+    color: #e6be5b;
 }
 
 :host ::ng-deep .p-rating .p-rating-item .p-rating-icon {
