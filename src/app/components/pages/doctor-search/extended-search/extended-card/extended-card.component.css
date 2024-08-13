@@ -74,25 +74,20 @@
     display: flex;
     align-items: center;
     background-color: #f0a500;
-    /* Arka plan rengi (görseldeki gibi) */
     color: white;
     padding: 3px 8px;
     border-radius: 5px;
-    /* Yuvarlatılmış köşeler */
     font-weight: bold;
     font-size: 14px;
     margin-right: 8px;
-    /* Değerlendirme metniyle aradaki boşluk */
 }
 
 .rating-box i {
     margin-right: 4px;
-    /* Yıldız ile rating arasında boşluk */
 }
 
 .feedback-text {
     color: #555;
-    /* Değerlendirme metninin rengi */
     font-size: 14px;
 }
 
@@ -114,7 +109,7 @@
     background-color: #e6be5b; /* Turuncu arka plan (Yarın) */
     color: #8a6d3b; /* Koyu turuncu yazı rengi */
     padding: 5px 10px;
-    border-radius: 12px;
+    border-radius: 5px;
     margin-left: 8px;
     font-weight: bold;
   }
@@ -123,7 +118,7 @@
     background-color: #f8d7da; /* Kırmızı arka plan (Diğer günler) */
     color: #721c24; /* Koyu kırmızı yazı rengi */
     padding: 5px 10px;
-    border-radius: 12px;
+    border-radius: 5px;
     margin-left: 8px;
     font-weight: bold;
   }
