@@ -1,0 +1,27 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .page-container {
+    margin-top: var(--navbar-height);
+    margin-left: 200px; /* Menü genişliği ile aynı */
+    padding: 20px;
+    flex: 1;
+    overflow: auto;
+    height: calc(100vh - var(--navbar-height));
+  }
+  
+  .content-container {
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+  }

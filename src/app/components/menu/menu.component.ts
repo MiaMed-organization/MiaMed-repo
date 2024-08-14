@@ -61,6 +61,7 @@ export class MenuComponent implements OnInit {
       {
         label: 'Doktor Profili',
         icon: 'pi pi-user',
+        routerLink: ['/doctor-profile']
        
       },
 

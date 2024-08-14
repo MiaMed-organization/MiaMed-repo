@@ -52,6 +52,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { SliderModule } from 'primeng/slider';
 import { ExtendedCardComponent } from './components/pages/doctor-search/extended-search/extended-card/extended-card.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { DoctorProfileComponent } from './components/pages/doctor-profile/doctor-profile.component';
+import { DoctorProfileCardComponent } from './components/pages/doctor-profile/doctor-profile-card/doctor-profile-card.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +78,8 @@ import { PaginatorModule } from 'primeng/paginator';
     ExtendedSearchComponent,
     ExtendedSearchFilterComponent,
     ExtendedCardComponent,
+    DoctorProfileComponent,
+    DoctorProfileCardComponent,
   ],
   imports: [
     BrowserModule,

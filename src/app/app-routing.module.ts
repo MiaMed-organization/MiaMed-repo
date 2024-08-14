@@ -7,6 +7,7 @@ import { authGuard } from './guards/auth.guard';
 import { DoctorsComponent } from './components/pages/doctors/doctors.component';
 import { SearchComponent } from './components/pages/doctor-search/search/search.component';
 import { ExtendedSearchComponent } from './components/pages/doctor-search/extended-search/extended-search.component';
+import { DoctorProfileComponent } from './components/pages/doctor-profile/doctor-profile.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'extended-search',
     component: ExtendedSearchComponent,
+  },
+  {
+    path: 'doctor-profile',
+    component: DoctorProfileComponent,
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
