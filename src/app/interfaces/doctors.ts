@@ -3,21 +3,24 @@ export interface Doctors {
     name?: string;
     image?: string;
     availability?: string;
-    title?:string;
+    title?: string;
     field?: string;
-    icon?:string;
+    icon?: string;
     location?: string;
+    hospital?: string; // Yeni eklendi
     languages?: string[];
     minPrice?: number;
     department?: string;
-    maxPrice?:number;
-    availableDay?:string;
+    maxPrice?: number;
+    availableDay?: string;
+    availableTime?: string; // Yeni eklendi
     rating?: number;
     email?: string;
-    experience?:number;
+    experience?: number;
     consultation?: { type: string; icon: string }[];
     feedback?: number;
     recommended?: number;
-    services?: string;
+    services?: string[]; // Dizi olarak değiştirildi
+    bookedAppointment?: number; // Yeni eklendi
     clinicImages: string[];
 }

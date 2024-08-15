@@ -16,12 +16,14 @@ export class DoctorsService {
         minPrice: 300,
         maxPrice: 500,
         location: 'Florida, USA',
+        hospital: 'Lotus Hastanesi',
+        bookedAppointment: 120,
         languages: ['Türkçe', 'İngilizce', 'Almanca'],
         rating: 3,
         feedback: 24,
         recommended: 90,
         field: 'Kalp Hastalıkları',
-        services: 'Kalp muayenesi',
+        services: ['Kalp muayenesi', 'EKG', 'Tansiyon ölçümü'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Kardiyoloji',
@@ -30,7 +32,8 @@ export class DoctorsService {
         consultation: [
           { type: 'Görüntülü Görüşme', icon: 'pi-video' },
           { type: 'Mesajlaşma', icon: 'pi-comment' }
-        ]
+        ],
+        availableTime: '10:30 - 16:00'
       },
       {
         id: '2',
@@ -40,12 +43,14 @@ export class DoctorsService {
         minPrice: 800,
         maxPrice: 1000,
         location: 'New York, USA',
+        hospital: 'Mavi Deniz Hastanesi',
+        bookedAppointment: 95,
         languages: ['İngilizce'],
         rating: 4,
         feedback: 30,
         recommended: 85,
         field: 'Deri Hastalıkları',
-        services: 'KBB',
+        services: ['Cilt kontrolü', 'Alerji testi', 'Egzama tedavisi'],
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Dermatoloji',
@@ -54,7 +59,8 @@ export class DoctorsService {
         consultation: [
           { type: 'Sesli Görüşme', icon: 'pi-microphone' },
           { type: 'Mesajlaşma', icon: 'pi-comment' }
-        ]
+        ],
+        availableTime: '09:00 - 15:30'
       },
       {
         id: '3',
@@ -64,12 +70,14 @@ export class DoctorsService {
         minPrice: 100,
         maxPrice: 300,
         location: 'California, USA',
+        hospital: 'Yeşil Bahar Hastanesi',
+        bookedAppointment: 45,
         languages: ['Türkçe', 'İngilizce'],
         rating: 1,
         feedback: 20,
         recommended: 70,
         field: 'Pediatri',
-        services: 'Göz muayenesi',
+        services: ['Göz kontrolü', 'Göz testi'],
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Göz Hastalıkları',
@@ -78,7 +86,8 @@ export class DoctorsService {
         consultation: [
           { type: 'Görüntülü Görüşme', icon: 'pi-video' },
           { type: 'Sesli Görüşme', icon: 'pi-microphone' }
-        ]
+        ],
+        availableTime: '08:00 - 13:00'
       },
       {
         id: '4',
@@ -88,12 +97,14 @@ export class DoctorsService {
         minPrice: 700,
         maxPrice: 800,
         location: 'Texas, USA',
+        hospital: 'Gümüş Şehir Hastanesi',
+        bookedAppointment: 75,
         languages: ['İngilizce', 'Çince'],
         rating: 2,
         feedback: 40,
         recommended: 95,
         field: 'Pediatri',
-        services: 'Diş muayenesi',
+        services: ['Diş kontrolü', 'Dolgu muayenesi'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Diş Hekimliği',
@@ -102,7 +113,8 @@ export class DoctorsService {
         consultation: [
           { type: 'Görüntülü Görüşme', icon: 'pi-video' },
           { type: 'Mesajlaşma', icon: 'pi-comment' }
-        ]
+        ],
+        availableTime: '11:00 - 17:00'
       },
       {
         id: '5',
@@ -112,12 +124,14 @@ export class DoctorsService {
         minPrice: 800,
         maxPrice: 950,
         location: 'Nevada, USA',
+        hospital: 'Güneş Sağlık Merkezi',
+        bookedAppointment: 60,
         languages: ['İngilizce'],
         rating: 5,
         feedback: 15,
         recommended: 60,
         field: 'Pediatri',
-        services: 'Kemik muayenesi',
+        services: ['Kemik kontrolü', 'Ortopedik muayene'],
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Ortopedi',
@@ -127,7 +141,8 @@ export class DoctorsService {
           { type: 'Görüntülü Görüşme', icon: 'pi-video' },
           { type: 'Sesli Görüşme', icon: 'pi-microphone' },
           { type: 'Mesajlaşma', icon: 'pi-comment' }
-        ]
+        ],
+        availableTime: '10:00 - 14:30'
       },
       {
         id: '6',
@@ -137,12 +152,14 @@ export class DoctorsService {
         minPrice: 150,
         maxPrice: 300,
         location: 'Washington, USA',
+        hospital: 'Doğa Hastanesi',
+        bookedAppointment: 85,
         languages: ['Almanca', 'İngilizce'],
         rating: 5,
         feedback: 35,
         recommended: 88,
         field: 'Nöroloji',
-        services: 'Beyin muayenesi',
+        services: ['Beyin kontrolü', 'Refleks testi'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Nöroloji',
@@ -151,7 +168,8 @@ export class DoctorsService {
         consultation: [
           { type: 'Sesli Görüşme', icon: 'pi-microphone' },
           { type: 'Mesajlaşma', icon: 'pi-comment' }
-        ]
+        ],
+        availableTime: '08:30 - 16:00'
       },
       {
         id: '7',
@@ -161,12 +179,14 @@ export class DoctorsService {
         minPrice: 400,
         maxPrice: 500,
         location: 'Oregon, USA',
+        hospital: 'Deniz Kabuğu Hastanesi',
+        bookedAppointment: 30,
         languages: ['İngilizce', 'Türkçe'],
         rating: 1,
         feedback: 28,
         recommended: 75,
         field: 'KBB',
-        services: 'Kulak Muayenesi',
+        services: ['Kulak kontrolü', 'Burun muayenesi'],
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'KBB',
@@ -175,7 +195,8 @@ export class DoctorsService {
         consultation: [
           { type: 'Görüntülü Görüşme', icon: 'pi-video' },
           { type: 'Mesajlaşma', icon: 'pi-comment' }
-        ]
+        ],
+        availableTime: '09:00 - 14:00'
       },
       {
         id: '8',
@@ -185,12 +206,14 @@ export class DoctorsService {
         minPrice: 300,
         maxPrice: 500,
         location: 'Arizona, USA',
+        hospital: 'Kaktüs Sağlık Merkezi',
+        bookedAppointment: 40,
         languages: ['Türkçe'],
         rating: 4,
         feedback: 22,
         recommended: 80,
         field: 'Plastik Cerrahi',
-        services: 'Estetik muayenesi',
+        services: ['Estetik muayenesi', 'Cilt kontrolü'],
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Plastik Cerrahi',
@@ -199,7 +222,8 @@ export class DoctorsService {
         consultation: [
           { type: 'Görüntülü Görüşme', icon: 'pi-video' },
           { type: 'Sesli Görüşme', icon: 'pi-microphone' }
-        ]
+        ],
+        availableTime: '11:30 - 16:30'
       },
       {
         id: '9',
@@ -209,12 +233,14 @@ export class DoctorsService {
         minPrice: 900,
         maxPrice: 1500,
         location: 'Colorado, USA',
-        languages: [ 'Türkçe', 'İngilizce'],
+        hospital: 'Kızıl Sağlık Hastanesi',
+        bookedAppointment: 110,
+        languages: ['Türkçe', 'İngilizce'],
         rating: 2,
         feedback: 50,
         recommended: 99,
         field: 'Pediatri',
-        services: 'Çocuk muayenesi',
+        services: ['Çocuk kontrolü', 'Büyüme testi'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Pediatri',
@@ -223,7 +249,8 @@ export class DoctorsService {
         consultation: [
           { type: 'Sesli Görüşme', icon: 'pi-microphone' },
           { type: 'Mesajlaşma', icon: 'pi-comment' }
-        ]
+        ],
+        availableTime: '09:30 - 15:00'
       },
       {
         id: '10',
@@ -233,12 +260,14 @@ export class DoctorsService {
         minPrice: 650,
         maxPrice: 800,
         location: 'Utah, USA',
+        hospital: 'Mor Hastane',
+        bookedAppointment: 22,
         languages: ['Çince'],
         rating: 1,
         feedback: 12,
         recommended: 55,
         field: 'Pediatri',
-        services: 'Dolgu',
+        services: ['Diş kontrolü', 'Psikolojik muayene'],
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
         department: 'Psikiyatri',
@@ -248,7 +277,8 @@ export class DoctorsService {
           { type: 'Görüntülü Görüşme', icon: 'pi-video' },
           { type: 'Sesli Görüşme', icon: 'pi-microphone' },
           { type: 'Mesajlaşma', icon: 'pi-comment' }
-        ]
+        ],
+        availableTime: '08:00 - 12:00'
       }
     ];
   }

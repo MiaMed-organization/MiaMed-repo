@@ -23,16 +23,18 @@
             <p class="font-light mb-2 text-xs">
                 <i class="pi pi-map-marker"></i> Konum, {{ doctor.location }}
             </p>
-            
+
             <div class="clinic-images mb-1">
                 <img *ngFor="let image of doctor.clinicImages" [src]="'../../../../../assets/images/clinics/' + image"
                     [alt]="doctor.name" class="clinic-image" />
             </div>
+
             <div class="services font-light text-sm">
-                <span>{{doctor.services}}</span>
+                <span *ngFor="let service of doctor.services" class="service-box">{{ service }}</span>
             </div>
+
         </div>
-        
+
         <div class="doctor-details mr-2">
             <p class="font-light my-1 text-xs">
                 <i class="pi pi-thumbs-up"></i> {{ doctor.recommended }}%

@@ -1,35 +1,239 @@
 .card-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1.5fr 1fr;
+    /* Sütun genişlikleri */
+    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 1200px;
-    position: relative;
-    /* Position relative for bookmark */
+    gap: 20px;
+    /* Sütunlar arasındaki boşluk */
+    align-items: center;
+    max-width: 1300px;
 }
 
 .img-container {
-    flex: 1;
-    overflow: hidden;
     display: flex;
     justify-content: center;
-    margin-right: 20px;
-    position: relative;
-    /* Position relative for bookmark */
+    align-items: center;
 }
 
 .img-container img {
-    width: 100%;
-    max-height: 170px;
+    height: 185spx;
+    width: 230px;
     border-radius: 4px;
     transition: transform 0.6s ease-in-out;
 }
 
-.img-container:hover img {
-    transform: scale(1.1);
+
+.doctor-info {
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.name-container {
+    display: flex;
+    align-items: center;
+    margin-top: 0px;
+}
+
+.name-container i {
+    color: green;
+    margin-left: 5px;
+}
+
+.field-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 4px;
+    margin-left: 4px;
+    background-color: #f2f8ff; /* Arka plan rengi */
+    border: 1px solid #ccc; /* Sınır rengi */
+    border-radius: 5px; /* Yuvarlak köşeler */
+    font-size: 14px;
+    color: #555; /* Yazı rengi */
+    font-weight: 500; /* Yazı kalınlığı */
+}
+
+.field-icon {
+    color: #673ab7; /* İkonun rengi (Mor tonları) */
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+
+.doctor-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.doctor-connections {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px; /* Add space between the items */
+    padding: 10px 0;
+}
+
+.icon-container {
+    display: flex;
+    gap: 5px;
+    /* Butonlar arasında boşluk */
+}
+
+.icon-button {
+    background-color: #f2f8ff;
+    /* Arkaplan rengi */
+    border: 2px solid #d3dce6;
+    /* Sınır rengi */
+    border-radius: 50%;
+    /* Yuvarlak buton */
+    padding: 5px;
+    /* İçerik boşluğu */
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icon-button i {
+    font-size: 15px;
+    /* İkon boyutu */
+    color: #424e5a;
+    /* İkon rengi */
+}
+
+.icon-button:hover {
+    background-color: #d3dce6;
+    /* Hover durumunda arkaplan rengi */
+}
+
+.accepting-patients {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+}
+
+
+.consultation-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.consultation-button {
+    background-color: #f2f8ff;
+    /* Arkaplan rengi */
+    border: 2px solid #d3dce6;
+    /* Sınır rengi */
+    border-radius: 7px;
+    /* Hafif yuvarlak köşeler */
+    padding: 4px 6px;
+    width: 160px;
+    /* İçerik boşluğu */
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    /* İkon ve metin arasında boşluk */
+    font-size: 14px;
+    /* Yazı boyutu */
+    color: #424e5a;
+    /* Yazı rengi */
+}
+
+.consultation-button i {
+    font-size: 15px;
+    /* İkon boyutu */
+    color: #424e5a;
+    /* İkon rengi */
+}
+
+.consultation-button:hover {
+    background-color: #d3dce6;
+    /* Hover durumunda arkaplan rengi */
+}
+
+.card-footer {
+    grid-column: 1 / -1;
+    /* Footer'ın tüm sütunları kaplamasını sağlar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid #ddd;
+}
+
+
+.footer-left {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-item i {
+    background-color: #1379ec;
+    /* Lacivert arka plan */
+    border-radius: 50%;
+    /* Yuvarlak şekil */
+    padding: 8px;
+    /* İçerik boşluğu */
+    color: #fff;
+    /* İkon rengi beyaz */
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer-item:nth-child(2) i {
+    background-color: #4850c0;
+    /* Mor-lacivert arası arka plan */
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.price-info {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    /* Genel font boyutunu ayarlayın */
+    color: #555;
+    /* Yazı rengi */
+}
+
+.price-info span {
+    margin-left: 5px; /* Randevu ücreti ve değerler arasında boşluk bırakır */
+    white-space: nowrap; /* Satırın kesilmesini engeller, tüm metni aynı satırda tutar */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+:host {
+    ::ng-deep .p-button {
+        width: 180px;
+        display: block;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        text-align: center;
+        padding: 14px 19px;
+        border-radius: 4px;
+    }
 }
 
 
@@ -48,63 +252,6 @@
     }
 }
 
-.doctor-info {
-    flex: 2;
-    padding-right: 20px;
-}
-
-.name-container {
-    display: flex;
-    align-items: center;
-}
-
-.clinic-images img {
-    max-width: 30px;
-    height: auto;
-    border-radius: 0.3rem;
-    margin-right: 5px;
-}
-
-.services {
-    border: 1px solid #cccccc;
-    display: inline-block;
-    font-size: 12px;
-    padding: 3px 10px;
-    border-radius: 4px;
-    margin-top: 5px;
-}
-
-.doctor-details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: 180px;
-    min-width: 150px;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    margin-top: 10px;
-    width: 100%;
-}
-
-:host {
-    ::ng-deep .p-button {
-        width: 180px;
-        display: block;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-align: center;
-        padding: 10px 15px;
-        border-radius: 4px;
-    }
-}
-
 @media (max-width: 1200px) {
     .img-container img {
         max-width: 200px;
@@ -115,7 +262,6 @@
 @media (max-width: 480px) {
     .card-container {
         flex-direction: column;
-        /* Küçük ekranlarda alt alta sıralanması için eklendi */
         align-items: center !important;
         min-width: 350px;
     }
