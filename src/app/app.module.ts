@@ -55,6 +55,11 @@ import { PaginatorModule } from 'primeng/paginator';
 import { DoctorProfileComponent } from './components/pages/doctor-profile/doctor-profile.component';
 import { DoctorProfileCardComponent } from './components/pages/doctor-profile/doctor-profile-card/doctor-profile-card.component';
 import { DividerModule } from 'primeng/divider';
+import { BookingComponent } from './components/pages/booking/booking.component';
+import { CheckoutComponent } from './components/pages/checkout/checkout.component';
+import { BookingSuccessComponent } from './components/pages/booking-success/booking-success.component';
+import { ProfileSettingsComponent } from './components/pages/profile-settings/profile-settings.component';
+import { ChangePasswordComponent } from './components/pages/change-password/change-password.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +86,11 @@ import { DividerModule } from 'primeng/divider';
     ExtendedCardComponent,
     DoctorProfileComponent,
     DoctorProfileCardComponent,
+    BookingComponent,
+    CheckoutComponent,
+    BookingSuccessComponent,
+    ProfileSettingsComponent,
+    ChangePasswordComponent,
   ],
   imports: [
     BrowserModule,

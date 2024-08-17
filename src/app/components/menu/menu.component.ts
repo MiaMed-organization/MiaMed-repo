@@ -67,27 +67,32 @@ export class MenuComponent implements OnInit {
 
       {
         label: 'Randevular',
-        icon: 'pi pi-book'
+        icon: 'pi pi-book',
+        routerLink: ['/booking']
       },
 
       {
         label: 'Checkout',
-        icon: 'pi pi-receipt'
+        icon: 'pi pi-receipt',
+        routerLink: ['/checkout']
       },
 
       {
-        label: 'Mesaj',
-        icon: 'pi pi-comment'
+        label: 'Başarılı randevu',
+        icon: 'pi pi-clipboard',
+        routerLink: ['/booking-success']
       },
 
       {
         label: 'Profil Ayarları',
-        icon: 'pi pi-cog'
+        icon: 'pi pi-cog',
+        routerLink: ['/profile-settings']
       },
 
       {
         label: 'Şifre Değiştir',
-        icon: 'pi pi-key'
+        icon: 'pi pi-key',
+        routerLink: ['/change-password']
       },
     ];
 
