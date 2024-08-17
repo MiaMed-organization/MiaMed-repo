@@ -54,6 +54,7 @@ import { ExtendedCardComponent } from './components/pages/doctor-search/extended
 import { PaginatorModule } from 'primeng/paginator';
 import { DoctorProfileComponent } from './components/pages/doctor-profile/doctor-profile.component';
 import { DoctorProfileCardComponent } from './components/pages/doctor-profile/doctor-profile-card/doctor-profile-card.component';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { DoctorProfileCardComponent } from './components/pages/doctor-profile/do
     CalendarModule,
     BreadcrumbModule,
     SliderModule,
-    PaginatorModule
+    PaginatorModule,
+    DividerModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

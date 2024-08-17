@@ -1,14 +1,12 @@
 .card-container {
     display: grid;
     grid-template-columns: 1fr 2fr 1.5fr 1fr;
-    /* Sütun genişlikleri */
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     gap: 20px;
-    /* Sütunlar arasındaki boşluk */
     align-items: center;
     max-width: 1300px;
 }
@@ -74,26 +72,26 @@
 .doctor-connections {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 15px; /* Add space between the items */
-    padding: 10px 0;
+    justify-content: space-between; /* Üst ve alt arasında boşluk bırak */
+    height: 100%; /* Tüm kartın yüksekliğini kapla */
 }
 
 .icon-container {
+    align-self: flex-end; /* İconları üste yerleştir */
     display: flex;
     gap: 5px;
-    /* Butonlar arasında boşluk */
+}
+
+.accepting-patients, 
+.consultation-buttons {
+    align-self: flex-end; /* Diğer kısımları alta yerleştir */
 }
 
 .icon-button {
     background-color: #f2f8ff;
-    /* Arkaplan rengi */
     border: 2px solid #d3dce6;
-    /* Sınır rengi */
     border-radius: 50%;
-    /* Yuvarlak buton */
     padding: 5px;
-    /* İçerik boşluğu */
     cursor: pointer;
     outline: none;
     display: flex;
@@ -104,14 +102,11 @@
 
 .icon-button i {
     font-size: 15px;
-    /* İkon boyutu */
     color: #424e5a;
-    /* İkon rengi */
 }
 
 .icon-button:hover {
     background-color: #d3dce6;
-    /* Hover durumunda arkaplan rengi */
 }
 
 .accepting-patients {
@@ -130,24 +125,20 @@
 
 .consultation-button {
     background-color: #f2f8ff;
-    /* Arkaplan rengi */
     border: 2px solid #d3dce6;
-    /* Sınır rengi */
     border-radius: 7px;
-    /* Hafif yuvarlak köşeler */
     padding: 4px 6px;
     width: 160px;
-    /* İçerik boşluğu */
+    align-items: center; /* Dikeyde ortalama */
+    justify-content: center; /* Yatayda ortalama */
+    text-align: center; /* Yazıyı ortala */
     cursor: pointer;
     outline: none;
     display: flex;
     align-items: center;
     gap: 4px;
-    /* İkon ve metin arasında boşluk */
     font-size: 14px;
-    /* Yazı boyutu */
     color: #424e5a;
-    /* Yazı rengi */
 }
 
 .consultation-button i {

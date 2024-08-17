@@ -16,6 +16,7 @@ export interface Doctors {
     availableTime?: string; // Yeni eklendi
     rating?: number;
     email?: string;
+    bio?:string;
     experience?: number;
     consultation?: { type: string; icon: string }[];
     feedback?: number;
@@ -23,4 +24,11 @@ export interface Doctors {
     services?: string[]; // Dizi olarak değiştirildi
     bookedAppointment?: number; // Yeni eklendi
     clinicImages: string[];
+    practiceExperience?: {  // Practice Experience için dizi
+        img: string[];
+        hospital: string[];
+        timePeriod: string[];
+        total: string[];
+        experiencedIn: string[];
+    }[];
 }

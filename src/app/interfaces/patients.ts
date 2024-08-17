@@ -15,4 +15,8 @@ export interface Patients {
     visitType?: string;
     appointmentType?: string;
     clinicLocation?: string;
+    rating?: number; // 1-5 arası puan
+    comment?: string; // Hastanın yorumu
+    commentDate?: string; // Yorumun yapıldığı tarih
+    isRecommend?: boolean; // Tavsiye durumu (true/false)
 }
