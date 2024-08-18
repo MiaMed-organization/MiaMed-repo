@@ -9,7 +9,82 @@
 
 
             <div class="content-container">
-                
+
+                <div class="personal-info">
+                    <form [formGroup]="personalInfoForm" (ngSubmit)="submitPersonalInfo()">
+                        <p-card header="Kişisel Bilgiler" [style]="{ width: '100%', 'padding': '1rem' }">
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="field">
+                                    <label for="firstName">İsim <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="firstName" class="input-field"
+                                        placeholder="İsim" (keypress)="validateText($event)" />
+                                    <small
+                                        *ngIf="firstName.hasError('required') && (firstName.dirty || firstName.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+
+                                </div>
+
+                                <div class="field">
+                                    <label for="lastName">Soyisim <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="lastName" class="input-field"
+                                        placeholder="Soyisim" (keypress)="validateText($event)" />
+                                    <small *ngIf="lastName.hasError('required') && (lastName.dirty || lastName.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+
+                                </div>
+
+                                <div class="field">
+                                    <label for="phoneNumber">Telefon Numarası <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="phoneNumber" class="input-field"
+                                        placeholder="901234567890" (keypress)="validatePhoneNumber($event)" />
+                                    <small
+                                        *ngIf="phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+
+                                    <small
+                                        *ngIf="phoneNumber.hasError('minlength') && !phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
+                                        class="block p-error">
+                                        Telefon numarası en az 10 haneli olmalıdır.
+                                    </small>
+                                    <small
+                                        *ngIf="phoneNumber.hasError('maxlength') && !phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
+                                        class="block p-error">
+                                        Telefon numarası en fazla 12 haneli olabilir.
+                                    </small>
+
+                                </div>
+
+                                <div class="field">
+                                    <label for="emailAddress">Email Adresi <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="emailAddress" class="input-field"
+                                        placeholder="example@example.com" />
+                                    <small
+                                        *ngIf="emailAddress.hasError('required') && (emailAddress.dirty || emailAddress.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="emailAddress.hasError('email') && !emailAddress.hasError('required') && (emailAddress.dirty || emailAddress.touched)"
+                                        class="block p-error">
+                                        Geçerli bir email adresi giriniz.
+                                    </small>
+                                </div>
+
+                            </div>
+                        </p-card>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>

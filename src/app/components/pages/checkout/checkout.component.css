@@ -1,0 +1,77 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.page-container {
+    margin-top: var(--navbar-height);
+    flex: 1;
+    overflow: auto;
+    height: calc(100vh - var(--navbar-height));
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.content-container {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+}
+
+
+.personal-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.input-field {
+    width: 100%;
+    /* Genişliği %100 yap */
+    display: block;
+    /* Inputları block yaparak label ile alt alta durmasını sağla */
+}
+
+:host ::ng-deep .p-card .p-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+:host ::ng-deep .field {
+    margin-bottom: 0.3rem;
+}
+
+:host ::ng-deep .p-card .p-card-body {
+    padding: 0.5rem;
+}
+
+.field>label {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+:host ::ng-deep .p-inputtext {
+
+    font-size: 0.9rem;
+    padding: 0.60rem;
+}
+
+:host ::ng-deep .p-card-content {
+    padding-bottom: 0px;
+}
