@@ -1,27 +1,43 @@
-import { Component, ViewChild, Renderer2 } from '@angular/core';
-import { FileUpload } from 'primeng/fileupload';
+import { Component, ViewChild } from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { FileUpload } from 'primeng/fileupload';
 
 @Component({
   selector: 'app-profile-img-card',
   templateUrl: './profile-img-card.component.html',
-  styleUrls: ['./profile-img-card.component.css']
+  styleUrls: ['./profile-img-card.component.css'],
+  providers: [MessageService]
 })
 export class ProfileImgCardComponent {
 
   @ViewChild('fileUpload') fileUpload: FileUpload;
+  
+  imageSrc: string | ArrayBuffer | null = null;
 
-  constructor(private messageService: MessageService, private renderer: Renderer2) { }
+  constructor(private messageService: MessageService) { }
+
+  onSelect(event: any) {
+    const file: File = event.files[0];
+    const fileExtension = file.name.split('.').pop().toLowerCase();
+
+    const acceptedFormats = ['jpg', 'jpeg', 'png', 'svg'];
+
+    if (!acceptedFormats.includes(fileExtension)) {
+      this.messageService.add({ severity: 'error', summary: 'Hata', detail: 'Dosya uzantısı geçerli değil' });
+      this.fileUpload.clear();  // Geçersiz dosyayı temizle
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.imageSrc = reader.result;
+    };
+    reader.readAsDataURL(file);  // Dosyayı img src için URL'ye dönüştür
+  }
 
   clearFiles() {
-    // Seçili dosyaları temizleme
-    this.fileUpload.clear();
-
-    // Dosya input alanını sıfırlama
-    const fileInput = this.renderer.selectRootElement('input[type="file"]');
-    if (fileInput) {
-      this.renderer.setProperty(fileInput, 'value', '');
-    }
+    this.imageSrc = null;  // Görseli kaldır
+    this.fileUpload.clear();  // Seçili dosyaları temizleme
   }
 
   onUpload(event: any) {

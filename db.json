@@ -5,14 +5,16 @@
       "fullName": "öz",
       "email": "oz@hotmail.com",
       "password": "321",
-      "userName": "öz"
+      "userName": "öz",
+       "profileImage": "url_to_image_1"
     },
     {
       "id": "f3d8",
       "fullName": "test",
       "email": "test@hotmail.com",
       "password": "123",
-      "userName": "test"
+      "userName": "test",
+       "profileImage": "url_to_image_2"
     }
   ]
 }

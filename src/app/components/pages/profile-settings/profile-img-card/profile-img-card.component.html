@@ -1,27 +1,26 @@
 <div class="profile-img-card">
     <div class="flex mb-1">
-        <div class="profile-img-logo">
-            <i class="pi pi-images"></i>
+      <div class="profile-img-logo">
+        <img *ngIf="imageSrc" [src]="imageSrc" alt="Profile Image" />
+        <i *ngIf="!imageSrc" class="pi pi-images"></i>
+      </div>
+  
+      <div class="profile-img-info text-sm text-gray-600">
+        <h5 class="font-semibold text-lg mt-0 mb-2">Profil Fotoğrafı</h5>
+  
+        <div class="button-group">
+          <p-fileUpload #fileUpload mode="basic" chooseLabel="Yükle" chooseIcon="pi pi-upload" name="demo[]"
+                        url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*"
+                        maxFileSize="4000000" (onSelect)="onSelect($event)" class="upload-button">
+          </p-fileUpload>
+  
+          <p-button class="my-1" icon="pi pi-trash" label="Kaldır" severity="danger" text="true" (click)="clearFiles()"></p-button>
         </div>
-
-        <div class="profile-img-info text-sm text-gray-600">
-            <h5 class="font-semibold mt-0 mb-2">Profil Fotoğrafı</h5>
-
-
-            <div class="button-group">
-
-                <p-fileUpload mode="basic" chooseLabel="Yükle" chooseIcon="pi pi-upload" name="demo[]"
-                    url="https://www.primefaces.org/cdn/api/upload.php" accept="image/*" maxFileSize="4000000"
-                    (onUpload)="onUpload($event)" class="upload-button"></p-fileUpload>
-
-                <p-button class="my-1" icon="pi pi-trash" label="Kaldır" severity="danger" text="true" (click)="clearFiles()"></p-button>
-
-            </div>
-
-
-            <p class="font-light text-xs my-2">
-                Dosya boyutu en fazla 4MB olabilir, Kabul edilen format jpg,png,svg
-            </p>
-        </div>
+  
+        <p class="font-light text-xs my-2">
+          Dosya boyutu en fazla 4MB olabilir, Kabul edilen format jpg,png,svg
+        </p>
+      </div>
     </div>
-</div>
+  </div>
+  
