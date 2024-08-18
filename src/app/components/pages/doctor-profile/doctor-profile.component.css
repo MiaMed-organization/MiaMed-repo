@@ -110,17 +110,6 @@ section h2 {
   flex-direction: column;
 }
 
-.profile-card-content {
-  display: flex;
-  justify-content: space-between; /* Öğeleri yatayda (horizontal) ayırır */
-  align-items: center; /* Öğeleri dikeyde ortalar */
-}
-
-.profile-card-left {
-  display: flex;
-  align-items: center;
-}
-
 .profile-card-logo {
   width: 100px;
   height: auto;
@@ -136,11 +125,6 @@ section h2 {
 .profile-card-info p {
   margin: 5px 0 0 0;
   color: #666;
-}
-
-.profile-card-details p {
-  margin: 5px 0;
-  color: #333;
 }
 
 .service-box {

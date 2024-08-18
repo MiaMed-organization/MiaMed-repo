@@ -60,6 +60,8 @@ import { CheckoutComponent } from './components/pages/checkout/checkout.componen
 import { BookingSuccessComponent } from './components/pages/booking-success/booking-success.component';
 import { ProfileSettingsComponent } from './components/pages/profile-settings/profile-settings.component';
 import { ChangePasswordComponent } from './components/pages/change-password/change-password.component';
+import { FileUploadModule } from 'primeng/fileupload';
+import { ProfileImgCardComponent } from './components/pages/profile-settings/profile-img-card/profile-img-card.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,7 @@ import { ChangePasswordComponent } from './components/pages/change-password/chan
     BookingSuccessComponent,
     ProfileSettingsComponent,
     ChangePasswordComponent,
+    ProfileImgCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -123,7 +126,8 @@ import { ChangePasswordComponent } from './components/pages/change-password/chan
     BreadcrumbModule,
     SliderModule,
     PaginatorModule,
-    DividerModule
+    DividerModule,
+    FileUploadModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

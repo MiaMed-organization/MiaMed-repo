@@ -1,0 +1,41 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.page-container {
+    margin-top: var(--navbar-height);
+    flex: 1;
+    overflow: auto;
+    height: calc(100vh - var(--navbar-height));
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+}
+
+.content-container {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+}
+
+
+.personal-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}

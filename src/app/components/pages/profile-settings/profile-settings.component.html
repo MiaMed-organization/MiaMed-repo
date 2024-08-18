@@ -6,10 +6,113 @@
 
         <div class="page-container">
 
-
-
             <div class="content-container">
-                
+
+                <app-profile-img-card></app-profile-img-card>
+
+                <div class="personal-info">
+                    <form [formGroup]="personalInfoForm" (ngSubmit)="submitPersonalInfo()">
+                        <p-card header="Kişisel Bilgiler" [style]="{ width: '100%', 'padding': '1rem' }">
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="field">
+                                    <label for="firstName">İsim</label>
+                                    <input type="text" pInputText formControlName="firstName" class="w-full"
+                                        placeholder="İsim" />
+                                    <small
+                                        *ngIf="firstName.hasError('required') && (firstName.dirty || firstName.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="firstName.hasError('pattern') && !firstName.hasError('required') && (firstName.dirty || firstName.touched)"
+                                        class="block p-error">
+                                        İsim yalnızca harflerden oluşabilir.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="lastName">Soyisim</label>
+                                    <input type="text" pInputText formControlName="lastName" class="w-full"
+                                        placeholder="Soyisim" />
+                                    <small *ngIf="lastName.hasError('required') && (lastName.dirty || lastName.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="lastName.hasError('pattern') && !lastName.hasError('required') && (lastName.dirty || lastName.touched)"
+                                        class="block p-error">
+                                        Soyisim yalnızca harflerden oluşabilir.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="dateOfBirth">Doğum Tarihi</label>
+                                    <p-calendar [(ngModel)]="dateOfBirth" [showIcon]="true"
+                                        formControlName="dateOfBirth" class="w-full"
+                                        placeholder="gg/aa/yyyy"></p-calendar>
+                                    <small
+                                        *ngIf="dateOfBirth.hasError('required') && (dateOfBirth.dirty || dateOfBirth.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="phoneNumber">Telefon Numarası</label>
+                                    <input type="text" pInputText formControlName="phoneNumber" class="w-full"
+                                        placeholder="901234567890" (keypress)="validatePhoneNumber($event)" />
+                                    <small
+                                        *ngIf="phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="phoneNumber.hasError('pattern') && !phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
+                                        class="block p-error">
+                                        Telefon numarası yalnızca sayılardan oluşabilir.
+                                    </small>
+                                    <small
+                                        *ngIf="phoneNumber.hasError('minlength') && !phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
+                                        class="block p-error">
+                                        Telefon numarası en az 10 haneli olmalıdır.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="emailAddress">Email Adresi</label>
+                                    <input type="text" pInputText formControlName="emailAddress" class="w-full"
+                                        placeholder="example@example.com" />
+                                    <small
+                                        *ngIf="emailAddress.hasError('required') && (emailAddress.dirty || emailAddress.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="emailAddress.hasError('email') && !emailAddress.hasError('required') && (emailAddress.dirty || emailAddress.touched)"
+                                        class="block p-error">
+                                        Geçerli bir email adresi giriniz.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="bloodGroup">Kan Grubu</label>
+                                    <input type="text" pInputText formControlName="bloodGroup" class="w-full"
+                                        placeholder="A Rh+" />
+                                    <small
+                                        *ngIf="bloodGroup.hasError('required') && (bloodGroup.dirty || bloodGroup.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                </div>
+                            </div>
+
+                            <p-button label="Gönder" styleClass="w-full mt-4" [disabled]="personalInfoForm.invalid"
+                                type="submit"></p-button>
+                        </p-card>
+                    </form>
+                </div>
+
+
             </div>
         </div>
     </div>
