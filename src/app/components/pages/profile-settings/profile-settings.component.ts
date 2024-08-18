@@ -32,10 +32,6 @@ export class ProfileSettingsComponent {
     this.maxDate = new Date();
   }
 
-  onUpload(event: any) {  // Burada event türünü any olarak güncelledik
-    this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
-  }
-
   get firstName() {
     return this.personalInfoForm.controls['firstName'];
   }
@@ -79,6 +75,10 @@ export class ProfileSettingsComponent {
 
   get pincode() {
     return this.addressForm.controls['pincode'];
+  }
+  
+  onUpload(event: any) {  // Burada event türünü any olarak güncelledik
+    this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
   }
 
   submitPersonalInfo() {
