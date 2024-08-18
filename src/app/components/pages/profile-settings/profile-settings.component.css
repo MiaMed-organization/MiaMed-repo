@@ -39,3 +39,44 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
+.button-container{
+    justify-content: flex-end !important;
+}
+
+/* :host ::ng-deep */
+.input-field {
+    width: 100%;
+    /* Genişliği %100 yap */
+    display: block;
+    /* Inputları block yaparak label ile alt alta durmasını sağla */
+}
+
+:host ::ng-deep .p-card .p-card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+:host ::ng-deep .field {
+    margin-bottom: 0.3rem;
+}
+
+:host ::ng-deep .p-card .p-card-body {
+    padding: 0.5rem;
+}
+
+.field>label {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+:host ::ng-deep .p-inputtext {
+
+    font-size: 0.9rem;
+    padding: 0.60rem;
+}
+
+:host ::ng-deep .p-card-content {
+    padding-bottom: 0px;
+}

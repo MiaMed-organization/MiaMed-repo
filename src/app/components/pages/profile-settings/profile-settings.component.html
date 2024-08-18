@@ -15,40 +15,35 @@
                         <p-card header="Kişisel Bilgiler" [style]="{ width: '100%', 'padding': '1rem' }">
                             <div class="grid grid-cols-3 gap-4">
                                 <div class="field">
-                                    <label for="firstName">İsim</label>
-                                    <input type="text" pInputText formControlName="firstName" class="w-full"
-                                        placeholder="İsim" />
+                                    <label for="firstName">İsim <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="firstName" class="input-field"
+                                        placeholder="İsim"  (keypress)="validateText($event)"/>
                                     <small
                                         *ngIf="firstName.hasError('required') && (firstName.dirty || firstName.touched)"
                                         class="block p-error">
                                         Bu alan zorunludur.
                                     </small>
-                                    <small
-                                        *ngIf="firstName.hasError('pattern') && !firstName.hasError('required') && (firstName.dirty || firstName.touched)"
-                                        class="block p-error">
-                                        İsim yalnızca harflerden oluşabilir.
-                                    </small>
+                               
                                 </div>
 
                                 <div class="field">
-                                    <label for="lastName">Soyisim</label>
-                                    <input type="text" pInputText formControlName="lastName" class="w-full"
-                                        placeholder="Soyisim" />
+                                    <label for="lastName">Soyisim <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="lastName" class="input-field"
+                                        placeholder="Soyisim" (keypress)="validateText($event)"/>
                                     <small *ngIf="lastName.hasError('required') && (lastName.dirty || lastName.touched)"
                                         class="block p-error">
                                         Bu alan zorunludur.
                                     </small>
-                                    <small
-                                        *ngIf="lastName.hasError('pattern') && !lastName.hasError('required') && (lastName.dirty || lastName.touched)"
-                                        class="block p-error">
-                                        Soyisim yalnızca harflerden oluşabilir.
-                                    </small>
+                                
                                 </div>
 
                                 <div class="field">
-                                    <label for="dateOfBirth">Doğum Tarihi</label>
-                                    <p-calendar [(ngModel)]="dateOfBirth" [showIcon]="true"
-                                        formControlName="dateOfBirth" class="w-full"
+                                    <label for="dateOfBirth">Doğum Tarihi <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <p-calendar [(ngModel)]="dateOfBirth" [showIcon]="true" [maxDate]="maxDate"
+                                        formControlName="dateOfBirth" class="input-field" 
                                         placeholder="gg/aa/yyyy"></p-calendar>
                                     <small
                                         *ngIf="dateOfBirth.hasError('required') && (dateOfBirth.dirty || dateOfBirth.touched)"
@@ -58,29 +53,33 @@
                                 </div>
 
                                 <div class="field">
-                                    <label for="phoneNumber">Telefon Numarası</label>
-                                    <input type="text" pInputText formControlName="phoneNumber" class="w-full"
+                                    <label for="phoneNumber">Telefon Numarası <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="phoneNumber" class="input-field"
                                         placeholder="901234567890" (keypress)="validatePhoneNumber($event)" />
                                     <small
                                         *ngIf="phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
                                         class="block p-error">
                                         Bu alan zorunludur.
                                     </small>
-                                    <small
-                                        *ngIf="phoneNumber.hasError('pattern') && !phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
-                                        class="block p-error">
-                                        Telefon numarası yalnızca sayılardan oluşabilir.
-                                    </small>
+                             
                                     <small
                                         *ngIf="phoneNumber.hasError('minlength') && !phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
                                         class="block p-error">
                                         Telefon numarası en az 10 haneli olmalıdır.
                                     </small>
+                                    <small
+                                        *ngIf="phoneNumber.hasError('maxlength') && !phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
+                                        class="block p-error">
+                                        Telefon numarası en fazla 12 haneli olabilir.
+                                    </small>
+
                                 </div>
 
                                 <div class="field">
-                                    <label for="emailAddress">Email Adresi</label>
-                                    <input type="text" pInputText formControlName="emailAddress" class="w-full"
+                                    <label for="emailAddress">Email Adresi <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="emailAddress" class="input-field"
                                         placeholder="example@example.com" />
                                     <small
                                         *ngIf="emailAddress.hasError('required') && (emailAddress.dirty || emailAddress.touched)"
@@ -95,8 +94,9 @@
                                 </div>
 
                                 <div class="field">
-                                    <label for="bloodGroup">Kan Grubu</label>
-                                    <input type="text" pInputText formControlName="bloodGroup" class="w-full"
+                                    <label for="bloodGroup">Kan Grubu <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="bloodGroup" class="input-field"
                                         placeholder="A Rh+" />
                                     <small
                                         *ngIf="bloodGroup.hasError('required') && (bloodGroup.dirty || bloodGroup.touched)"
@@ -106,10 +106,97 @@
                                 </div>
                             </div>
 
-                            <p-button label="Gönder" styleClass="w-full mt-4" [disabled]="personalInfoForm.invalid"
-                                type="submit"></p-button>
                         </p-card>
                     </form>
+                </div>
+
+
+                <div class="address-info mt-2">
+                    <form [formGroup]="addressForm" (ngSubmit)="submitAddressInfo()">
+                        <p-card header="Adres Bilgileri" [style]="{ width: '100%', 'padding': '1rem' }">
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="field col-span-3">
+                                    <label for="address">Adres <span class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="address" class="input-field"
+                                        placeholder="Adres" />
+                                    <small *ngIf="address.hasError('required') && (address.dirty || address.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="city">Şehir <span class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="city" class="input-field"
+                                        placeholder="Şehir" (keypress)="validateText($event)" />
+                                    <small *ngIf="city.hasError('required') && (city.dirty || city.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="city.hasError('pattern') && !city.hasError('required') && (city.dirty || city.touched)"
+                                        class="block p-error">
+                                        Şehir yalnızca harflerden oluşabilir.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="state">İlçe <span class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="state" class="input-field"
+                                        placeholder="İlçe" (keypress)="validateText($event)" />
+                                    <small *ngIf="state.hasError('required') && (state.dirty || state.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="state.hasError('pattern') && !state.hasError('required') && (state.dirty || state.touched)"
+                                        class="block p-error">
+                                        İlçe yalnızca harflerden oluşabilir.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="country">Ülke <span class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="country" class="input-field"
+                                        placeholder="Ülke" (keypress)="validateText($event)" />
+                                    <small *ngIf="country.hasError('required') && (country.dirty || country.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="country.hasError('pattern') && !country.hasError('required') && (country.dirty || country.touched)"
+                                        class="block p-error">
+                                        Ülke yalnızca harflerden oluşabilir.
+                                    </small>
+                                </div>
+
+                                <div class="field">
+                                    <label for="pincode">Posta Kodu <span
+                                            class="text-red-500 font-semibold">*</span></label>
+                                    <input type="text" pInputText formControlName="pincode" class="input-field"
+                                        placeholder="Posta Kodu" (keypress)="validatePincode($event)" />
+                                    <small *ngIf="pincode.hasError('required') && (pincode.dirty || pincode.touched)"
+                                        class="block p-error">
+                                        Bu alan zorunludur.
+                                    </small>
+                                    <small
+                                        *ngIf="pincode.hasError('pattern') && !pincode.hasError('required') && (pincode.dirty || pincode.touched)"
+                                        class="block p-error">
+                                        Posta kodu yalnızca sayılardan oluşabilir.
+                                    </small>
+                                </div>
+                            </div>
+
+                        </p-card>
+                    </form>
+                </div>
+
+                <div class="button-container mt-3 flex gap-4">
+                    <p-button label="İptal" outlined="true" styleClass="w-full mt-4" (click)="resetForms()" severity="secondary"></p-button>
+
+                    <p-button label="Gönder" styleClass="w-full mt-4"
+                        [disabled]="personalInfoForm.invalid || addressForm.invalid" (click)="submitForms()"
+                        type="button"></p-button>
                 </div>
 
 

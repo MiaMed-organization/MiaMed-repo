@@ -1,14 +1,11 @@
 .profile-img-card {
     border: 1px solid #e0e0e0;
-    /* Hafif gri border */
     border-radius: 8px;
-    /* Hafif yuvarlatılmış köşeler */
     padding: 15px;
     margin-bottom: 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    /* Hafif gölge */
-    max-width: 800px;
+    max-width: 1000px;
     height: 130px;
     display: flex;
     flex-direction: column;
@@ -22,30 +19,23 @@
     width: 90px;
     height: 85px;
     background-color: #f0f0f0;
-    /* Açık gri arka plan */
     display: flex;
     align-items: center;
-    /* Dikeyde ortalamak için */
     justify-content: center;
-    /* Yatayda ortalamak için */
     margin-right: 15px;
     border: 1px solid #e0e0e0;
-    /* Görselin etrafında hafif gri border */
     border-radius: 4px;
 }
 
 .profile-img-logo i {
     font-size: 24px;
-    /* İkon boyutu */
     color: #666;
-    /* İkon rengi */
 }
 
 .button-group {
     display: flex;
     align-items: center;
     gap: 3px;
-    /* Butonlar arasında boşluk */
 }
 
 
