@@ -22,7 +22,7 @@ export class DoctorsService {
         rating: 3,
         feedback: 24,
         recommended: 90,
-        bio: 'Highly motivated and experienced doctor with a passion for providing excellent care to patients. Experienced in a wide variety of medical settings, with particular expertise in diagnostics, primary care and emergency medicine. Skilled in using the latest technology to streamline patient care. Committed to delivering compassionate, personalized care to each and every patient.',
+        bio: 'Highly motivated and experienced doctor with a passion for providing excellent care to patients.',
         field: 'Kalp Hastalıkları',
         services: ['Kalp muayenesi', 'EKG', 'Tansiyon ölçümü'],
         icon: 'pi-heart',
@@ -35,18 +35,7 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '10:30 - 16:00',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['Cambridge University Hospital', 'Hill Medical Hospital'],
-            timePeriod: ['Aralık 2020 - Ocak 2022', 'Ekim 2022 - Aralık 2022'],
-            total: ['2 Years 2 months', '1 Years 1 months'],
-            experiencedIn: [
-              'Experienced in a wide variety of medical settings, with particular expertise in diagnostics, primary care and emergency medicine.',
-              'Experienced in a wide variety of medical settings, with particular expertise in diagnostics, primary care and emergency medicine.'
-            ]
-          }
-        ]
+        consultationFee: 400
       },
       {
         id: '2',
@@ -62,7 +51,7 @@ export class DoctorsService {
         rating: 4,
         feedback: 30,
         recommended: 85,
-        bio: 'Passionate and dedicated to providing high-quality care to all patients. Extensive experience in diagnostics and emergency medicine. Strong focus on personalized treatment plans.',
+        bio: 'Passionate and dedicated to providing high-quality care to all patients. Extensive experience in diagnostics and emergency medicine.',
         field: 'Deri Hastalıkları',
         services: ['Cilt kontrolü', 'Alerji testi', 'Egzama tedavisi'],
         icon: 'pi-chart-bar',
@@ -75,18 +64,7 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '09:00 - 15:30',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['New York Presbyterian Hospital', 'Mount Sinai Hospital'],
-            timePeriod: ['Ocak 2018 - Mart 2020', 'Nisan 2020 - Ağustos 2021'],
-            total: ['2 Years 2 months', '1 Years 4 months'],
-            experiencedIn: [
-              'Extensive experience in diagnostics and emergency medicine, with a focus on dermatology.',
-              'Focused on personalized treatment plans for patients with complex skin conditions.'
-            ]
-          }
-        ]
+        consultationFee: 900
       },
       {
         id: '3',
@@ -115,18 +93,7 @@ export class DoctorsService {
           { type: 'Sesli Görüşme', icon: 'pi-microphone' }
         ],
         availableTime: '08:00 - 13:00',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['UCLA Medical Center', 'Stanford Children\'s Health'],
-            timePeriod: ['Temmuz 2019 - Aralık 2020', 'Ocak 2021 - Ekim 2021'],
-            total: ['1 Year 6 months', '9 months'],
-            experiencedIn: [
-              'Specialized in childhood diseases with a focus on early diagnosis.',
-              'Provided excellent pediatric care, focusing on childhood diseases and treatments.'
-            ]
-          }
-        ]
+        consultationFee: 250
       },
       {
         id: '4',
@@ -155,18 +122,7 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '11:00 - 17:00',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['Texas Dental Center', 'Dallas Dental Clinic'],
-            timePeriod: ['Mart 2018 - Mayıs 2020', 'Haziran 2020 - Kasım 2021'],
-            total: ['2 Years 3 months', '1 Year 5 months'],
-            experiencedIn: [
-              'Extensive experience in general dentistry, focusing on preventive care and dental hygiene.',
-              'Specialized in complex dental procedures with a focus on patient comfort.'
-            ]
-          }
-        ]
+        consultationFee: 750
       },
       {
         id: '5',
@@ -196,18 +152,7 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '10:00 - 14:30',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['Las Vegas Orthopedic Center', 'Reno Sports Clinic'],
-            timePeriod: ['Şubat 2020 - Ağustos 2021', 'Eylül 2021 - Şubat 2022'],
-            total: ['1 Year 6 months', '5 months'],
-            experiencedIn: [
-              'Specialized in sports injuries and rehabilitation, with a focus on orthopedic surgery.',
-              'Focused on improving patient mobility and quality of life through advanced surgical techniques.'
-            ]
-          }
-        ]
+        consultationFee: 875
       },
       {
         id: '6',
@@ -236,18 +181,7 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '08:30 - 16:00',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['Washington Neurology Center', 'Seattle Brain Institute'],
-            timePeriod: ['Eylül 2017 - Aralık 2019', 'Ocak 2020 - Haziran 2021'],
-            total: ['2 Years 4 months', '1 Year 6 months'],
-            experiencedIn: [
-              'Extensive experience in treating neurological disorders, with a focus on personalized care.',
-              'Specialized in advanced neurological treatments, including diagnostics and patient education.'
-            ]
-          }
-        ]
+        consultationFee: 225
       },
       {
         id: '7',
@@ -276,18 +210,7 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '09:00 - 14:00',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['Oregon ENT Center', 'Portland Hearing Clinic'],
-            timePeriod: ['Mart 2018 - Ağustos 2020', 'Eylül 2020 - Ocak 2022'],
-            total: ['2 Years 6 months', '1 Year 5 months'],
-            experiencedIn: [
-              'Specialized in ear, nose, and throat conditions with a focus on comprehensive care.',
-              'Provided advanced ENT treatments, focusing on patient comfort and successful outcomes.'
-            ]
-          }
-        ]
+        consultationFee: 450
       },
       {
         id: '8',
@@ -316,18 +239,7 @@ export class DoctorsService {
           { type: 'Sesli Görüşme', icon: 'pi-microphone' }
         ],
         availableTime: '11:30 - 16:30',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['Phoenix Aesthetic Center', 'Tucson Cosmetic Clinic'],
-            timePeriod: ['Nisan 2019 - Mart 2020', 'Nisan 2020 - Temmuz 2021'],
-            total: ['11 months', '1 Year 3 months'],
-            experiencedIn: [
-              'Focused on aesthetic procedures, with a strong emphasis on natural results.',
-              'Provided advanced cosmetic surgeries, specializing in patient satisfaction and safety.'
-            ]
-          }
-        ]
+        consultationFee: 400
       },
       {
         id: '9',
@@ -356,18 +268,7 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '09:30 - 15:00',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['Denver Children\'s Hospital', 'Boulder Pediatric Clinic'],
-            timePeriod: ['Ocak 2016 - Nisan 2018', 'Mayıs 2018 - Ekim 2020'],
-            total: ['2 Years 3 months', '2 Years 5 months'],
-            experiencedIn: [
-              'Extensive experience in treating children of all ages, focusing on early intervention.',
-              'Provided comprehensive pediatric care with a focus on patient and family support.'
-            ]
-          }
-        ]
+        consultationFee: 1200
       },
       {
         id: '10',
@@ -397,18 +298,7 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '08:00 - 12:00',
-        practiceExperience: [
-          {
-            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
-            hospital: ['Utah Psychiatric Center', 'Salt Lake Child Psychiatry Clinic'],
-            timePeriod: ['Temmuz 2019 - Şubat 2021', 'Mart 2021 - Aralık 2021'],
-            total: ['1 Year 8 months', '9 months'],
-            experiencedIn: [
-              'Focused on child and adolescent mental health, providing comprehensive psychiatric care.',
-              'Specialized in helping young people overcome mental health challenges and achieve their full potential.'
-            ]
-          }
-        ]
+        consultationFee: 700
       }
     ];
   }

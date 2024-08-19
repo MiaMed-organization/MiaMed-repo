@@ -6,6 +6,7 @@ export interface Doctors {
     title?: string;
     field?: string;
     icon?: string;
+    consultationFee?:number;
     location?: string;
     hospital?: string; // Yeni eklendi
     languages?: string[];

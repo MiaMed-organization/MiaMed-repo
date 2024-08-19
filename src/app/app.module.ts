@@ -62,6 +62,8 @@ import { ProfileSettingsComponent } from './components/pages/profile-settings/pr
 import { ChangePasswordComponent } from './components/pages/change-password/change-password.component';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ProfileImgCardComponent } from './components/pages/profile-settings/profile-img-card/profile-img-card.component';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { BookingSummaryComponent } from './components/pages/checkout/booking-summary/booking-summary.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +96,7 @@ import { ProfileImgCardComponent } from './components/pages/profile-settings/pro
     ProfileSettingsComponent,
     ChangePasswordComponent,
     ProfileImgCardComponent,
+    BookingSummaryComponent,
   ],
   imports: [
     BrowserModule,
@@ -127,7 +130,8 @@ import { ProfileImgCardComponent } from './components/pages/profile-settings/pro
     SliderModule,
     PaginatorModule,
     DividerModule,
-    FileUploadModule
+    FileUploadModule,
+    RadioButtonModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

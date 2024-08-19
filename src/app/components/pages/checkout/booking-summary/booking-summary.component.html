@@ -1,0 +1,56 @@
+<div class="summary-card-container">
+    <div class="header">
+        <h4 class="font-semibold text-m mt-1 ml-1 mb-0">Danışmanlık Özeti</h4>
+
+        <p-divider></p-divider>
+    </div>
+
+    <div class="img-container">
+        <img [src]="'../../../../assets/images/doctors/' + firstDoctor.image" [alt]="firstDoctor.name"
+            class="rounded-img shadow-1" />
+        
+        <div class="doctor-info">
+            <div class="name-container">
+                <p class="text-sm font-medium mt-0 mb-2">{{ firstDoctor.name }}</p>
+                <i class="fas fa-check-circle verified"></i>
+            </div>
+
+            <p-rating [(ngModel)]="firstDoctor.rating" [readonly]="true" [cancel]="false"></p-rating>
+            <span class="font-light text-xs ml-1">({{ firstDoctor.feedback }})</span>
+
+            <p class="font-light my-1 text-xs">
+                <i class="pi pi-map-marker"></i> Konum, {{ firstDoctor.location }}
+            </p>
+        </div>
+    </div>
+
+    <div class="booking-info">
+        <p class="font-light my-3 text-xs">
+            <span class="font-medium">Tarih: </span> {{firstPatient.appointmentDate}}
+            <span class="font-medium">Zaman: </span>{{firstPatient.appointmentTime}}
+        </p>
+
+        <div class="fees ml-1">
+            <div class="fee-item">
+                <p class="font-medium mb-1 text-xs">Danışmanlık ücreti:</p>
+                <p class="font-light mb-1 text-xs">{{firstDoctor.consultationFee}}$</p>
+            </div>
+            <div class="fee-item">
+                <p class="font-medium mb-1 text-xs">Randevu ücreti:</p>
+                <p class="font-light mb-1 text-xs">{{firstPatient.bookingFee}}$</p>
+            </div>
+            <div class="fee-item">
+                <p class="font-medium mb-1 text-xs">{{firstPatient.consultingFee.type}}:</p>
+                <p class="font-light mb-1 text-xs">{{firstPatient.consultingFee.price}}$</p>
+            </div>
+
+            <p-divider></p-divider>
+ 
+            <div class="fee-item mt-0">
+                <p class="font-semibold mb-1  mt-0 text-m">Toplam ücret:</p>
+                <p class="font-semibold mb-1 mt-0 text-m text-primary">{{ totalFee }}$</p>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -6,17 +6,15 @@
 
         <div class="page-container">
 
-
-
             <div class="content-container">
 
-                <div class="personal-info">
-                    <form [formGroup]="personalInfoForm" (ngSubmit)="submitPersonalInfo()">
-                        <p-card header="Kişisel Bilgiler" [style]="{ width: '100%', 'padding': '1rem' }">
+                <div class="payment-info mt-6">
+                    <form [formGroup]="paymentInfoForm" (ngSubmit)="submitPaymentInfo()">
+                        <p-card header="Ödeme Bilgileri" [style]="{ width: '100%', 'padding': '1rem' }">
+
                             <div class="grid grid-cols-3 gap-4">
                                 <div class="field">
-                                    <label for="firstName">İsim <span
-                                            class="text-red-500 font-semibold">*</span></label>
+                                    <label for="firstName">İsim</label>
                                     <input type="text" pInputText formControlName="firstName" class="input-field"
                                         placeholder="İsim" (keypress)="validateText($event)" />
                                     <small
@@ -24,24 +22,20 @@
                                         class="block p-error">
                                         Bu alan zorunludur.
                                     </small>
-
                                 </div>
 
                                 <div class="field">
-                                    <label for="lastName">Soyisim <span
-                                            class="text-red-500 font-semibold">*</span></label>
+                                    <label for="lastName">Soyisim</label>
                                     <input type="text" pInputText formControlName="lastName" class="input-field"
                                         placeholder="Soyisim" (keypress)="validateText($event)" />
                                     <small *ngIf="lastName.hasError('required') && (lastName.dirty || lastName.touched)"
                                         class="block p-error">
                                         Bu alan zorunludur.
                                     </small>
-
                                 </div>
 
                                 <div class="field">
-                                    <label for="phoneNumber">Telefon Numarası <span
-                                            class="text-red-500 font-semibold">*</span></label>
+                                    <label for="phoneNumber">Telefon Numarası</label>
                                     <input type="text" pInputText formControlName="phoneNumber" class="input-field"
                                         placeholder="901234567890" (keypress)="validatePhoneNumber($event)" />
                                     <small
@@ -49,7 +43,6 @@
                                         class="block p-error">
                                         Bu alan zorunludur.
                                     </small>
-
                                     <small
                                         *ngIf="phoneNumber.hasError('minlength') && !phoneNumber.hasError('required') && (phoneNumber.dirty || phoneNumber.touched)"
                                         class="block p-error">
@@ -60,12 +53,10 @@
                                         class="block p-error">
                                         Telefon numarası en fazla 12 haneli olabilir.
                                     </small>
-
                                 </div>
 
                                 <div class="field">
-                                    <label for="emailAddress">Email Adresi <span
-                                            class="text-red-500 font-semibold">*</span></label>
+                                    <label for="emailAddress">Email Adresi</label>
                                     <input type="text" pInputText formControlName="emailAddress" class="input-field"
                                         placeholder="example@example.com" />
                                     <small
@@ -79,11 +70,94 @@
                                         Geçerli bir email adresi giriniz.
                                     </small>
                                 </div>
-
                             </div>
+
+                            <p-divider></p-divider>
+
+                            <div class="payment-info mt-4">
+                                <h4>Kredi Kartı Bilgileri</h4>
+
+                                <p-radioButton name="payment-method" value="credit card" inputId="payment-method1"
+                                    class=" ng-dirty" />
+                                <label for="payment-method1" class="ml-1">
+                                    Kredi Kartı
+                                </label>
+
+                                <div class="grid grid-cols-3 gap-4 mt-4">
+                                    <div class="field">
+                                        <label for="cardHolderName">Kart İsmi</label>
+                                        <input type="text" pInputText formControlName="cardHolderName"
+                                            class="input-field" placeholder="Kart İsmi"
+                                            (keypress)="validateText($event)" />
+                                        <small
+                                            *ngIf="cardHolderName.hasError('required') && (cardHolderName.dirty || cardHolderName.touched)"
+                                            class="block p-error">
+                                            Bu alan zorunludur.
+                                        </small>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="cardNumber">Kart Numarası</label>
+                                        <input type="text" pInputText formControlName="cardNumber" class="input-field"
+                                            placeholder="0000111122223333" (keypress)="validatePhoneNumber($event)" />
+                                        <small
+                                            *ngIf="cardNumber.hasError('required') && (cardNumber.dirty || cardNumber.touched)"
+                                            class="block p-error">
+                                            Bu alan zorunludur.
+                                        </small>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="expiryMonth">Ay</label>
+                                        <p-dropdown formControlName="expiryMonth" [options]="months"
+                                            placeholder="Ay"></p-dropdown>
+                                        <small
+                                            *ngIf="expiryMonth.hasError('required') && (expiryMonth.dirty || expiryMonth.touched)"
+                                            class="block p-error">
+                                            Bu alan zorunludur.
+                                        </small>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="expiryYear">Yıl</label>
+                                        <p-dropdown formControlName="expiryYear" [options]="years"
+                                            placeholder="Yıl"></p-dropdown>
+                                        <small
+                                            *ngIf="expiryYear.hasError('required') && (expiryYear.dirty || expiryYear.touched)"
+                                            class="block p-error">
+                                            Bu alan zorunludur.
+                                        </small>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" pInputText formControlName="cvv" class="input-field"
+                                            placeholder="111" (keypress)="validatePhoneNumber($event)" />
+                                        <small *ngIf="cvv.hasError('required') && (cvv.dirty || cvv.touched)"
+                                            class="block p-error">
+                                            Bu alan zorunludur.
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <p-radioButton name="payment-method" value="Paypal" inputId="payment-method2" />
+                                <label for="payment-method2" class="ml-1 ">
+                                    Paypal
+                                </label>
+
+                                <input type="checkbox" id="termsAndConditions" name="termsAndConditions">
+                                <label for="termsAndConditions"><a class="text-primary">Şartlar ve Koşulları</a> okudum ve
+                                    kabul ediyorum</label>
+
+                                </div>
+
+                            <p-button label="Doğrula ve Öde" styleClass=" mt-4" [disabled]="paymentInfoForm.invalid"
+                                type="submit"></p-button>
                         </p-card>
                     </form>
                 </div>
+
+                <app-booking-summary></app-booking-summary>
 
             </div>
         </div>

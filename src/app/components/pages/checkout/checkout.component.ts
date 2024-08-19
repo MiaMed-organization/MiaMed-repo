@@ -8,37 +8,93 @@ import { MessageService } from 'primeng/api';
   styleUrl: './checkout.component.css'
 })
 export class CheckoutComponent {
-  personalInfoForm = this.fb.group({
+
+  checked: boolean = false;
+
+  paymentInfoForm = this.fb.group({
     firstName: ['', [Validators.required, Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/)]],
     lastName: ['', [Validators.required, Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/)]],
     phoneNumber: ['', [Validators.required, Validators.pattern(/^\d+$/), Validators.minLength(10), Validators.maxLength(12)]],
     emailAddress: ['', [Validators.required, Validators.email]],
+    paymentMethod: ['', Validators.required],
+    cardHolderName: ['', [Validators.required, Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/)]],
+    cardNumber: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+    cvv: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
+    expiryMonth: ['', Validators.required],
+    expiryYear: ['', Validators.required]
   });
+
+  months = [
+    { label: 'Ocak', value: '01' },
+    { label: 'Şubat', value: '02' },
+    { label: 'Mart', value: '03' },
+    { label: 'Nisan', value: '04' },
+    { label: 'Mayıs', value: '05' },
+    { label: 'Haziran', value: '06' },
+    { label: 'Temmuz', value: '07' },
+    { label: 'Ağustos', value: '08' },
+    { label: 'Eylül', value: '09' },
+    { label: 'Ekim', value: '10' },
+    { label: 'Kasım', value: '11' },
+    { label: 'Aralık', value: '12' }
+  ];
+
+  years = this.generateYears();
+
+  // Yılları dinamik olarak oluşturmak için fonksiyon
+  generateYears(): any[] {
+    const currentYear = new Date().getFullYear();
+    const years = [];
+    for (let i = currentYear; i <= currentYear + 20; i++) {
+      years.push({ label: i.toString(), value: i.toString() });
+    }
+    return years;
+  }
 
   constructor(private fb: FormBuilder, private messageService: MessageService) { }
 
   get firstName() {
-    return this.personalInfoForm.controls['firstName'];
+    return this.paymentInfoForm.controls['firstName'];
   }
 
   get lastName() {
-    return this.personalInfoForm.controls['lastName'];
+    return this.paymentInfoForm.controls['lastName'];
   }
 
   get phoneNumber() {
-    return this.personalInfoForm.controls['phoneNumber'];
+    return this.paymentInfoForm.controls['phoneNumber'];
   }
 
   get emailAddress() {
-    return this.personalInfoForm.controls['emailAddress'];
+    return this.paymentInfoForm.controls['emailAddress'];
+  }
+
+  get cardHolderName() {
+    return this.paymentInfoForm.controls['cardHolderName'];
+  }
+
+  get cardNumber() {
+    return this.paymentInfoForm.controls['cardNumber'];
+  }
+
+  get cvv() {
+    return this.paymentInfoForm.controls['cvv'];
+  }
+
+  get expiryMonth() {
+    return this.paymentInfoForm.controls['expiryMonth'];
+  }
+
+  get expiryYear() {
+    return this.paymentInfoForm.controls['expiryYear'];
   }
 
   onUpload(event: any) {  // Burada event türünü any olarak güncelledik
     this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
   }
 
-  submitPersonalInfo() {
-    if (this.personalInfoForm.valid) {
+  submitPaymentInfo() {
+    if (this.paymentInfoForm.valid) {
       console.log('Form submitted successfully');
       // Form işlemleri burada yapılacak
     } else {

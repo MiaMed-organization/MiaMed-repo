@@ -13,11 +13,11 @@ export class PatientsService {
         appointmentId: '#Apt0001',
         name: 'Adrian Marshall',
         image: 'patient1.jpeg',
-        appointmentDate: '10 Haziran 2024', 
+        appointmentDate: '10 Haziran 2024',
         appointmentTime: '10:45',
         location: 'New York, United States',
         patientId: 'P0001',
-        fee: 200,
+        totalFee: 200,
         paidDate: '21 Temmuz 2024',
         email: 'Kelly@Example.Com',
         phoneNumber: '+90 504 368 6874',
@@ -28,18 +28,23 @@ export class PatientsService {
         rating: 4,
         comment: "Thank you for this informative article! I've had a couple of hit-and-miss experiences with freelancers in the past, and I realize now that I wasn't vetting them properly. Your checklist for choosing the right freelancer is going to be my go-to from now on.",
         commentDate: 'Bugün',
-        isRecommend: true
+        isRecommend: true,
+        bookingFee: 10,
+        consultingFee: {
+          type: 'Görüntülü Görüşme',
+          price: 50
+        }
       },
       {
         id: '2',
         appointmentId: '#Apt0002',
         name: 'John Doe',
         image: 'patient2.jpeg',
-        appointmentDate: '21 Temmuz 2024', 
+        appointmentDate: '21 Temmuz 2024',
         appointmentTime: '11:30',
         location: 'Los Angeles, United States',
         patientId: 'P0002',
-        fee: 150,
+        totalFee: 150,
         paidDate: '10 Haziran 2024',
         email: 'john.doe@example.com',
         phoneNumber: '+90 504 368 6875',
@@ -50,18 +55,23 @@ export class PatientsService {
         rating: 5,
         comment: "Amazing service! The doctor was very attentive and the entire process was smooth. Highly recommend!",
         commentDate: '2 gün önce',
-        isRecommend: true
+        isRecommend: true,
+        bookingFee: 10,
+        consultingFee: {
+          type: 'Sesli Görüşme',
+          price: 40
+        }
       },
       {
         id: '3',
         appointmentId: '#Apt0003',
         name: 'Jane Smith',
         image: 'patient3.jpeg',
-        appointmentDate: '9 Ocak 2024', 
+        appointmentDate: '9 Ocak 2024',
         appointmentTime: '14:00',
         location: 'Chicago, United States',
         patientId: 'P0003',
-        fee: 250,
+        totalFee: 250,
         paidDate: '13 Eylül 2024',
         email: 'jane.smith@example.com',
         phoneNumber: '+90 504 368 6876',
@@ -70,9 +80,14 @@ export class PatientsService {
         appointmentType: 'Kontrol',
         clinicLocation: 'Jane’s Klinik',
         rating: 3,
-        comment: "The consultation was okay, but I feel like it could have been more thorough. Not bad overall.",
+        comment: "The consultation was okay, but I totalFeel like it could have been more thorough. Not bad overall.",
         commentDate: '1 ay önce',
-        isRecommend: false
+        isRecommend: false,
+        bookingFee: 10,
+        consultingFee: {
+          type: 'Mesajlaşma',
+          price: 30
+        }
       },
       {
         id: '4',
@@ -83,7 +98,7 @@ export class PatientsService {
         appointmentTime: '09:30',
         location: 'Houston, United States',
         patientId: 'P0004',
-        fee: 300,
+        totalFee: 300,
         paidDate: '9 Ocak 2024',
         email: 'michael.brown@example.com',
         phoneNumber: '+90 504 368 6877',
@@ -94,18 +109,23 @@ export class PatientsService {
         rating: 2,
         comment: "The consultation felt rushed, and I didn't get the answers I was looking for. Disappointed.",
         commentDate: '2 gün önce',
-        isRecommend: false
+        isRecommend: false,
+        bookingFee: 10,
+        consultingFee: {
+          type: 'Görüntülü Görüşme',
+          price: 50
+        }
       },
       {
         id: '5',
         appointmentId: '#Apt0005',
         name: 'Emily Davis',
         image: 'patient5.jpeg',
-        appointmentDate: '22 Ekim 2024', 
+        appointmentDate: '22 Ekim 2024',
         appointmentTime: '13:15',
         location: 'Phoenix, United States',
         patientId: 'P0005',
-        fee: 180,
+        totalFee: 180,
         paidDate: '20 Ekim 2024',
         email: 'emily.davis@example.com',
         phoneNumber: '+90 504 368 6878',
@@ -116,7 +136,12 @@ export class PatientsService {
         rating: 5,
         comment: "Excellent service! The staff was friendly, and the doctor provided great care. Highly recommend!",
         commentDate: 'Bugün',
-        isRecommend: true
+        isRecommend: true,
+        bookingFee: 10,
+        consultingFee: {
+          type: 'Mesajlaşma',
+          price: 30
+        }
       }
     ];
   }
