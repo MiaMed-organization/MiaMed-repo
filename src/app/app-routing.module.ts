@@ -13,6 +13,7 @@ import { BookingSuccessComponent } from './components/pages/booking-success/book
 import { ChangePasswordComponent } from './components/pages/change-password/change-password.component';
 import { CheckoutComponent } from './components/pages/checkout/checkout.component';
 import { ProfileSettingsComponent } from './components/pages/profile-settings/profile-settings.component';
+import { InvoiceViewComponent } from './components/pages/booking-success/invoice-view/invoice-view.component';
 
 const routes: Routes = [
   {
@@ -63,6 +64,10 @@ const routes: Routes = [
   {
     path: 'profile-settings',
     component: ProfileSettingsComponent,
+  },
+  {
+    path: 'invoice-view',
+    component: InvoiceViewComponent,
   },
   {
     path: '', redirectTo: '/home', pathMatch: 'full'
