@@ -6,11 +6,30 @@
 
         <div class="page-container">
 
-
-
-            <div class="content-container">
-                
+            <div class="card flex justify-content-center">
+                <p-card header="Randevunuz başarıyla alındı!" [style]="{ width: '450px' , padding: '20px 0' }">
+                    <ng-template pTemplate="header">
+                        <div></div>
+                        <div class="bg-green-600 success-icon flex justify-content-center align-items-center mx-auto rounded-full" style="width: 50px; height: 50px;">
+                            <i class="pi pi-check text-3xl text-white "></i>
+                        </div>
+                    </ng-template>
+                    <p class="text-sm text-center">
+                        <span class="font-semibold">{{firstDoctor.name}}</span> ile
+                        <span class="font-semibold">{{firstPatient.appointmentDate}}</span> tarihinde ve
+                        <span class="font-semibold">{{firstPatient.appointmentTime}}</span> saatine randevu aldınız.
+                    </p>
+            
+                    <ng-template pTemplate="footer">
+                        <div class="text-center">
+                            <p-button label="Faturayı Görüntüle" severity="success" class="w-8" />
+                        </div>
+                    </ng-template>
+                </p-card>
             </div>
+            
+
+
         </div>
     </div>
 </div>

@@ -1,0 +1,48 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.page-container {
+    margin-top: var(--navbar-height);
+    flex: 1;
+    overflow: auto;
+    height: calc(100vh - var(--navbar-height));
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.success-icon-container {
+    height: 60px; /* İcon'u dikeyde ortalamak için yeterli bir yükseklik */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Dikey ve yatayda ortalama */
+}
+
+.success-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+p-card .p-card-footer {
+    display: flex;
+    justify-content: center; /* Footer kısmındaki butonu yatayda ortalamak için */
+}
+
+:host ::ng-deep .p-card .p-card-title{
+    text-align: center;
+}
+
+
