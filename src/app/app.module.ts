@@ -64,6 +64,7 @@ import { FileUploadModule } from 'primeng/fileupload';
 import { ProfileImgCardComponent } from './components/pages/profile-settings/profile-img-card/profile-img-card.component';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { BookingSummaryComponent } from './components/pages/checkout/booking-summary/booking-summary.component';
+import { InvoiceViewComponent } from './components/pages/booking-success/invoice-view/invoice-view.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +98,7 @@ import { BookingSummaryComponent } from './components/pages/checkout/booking-sum
     ChangePasswordComponent,
     ProfileImgCardComponent,
     BookingSummaryComponent,
+    InvoiceViewComponent,
   ],
   imports: [
     BrowserModule,
