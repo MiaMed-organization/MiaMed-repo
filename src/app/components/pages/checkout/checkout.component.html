@@ -8,11 +8,11 @@
 
             <div class="content-container">
 
-                <div class="payment-info mt-6">
+                <div class="payment-info ">
                     <form [formGroup]="paymentInfoForm" (ngSubmit)="submitPaymentInfo()">
                         <p-card header="Ödeme Bilgileri" [style]="{ width: '100%', 'padding': '1rem' }">
 
-                            <div class="grid grid-cols-3 gap-4">
+                            <div class="grid grid-cols-2 gap-4">
                                 <div class="field">
                                     <label for="firstName">İsim</label>
                                     <input type="text" pInputText formControlName="firstName" class="input-field"
@@ -107,28 +107,24 @@
                                         </small>
                                     </div>
 
-                                    <div class="field">
-                                        <label for="expiryMonth">Ay</label>
-                                        <p-dropdown formControlName="expiryMonth" [options]="months"
-                                            placeholder="Ay"></p-dropdown>
-                                        <small
-                                            *ngIf="expiryMonth.hasError('required') && (expiryMonth.dirty || expiryMonth.touched)"
-                                            class="block p-error">
-                                            Bu alan zorunludur.
-                                        </small>
+                                    <div class="field expireDate">
+                                        <div class="month">
+                                            <label for="expiryMonth" class=" mb-2">Ay</label>
+                                            <p-dropdown formControlName="expiryMonth" [options]="months" placeholder="Ay"></p-dropdown>
+                                            <small *ngIf="expiryMonth.hasError('required') && (expiryMonth.dirty || expiryMonth.touched)" class="block p-error">
+                                                Bu alan zorunludur.
+                                            </small>
+                                        </div>
+                                    
+                                        <div class="year">
+                                            <label for="expiryYear" class=" mb-2">Yıl</label>
+                                            <p-dropdown formControlName="expiryYear" [options]="years" placeholder="Yıl"></p-dropdown>
+                                            <small *ngIf="expiryYear.hasError('required') && (expiryYear.dirty || expiryYear.touched)" class="block p-error">
+                                                Bu alan zorunludur.
+                                            </small>
+                                        </div>
                                     </div>
-
-                                    <div class="field">
-                                        <label for="expiryYear">Yıl</label>
-                                        <p-dropdown formControlName="expiryYear" [options]="years"
-                                            placeholder="Yıl"></p-dropdown>
-                                        <small
-                                            *ngIf="expiryYear.hasError('required') && (expiryYear.dirty || expiryYear.touched)"
-                                            class="block p-error">
-                                            Bu alan zorunludur.
-                                        </small>
-                                    </div>
-
+                                    
                                     <div class="field">
                                         <label for="cvv">CVV</label>
                                         <input type="text" pInputText formControlName="cvv" class="input-field"
@@ -140,16 +136,22 @@
                                     </div>
                                 </div>
 
-                                <p-radioButton name="payment-method" value="Paypal" inputId="payment-method2" />
-                                <label for="payment-method2" class="ml-1 ">
-                                    Paypal
-                                </label>
-
-                                <input type="checkbox" id="termsAndConditions" name="termsAndConditions">
-                                <label for="termsAndConditions"><a class="text-primary">Şartlar ve Koşulları</a> okudum ve
-                                    kabul ediyorum</label>
-
+                                <div class="flex flex-column mt-2">
+                                    <div class="field flex align-items-center">
+                                        <p-radioButton name="payment-method" value="Paypal" inputId="payment-method2" />
+                                        <label for="payment-method2" class="ml-1 mt-2 ">
+                                            Paypal
+                                        </label>
+                                    </div>
+                                
+                                    <div class="field flex align-items-center">
+                                        <input type="checkbox" id="termsAndConditions" name="termsAndConditions">
+                                        <label for="termsAndConditions" class="mt-2 ml-1"><a class="text-primary">Şartlar ve Koşulları</a> okudum ve kabul ediyorum</label>
+                                    </div>
                                 </div>
+                                
+
+                            </div>
 
                             <p-button label="Doğrula ve Öde" styleClass=" mt-4" [disabled]="paymentInfoForm.invalid"
                                 type="submit"></p-button>
