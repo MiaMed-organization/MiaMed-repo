@@ -1,0 +1,65 @@
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.page-container {
+    margin-top: var(--navbar-height);
+    flex: 1;
+    overflow: auto;
+    height: calc(100vh - var(--navbar-height));
+    display: flex;
+    padding-top: 40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.invoice-card{
+    padding: 1.5rem ;
+    border: 0.4px solid rgb(230, 230, 230);
+    border-radius: 1rem;
+    width:550px;
+}
+
+.img-container {
+    display: flex;
+    align-items: center; /* Dikeyde de ortalamak isterseniz bu eklemeyi yapabilirsiniz */
+}
+
+.card-right{
+    display: flex;
+    flex-direction: column; /* İçerikleri dikeyde sıralamak için */
+    justify-content: center; /* Dikeyde ortalamak için */
+    align-items: flex-end; /* Sağ tarafa yaslamak için */
+    text-align: right; /* Metinlerin sağa yaslanmasını sağlamak için */
+}
+
+:host ::ng-deep .p-datatable{
+    width: 500px;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    padding:0.5rem;
+    font-weight: 600;
+    font-size: 15px;
+    color: #374151;
+    background: transparent !important;
+    width: 90px;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.7rem;
+    font-size: 13px;
+}
+
+:host ::ng-deep .p-datatable>.p-datatable-wrapper {
+    overflow: hidden;
+}

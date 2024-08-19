@@ -6,11 +6,83 @@
 
         <div class="page-container">
 
+            <div class="invoice-card">
+                <div class="invoice-info grid ">
+                    
+                    <div class="img-container col-6">
+                        <p-image src="../../../../../assets/images/ss_logo.png" alt="Image" width="120" />
+                    </div>
 
+                    <div class="col-6 card-right">
+                        <p class="font-light   text-xs">
+                            <span class="font-medium">Randevu id: </span> {{firstPatient.appointmentId}}
+                        </p>
 
-            <div class="content-container">
-                
+                        <p class="font-light  mt-0 text-xs">
+                            <span class="font-medium">Randevu tarihi: </span> {{firstPatient.appointmentDate}}
+                        </p>
+                    </div>
+
+                    <div class="invoiceFrom col-6">
+                        <h4 class="font-medium text-m mb-0">Fatura Gönderen</h4>
+
+                        <p class="font-light text-xs">{{firstDoctor.name}}</p>
+                        <p class="font-light  text-xs">{{firstDoctor.location}}</p>
+
+                    </div>
+
+                    <div class="invoiceTo col-6 card-right">
+                        <h4 class="font-medium text-m mb-0">Fatura Alıcısı</h4>
+
+                        <p class="font-light   text-xs">{{firstPatient.name}}</p>
+                        <p class="font-light  mt-0 text-xs">{{firstPatient.location}}</p>
+
+                    </div>
+
+                    <div class="paymentMethod col-6 ">
+                        <h4 class="font-medium text-m mb-0">Ödeme Yöntemi</h4>
+
+                        <p class="font-light   text-xs">{{firstPatient.paymentMethod.type}}</p>
+                        <p class="font-light   text-xs">XXXXXXXXXXXX-{{firstPatient.paymentMethod.lastDigits}}</p>
+                        <p class="font-light   text-xs">{{firstPatient.paymentMethod.bank}}</p>
+
+                    </div>
+
+                    <div class="col-6"></div>
+                </div>
+
+                <p-table [value]="fees"  [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Tanım</th>
+                            <th>Miktar</th>
+                            <th>KDV</th>
+                            <th>Toplam</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-fee>
+                        <tr>
+                            <td>{{ fee.description }}</td>
+                            <td>{{ fee.quantity }}</td>
+                            <td>{{ fee.discount }}</td>
+                            <td>{{ fee.total }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+
+                <div class="other-information">
+                    <h5 class="font-medium text-m mb-1" >Diğer Bilgiler</h5>
+
+                    <p class="font-light   text-xs">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed dictum ligula, cursus
+                        blandit risus. Maecenas eget metus non tellus dignissim aliquam ut a ex. Maecenas sed vehicula
+                        dui, ac suscipit lacus. Sed finibus leo vitae lorem interdum, eu scelerisque tellus fermentum.
+                        Curabitur sit amet lacinia lorem. Nullam finibus pellentesque libero.
+                    </p>
+                </div>
             </div>
+
+
         </div>
     </div>
 </div>

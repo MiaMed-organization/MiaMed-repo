@@ -33,7 +33,10 @@ export class PatientsService {
         consultingFee: {
           type: 'Görüntülü Görüşme',
           price: 50
-        }
+        },
+        paymentMethod:
+          { type: 'Debit Card', lastDigits: 2541, bank: 'HDFC Bank' }
+
       },
       {
         id: '2',
@@ -60,7 +63,10 @@ export class PatientsService {
         consultingFee: {
           type: 'Sesli Görüşme',
           price: 40
-        }
+        },
+        paymentMethod:
+          { type: 'Credit Card', lastDigits: 1234, bank: 'Chase Bank' }
+
       },
       {
         id: '3',
@@ -80,14 +86,17 @@ export class PatientsService {
         appointmentType: 'Kontrol',
         clinicLocation: 'Jane’s Klinik',
         rating: 3,
-        comment: "The consultation was okay, but I totalFeel like it could have been more thorough. Not bad overall.",
+        comment: "The consultation was okay, but I feel like it could have been more thorough. Not bad overall.",
         commentDate: '1 ay önce',
         isRecommend: false,
         bookingFee: 10,
         consultingFee: {
           type: 'Mesajlaşma',
           price: 30
-        }
+        },
+        paymentMethod:
+          { type: 'Paypal', lastDigits: 4352, bank: 'Paypal Account' }
+
       },
       {
         id: '4',
@@ -114,7 +123,10 @@ export class PatientsService {
         consultingFee: {
           type: 'Görüntülü Görüşme',
           price: 50
-        }
+        },
+        paymentMethod:
+          { type: 'Debit Card', lastDigits: 9876, bank: 'Citi Bank' }
+
       },
       {
         id: '5',
@@ -141,7 +153,10 @@ export class PatientsService {
         consultingFee: {
           type: 'Mesajlaşma',
           price: 30
-        }
+        },
+        paymentMethod:
+          { type: 'Credit Card', lastDigits: 4321, bank: 'Wells Fargo' }
+
       }
     ];
   }

@@ -21,4 +21,5 @@ export interface Patients {
     commentDate?: string; // Yorumun yapıldığı tarih
     isRecommend?: boolean; // Tavsiye durumu (true/false)
     consultingFee?: { type: string; price: number };
+    paymentMethod?: { type: string; lastDigits: number ;bank :string};
 }
