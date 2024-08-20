@@ -42,24 +42,27 @@
     text-align: right; /* Metinlerin sağa yaslanmasını sağlamak için */
 }
 
-:host ::ng-deep .p-datatable{
-    width: 500px;
-}
-
-:host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
-    padding:0.5rem;
-    font-weight: 600;
+table, th, td {
+    border-bottom: 1px solid rgb(204, 204, 204) !important;
+    border-collapse: collapse;
     font-size: 15px;
-    color: #374151;
-    background: transparent !important;
-    width: 90px;
-}
+    padding:0.5rem;
+    font-weight: 300;
+  }
 
-:host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
-    padding: 0.7rem;
-    font-size: 13px;
-}
+  table, th, td {
+    border-bottom: 1px solid #374151;
+    border-collapse: collapse;
 
-:host ::ng-deep .p-datatable>.p-datatable-wrapper {
-    overflow: hidden;
-}
+  }
+
+  table td{
+    padding:0.5rem;
+    font-weight: 300;
+  }
+
+  table th{
+    padding:0.5rem;
+    font-weight: 500;
+    text-align: justify;
+  }

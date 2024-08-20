@@ -8,7 +8,7 @@
 
             <div class="invoice-card">
                 <div class="invoice-info grid ">
-                    
+
                     <div class="img-container col-6">
                         <p-image src="../../../../../assets/images/ss_logo.png" alt="Image" width="120" />
                     </div>
@@ -51,29 +51,49 @@
                     <div class="col-6"></div>
                 </div>
 
-                <p-table [value]="fees"  [tableStyle]="{ 'min-width': '50rem' }">
-                    <ng-template pTemplate="header">
+                <table style="min-width: 30rem; table-layout: auto; white-space: nowrap; width: 500px;">
+                    <thead>
                         <tr>
                             <th>Tanım</th>
                             <th>Miktar</th>
                             <th>KDV</th>
                             <th>Toplam</th>
                         </tr>
-                    </ng-template>
-                    <ng-template pTemplate="body" let-fee>
-                        <tr>
-                            <td>{{ fee.description }}</td>
-                            <td>{{ fee.quantity }}</td>
-                            <td>{{ fee.discount }}</td>
-                            <td>{{ fee.total }}</td>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let fee of fees">
+                            <td style="padding: 0.7rem; font-size: 13px;">{{ fee.description }}</td>
+                            <td style="padding: 0.7rem; font-size: 13px;">{{ fee.quantity }}</td>
+                            <td style="padding: 0.7rem; font-size: 13px;">{{ fee.vat | currency: 'USD':'symbol':'1.0-0' }}</td>
+                            <td style="padding: 0.7rem; font-size: 13px;">{{ fee.total | currency: 'USD':'symbol':'1.0-0'}}</td>
                         </tr>
-                    </ng-template>
-                </p-table>
+
+                    </tbody>
+                </table>
+
+                <table style="min-width: 50rem; table-layout: auto; white-space: nowrap; width: 500px; margin-top: 1rem;">
+                    <tbody>
+                      <tr>
+                        <td style="padding: 0.7rem; font-size: 13px; text-align: right;">Ara toplam:</td>
+                        <td style="padding: 0.7rem; font-size: 13px; text-align: right;">{{ subtotal | currency: 'USD':'symbol':'1.0-0' }}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0.7rem; font-size: 13px;  text-align: right;">İndirim:</td>
+                        <td style="padding: 0.7rem; font-size: 13px; text-align: right;"> -{{ discount | percent }}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 0.7rem; font-size: 13px;  text-align: right;">Toplam tutar:</td>
+                        <td style="padding: 0.7rem; font-size: 13px; text-align: right;">{{ totalAmount| currency: 'USD':'symbol':'1.0-0' }}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
 
                 <div class="other-information">
-                    <h5 class="font-medium text-m mb-1" >Diğer Bilgiler</h5>
+                    <h5 class="font-medium text-m mb-1">Diğer Bilgiler</h5>
 
-                    <p class="font-light   text-xs">
+                    <p class="font-light text-xs">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed dictum ligula, cursus
                         blandit risus. Maecenas eget metus non tellus dignissim aliquam ut a ex. Maecenas sed vehicula
                         dui, ac suscipit lacus. Sed finibus leo vitae lorem interdum, eu scelerisque tellus fermentum.

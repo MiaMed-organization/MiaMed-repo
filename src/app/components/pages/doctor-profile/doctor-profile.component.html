@@ -104,7 +104,7 @@
 
                                 <div class="profile-card-info text-sm">
                                     <h4 class="text-lg font-semibold">{{ firstDoctor.hospital }}</h4>
-                                    <p class="font-medium text-sm text-primary mb-5">{{ firstDoctor.minPrice }}$
+                                    <p class="font-medium text-sm text-primary mb-5">{{ firstDoctor.minPrice | currency: 'USD':'symbol':'1.0-0'}}
                                         /Randevu</p>
                                     <p class="font-medium">
                                         <i class="pi pi-map-marker"></i> {{ firstDoctor.location }}

@@ -90,7 +90,7 @@
         <div class="footer-right">
 
             <div class="price-info">
-                Ücret: <span class="font-medium text-sm">{{doctor.minPrice}}$ - {{doctor.maxPrice}}$</span>
+                Ücret: <span class="font-medium text-sm">{{doctor.minPrice | currency: 'USD':'symbol':'1.0-0'}} - {{doctor.maxPrice| currency: 'USD':'symbol':'1.0-0'}}</span>
             </div>
 
             <div class="button-container">

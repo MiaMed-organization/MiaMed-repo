@@ -33,22 +33,22 @@
         <div class="fees ml-1">
             <div class="fee-item">
                 <p class="font-medium mb-1 text-xs">Danışmanlık ücreti:</p>
-                <p class="font-light mb-1 text-xs">{{firstDoctor.consultationFee}}$</p>
+                <p class="font-light mb-1 text-xs">{{firstDoctor.consultationFee | currency: 'USD':'symbol':'1.0-0'}}</p>
             </div>
             <div class="fee-item">
                 <p class="font-medium mb-1 text-xs">Randevu ücreti:</p>
-                <p class="font-light mb-1 text-xs">{{firstPatient.bookingFee}}$</p>
+                <p class="font-light mb-1 text-xs">{{firstPatient.bookingFee | currency: 'USD':'symbol':'1.0-0'}}</p>
             </div>
             <div class="fee-item">
                 <p class="font-medium mb-1 text-xs">{{firstPatient.consultingFee.type}}:</p>
-                <p class="font-light mb-1 text-xs">{{firstPatient.consultingFee.price}}$</p>
+                <p class="font-light mb-1 text-xs">{{firstPatient.consultingFee.price | currency: 'USD':'symbol':'1.0-0'}}</p>
             </div>
 
             <p-divider></p-divider>
  
             <div class="fee-item mt-0">
                 <p class="font-semibold mb-1  mt-0 text-m">Toplam ücret:</p>
-                <p class="font-semibold mb-1 mt-0 text-m text-primary">{{ totalFee }}$</p>
+                <p class="font-semibold mb-1 mt-0 text-m text-primary">{{ totalFee | currency: 'USD':'symbol':'1.0-0'}}</p>
             </div>
 
         </div>

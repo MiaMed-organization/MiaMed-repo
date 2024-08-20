@@ -17,14 +17,20 @@ export class InvoiceViewComponent implements OnInit{
   patients: Patients[] = [];
   firstPatient!: Patients;
 
-  totalFee: number = 0;
+  subtotal: number;
+  discount: number;
+  totalAmount: number;
 
   fees = [
-    { description: 'Genel Danışmanlık', quantity: 1, discount: '$0', total: '$100' },
-    { description: 'Görüntülü görüşme', quantity: 1, discount: '$0', total: '$250' }
+    { description: 'Genel Danışmanlık', quantity: 1, vat: 0, total: 100 },
+    { description: 'Görüntülü görüşme', quantity: 1, vat: 0, total: 250 }
   ];
 
-  constructor(private doctorsService: DoctorsService, private patientsService: PatientsService) {}
+  constructor(private doctorsService: DoctorsService, private patientsService: PatientsService) {
+    this.calculateSubtotal(); // Alt toplamı hesapla
+    this.discount = 0.1; // İndirim oranı (örneğin %10 için 0.1)
+    this.totalAmount = this.calculateTotalAmount(); // Toplam tutarı hesapla
+  }
 
 
   ngOnInit(): void {
@@ -34,7 +40,6 @@ export class InvoiceViewComponent implements OnInit{
         this.firstDoctor = this.doctors[0];
       }
 
-      this.calculateTotalFee();
     });
 
     this.patientsService.getPatients().then((data: Patients[]) => {
@@ -43,14 +48,17 @@ export class InvoiceViewComponent implements OnInit{
         this.firstPatient = this.patients[0];
       }
 
-      this.calculateTotalFee(); 
     });
   }
 
-  calculateTotalFee(): void {
-    if (this.firstDoctor && this.firstPatient) {
-      this.totalFee = this.firstDoctor.consultationFee + this.firstPatient.bookingFee + this.firstPatient.consultingFee.price;
-    }
+  calculateSubtotal(): void {
+    this.subtotal = this.fees.reduce((acc, fee) => {
+      return acc + fee.quantity * (fee.vat + fee.total);
+    }, 0);
+  }
+
+  calculateTotalAmount(): number {
+    return this.subtotal - (this.subtotal * this.discount);
   }
 
 
