@@ -65,6 +65,7 @@ import { ProfileImgCardComponent } from './components/pages/profile-settings/pro
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { BookingSummaryComponent } from './components/pages/checkout/booking-summary/booking-summary.component';
 import { InvoiceViewComponent } from './components/pages/booking-success/invoice-view/invoice-view.component';
+import { BookingSummaryCardComponent } from './components/pages/booking/booking-summary-card/booking-summary-card.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { InvoiceViewComponent } from './components/pages/booking-success/invoice
     ProfileImgCardComponent,
     BookingSummaryComponent,
     InvoiceViewComponent,
+    BookingSummaryCardComponent,
   ],
   imports: [
     BrowserModule,
