@@ -20,3 +20,82 @@
     padding-top: 40px;
     justify-content: center;
 }
+
+.container {
+    display: flex;
+    justify-content: center; /* Yatayda ortalar */
+    align-items: flex-start; /* Üst hizalamayı sağlar */
+  }
+  
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+  }
+  
+  .date-container,
+  .app-booking-calender {
+    margin-bottom: 20px; /* Alt alta boşluk sağlar */
+  }
+  
+  .app-booking-summary-card {
+    width: 30%;
+    margin-left: 20px; /* Sol boşluk ekler */
+  }
+
+  .date-container h3{
+    font-size: 18px;
+  }
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    width: 300px;
+    font-size: 15px;
+    color: rgb(65, 64, 64);
+    cursor: pointer;
+    background-color: white;
+  }
+  
+  .selected-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    font-size: 15px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+    z-index: 1000;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f1f1f1;
+  }
+  
+
+  :host ::ng-deep .p-button{
+    padding: 0.5rem;
+    font-size: 13px;
+}
+
+:host ::ng-deep .p-button .p-button-label {
+    font-weight: 500;
+}

@@ -1,65 +1,68 @@
-<h4 class="font-semibold text-m mt-1 ml-1 mb-4">Rezarvasyon Özeti</h4>
+<div class="ml-5">
+    <h4 class="font-semibold text-m mt-1 ml-1 mb-4">Rezarvasyon Özeti</h4>
 
 
-<div class="container">
-    <img [src]="'../../../../assets/images/doctors/' + firstDoctor.image" [alt]="firstDoctor.name"
-        class="rounded-img shadow-1" />
-
-    <div class="info">
-        <div class="title">
-            <p class="text-sm font-medium mt-0 mb-1">{{ firstDoctor.name }}</p>
-
+    <div class="container">
+        <img [src]="'../../../../assets/images/doctors/' + firstDoctor.image" [alt]="firstDoctor.name"
+            class="rounded-img shadow-1" />
+    
+        <div class="info">
+            <div class="title">
+                <p class="text-sm font-medium mt-0 mb-1">{{ firstDoctor.name }}</p>
+    
+            </div>
+    
+            <p class="font-light my-1 text-xs">
+                {{firstDoctor.field}}
+            </p>
+    
         </div>
-
-        <p class="font-light my-1 text-xs">
-            {{firstDoctor.field}}
-        </p>
-
+    
+        <div class="card-left ml-4">
+            <i class="fas fa-check-circle verified text-green-600"></i>
+    
+            <a class="underline text-xs text-primary ml-1" routerLink="/profile-settings">Düzenle</a>
+        </div>
     </div>
-
-    <div class="card-left ml-4">
-        <i class="fas fa-check-circle verified text-green-600"></i>
-
-        <a class="underline text-xs text-primary ml-1" routerLink="/profile-settings">Düzenle</a>
+    
+    <div class="container my-3">
+        <i class="pi pi-desktop text-primary text-2xl"></i>
+    
+        <div class="info">
+            <div class="title">
+                <p class="text-sm font-medium mt-0 mb-1 ml-3 text-gray-700">Size yardımcı olabiliriz</p>
+            </div>
+    
+    
+            <p class="text-xs font-light mt-1 mb-3 ml-3 text-gray-500">
+                Bizi +1 888-888-8888 numaralı telefondan arayın veya müşteri destek ekibimizle sohbet edin.
+            </p>
+    
+    
+            <p-button outlined="true" label="Bizle Sohbet Edin" severity="primary" class="ml-3"></p-button>
+        </div>
+    </div>
+    
+    
+    <div class="container">
+        <i class="pi pi-mobile text-primary text-2xl"></i>
+    
+        <div class="info">
+            <div class="title">
+                <p class="text-sm font-medium mt-0 mb-1 ml-3 text-gray-700">Uygulamaya göz atın</p>
+            </div>
+    
+    
+            <p class="text-xs font-light mt-1 mb-3 ml-3 text-gray-500">
+                Daha iyi bir deneyim ve daha fazla özellik için uygulamamızı indirin
+            </p>
+    
+            <div class="downloand-images ml-3">
+                <a href=""><img src="../../../../assets/images/download-playStore.svg" alt="Download PlayStore"></a>
+    
+                <a href=""><img src="../../../../assets/images/download-appStore.svg" alt="Download PlayStore"></a>
+            </div>
+        </div>
     </div>
 </div>
 
-<div class="container my-3">
-    <i class="pi pi-desktop text-primary text-2xl"></i>
-
-    <div class="info">
-        <div class="title">
-            <p class="text-sm font-medium mt-0 mb-1 ml-3 text-gray-700">Size yardımcı olabiliriz</p>
-        </div>
-
-
-        <p class="text-xs font-light mt-1 mb-3 ml-3 text-gray-500">
-            Bizi +1 888-888-8888 numaralı telefondan arayın veya müşteri destek ekibimizle sohbet edin.
-        </p>
-
-
-        <p-button outlined="true" label="Bizle Sohbet Edin" severity="primary" class="ml-3"></p-button>
-    </div>
-</div>
-
-
-<div class="container">
-    <i class="pi pi-mobile text-primary text-2xl"></i>
-
-    <div class="info">
-        <div class="title">
-            <p class="text-sm font-medium mt-0 mb-1 ml-3 text-gray-700">Uygulamaya göz atın</p>
-        </div>
-
-
-        <p class="text-xs font-light mt-1 mb-3 ml-3 text-gray-500">
-            Daha iyi bir deneyim ve daha fazla özellik için uygulamamızı indirin
-        </p>
-
-        <div class="downloand-images ml-3">
-            <a href=""><img src="../../../../assets/images/download-playStore.svg" alt="Download PlayStore"></a>
-
-            <a href=""><img src="../../../../assets/images/download-appStore.svg" alt="Download PlayStore"></a>
-        </div>
-    </div>
-</div>

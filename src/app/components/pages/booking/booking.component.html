@@ -5,8 +5,46 @@
         <app-menu></app-menu>
 
         <div class="page-container">
-<app-booking-calender></app-booking-calender>
-            <app-booking-summary-card></app-booking-summary-card>
+
+            <div class="container">
+                <div class="left-section">
+                    <div class="date-container">
+                        <h3 class="font-semibold mt-0">Uygun zaman aralığını seçin</h3>
+    
+                        <div class="choseDate flex align-items-center">
+    
+                            <p class="font-light text-sm mr-4">Tarih seçin</p>
+    
+                            <div class="custom-dropdown">
+                                <div class="selected-date" (click)="toggleDropdown()">
+                                    <i class="pi pi-calendar"></i>
+                                    <span>{{ displayDate }}</span>
+                                    <i class="pi pi-chevron-down"></i>
+                                </div>
+                                <ul *ngIf="dropdownOpen" class="dropdown-menu">
+                                    <li (click)="selectDate('today')">Bugün</li>
+                                    <li (click)="selectDate('yesterday')">Dün</li>
+                                    <li (click)="selectDate('last7Days')">Son 7 Gün</li>
+                                    <li (click)="selectDate('last30Days')">Son 30 Gün</li>
+                                    <li (click)="selectDate('thisMonth')">Bu Ay</li>
+                                    <li (click)="selectDate('lastMonth')">Geçen Ay</li>
+                                </ul>
+                            </div>
+    
+                        </div>
+    
+                    </div>
+    
+                    <app-booking-calender></app-booking-calender>
+
+                    <p-button severity="primary" label="Sonraki adım"  icon="pi pi-angle-double-right" iconPos="right"  class="mt-3"></p-button>
+                </div>
+    
+    
+    
+                <app-booking-summary-card></app-booking-summary-card>
+            </div>
+            
         </div>
     </div>
 </div>
