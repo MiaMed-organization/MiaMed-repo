@@ -12,7 +12,7 @@ export class ProfileSettingsComponent {
   personalInfoForm = this.fb.group({
     firstName: ['', [Validators.required, Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/)]],
     lastName: ['', [Validators.required, Validators.pattern(/^[A-Za-zÇçĞğİıÖöŞşÜü\s]+$/)]],
-    dateOfBirth: ['', Validators.required],
+    dateOfBirth: [''],
     phoneNumber: ['', [Validators.required, Validators.pattern(/^\d+$/), Validators.minLength(10), Validators.maxLength(12)]],
     emailAddress: ['', [Validators.required, Validators.email]],
     bloodGroup: ['', Validators.required]

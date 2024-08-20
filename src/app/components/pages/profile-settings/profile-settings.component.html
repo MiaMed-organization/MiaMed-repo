@@ -40,16 +40,11 @@
                                 </div>
 
                                 <div class="field">
-                                    <label for="dateOfBirth">Doğum Tarihi <span
-                                            class="text-red-500 font-semibold">*</span></label>
+                                    <label for="dateOfBirth">Doğum Tarihi</label>
                                     <p-calendar [(ngModel)]="dateOfBirth" [showIcon]="true" [maxDate]="maxDate"
                                         formControlName="dateOfBirth" class="input-field" 
                                         placeholder="gg/aa/yyyy"></p-calendar>
-                                    <small
-                                        *ngIf="dateOfBirth.hasError('required') && (dateOfBirth.dirty || dateOfBirth.touched)"
-                                        class="block p-error">
-                                        Bu alan zorunludur.
-                                    </small>
+                                   
                                 </div>
 
                                 <div class="field">
