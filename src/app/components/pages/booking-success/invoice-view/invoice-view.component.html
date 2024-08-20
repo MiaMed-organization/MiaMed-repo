@@ -40,7 +40,7 @@
                     </div>
 
                     <div class="paymentMethod col-6 ">
-                        <h4 class="font-medium text-m mb-0">Ödeme Yöntemi</h4>
+                        <h4 class="font-medium text-m mb-0 mt-2">Ödeme Yöntemi</h4>
 
                         <p class="font-light   text-xs">{{firstPatient.paymentMethod.type}}</p>
                         <p class="font-light   text-xs">XXXXXXXXXXXX-{{firstPatient.paymentMethod.lastDigits}}</p>
@@ -51,7 +51,7 @@
                     <div class="col-6"></div>
                 </div>
 
-                <table style="min-width: 30rem; table-layout: auto; white-space: nowrap; width: 500px;">
+                <table style="min-width: 30rem; table-layout: auto; white-space: nowrap; width: 500px; margin-top: 1rem;">
                     <thead>
                         <tr>
                             <th>Tanım</th>
@@ -63,32 +63,43 @@
                     <tbody>
 
                         <tr *ngFor="let fee of fees">
-                            <td style="padding: 0.7rem; font-size: 13px;">{{ fee.description }}</td>
-                            <td style="padding: 0.7rem; font-size: 13px;">{{ fee.quantity }}</td>
-                            <td style="padding: 0.7rem; font-size: 13px;">{{ fee.vat | currency: 'USD':'symbol':'1.0-0' }}</td>
-                            <td style="padding: 0.7rem; font-size: 13px;">{{ fee.total | currency: 'USD':'symbol':'1.0-0'}}</td>
+                            <td style=" font-size: 13px;">{{ fee.description }}</td>
+                            <td style=" font-size: 13px;">{{ fee.quantity }}</td>
+                            <td style=" font-size: 13px;">{{ fee.vat | currency: 'USD':'symbol':'1.0-0'
+                                }}</td>
+                            <td style=" font-size: 13px;">{{ fee.total | currency:
+                                'USD':'symbol':'1.0-0'}}</td>
                         </tr>
 
                     </tbody>
                 </table>
 
-                <table style="min-width: 50rem; table-layout: auto; white-space: nowrap; width: 500px; margin-top: 1rem;">
-                    <tbody>
-                      <tr>
-                        <td style="padding: 0.7rem; font-size: 13px; text-align: right;">Ara toplam:</td>
-                        <td style="padding: 0.7rem; font-size: 13px; text-align: right;">{{ subtotal | currency: 'USD':'symbol':'1.0-0' }}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 0.7rem; font-size: 13px;  text-align: right;">İndirim:</td>
-                        <td style="padding: 0.7rem; font-size: 13px; text-align: right;"> -{{ discount | percent }}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding: 0.7rem; font-size: 13px;  text-align: right;">Toplam tutar:</td>
-                        <td style="padding: 0.7rem; font-size: 13px; text-align: right;">{{ totalAmount| currency: 'USD':'symbol':'1.0-0' }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  
+                <div style="display: flex; justify-content: end; margin-top: 1rem;">
+                    <table style="min-width: 18rem; table-layout: auto; white-space: nowrap; ">
+                        <tbody>
+                            <tr>
+                                <td style=" font-size: 13px; font-weight: 500; text-align: left;">Ara
+                                    toplam:</td>
+                                <td style="padding-right: 4.5rem; font-size: 13px; text-align: right;">{{ subtotal | currency:
+                                    'USD':'symbol':'1.0-0' }}</td>
+                            </tr>
+                            <tr>
+                                <td style=" font-size: 13px; font-weight: 500; text-align: left;">İndirim:
+                                </td>
+                                <td style="padding-right: 4.5rem; font-size: 13px; text-align: right;"> -{{ discount | percent }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style=" font-size: 13px; font-weight: 500; text-align: left;">Toplam
+                                    tutar:</td>
+                                <td style="padding-right: 4.5rem; font-size: 13px; text-align: right;">{{ totalAmount| currency:
+                                    'USD':'symbol':'1.0-0' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+
 
                 <div class="other-information">
                     <h5 class="font-medium text-m mb-1">Diğer Bilgiler</h5>

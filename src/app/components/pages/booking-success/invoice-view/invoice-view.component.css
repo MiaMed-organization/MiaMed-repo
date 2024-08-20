@@ -17,7 +17,6 @@
     overflow: auto;
     height: calc(100vh - var(--navbar-height));
     display: flex;
-    padding-top: 40px;
     justify-content: center;
     align-items: center;
 }
@@ -43,7 +42,7 @@
 }
 
 table, th, td {
-    border-bottom: 1px solid rgb(204, 204, 204) !important;
+    border-bottom: 1px solid rgb(224, 224, 224) !important;
     border-collapse: collapse;
     font-size: 15px;
     padding:0.5rem;
