@@ -1,0 +1,40 @@
+<div class="booking-calendar">
+    <div class="day-selector">
+        <button class="arrow">&lt;</button>
+        <div class="days">
+            <div *ngFor="let day of days" class="day" [class.active]="day.active">
+              <p class="text-sm">{{ day.day }}</p>
+              <span class="font-light text-xs">{{ day.date }}</span>
+            </div>
+          </div>
+          
+        <button class="arrow">&gt;</button>
+    </div>
+
+    <div class="time-slots">
+        <div class="time-slot">
+            <p class="font-medium text-sm">Sabah</p>
+            <div class="times">
+                <button class="time">09:00 - 09:30</button>
+                <button class="time">10:00 - 10:30</button>
+                <button class="time">11:00 - 11:30</button>
+            </div>
+        </div>
+        <div class="time-slot">
+            <p class="font-medium text-sm">Öğle</p>
+            <div class="times">
+                <button class="time">12:00 - 12:30</button>
+                <button class="time active">01:00 - 01:30</button>
+                <button class="time">02:30 - 03:00</button>
+            </div>
+        </div>
+        <div class="time-slot">
+            <p class="font-medium text-sm">Akşam</p>
+            <div class="times">
+                <button class="time">03:00 - 03:30</button>
+                <button class="time">04:00 - 04:30</button>
+                <button class="time">05:00 - 05:30</button>
+            </div>
+        </div>
+    </div>
+</div>
