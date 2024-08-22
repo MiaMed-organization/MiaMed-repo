@@ -22,7 +22,7 @@
             <div class="page sections ">
                 <section id="bio-section">
                     <h2>Biyografi</h2>
-                    <p class="text-gray-600" [class.collapsed]="isCollapsed">"{{ displayedBio }}"</p>
+                    <p class="text-gray-600 text-sm" [class.collapsed]="isCollapsed">"{{ displayedBio }}"</p>
                     <button *ngIf="showReadMore" (click)="toggleReadMore()" class="read-more-button">
                         {{ isCollapsed ? 'Devamını oku' : 'Daha azını göster' }}
                     </button>
@@ -33,33 +33,34 @@
 
                 <section id="experience-section">
                     <h2>Deneyimler</h2>
-
-                    <div *ngFor="let experience of firstDoctor.practiceExperience">
+                  
+                    <div *ngIf="firstDoctor.practiceExperience && firstDoctor.practiceExperience.length > 0; else noExperience">
+                      <div *ngFor="let experience of firstDoctor.practiceExperience">
                         <div class="profile-card" *ngFor="let i of experience.img; let index = index">
-                            <div class="flex mb-1">
-                                <img [src]="'../../../../assets/images/doctors/' + experience.img[index]"
-                                    alt="Hospital Logo" class="profile-card-logo">
-
-                                <div class="profile-card-info text-sm">
-                                    <h4 class="text-lg font-semibold">{{ experience.hospital[index] }}</h4>
-                                    <p class="font-medium ">{{ firstDoctor.field }} &bull; {{ firstDoctor.location }}
-                                    </p>
-
-                                    <p class="font-light text-sm mt-3">{{ experience.timePeriod[index] }} &bull; {{
-                                        experience.total[index]
-                                        }}</p>
-                                    <p class="font-light text-sm">{{ experience.experiencedIn[index] }}</p>
-                                </div>
+                          <div class="flex mb-1">
+                            <img [src]="'../../../../assets/images/doctors/' + experience.img[index]"
+                                 alt="Hospital Logo" class="profile-card-logo">
+                            <div class="profile-card-info text-sm">
+                              <h4 class="text-m font-semibold">{{ experience.hospital[index] }}</h4>
+                              <p class="font-medium text-xs">{{ firstDoctor.field }} &bull; {{ firstDoctor.location }}</p>
+                              <p class="font-light text-xs mt-3">{{ experience.timePeriod[index] }} &bull; {{ experience.total[index] }}</p>
+                              <p class="font-light text-sm">{{ experience.experiencedIn[index] }}</p>
                             </div>
+                          </div>
                         </div>
+                      </div>
                     </div>
-                </section>
+                    <ng-template #noExperience>
+                      <p>Doktorun henüz bir deneyimi bulunmamaktadır.</p>
+                    </ng-template>
+                  </section>
+                  
 
                 <p-divider />
 
                 <section id="services-section">
                     <h2>Hizmetler</h2>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2 text-m">
                         <div class="service-box" *ngFor="let service of firstDoctor.services">
                             {{ service }}
                         </div>
@@ -71,7 +72,7 @@
 
                 <section id="availability-section">
                     <div class="section-header">
-                        <h2>Availability</h2>
+                        <h2>Müsaitlik</h2>
                         <div class="button-container">
                             <p-button icon="pi pi-chevron-left" [text]="true" severity="secondary"></p-button>
                             <p-button icon="pi pi-chevron-right" [text]="true" severity="secondary"></p-button>
@@ -79,7 +80,7 @@
                     </div>
 
                     <div class="availability-container gap-3">
-                        <div class="availability-box" *ngFor="let availability of [1,2,3,4,5,6,7,8]">
+                        <div class="availability-box" *ngFor="let availability of [1,2,3,4,5,6,7]">
                             <div class="font-medium text-sm mb-2">
                                 {{ firstDoctor.availability }}
                             </div>
@@ -98,24 +99,24 @@
 
                     <div class="profile-card" *ngFor="let image of firstDoctor.clinicImages; let index = index">
                         <div class="profile-card-content">
-                            <div class="flex mb-1 profile-card-left">
+                            <div class="flex mb-2 profile-card-left">
                                 <img [src]="'../../../../assets/images/clinics/' + firstDoctor.clinicImages[index]"
                                     alt="Hospital Logo" class="profile-card-logo">
 
                                 <div class="profile-card-info text-sm">
-                                    <h4 class="text-lg font-semibold">{{ firstDoctor.hospital }}</h4>
-                                    <p class="font-medium text-sm text-primary mb-5">{{ firstDoctor.minPrice | currency: 'USD':'symbol':'1.0-0'}}
+                                    <h4 class="text-m font-semibold">{{ firstDoctor.hospital }}</h4>
+                                    <p class="font-medium text-xs text-primary mb-5">{{ firstDoctor.minPrice | currency: 'USD':'symbol':'1.0-0'}}
                                         /Randevu</p>
-                                    <p class="font-medium">
+                                    <p class="font-medium text-xs">
                                         <i class="pi pi-map-marker"></i> {{ firstDoctor.location }}
                                     </p>
                                 </div>
                             </div>
 
-                            <div class="flex clinic-availability">
+                            <div class="flex clinic-availability ">
                                 <div class="availability-container gap-3">
                                     <div class="availability-box" *ngFor="let availability of [1, 2]">
-                                        <div class="font-medium text-sm mb-2">{{ firstDoctor.availability }}</div>
+                                        <div class="font-medium text-sm mb-1">{{ firstDoctor.availability }}</div>
                                         <div class="font-light text-xs">{{ firstDoctor.availableTime }}</div>
                                     </div>
                                 </div>
@@ -137,7 +138,7 @@
                                 <img [src]="'../../../../assets/images/patients/' + review.image"
                                     alt="{{ review.name }}" class="review-image">
                                 <div class="review-info">
-                                    <h3>{{ review.name }}</h3>
+                                    <h3 class="text-sm font-medium">{{ review.name }}</h3>
                                     <div class="rating-container">
                                         <span class="star" *ngFor="let star of [1,2,3,4,5]; let i = index">
                                             <i class="pr-1 pi"
@@ -147,7 +148,7 @@
                                     </div>
                                     <p class="font-light text-gray-600 text-xs">{{ review.commentDate }}</p>
                                 </div>
-                                <div class="recommendation">
+                                <div class="recommendation text-sm">
                                     <i *ngIf="review.isRecommend" class="pi pi-thumbs-up text-green-500"></i>
                                     <span *ngIf="review.isRecommend" class="recommend-text text-green-500">Evet, randevu
                                         için öneriyorum.</span>
@@ -157,10 +158,10 @@
                                 </div>
                             </div>
                             <div class="review-body">
-                                <p class="text-sm">{{ review.comment }}</p>
+                                <p class="text-xs text-gray-600">{{ review.comment }}</p>
                             </div>
-                            <div class="mt-1">
-                                <button class="reply-button"><i class="pi pi-reply"></i> Reply</button>
+                            <div class="mt-1 text-xs">
+                                <button class="reply-button"><i class="pi pi-reply"></i> Yanıtla</button>
                             </div>
                         </div>
                     </div>

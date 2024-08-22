@@ -1,14 +1,14 @@
 .card-container {
     display: grid;
     grid-template-columns: 1fr 2fr 1.5fr 1fr;
-    padding: 15px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    gap: 20px;
+    gap: 10px;
     align-items: center;
-    max-width: 1300px;
+    max-width: 1100px;
 }
 
 .img-container {
@@ -18,8 +18,8 @@
 }
 
 .img-container img {
-    height: 185spx;
-    width: 230px;
+    height: auto;
+    width: 200px;
     border-radius: 4px;
     transition: transform 0.6s ease-in-out;
 }
@@ -216,13 +216,13 @@
 
 :host {
     ::ng-deep .p-button {
-        width: 180px;
+        width: 170px;
         display: block;
-        font-size: 15px;
+        font-size: 13px;
         font-weight: 400;
         letter-spacing: 1px;
         text-align: center;
-        padding: 14px 19px;
+        padding: 10px;
         border-radius: 4px;
     }
 }

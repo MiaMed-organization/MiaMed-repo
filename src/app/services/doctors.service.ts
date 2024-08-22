@@ -22,7 +22,7 @@ export class DoctorsService {
         rating: 3,
         feedback: 24,
         recommended: 90,
-        bio: 'Highly motivated and experienced doctor with a passion for providing excellent care to patients.',
+        bio: 'Hastalarına mükemmel bakım sağlama konusunda tutkulu ve deneyimli bir doktor. Çocuk hastalıkları ve erken teşhis alanında uzmanlaşmış, çocuklara mükemmel bakım sunmaya kendini adamış bir doktor.',
         field: 'Kalp Hastalıkları',
         services: ['Kalp muayenesi', 'EKG', 'Tansiyon ölçümü'],
         icon: 'pi-heart',
@@ -35,7 +35,17 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '10:30 - 16:00',
-        consultationFee: 400
+        consultationFee: 400,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['Cambridge University Hastanesi', 'Hill Medical Hastanesi'],
+            timePeriod: ['Eylül 2020 - Ocak 2024', 'Mart 2016 - Ağustos 2020'],
+            total: ['2 yıl 3 ay', '4 yıl 5 ay'],
+            experiencedIn: ['Birinci sınıf sağlık hizmetleri ve acil tıp alanlarında özel uzmanlığa sahip.', 
+                            'Çok çeşitli tıbbi ortamlarda deneyim sahibidir.']
+          }
+        ]
       },
       {
         id: '2',
@@ -51,7 +61,7 @@ export class DoctorsService {
         rating: 4,
         feedback: 30,
         recommended: 85,
-        bio: 'Passionate and dedicated to providing high-quality care to all patients. Extensive experience in diagnostics and emergency medicine.',
+        bio: 'Tüm hastalara yüksek kaliteli bakım sunmaya adanmış ve tutkulu bir doktor. Tanı ve acil tıp alanında geniş deneyime sahip.',
         field: 'Deri Hastalıkları',
         services: ['Cilt kontrolü', 'Alerji testi', 'Egzama tedavisi'],
         icon: 'pi-chart-bar',
@@ -64,7 +74,17 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '09:00 - 15:30',
-        consultationFee: 900
+        consultationFee: 900,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['New York Presbyterian Hospital', 'Mount Sinai Hospital'],
+            timePeriod: ['Şubat 2018 - Mart 2022', 'Nisan 2013 - Ocak 2018'],
+            total: ['4 yıl 1 ay', '5 yıl 9 ay'],
+            experiencedIn: ['Acil tıp ve yoğun bakım ünitelerinde deneyim sahibi.', 
+                            'Tanı ve tedavi süreçlerinde uzmandır.']
+          }
+        ]
       },
       {
         id: '3',
@@ -80,7 +100,7 @@ export class DoctorsService {
         rating: 1,
         feedback: 20,
         recommended: 70,
-        bio: 'Dedicated pediatrician with a strong commitment to providing excellent care to children. Specialized in childhood diseases and early diagnosis.',
+        bio: 'Çocuk hastalıkları ve erken teşhis alanında uzmanlaşmış, çocuklara mükemmel bakım sunmaya kendini adamış bir doktor.',
         field: 'Pediatri',
         services: ['Göz kontrolü', 'Göz testi'],
         icon: 'pi-eye',
@@ -93,7 +113,17 @@ export class DoctorsService {
           { type: 'Sesli Görüşme', icon: 'pi-microphone' }
         ],
         availableTime: '08:00 - 13:00',
-        consultationFee: 250
+        consultationFee: 250,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['UCLA Medical Center', 'Stanford Children\'s Health'],
+            timePeriod: ['Ocak 2019 - Şubat 2023', 'Mart 2015 - Aralık 2018'],
+            total: ['4 yıl 1 ay', '3 yıl 9 ay'],
+            experiencedIn: ['Çocuk sağlığı ve hastalıkları alanında uzmanlaşmış.', 
+                            'Erken teşhis ve tedavi konusunda deneyimlidir.']
+          }
+        ]
       },
       {
         id: '4',
@@ -109,8 +139,8 @@ export class DoctorsService {
         rating: 2,
         feedback: 40,
         recommended: 95,
-        bio: 'Experienced dentist with a passion for oral health. Committed to providing the best possible care to patients with a variety of dental conditions.',
-        field: 'Pediatri',
+        bio: 'Ağız sağlığına tutkulu bir diş hekimi. Çeşitli diş tedavilerinde deneyim sahibidir.',
+        field: 'Diş Hekimliği',
         services: ['Diş kontrolü', 'Dolgu muayenesi'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
@@ -122,7 +152,17 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '11:00 - 17:00',
-        consultationFee: 750
+        consultationFee: 750,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['Texas Dental Clinic', 'San Antonio Oral Surgery'],
+            timePeriod: ['Ocak 2016 - Aralık 2022', 'Şubat 2010 - Aralık 2015'],
+            total: ['6 yıl', '5 yıl 10 ay'],
+            experiencedIn: ['Diş cerrahisi ve estetik diş hekimliği alanında uzman.', 
+                            'Ağız sağlığı ve diş tedavilerinde geniş deneyim.']
+          }
+        ]
       },
       {
         id: '5',
@@ -138,8 +178,8 @@ export class DoctorsService {
         rating: 5,
         feedback: 15,
         recommended: 60,
-        bio: 'Orthopedic surgeon with a focus on sports injuries and rehabilitation. Passionate about helping patients regain mobility and improve their quality of life.',
-        field: 'Pediatri',
+        bio: 'Spor yaralanmaları ve rehabilitasyon konusunda uzmanlaşmış bir ortopedi cerrahı. Hastaların hareket kabiliyetini yeniden kazanmalarına yardımcı olmayı amaçlar.',
+        field: 'Ortopedi',
         services: ['Kemik kontrolü', 'Ortopedik muayene'],
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
@@ -152,7 +192,17 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '10:00 - 14:30',
-        consultationFee: 875
+        consultationFee: 875,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['Nevada Orthopedic Clinic', 'Sunrise Hospital and Medical Center'],
+            timePeriod: ['Nisan 2019 - Ocak 2023', 'Şubat 2016 - Mart 2019'],
+            total: ['3 yıl 9 ay', '3 yıl 1 ay'],
+            experiencedIn: ['Spor yaralanmaları ve rehabilitasyon alanında uzman.', 
+                            'Ortopedik cerrahi ve kas-iskelet sistemi tedavilerinde deneyimlidir.']
+          }
+        ]
       },
       {
         id: '6',
@@ -168,7 +218,7 @@ export class DoctorsService {
         rating: 5,
         feedback: 35,
         recommended: 88,
-        bio: 'Neurologist with extensive experience in treating a wide range of neurological disorders. Dedicated to providing compassionate and personalized care to each patient.',
+        bio: 'Nöroloji alanında geniş bir yelpazede hastalıklar tedavi eden bir nörolog. Hastalara kişiselleştirilmiş ve şefkatli bakım sunmayı amaçlar.',
         field: 'Nöroloji',
         services: ['Beyin kontrolü', 'Refleks testi'],
         icon: 'pi-heart',
@@ -181,7 +231,17 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '08:30 - 16:00',
-        consultationFee: 225
+        consultationFee: 225,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['George Washington University Hospital', 'Virginia Mason Medical Center'],
+            timePeriod: ['Haziran 2014 - Ağustos 2019', 'Eylül 2009 - Mayıs 2014'],
+            total: ['5 yıl 2 ay', '4 yıl 8 ay'],
+            experiencedIn: ['Nöroloji alanında geniş bir yelpazede hastalıklar tedavi etmiştir.', 
+                            'Beyin cerrahisi ve nörolojik hastalıklar konusunda uzmandır.']
+          }
+        ]
       },
       {
         id: '7',
@@ -197,7 +257,7 @@ export class DoctorsService {
         rating: 1,
         feedback: 28,
         recommended: 75,
-        bio: 'ENT specialist with a focus on ear, nose, and throat conditions. Committed to providing comprehensive care to patients of all ages.',
+        bio: 'KBB alanında uzmanlaşmış bir doktor. Kulak, burun ve boğaz hastalıkları konusunda geniş bir deneyime sahip.',
         field: 'KBB',
         services: ['Kulak kontrolü', 'Burun muayenesi'],
         icon: 'pi-eye',
@@ -210,7 +270,17 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '09:00 - 14:00',
-        consultationFee: 450
+        consultationFee: 450,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['Oregon Health & Science University', 'Legacy Emanuel Medical Center'],
+            timePeriod: ['Temmuz 2018 - Kasım 2022', 'Ekim 2014 - Haziran 2018'],
+            total: ['4 yıl 4 ay', '3 yıl 8 ay'],
+            experiencedIn: ['KBB alanında çeşitli tedavi ve cerrahi işlemler yapmıştır.', 
+                            'Kulak, burun, boğaz hastalıkları üzerine geniş deneyim sahibi.']
+          }
+        ]
       },
       {
         id: '8',
@@ -226,7 +296,7 @@ export class DoctorsService {
         rating: 4,
         feedback: 22,
         recommended: 80,
-        bio: 'Plastic surgeon with a strong emphasis on aesthetic procedures. Passionate about helping patients achieve their cosmetic goals with natural results.',
+        bio: 'Estetik cerrahi alanında uzmanlaşmış bir plastik cerrah. Hastaların kozmetik hedeflerine doğal sonuçlarla ulaşmalarına yardımcı olmayı amaçlar.',
         field: 'Plastik Cerrahi',
         services: ['Estetik muayenesi', 'Cilt kontrolü'],
         icon: 'pi-chart-bar',
@@ -239,7 +309,17 @@ export class DoctorsService {
           { type: 'Sesli Görüşme', icon: 'pi-microphone' }
         ],
         availableTime: '11:30 - 16:30',
-        consultationFee: 400
+        consultationFee: 400,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['Mayo Clinic', 'Phoenix Children\'s Hospital'],
+            timePeriod: ['Nisan 2017 - Şubat 2021', 'Mart 2012 - Mart 2017'],
+            total: ['3 yıl 10 ay', '5 yıl'],
+            experiencedIn: ['Estetik cerrahi alanında uzman, doğal sonuçlar elde etmeye odaklanır.', 
+                            'Çeşitli estetik prosedürler konusunda geniş deneyime sahip.']
+          }
+        ]
       },
       {
         id: '9',
@@ -255,7 +335,7 @@ export class DoctorsService {
         rating: 2,
         feedback: 50,
         recommended: 99,
-        bio: 'Pediatrician with extensive experience in treating children of all ages. Focused on providing comprehensive care in a friendly and supportive environment.',
+        bio: 'Çocuk sağlığı ve hastalıkları alanında geniş deneyim sahibi bir pediatrist. Çocuklara dostane ve destekleyici bir ortamda kapsamlı bakım sunar.',
         field: 'Pediatri',
         services: ['Çocuk kontrolü', 'Büyüme testi'],
         icon: 'pi-heart',
@@ -268,7 +348,17 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '09:30 - 15:00',
-        consultationFee: 1200
+        consultationFee: 1200,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['Children\'s Hospital Colorado', 'Rocky Mountain Hospital for Children'],
+            timePeriod: ['Ocak 2015 - Eylül 2021', 'Mart 2010 - Aralık 2014'],
+            total: ['6 yıl 8 ay', '4 yıl 9 ay'],
+            experiencedIn: ['Çocuk sağlığı ve hastalıkları alanında geniş deneyim sahibi.', 
+                            'Pediatri alanında uzmanlaşmış, geniş bir hasta kitlesi ile çalışmıştır.']
+          }
+        ]
       },
       {
         id: '10',
@@ -284,8 +374,8 @@ export class DoctorsService {
         rating: 1,
         feedback: 12,
         recommended: 55,
-        bio: 'Psychiatrist with a focus on child and adolescent mental health. Passionate about helping young people overcome challenges and achieve their full potential.',
-        field: 'Pediatri',
+        bio: 'Çocuk ve ergen ruh sağlığı konusunda uzmanlaşmış bir psikiyatrist. Genç bireylerin zorlukları aşmalarına ve potansiyellerini gerçekleştirmelerine yardımcı olmayı amaçlar.',
+        field: 'Psikiyatri',
         services: ['Diş kontrolü', 'Psikolojik muayene'],
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
@@ -298,7 +388,17 @@ export class DoctorsService {
           { type: 'Mesajlaşma', icon: 'pi-comment' }
         ],
         availableTime: '08:00 - 12:00',
-        consultationFee: 700
+        consultationFee: 700,
+        practiceExperience: [
+          {
+            img: ['experience-logo-01.svg', 'experience-logo-02.svg'],
+            hospital: ['University of Utah Health', 'Primary Children\'s Hospital'],
+            timePeriod: ['Ekim 2020 - Mart 2022', 'Haziran 2018 - Eylül 2020'],
+            total: ['1 yıl 5 ay', '2 yıl 3 ay'],
+            experiencedIn: ['Çocuk ve ergen ruh sağlığı konusunda uzmanlaşmış.', 
+                            'Genç bireylerle çalışma konusunda geniş deneyime sahip.']
+          }
+        ]
       }
     ];
   }

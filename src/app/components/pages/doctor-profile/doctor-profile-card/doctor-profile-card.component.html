@@ -13,10 +13,10 @@
         </div>
 
         <div class="name-container">
-            <a class="text-lg font-semibold">{{ doctor.name }}</a>
+            <a class="text-m font-semibold">{{ doctor.name }}</a>
             <i class="fas fa-check-circle verified"></i>
 
-            <div class="field-tag">
+            <div class="field-tag text-xs">
                 <span class="field-icon">•</span> {{ doctor.field }}
             </div>
 
@@ -76,12 +76,12 @@
     </div>
 
     <div class="card-footer">
-        <div class="footer-left">
+        <div class="footer-left text-sm">
             <div class="footer-item ">
                 <i class="pi pi-calendar footer-item text-white"></i>
                 {{doctor.bookedAppointment}} Hasta randevusu alındı
             </div>
-            <div class="footer-item">
+            <div class="footer-item ml-2">
                 <i class="pi pi-verified footer-item text-white"></i>
                 {{doctor.experience}} Yıllık deneyim
             </div>

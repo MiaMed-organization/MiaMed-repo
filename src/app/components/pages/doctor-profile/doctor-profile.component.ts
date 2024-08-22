@@ -33,6 +33,7 @@ export class DoctorProfileComponent implements OnInit {
       this.doctors = data;
       if (this.doctors.length > 0) {
         this.firstDoctor = this.doctors[0];
+        console.log("Doctor Data:", this.firstDoctor);
         this.initializeBio(); // Biyografi metnini ayarla
       }
     });
