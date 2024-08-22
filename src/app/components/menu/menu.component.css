@@ -12,137 +12,151 @@ body {
     height: calc(100vh - 67px);
 }
 
-.sidebar-menu li::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: 0;
-    right: 0;
-    height: 8px;
-    /* Gölgenin yüksekliği */
-    box-shadow: 0 -8px 10px rgba(0, 0, 0, 0.4);
-    /* Gölgeyi üst kısımda oluşturur */
+nav {
+    height: 67px;
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    /* Navbar'ı tamamen sabit yapar */
+    top: 0;
+    /* Sayfanın üst kısmına sabitler */
+    width: 100%;
+    /* Navbar'ın genişliğini tam ekran yapar */
+    z-index: 1000;
+    /* Navbar'ın diğer içeriklerin üstünde görünmesini sağlar */
+    background-color: white;
+    /* Arka planı beyaz yapar */
+}
+
+
+@media (max-width: 768px) {
+    .navbar-container input[pInputText] {
+        width: 140px;
+    }
+
+    .navbar-container input[pInputText] {
+        font-size: 14px;
+    }
+
+    .avatar-button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container input[pInputText] {
+        width: 100px;
+    }
+
+    .navbar-container input[pInputText] {
+        font-size: 12px;
+    }
+
+    .avatar-button {
+        font-size: 12px;
+    }
 }
 
 .sidebar-container {
     display: flex;
     width: 6.5rem;
-    position: relative;
-    margin-top: 0.1rem;
-    z-index: 3;
-    transition: width 0.5s;
-}
-
-.sidebar-container aside {
-    width: 0;
-    overflow-y: hidden;
-    transition: all 0.5s;
-    position: absolute;
+    position: fixed;
+    /* Slimbar'ı sabit hale getirir */
+    top: 67px;
+    /* Navbar'ın yüksekliği kadar bir boşluk bırakır */
     left: 0;
-    top: 0;
-    height: 100%;
-    z-index: 1;
+    /* Sayfanın sol tarafına sabitler */
+    height: calc(100vh - 67px);
+    /* Tam ekran yüksekliği - navbar yüksekliği */
+    z-index: 100;
+    /* Navbar'ın altında kalmasını sağlar */
     transition: width 0.5s;
+    background-color: #124BAC;
+    /* Slimbar'ın arka plan rengini sabitler */
 }
 
-.container .slim-body {
-    width: 6.5rem;
+.slim-body {
     background-color: #124BAC;
     height: 100%;
-    transition: all 0.5s;
-    transition: width 0.5s;
-}
-
-.sidebar-content {
-    background-color: #f9fafb;
-}
-
-.sidebar-container.sidebar-open aside {
-    width: 19rem;
+    align-items: center; 
+    transition: width 0.5s ease-in-out, padding 0.5s ease-in-out;
+    position: fixed;
+    /* Slimbar gövdesini sabitler */
+    top: 67px;
+    /* Navbar'ın altında kalacak şekilde sabitler */
+    left: 0;
+    z-index: 100;
+    width: 6.5rem;
+    /* Daraltılmış genişlik */
 }
 
 .sidebar-container.sidebar-open .slim-body {
-    width: 19rem;
+    width: 16rem;
+    align-items: center; 
+    /* Genişletilmiş genişlik */
 }
 
-.sidebar-menu li {
-    display: flex;
-    align-items: center;
-    padding: 0.6rem 5rem 0.6rem 0.3rem;
-}
-
-.avatar-button {
-    font-size: 0.1rem;
-    padding: 0rem;
-}
-
-.avatar-wrapper {
-    padding-top: 3rem;
-    position: relative;
-    display: inline-block;
-}
-
-.avatar-icon {
-    position: absolute;
-    display: flex;
-    margin: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgb(27, 150, 58);
-    border-radius: 50%;
-    padding: 0.3rem;
-    font-size: 0.4rem;
-    font-weight: bolder;
-    color: white;
-}
-
-.head {
+.slim-body .card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    width: 100%; /* Card'ın genişliği tam olur */
+    transition: all 0.5s ease-in-out; /* Genişleme sırasında geçiş efekti */
 }
 
-.head h4,
-.head p {
-    margin: 0;
-    padding: 0;
+.sidebar-avatar{
+    margin-left: 6rem;
 }
 
-.head h4 {
-    margin-bottom: 0.5rem;
-}
-
-.head p {
-    font-size: 0.8rem;
-}
-
-:host ::ng-deep .p-avatar {
-    border: 3px solid white;
-}
-
-.sidebar-items .availability {
-    background-color: #e7e7e7;
-    padding: 0.3rem 0 1.3rem 1.3rem;
-}
-
-:host ::ng-deep .p-dropdown {
-    width: 16rem;
-}
-
-.sidebar-menu {
-    list-style-type: none;
-    padding-left: 0;
+.slimbar-avatar{
     margin-left: 1rem;
 }
 
-.sidebar-items .sidebar-menu li:hover {
-    background-color: #e7e7e7;
-    border: none;
-    border-radius: 10px;
-    transition: 0.2s;
+.slim-body .p-avatar {
+    margin-bottom: 1rem; /* P-avatar ile altındaki içerik arasında boşluk bırakır */
 }
+
+.text-container {
+    text-align: center; /* Metni ortalar */
+    color: white; /* Yazı rengini beyaz yapar (isteğe bağlı) */
+    margin-top: 1rem; /* Üstten boşluk ekler */
+    white-space: nowrap;
+}
+
+.text-container h4 {
+    margin: 0;
+    font-size: 1.2rem; /* Başlığın boyutu */
+}
+
+.text-container p {
+    margin: 0;
+    font-size: 0.9rem; /* Alt başlığın boyutu */
+}
+
+.availability {
+    background-color: #3461af;
+    padding: 0.1rem 0 1.3rem 1.3rem;
+}
+
+:host ::ng-deep .p-inputtext {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.2rem;
+}
+
+/* Sidebar genişlediğinde fare işaretçisini pointer yap */
+.sidebar-container.sidebar-open .slimbar-menu li {
+    cursor: pointer;
+}
+
+/* Sidebar genişlediğinde ve hover durumunda arka plan rengini değiştir */
+.sidebar-container.sidebar-open .slimbar-menu li:hover {
+    transition: all 0.3s ease; /* Geçişi yumuşatır */
+    padding: 0.5rem 0.2rem;
+}
+
+/* Slimbar durumundayken arka plan rengi değişmesin */
+.slimbar-menu li:hover {
+    background-color: transparent; /* Hover olduğunda arka plan rengi değişmesin */
+}
+
 
 .slimbar-menu {
     list-style-type: none;
@@ -154,21 +168,16 @@ body {
 }
 
 .slimbar-menu li {
-    position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 10px 0;
+    justify-content: flex-start; /* İkon ve etiketlerin hizalanmasını sağlar */
+    transition: all 0.5s ease; /* Transition efekti */
+    white-space: nowrap;
 }
 
-.sidebar-menu li.active {
-    background-color: blue;
-    color: white;
-    border-radius: 10px;
-}
 
-.sidebar-menu li.active:hover {
-    background-color: blue !important;
+:host ::ng-deep .p-avatar {
+    border: 3px solid white;
 }
 
 .overlay {
@@ -177,12 +186,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Griden neredeyse transparan */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Griden neredeyse transparan */
     z-index: 2;
 }
 
 @media (max-width: 620px) {
     .slim-body {
-        display: none; /* Slimbar'ı gizler */
+        display: none;
+        /* Slimbar'ı gizler */
     }
 }
