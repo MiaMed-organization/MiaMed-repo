@@ -17,7 +17,7 @@
     overflow: auto;
     height: calc(100vh - var(--navbar-height));
     display: flex;
-    padding-top: 30px;
+    padding-top: 100px;
     justify-content: center;
 }
 

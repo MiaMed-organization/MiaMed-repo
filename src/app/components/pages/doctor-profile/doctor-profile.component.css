@@ -29,6 +29,7 @@
 .page-container {
   margin-top: 10px;
   display: flex;
+  padding-top: 90px !important;
   flex-direction: column;
   align-items: center;
   width: 100%;
