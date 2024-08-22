@@ -1,5 +1,4 @@
 
-
 .app-container {
   display: flex;
   flex-direction: column;
@@ -16,6 +15,7 @@
 .container {
   display: flex;
   padding-top: 65px;
+  margin-left: 7rem;
   width: 100%;
   height: calc(100vh - var(--navbar-height));
   overflow: hidden; /* Taşmayı engellemek için eklendi */

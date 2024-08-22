@@ -8,9 +8,9 @@
       <div class="avatar-container">
         <p-avatar image="../../../assets/images/pp_user.jpeg"
           [ngClass]="{'sidebar-avatar': sidebarOpen, 'slimbar-avatar': !sidebarOpen}"
-          styleClass="mr-2 w-4rem mt-5 h-auto" shape="circle">
+          styleClass="mr-2 w-4rem mt-6 h-auto" shape="circle">
         </p-avatar>
-
+        
         <div *ngIf="sidebarOpen" class="text-container mt-2">
           <h4 class="text-sm font-semibold">Dr Edalin Hendry</h4>
           <p class="text-xs font-light">BDS, MDS - Oral & Maxillofacial Surgery</p>
@@ -27,6 +27,7 @@
 
       <div class="card flex mt-4">
         <ul class="slimbar-menu justify-content-center align-items-center">
+          
           <li *ngFor="let item of sidebarItems" class="mb-4" [pTooltip]="!sidebarOpen ? item.label : null"
             tooltipEvent="hover" (click)="setActiveItem(item)">
             <i [class]="item.icon" class="pr-3"></i>
