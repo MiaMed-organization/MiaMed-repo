@@ -1,68 +1,129 @@
 .app-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
 }
 
 .content-wrapper {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
 
 .page-container {
-    margin-top: var(--navbar-height);
-    flex: 1;
-    overflow: auto;
-    padding-top: 40px;
-    height: calc(100vh - var(--navbar-height));
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin-top: var(--navbar-height);
+  flex: 1;
+  overflow: auto;
+  padding-top: 40px;
+  height: calc(100vh - var(--navbar-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.invoice-card{
-    padding: 1.5rem ;
-    border: 0.4px solid rgb(230, 230, 230);
-    border-radius: 1rem;
-    width:550px;
+.invoice-card {
+  padding: 1.5rem;
+  border: 0.4px solid rgb(230, 230, 230);
+  border-radius: 1rem;
+  width: 550px;
 }
 
 .img-container {
-    display: flex;
-    align-items: center; /* Dikeyde de ortalamak isterseniz bu eklemeyi yapabilirsiniz */
+  display: flex;
+  align-items: center;
+  /* Dikeyde de ortalamak isterseniz bu eklemeyi yapabilirsiniz */
 }
 
-.card-right{
-    display: flex;
-    flex-direction: column; /* İçerikleri dikeyde sıralamak için */
-    justify-content: center; /* Dikeyde ortalamak için */
-    align-items: flex-end; /* Sağ tarafa yaslamak için */
-    text-align: right; /* Metinlerin sağa yaslanmasını sağlamak için */
+.card-right {
+  display: flex;
+  flex-direction: column;
+  /* İçerikleri dikeyde sıralamak için */
+  justify-content: center;
+  /* Dikeyde ortalamak için */
+  align-items: flex-end;
+  /* Sağ tarafa yaslamak için */
+  text-align: right;
+  /* Metinlerin sağa yaslanmasını sağlamak için */
 }
 
-table, th, td {
-    border-bottom: 1px solid rgb(224, 224, 224) !important;
-    border-collapse: collapse;
+table,
+th,
+td {
+  border-bottom: 1px solid rgb(224, 224, 224) !important;
+  border-collapse: collapse;
+  font-size: 15px;
+  padding: 0.5rem;
+  font-weight: 300;
+}
+
+table,
+th,
+td {
+  border-bottom: 1px solid #374151;
+  border-collapse: collapse;
+
+}
+
+table td {
+  padding: 0.5rem;
+  font-weight: 300;
+}
+
+table th {
+  padding: 0.5rem;
+  font-weight: 500;
+  text-align: justify;
+}
+
+.fee-table {
+  min-width: 30rem;
+  table-layout: auto;
+  white-space: nowrap;
+  width: 500px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 650px) {
+  .invoice-card {
+    width: 490px;
+  }
+
+  .fee-table {
+    min-width: 28rem;
+    width: 400px
+  }
+
+  h4 {
     font-size: 15px;
-    padding:0.5rem;
-    font-weight: 300;
   }
 
-  table, th, td {
-    border-bottom: 1px solid #374151;
-    border-collapse: collapse;
+  table,
+  th,
+  td {
 
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 540px) {
+  .invoice-card {
+    width: 450px;
   }
 
-  table td{
-    padding:0.5rem;
-    font-weight: 300;
+  .fee-table {
+    min-width: 25rem;
+    width: 400px
   }
 
-  table th{
-    padding:0.5rem;
-    font-weight: 500;
-    text-align: justify;
+  h4 {
+    font-size: 14px;
   }
+
+  table,
+  th,
+  td {
+
+    font-size: 14px;
+  }
+}

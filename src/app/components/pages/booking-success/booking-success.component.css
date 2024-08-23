@@ -22,10 +22,12 @@
 }
 
 .success-icon-container {
-    height: 60px; /* İcon'u dikeyde ortalamak için yeterli bir yükseklik */
+    height: 60px;
+    /* İcon'u dikeyde ortalamak için yeterli bir yükseklik */
     display: flex;
     justify-content: center;
-    align-items: center; /* Dikey ve yatayda ortalama */
+    align-items: center;
+    /* Dikey ve yatayda ortalama */
 }
 
 .success-icon {
@@ -37,11 +39,37 @@
 
 p-card .p-card-footer {
     display: flex;
-    justify-content: center; /* Footer kısmındaki butonu yatayda ortalamak için */
+    justify-content: center;
+    /* Footer kısmındaki butonu yatayda ortalamak için */
 }
 
-:host ::ng-deep .p-card .p-card-title{
+:host ::ng-deep .p-card .p-card-title {
     text-align: center;
 }
 
 
+@media (max-width: 950px) {
+    :host ::ng-deep .p-card-title {
+        font-size: 20px;
+    }
+
+    :host ::ng-deep .p-card .p-card-content {
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+
+    :host ::ng-deep .p-card-title {
+        font-size: 18px;
+    }
+
+    :host ::ng-deep .p-card .p-card-content {
+        padding: 0.8rem 0;
+    }
+
+    :host ::ng-deep .p-button {
+        padding: 0.7rem ;
+    }
+
+}
