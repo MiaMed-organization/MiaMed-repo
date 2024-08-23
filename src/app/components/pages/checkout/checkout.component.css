@@ -24,7 +24,6 @@
 .content-container {
     display: flex;
     overflow: auto;
-    flex-direction: column;
     align-items: flex-start;
     gap: 20px;
     flex-direction: row; 
@@ -46,7 +45,6 @@
 
 .expireDate {
     display: flex;
-    margin-top: 0.3rem;
     justify-content: space-between; /* Ay ve Yıl arasında boşluk bırakır */
 }
 
@@ -89,4 +87,29 @@
 
 :host ::ng-deep .p-card-content {
     padding-bottom: 0px;
+}
+
+@media (max-width: 900px){
+    .field>label{
+        font-size: 13.5px;
+    }
+
+    :host ::ng-deep .p-card .p-card-title{
+        font-size: 1rem;
+    }
+
+    .checkbox{
+        font-size: 13.5px;
+    }
+}
+
+@media (max-width: 840px){
+    .page-container{
+        flex-direction: column;
+    }
+
+    .content-container {
+        flex-direction: column; /* Booking Summary'nin altına geçmesini sağlar */
+        align-items: center; /* İçeriği ortalar */
+    }
 }

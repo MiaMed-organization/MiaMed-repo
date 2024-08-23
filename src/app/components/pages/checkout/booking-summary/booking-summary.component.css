@@ -4,7 +4,9 @@
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
+    max-width: 300px ;
+    width: 100%; 
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -58,4 +60,29 @@
 
 :host ::ng-deep .p-divider{
     margin-top: 0.4rem;
+}
+
+
+@media (max-width: 900px){
+    .summary-card-container{
+        max-width: 260px;
+    }
+
+    .img-container img {
+        max-width: 85px;
+    }
+}
+
+@media (max-width: 840px){
+    .summary-card-container{
+        flex-basis: 100%;
+        min-width: 550px !important;
+        margin-bottom: 25px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .img-container img {
+        max-width: 120px;
+    }
 }
