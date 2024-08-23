@@ -2,17 +2,14 @@
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     max-width: 1000px;
+    width: 100%;
     height: 130px;
     display: flex;
     flex-direction: column;
-}
-
-.profile-img-card h5{
-    font-size: 15px;
 }
 
 .profile-img-logo {
@@ -60,4 +57,51 @@
 
 :host ::ng-deep .p-button .p-button-label {
     font-weight: 500;
+}
+
+@media (max-width: 1200px){
+    .profile-img-card {
+        max-width: 900px !important;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 950px){
+    .profile-img-card {
+        max-width: 800px !important;
+        margin: 0 auto;
+    }
+
+    .profile-img-card h5{
+        font-size: 16.7px !important;
+    }
+
+}
+
+@media (max-width: 850px){
+    .profile-img-card {
+        max-width: 750px !important;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 768px){
+    .profile-img-card {
+        max-width: 650px !important;
+        margin: 0 auto;
+    }
+
+    .profile-img-card h5{
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 660px){
+    .profile-img-card {
+        max-width: 550px !important;
+        margin: 0 auto;
+    }
+
 }

@@ -17,8 +17,9 @@
     overflow: auto;
     height: calc(100vh - var(--navbar-height));
     display: flex;
-    padding-top: 100px;
+    padding-top: 40px;
     justify-content: center;
+    align-items: center;
 }
 
 .content-container {
@@ -80,3 +81,61 @@
 :host ::ng-deep .p-card-content {
     padding-bottom: 0px;
 }
+
+/* Profile Img Card için */
+.profile-img-card,
+.personal-info form,
+.address-info form {
+    max-width: 900px; /* Büyük ekranlar için max genişlik */
+    width: 100%; /* Mevcut genişliği doldur */
+    margin: 0 auto; /* Ortala */
+}
+
+@media (max-width: 1200px) {
+    .profile-img-card,
+    .personal-info form,
+    .address-info form {
+        max-width: 900px !important;
+    }
+}
+
+@media (max-width: 950px) {
+    .profile-img-card,
+    .personal-info form,
+    .address-info form {
+        max-width: 800px !important;
+    }
+
+    :host ::ng-deep .p-card-title {
+        font-size: 16.7px !important;
+    }
+}
+
+@media (max-width: 850px) {
+    .profile-img-card,
+    .personal-info form,
+    .address-info form {
+        max-width: 750px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .profile-img-card,
+    .personal-info form,
+    .address-info form {
+        max-width: 650px !important;
+    }
+    
+    :host ::ng-deep .p-card-title {
+        font-size: 15px !important;
+    }
+}
+
+@media (max-width: 660px) {
+    .profile-img-card,
+    .personal-info form,
+    .address-info form {
+        max-width: 550px !important;
+    }
+}
+
