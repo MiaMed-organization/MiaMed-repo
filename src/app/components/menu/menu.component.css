@@ -16,17 +16,132 @@ nav {
     height: 67px;
     box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
     position: fixed;
-    /* Navbar'ı tamamen sabit yapar */
     top: 0;
-    /* Sayfanın üst kısmına sabitler */
     width: 100%;
-    /* Navbar'ın genişliğini tam ekran yapar */
     z-index: 1000;
-    /* Navbar'ın diğer içeriklerin üstünde görünmesini sağlar */
     background-color: white;
-    /* Arka planı beyaz yapar */
 }
 
+.sidebar-container {
+    display: flex;
+    width: 6.5rem;
+    position: fixed;
+    top: 67px;
+    left: 0;
+    height: calc(100vh - 67px);
+    z-index: 100;
+    transition: width 0.5s;
+    background-color: #124BAC;
+}
+
+.slim-body {
+    background-color: #124BAC;
+    height: 100%;
+    align-items: center;
+    transition: width 0.5s ease-in-out, padding 0.5s ease-in-out;
+    position: fixed;
+    top: 67px;
+    left: 0;
+    z-index: 100;
+    width: 6.5rem;
+}
+
+.sidebar-container.sidebar-open .slim-body {
+    width: 16rem;
+    align-items: center;
+}
+
+.slim-body .card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.sidebar-avatar {
+    margin-left: 6rem;
+}
+
+.slimbar-avatar {
+    margin-left: 1rem;
+}
+
+.slim-body .p-avatar {
+    margin-bottom: 1rem;
+}
+
+.text-container {
+    text-align: center;
+    color: white;
+    margin-top: 1rem;
+    white-space: nowrap;
+}
+
+.text-container h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.text-container p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.availability {
+    background-color: #3461af;
+    padding: 0.1rem 0 1.3rem 1.3rem;
+}
+
+:host ::ng-deep .p-inputtext {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.2rem;
+}
+
+.sidebar-container.sidebar-open .slimbar-menu li {
+    cursor: pointer;
+}
+
+.sidebar-container.sidebar-open .slimbar-menu li:hover {
+    transition: all 0.3s ease;
+    padding: 0.5rem 0.2rem;
+}
+
+.slimbar-menu li:hover {
+    background-color: transparent;
+}
+
+
+.slimbar-menu {
+    list-style-type: none;
+    color: white;
+}
+
+.slimbar-menu i {
+    font-size: 20px;
+}
+
+.slimbar-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: all 0.5s ease;
+    white-space: nowrap;
+}
+
+
+:host ::ng-deep .p-avatar {
+    border: 3px solid white;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
 
 @media (max-width: 768px) {
     .navbar-container input[pInputText] {
@@ -56,144 +171,19 @@ nav {
     }
 }
 
-.sidebar-container {
-    display: flex;
-    width: 6.5rem;
-    position: fixed;
-    /* Slimbar'ı sabit hale getirir */
-    top: 67px;
-    /* Navbar'ın yüksekliği kadar bir boşluk bırakır */
-    left: 0;
-    /* Sayfanın sol tarafına sabitler */
-    height: calc(100vh - 67px);
-    /* Tam ekran yüksekliği - navbar yüksekliği */
-    z-index: 100;
-    /* Navbar'ın altında kalmasını sağlar */
-    transition: width 0.5s;
-    background-color: #124BAC;
-    /* Slimbar'ın arka plan rengini sabitler */
-}
-
-.slim-body {
-    background-color: #124BAC;
-    height: 100%;
-    align-items: center; 
-    transition: width 0.5s ease-in-out, padding 0.5s ease-in-out;
-    position: fixed;
-    /* Slimbar gövdesini sabitler */
-    top: 67px;
-    /* Navbar'ın altında kalacak şekilde sabitler */
-    left: 0;
-    z-index: 100;
-    width: 6.5rem;
-    /* Daraltılmış genişlik */
-}
-
-.sidebar-container.sidebar-open .slim-body {
-    width: 16rem;
-    align-items: center; 
-    /* Genişletilmiş genişlik */
-}
-
-.slim-body .card {
-    display: flex;
-    flex-direction: column;
-    width: 100%; /* Card'ın genişliği tam olur */
-    transition: all 0.5s ease-in-out; /* Genişleme sırasında geçiş efekti */
-}
-
-.sidebar-avatar{
-    margin-left: 6rem;
-}
-
-.slimbar-avatar{
-    margin-left: 1rem;
-}
-
-.slim-body .p-avatar {
-    margin-bottom: 1rem; /* P-avatar ile altındaki içerik arasında boşluk bırakır */
-}
-
-.text-container {
-    text-align: center; /* Metni ortalar */
-    color: white; /* Yazı rengini beyaz yapar (isteğe bağlı) */
-    margin-top: 1rem; /* Üstten boşluk ekler */
-    white-space: nowrap;
-}
-
-.text-container h4 {
-    margin: 0;
-    font-size: 1.2rem; /* Başlığın boyutu */
-}
-
-.text-container p {
-    margin: 0;
-    font-size: 0.9rem; /* Alt başlığın boyutu */
-}
-
-.availability {
-    background-color: #3461af;
-    padding: 0.1rem 0 1.3rem 1.3rem;
-}
-
-:host ::ng-deep .p-inputtext {
-    font-size: 0.9rem;
-    padding: 0.5rem 0.2rem;
-}
-
-/* Sidebar genişlediğinde fare işaretçisini pointer yap */
-.sidebar-container.sidebar-open .slimbar-menu li {
-    cursor: pointer;
-}
-
-/* Sidebar genişlediğinde ve hover durumunda arka plan rengini değiştir */
-.sidebar-container.sidebar-open .slimbar-menu li:hover {
-    transition: all 0.3s ease; /* Geçişi yumuşatır */
-    padding: 0.5rem 0.2rem;
-}
-
-/* Slimbar durumundayken arka plan rengi değişmesin */
-.slimbar-menu li:hover {
-    background-color: transparent; /* Hover olduğunda arka plan rengi değişmesin */
-}
-
-
-.slimbar-menu {
-    list-style-type: none;
-    color: white;
-}
-
-.slimbar-menu i {
-    font-size: 20px;
-}
-
-.slimbar-menu li {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; /* İkon ve etiketlerin hizalanmasını sağlar */
-    transition: all 0.5s ease; /* Transition efekti */
-    white-space: nowrap;
-}
-
-
-:host ::ng-deep .p-avatar {
-    border: 3px solid white;
-}
-
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Griden neredeyse transparan */
-    z-index: 2;
-}
-
-@media (max-width: 620px) {
-    .slim-body {
-        display: none;
-        /* Slimbar'ı gizler */
+@media (max-width: 768px) {
+    .sidebar-container {
+      display: none; /* Completely hide the sidebar container and background */
     }
-}
+  
+    .sidebar-container.sidebar-open {
+      display: block; /* Show sidebar when open */
+      width: 16rem;   /* Set the width for the expanded sidebar */
+      background-color: #124BAC; /* Keep the blue background for the expanded sidebar */
+    }
+    
+    .overlay {
+      display: block; /* Ensure overlay appears when sidebar is open */
+    }
+  }
+  
