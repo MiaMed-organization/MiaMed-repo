@@ -1,101 +1,136 @@
 .app-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
 }
 
 .content-wrapper {
-    display: flex;
-    flex: 1;
-    overflow: hidden;
+  display: flex;
+  flex: 1;
+  overflow: hidden;
 }
 
 .page-container {
-    margin-top: var(--navbar-height);
-    flex: 1;
-    overflow: auto;
-    height: calc(100vh - var(--navbar-height));
-    display: flex;
-    padding-top: 120px;
-    justify-content: center;
+  margin-top: var(--navbar-height);
+  flex: 1;
+  overflow: auto;
+  height: calc(100vh - var(--navbar-height));
+  display: flex;
+  padding-top: 120px;
+  justify-content: center;
 }
 
-.container {
-    display: flex;
-    justify-content: center; /* Yatayda ortalar */
-    align-items: flex-start; /* Üst hizalamayı sağlar */
-  }
-  
-  .left-section {
-    display: flex;
-    flex-direction: column;
-    width: 65%;
-  }
-  
-  .date-container,
-  .app-booking-calender {
-    margin-bottom: 20px; /* Alt alta boşluk sağlar */
-  }
-  
-  .app-booking-summary-card {
-    width: 30%;
-    margin-left: 20px; /* Sol boşluk ekler */
-  }
+.booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 
-  .date-container h3{
-    font-size: 18px;
-  }
+.left-section {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.date-container,
+.app-booking-calender {
+  margin-bottom: 20px;
+}
+
+.app-booking-summary-card {
+  width: 30%;
+  margin-left: 20px;
+}
+
+.date-container h3 {
+  font-size: 18px;
+}
 
 .custom-dropdown {
-    position: relative;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 8px 12px;
-    width: 300px;
-    font-size: 15px;
-    color: rgb(65, 64, 64);
-    cursor: pointer;
-    background-color: white;
-  }
-  
-  .selected-date {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    font-size: 15px;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
-    list-style: none;
-    padding: 0;
-    z-index: 1000;
-  }
-  
-  .dropdown-menu li {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .dropdown-menu li:hover {
-    background-color: #f1f1f1;
-  }
-  
+  position: relative;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px 12px;
+  width: 300px;
+  font-size: 15px;
+  color: rgb(65, 64, 64);
+  cursor: pointer;
+  background-color: white;
+}
 
-  :host ::ng-deep .p-button{
-    padding: 0.5rem;
-    font-size: 13px;
+.selected-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  font-size: 15px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  list-style: none;
+  padding: 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f1f1;
+}
+
+
+:host ::ng-deep .p-button {
+  padding: 0.5rem;
+  font-size: 13px;
 }
 
 :host ::ng-deep .p-button .p-button-label {
-    font-weight: 500;
+  font-weight: 500;
+}
+
+@media (max-width: 1200px) {
+  .booking-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-section {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 4rem;
+  }
+
+  .app-booking-summary-card {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .date-container {
+    margin-left: 2rem;
+  }
+
+  p-button {
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 725px) {
+  .date-container h4 {
+    font-size: 15px;
+  }
+
+  .dropdown-menu{
+    font-size: 14px;
+  }
 }

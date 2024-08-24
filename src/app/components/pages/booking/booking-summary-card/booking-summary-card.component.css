@@ -45,3 +45,22 @@
 :host ::ng-deep .p-button .p-button-label {
     font-weight: 500;
 }
+
+@media (max-width: 1200px){
+    .container {
+        width: 640px;
+        margin-right: 2rem;
+    }
+}
+
+@media (max-width: 725px){
+    .container {
+        width: 550px;
+    }
+}
+
+@media (max-width: 595px){
+    .container {
+        width: 500px;
+    }
+}
