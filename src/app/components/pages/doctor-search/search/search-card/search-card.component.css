@@ -134,7 +134,7 @@
     }
 }
 
-/* @media (max-width: 1650px) {
+@media (max-width: 1650px) {
     .list-card-container{
         width: 900px;
     }
@@ -156,4 +156,4 @@
     .list-card-container{
         width: 670px;
     }
-} */
+}

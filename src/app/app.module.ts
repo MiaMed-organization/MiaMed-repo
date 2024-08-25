@@ -67,6 +67,7 @@ import { BookingSummaryComponent } from './components/pages/checkout/booking-sum
 import { InvoiceViewComponent } from './components/pages/booking-success/invoice-view/invoice-view.component';
 import { BookingSummaryCardComponent } from './components/pages/booking/booking-summary-card/booking-summary-card.component';
 import { BookingCalenderComponent } from './components/pages/booking/booking-calender/booking-calender.component';
+import { SearchCardComponent } from './components/pages/doctor-search/search/search-card/search-card.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { BookingCalenderComponent } from './components/pages/booking/booking-cal
     InvoiceViewComponent,
     BookingSummaryCardComponent,
     BookingCalenderComponent,
+    SearchCardComponent,
   ],
   imports: [
     BrowserModule,
