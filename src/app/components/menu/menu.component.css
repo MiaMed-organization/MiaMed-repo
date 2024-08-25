@@ -173,17 +173,16 @@ nav {
 
 @media (max-width: 1300px) {
     .sidebar-container {
-      display: none; /* Completely hide the sidebar container and background */
+        display: none;
     }
-  
+
     .sidebar-container.sidebar-open {
-      display: block; /* Show sidebar when open */
-      width: 16rem;   /* Set the width for the expanded sidebar */
-      background-color: #124BAC; /* Keep the blue background for the expanded sidebar */
+        display: block;
+        width: 16rem;
+        background-color: #124BAC;
     }
-    
+
     .overlay {
-      display: block; /* Ensure overlay appears when sidebar is open */
+        display: block;
     }
-  }
-  
+}

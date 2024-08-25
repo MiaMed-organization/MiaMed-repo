@@ -8,7 +8,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 1000px;
     position: relative;
-    /* Position relative for bookmark */
 }
 
 .img-container {
@@ -18,7 +17,6 @@
     justify-content: center;
     margin-right: 20px;
     position: relative;
-    /* Position relative for bookmark */
 }
 
 .img-container img {
@@ -64,7 +62,6 @@
 
     50% {
         transform: translateX(-10px);
-        /* Sola hareket */
     }
 
     100% {
@@ -99,8 +96,8 @@
     font-size: 12px;
     padding: 3px 10px;
     border-radius: 4px;
-    margin-right: 5px; /* Kutucuklar arasında boşluk oluşturmak için */
-    margin-top: 5px;   /* Kutucuklar arasında dikey boşluk oluşturmak için */
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 .doctor-details {
@@ -133,27 +130,3 @@
         border-radius: 4px;
     }
 }
-
-/* @media (max-width: 1650px) {
-    .list-card-container{
-        width: 900px;
-    }
-}
-
-@media (max-width: 1550px) {
-    .list-card-container{
-        width: 800px;
-    }
-}
-
-@media (max-width: 1450px) {
-    .list-card-container{
-        width: 700px;
-    }
-}
-
-@media (max-width: 1350px) {
-    .list-card-container{
-        width: 670px;
-    }
-} */

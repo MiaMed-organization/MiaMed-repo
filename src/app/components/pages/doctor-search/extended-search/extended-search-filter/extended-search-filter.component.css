@@ -28,14 +28,11 @@
 
 .filter-group .card {
     width: 100%;
-    /* Kartın genişliğini tam olarak ayarlar */
     padding: 10px;
-    /* Kart içeriği için dolgu ekler */
 }
 
 .filter-group .flex {
     width: 100%;
-    /* Flex konteyner genişliğini tam olarak ayarlar */
 }
 
 .filter-group .justify-content-between {

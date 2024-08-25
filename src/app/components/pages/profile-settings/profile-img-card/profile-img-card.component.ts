@@ -32,12 +32,12 @@ export class ProfileImgCardComponent {
     reader.onload = () => {
       this.imageSrc = reader.result;
     };
-    reader.readAsDataURL(file);  // Dosyayı img src için URL'ye dönüştür
+    reader.readAsDataURL(file);  
   }
 
   clearFiles() {
-    this.imageSrc = null;  // Görseli kaldır
-    this.fileUpload.clear();  // Seçili dosyaları temizleme
+    this.imageSrc = null;  
+    this.fileUpload.clear();  
   }
 
   onUpload(event: any) {

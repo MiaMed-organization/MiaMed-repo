@@ -27,9 +27,9 @@ export class InvoiceViewComponent implements OnInit{
   ];
 
   constructor(private doctorsService: DoctorsService, private patientsService: PatientsService) {
-    this.calculateSubtotal(); // Alt toplamı hesapla
-    this.discount = 0.1; // İndirim oranı (örneğin %10 için 0.1)
-    this.totalAmount = this.calculateTotalAmount(); // Toplam tutarı hesapla
+    this.calculateSubtotal();
+    this.discount = 0.1; 
+    this.totalAmount = this.calculateTotalAmount(); 
   }
 
 

@@ -12,7 +12,6 @@ export class BookingSummaryCardComponent implements OnInit{
   doctors: Doctors[] = [];
   firstDoctor!: Doctors;
 
-
   constructor(private doctorsService: DoctorsService){}
 
   ngOnInit(): void {

@@ -1,15 +1,14 @@
-
 .app-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden; /* Taşmayı engellemek için eklendi */
+  overflow: hidden;
 }
 
 .content-container {
   display: flex;
   flex: 1;
-  overflow: hidden; /* Taşmayı engellemek için eklendi */
+  overflow: hidden;
 }
 
 .container {
@@ -18,7 +17,7 @@
   margin-left: 7rem;
   width: 100%;
   height: calc(100vh - var(--navbar-height));
-  overflow: hidden; /* Taşmayı engellemek için eklendi */
+  overflow: hidden;
 }
 
 .left-side {
@@ -27,7 +26,7 @@
   flex-direction: column;
   width: 100%;
   margin-right: 10px;
-  overflow-y: auto; /* Taşmayı engellemek için eklendi */
+  overflow-y: auto;
 }
 
 .right-side {
@@ -38,7 +37,7 @@
   margin-top: 0.2rem;
   box-sizing: border-box;
   transition: flex 0.3s ease;
-  overflow-y: auto; /* Taşmayı engellemek için eklendi */
+  overflow-y: auto;
 }
 
 .header-container {
@@ -144,7 +143,6 @@
   }
 }
 
-/*responsive*/
 @media (max-width: 1300px) {
   .container {
     flex-direction: column;
@@ -164,10 +162,11 @@
     max-width: 100%;
     margin-right: 0;
   }
+
   .right-side {
     flex: 1;
   }
-  
+
   .left-side {
     flex: 3;
   }
@@ -184,14 +183,14 @@
 }
 
 @media (max-width: 880px) {
- 
+
 
   .header-container {
     font-size: small;
     flex-direction: column;
     align-items: flex-end !important;
   }
-  
+
   .doctors-grid {
     grid-template-columns: repeat(2, 1fr);
   }

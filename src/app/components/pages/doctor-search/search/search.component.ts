@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.doctorsService.getDoctors().then((data) => {
       this.doctors = data;
-      this.paginate({ first: 0, rows: 10 }); // Başlangıçta ilk sayfayı yükle
+      this.paginate({ first: 0, rows: 10 }); 
     });
 
     this.items = [

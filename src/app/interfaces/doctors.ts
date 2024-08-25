@@ -8,13 +8,13 @@ export interface Doctors {
     icon?: string;
     consultationFee?:number;
     location?: string;
-    hospital?: string; // Yeni eklendi
+    hospital?: string; 
     languages?: string[];
     minPrice?: number;
     department?: string;
     maxPrice?: number;
     availableDay?: string;
-    availableTime?: string; // Yeni eklendi
+    availableTime?: string; 
     rating?: number;
     email?: string;
     bio?:string;
@@ -22,10 +22,10 @@ export interface Doctors {
     consultation?: { type: string; icon: string }[];
     feedback?: number;
     recommended?: number;
-    services?: string[]; // Dizi olarak değiştirildi
-    bookedAppointment?: number; // Yeni eklendi
+    services?: string[]; 
+    bookedAppointment?: number; 
     clinicImages: string[];
-    practiceExperience?: {  // Practice Experience için dizi
+    practiceExperience?: {  
         img: string[];
         hospital: string[];
         timePeriod: string[];

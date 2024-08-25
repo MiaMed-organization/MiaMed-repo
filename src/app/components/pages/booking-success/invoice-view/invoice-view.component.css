@@ -32,19 +32,14 @@
 .img-container {
   display: flex;
   align-items: center;
-  /* Dikeyde de ortalamak isterseniz bu eklemeyi yapabilirsiniz */
 }
 
 .card-right {
   display: flex;
   flex-direction: column;
-  /* İçerikleri dikeyde sıralamak için */
   justify-content: center;
-  /* Dikeyde ortalamak için */
   align-items: flex-end;
-  /* Sağ tarafa yaslamak için */
   text-align: right;
-  /* Metinlerin sağa yaslanmasını sağlamak için */
 }
 
 table,

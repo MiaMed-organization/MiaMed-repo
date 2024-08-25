@@ -25,7 +25,7 @@ import { BadgeModule } from 'primeng/badge';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { CardsComponent } from './components/home/cards/cards.component';
-import { AppointmentComponent } from './components/home/appointment/appointment.component'; // ngModel için gerekliimport { FormsModule } from '@angular/forms'; // ngModel için gerekli
+import { AppointmentComponent } from './components/home/appointment/appointment.component'; 
 import { TableModule } from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import { RatingModule } from 'primeng/rating';

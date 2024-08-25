@@ -21,7 +21,7 @@ export class ExtendedSearchFilterComponent implements OnInit {
 
   ratings: number[] = [5, 4, 3, 2, 1];
 
-  languages: string[] = []; // Servisten gelen tüm diller
+  languages: string[] = []; 
   fields: { name: string, value: string, label: string }[] = [];
   availableDays: string[] = [];
   consultationTypes: { type: string, icon: string }[] = [];
@@ -40,7 +40,6 @@ export class ExtendedSearchFilterComponent implements OnInit {
   constructor(private doctorsService: DoctorsService) {}
 
   ngOnInit(): void {
-    //price
     this.updatePriceRange();
 
     this.doctorsService.getDoctors().then((doctors) => {
@@ -50,19 +49,16 @@ export class ExtendedSearchFilterComponent implements OnInit {
       const languageSet = new Set<string>();
 
       doctors.forEach(doctor => {
-        // Uzmanlık alanları
         if (!fieldSet.has(doctor.field)) {
           fieldSet.add(doctor.field);
           this.fields.push({ name: doctor.field, value: doctor.field, label: doctor.field });
         }
 
-        // Available Day alanları
         if (!availableDaySet.has(doctor.availableDay)) {
           availableDaySet.add(doctor.availableDay);
           this.availableDays.push(doctor.availableDay);
         }
 
-        // Consultation alanları
         doctor.consultation.forEach(consultation => {
           if (!consultationSet.has(consultation.type)) {
             consultationSet.set(consultation.type, consultation.icon);
@@ -70,7 +66,6 @@ export class ExtendedSearchFilterComponent implements OnInit {
           }
         });
 
-        // Dil alanları
         doctor.languages.forEach(language => {
           if (!languageSet.has(language)) {
             languageSet.add(language);
@@ -83,13 +78,12 @@ export class ExtendedSearchFilterComponent implements OnInit {
   }
 
   updatePriceRange() {
-    // Slider'daki seçilmiş aralıkları güncelleyebilirsiniz.
     this.rangeValues = [...this.rangeValues]; 
   }
 
   toggleSection(section: string) {
     this.sections[section] = !this.sections[section];
-    console.log(this.sections[section]);  // Bu satır ile değeri kontrol edebilirsiniz
+    console.log(this.sections[section]);  
   }
   
   resetFilters() {

@@ -56,7 +56,6 @@ export class ProfileSettingsComponent {
     return this.personalInfoForm.controls['bloodGroup'];
   }
 
-  //adres
   get address() {
     return this.addressForm.controls['address'];
   }
@@ -77,7 +76,7 @@ export class ProfileSettingsComponent {
     return this.addressForm.controls['pincode'];
   }
   
-  onUpload(event: any) {  // Burada event türünü any olarak güncelledik
+  onUpload(event: any) { 
     this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
   }
 
@@ -114,7 +113,6 @@ export class ProfileSettingsComponent {
   submitAddressInfo() {
     if (this.addressForm.valid) {
       console.log('Address form submitted successfully');
-      // Form işlemleri burada yapılacak
     } else {
       console.log('Address form is invalid');
     }
@@ -122,7 +120,6 @@ export class ProfileSettingsComponent {
 
   submitForms() {
     if (this.personalInfoForm.valid && this.addressForm.valid) {
-      // İki form da geçerliyse işlemleri gerçekleştirin
       console.log('Personal Info:', this.personalInfoForm.value);
       console.log('Address Info:', this.addressForm.value);
     } else {

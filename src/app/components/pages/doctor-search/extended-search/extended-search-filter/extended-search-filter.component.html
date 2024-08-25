@@ -4,7 +4,6 @@
     </div>
 
     <div class="filter-container">
-        <!-- Gender Filter -->
         <div class="filter-group mb-3">
             <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('gender')">
                 <label class="font-semibold text-sm">Cinsiyet</label>
@@ -20,7 +19,6 @@
             </div>
         </div>
 
-        <!-- Availability Filter -->
         <div class="filter-group mb-3">
             <div class="flex justify-content-between items-center cursor-pointer"
                 (click)="toggleSection('availability')">
@@ -35,7 +33,6 @@
             </div>
         </div>
 
-        <!-- Consultation Fee Filter -->
         <div class="filter-group mb-3">
             <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('fee')">
                 <label class="font-semibold text-sm">Ücret</label>
@@ -56,7 +53,6 @@
             </div>
         </div>
 
-        <!-- Specialty Filter -->
         <div class="filter-group mb-3">
             <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('specialty')">
                 <label class="font-semibold text-sm">Uzmanlık</label>
@@ -70,7 +66,6 @@
             </div>
         </div>
 
-        <!-- Experience Filter -->
         <div class="filter-group mb-3">
             <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('experience')">
                 <label class="font-semibold text-sm">Deneyim</label>
@@ -92,7 +87,6 @@
             </div>
         </div>
 
-        <!-- Online Consultation Filter -->
         <div class="filter-group mb-3">
             <div class="flex justify-content-between items-center cursor-pointer"
                 (click)="toggleSection('consultation')">
@@ -123,8 +117,6 @@
             </div>
         </div>
 
-
-        <!-- Language Filter -->
         <div class="filter-group mb-3">
             <div class="flex justify-content-between items-center cursor-pointer" (click)="toggleSection('language')">
                 <label class="font-semibold text-sm">Diller</label>
@@ -138,7 +130,6 @@
             </div>
         </div>
 
-        <!-- Buttons -->
         <div class="button-container">
             <p-button label="Filtrele" [outlined]="true"></p-button>
             <p-button label="Resetle" (click)="resetFilters()"></p-button>

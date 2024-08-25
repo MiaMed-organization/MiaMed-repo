@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 import { SidebarService } from '../../services/sidebar.service';
 
 interface Availability {
@@ -11,18 +11,18 @@ interface Availability {
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css'] // Fixed typo in `styleUrls`
+  styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
   sidebarVisible: boolean = false;
-  selectedAvailability: Availability | undefined; 
-  availability: Availability[] | undefined; 
+  selectedAvailability: Availability | undefined;
+  availability: Availability[] | undefined;
   sidebarItems: MenuItem[] | undefined;
   activeItem: string = '';
   sidebarOpen = false;
   overlayVisible = false;
 
-  constructor(private router: Router, private sidebarService: SidebarService) {}
+  constructor(private router: Router, private sidebarService: SidebarService) { }
 
   ngOnInit() {
     this.availability = [
@@ -50,7 +50,6 @@ export class MenuComponent implements OnInit {
       this.overlayVisible = visible;
     });
 
-    // Check the screen size on initialization
     this.adjustForScreenSize();
   }
 
@@ -60,18 +59,16 @@ export class MenuComponent implements OnInit {
   }
 
   adjustForScreenSize() {
-    // Hide the slimbar on small screens (<=768px)
     if (window.innerWidth <= 768) {
       this.sidebarOpen = false;
-      this.sidebarVisible = false;  // Ensure the slimbar is hidden
+      this.sidebarVisible = false;
     }
   }
 
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
     this.overlayVisible = this.sidebarOpen;
-  
-    // Add or remove the class to control visibility
+
     if (window.innerWidth <= 768) {
       if (this.sidebarOpen) {
         document.querySelector('.sidebar-container')?.classList.add('sidebar-open');
@@ -80,19 +77,18 @@ export class MenuComponent implements OnInit {
       }
     }
   }
-  
+
 
   setActiveItem(item: MenuItem) {
     this.activeItem = item.label;
     if (item.routerLink) {
       this.router.navigate(item.routerLink).then(() => {
         setTimeout(() => {
-          this.closeSidebar();  // Close sidebar after navigation
-        }, 300);  // Add a delay to allow animation to complete
+          this.closeSidebar();  
+        }, 300); 
       });
     }
 
-    // Handle tooltip visibility by adding/removing 'clicked' class
     const slimbarItems = document.querySelectorAll('.slimbar-menu li');
     slimbarItems.forEach(el => el.classList.remove('clicked'));
     const currentItem = Array.from(slimbarItems).find(el => el.textContent.trim() === item.label);

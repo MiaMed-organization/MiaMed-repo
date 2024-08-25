@@ -8,7 +8,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 860px;
     position: relative;
-    /* Position relative for bookmark */
 }
 
 .img-container {
@@ -18,7 +17,6 @@
     justify-content: center;
     margin-right: 20px;
     position: relative;
-    /* Position relative for bookmark */
 }
 
 .img-container img {
@@ -64,7 +62,6 @@
 
     50% {
         transform: translateX(-10px);
-        /* Sola hareket */
     }
 
     100% {
@@ -100,9 +97,7 @@
     padding: 3px 10px;
     border-radius: 4px;
     margin-right: 5px;
-    /* Kutucuklar arasında boşluk oluşturmak için */
     margin-top: 5px;
-    /* Kutucuklar arasında dikey boşluk oluşturmak için */
 }
 
 .doctor-details {

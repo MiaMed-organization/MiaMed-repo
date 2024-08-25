@@ -26,7 +26,7 @@
     overflow: auto;
     align-items: flex-start;
     gap: 20px;
-    flex-direction: row; 
+    flex-direction: row;
 }
 
 
@@ -38,25 +38,24 @@
 
 .input-field {
     width: 100%;
-    /* Genişliği %100 yap */
     display: block;
-    /* Inputları block yaparak label ile alt alta durmasını sağla */
 }
 
 .expireDate {
     display: flex;
-    justify-content: space-between; /* Ay ve Yıl arasında boşluk bırakır */
+    justify-content: space-between;
 }
 
-.month, .year {
+.month,
+.year {
     display: flex;
-    flex-direction: column; /* Label'in üstte, input'un altta olmasını sağlar */
+    flex-direction: column;
     flex: 1;
-    margin-right: 10px; /* Ay ve Yıl arasında boşluk bırakır */
+    margin-right: 10px;
 }
 
 .year {
-    margin-right: 0; /* Son öğede boşluk bırakma */
+    margin-right: 0;
 }
 
 
@@ -89,27 +88,27 @@
     padding-bottom: 0px;
 }
 
-@media (max-width: 900px){
-    .field>label{
+@media (max-width: 900px) {
+    .field>label {
         font-size: 13.5px;
     }
 
-    :host ::ng-deep .p-card .p-card-title{
+    :host ::ng-deep .p-card .p-card-title {
         font-size: 1rem;
     }
 
-    .checkbox{
+    .checkbox {
         font-size: 13.5px;
     }
 }
 
-@media (max-width: 840px){
-    .page-container{
+@media (max-width: 840px) {
+    .page-container {
         flex-direction: column;
     }
 
     .content-container {
-        flex-direction: column; /* Booking Summary'nin altına geçmesini sağlar */
-        align-items: center; /* İçeriği ortalar */
+        flex-direction: column;
+        align-items: center;
     }
 }

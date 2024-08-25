@@ -21,7 +21,7 @@ export class DoctorProfileComponent implements OnInit {
   isCollapsed: boolean = true;
   showReadMore: boolean = false;
   displayedBio: string = '';
-  readonly maxLength: number = 97; // Gösterilecek maksimum karakter sayısı
+  readonly maxLength: number = 97; 
 
   @ViewChild('scrollContainer', { read: ElementRef }) scrollContainer!: ElementRef;
 
@@ -34,7 +34,7 @@ export class DoctorProfileComponent implements OnInit {
       if (this.doctors.length > 0) {
         this.firstDoctor = this.doctors[0];
         console.log("Doctor Data:", this.firstDoctor);
-        this.initializeBio(); // Biyografi metnini ayarla
+        this.initializeBio(); 
       }
     });
 
@@ -44,7 +44,6 @@ export class DoctorProfileComponent implements OnInit {
     });
   }
 
-  // Biyografi metnini başlangıçta ayarla
   initializeBio(): void {
     if (this.firstDoctor.bio && this.firstDoctor.bio.length > this.maxLength) {
       this.displayedBio = this.firstDoctor.bio.slice(0, this.maxLength) + '...';
@@ -54,7 +53,6 @@ export class DoctorProfileComponent implements OnInit {
     }
   }
 
-  // "Read More" işlevi
   toggleReadMore(): void {
     this.isCollapsed = !this.isCollapsed;
     this.displayedBio = this.isCollapsed
@@ -62,7 +60,6 @@ export class DoctorProfileComponent implements OnInit {
       : this.firstDoctor.bio;
   }
 
-  // Sayfa içinde belirli bir bölüme kaydırma
   scrollToSection(event: Event, sectionId: string) {
     event.preventDefault();
     const section = document.getElementById(sectionId);

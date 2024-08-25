@@ -1,62 +1,59 @@
 nav {
   height: 67px;
   box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3);
-  position: fixed; /* Navbar'ı tamamen sabit yapar */
-  top: 0; /* Sayfanın üst kısmına sabitler */
-  width: 100%; /* Navbar'ın genişliğini tam ekran yapar */
-  z-index: 1000; /* Navbar'ın diğer içeriklerin üstünde görünmesini sağlar */
-  background-color: white; /* Arka planı beyaz yapar */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
 }
 
-
-.menu-icon{
-   cursor: pointer;
+.menu-icon {
+  cursor: pointer;
 }
 
-.menu-icon:hover{
-   color: rgb(92, 92, 255);
-   transition: color 0.5s;
+.menu-icon:hover {
+  color: rgb(92, 92, 255);
+  transition: color 0.5s;
 }
 
 .navbar-container input[pInputText] {
-   width: 250px;
-   transition: width 0.3s ease;
-}
- 
-.avatar-button {
-   transition: font-size 0.3s ease, width 0.3s ease;
+  width: 250px;
+  transition: width 0.3s ease;
 }
 
-:host {
-  ::ng-deep .p-inputtext {
+.avatar-button {
+  transition: font-size 0.3s ease, width 0.3s ease;
+}
+
+:host ::ng-deep .p-inputtext {
     padding: 0.5rem 0.5rem;
+  }
+
+@media (max-width: 768px) {
+  .navbar-container input[pInputText] {
+    width: 140px;
+  }
+
+  .navbar-container input[pInputText] {
+    font-size: 14px;
+  }
+
+  .avatar-button {
+    font-size: 14px;
   }
 }
 
-@media (max-width: 768px) {
-   .navbar-container input[pInputText] {
-     width: 140px; 
-   }
- 
-   .navbar-container input[pInputText] {
-     font-size: 14px; 
-   }
- 
-   .avatar-button {
-     font-size: 14px; 
-   }
-}
-
 @media (max-width: 480px) {
-   .navbar-container input[pInputText] {
-     width: 100px; 
-   }
- 
-   .navbar-container input[pInputText] {
-     font-size: 12px; 
-   }
- 
-   .avatar-button {
-     font-size: 12px; 
-   }
+  .navbar-container input[pInputText] {
+    width: 100px;
+  }
+
+  .navbar-container input[pInputText] {
+    font-size: 12px;
+  }
+
+  .avatar-button {
+    font-size: 12px;
+  }
 }

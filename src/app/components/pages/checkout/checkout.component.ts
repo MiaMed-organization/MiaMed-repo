@@ -41,7 +41,6 @@ export class CheckoutComponent {
 
   years = this.generateYears();
 
-  // Yılları dinamik olarak oluşturmak için fonksiyon
   generateYears(): any[] {
     const currentYear = new Date().getFullYear();
     const years = [];
@@ -89,14 +88,13 @@ export class CheckoutComponent {
     return this.paymentInfoForm.controls['expiryYear'];
   }
 
-  onUpload(event: any) {  // Burada event türünü any olarak güncelledik
+  onUpload(event: any) { 
     this.messageService.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded with Basic Mode' });
   }
 
   submitPaymentInfo() {
     if (this.paymentInfoForm.valid) {
       console.log('Form submitted successfully');
-      // Form işlemleri burada yapılacak
     } else {
       console.log('Form is invalid');
     }

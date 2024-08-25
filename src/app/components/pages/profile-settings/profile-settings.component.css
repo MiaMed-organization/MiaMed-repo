@@ -41,16 +41,13 @@
     gap: 20px;
 }
 
-.button-container{
+.button-container {
     justify-content: flex-end !important;
 }
 
-/* :host ::ng-deep */
 .input-field {
     width: 100%;
-    /* Genişliği %100 yap */
     display: block;
-    /* Inputları block yaparak label ile alt alta durmasını sağla */
 }
 
 :host ::ng-deep .p-card .p-card-title {
@@ -82,16 +79,16 @@
     padding-bottom: 0px;
 }
 
-/* Profile Img Card için */
 .profile-img-card,
 .personal-info form,
 .address-info form {
-    max-width: 900px; /* Büyük ekranlar için max genişlik */
-    width: 100%; /* Mevcut genişliği doldur */
-    margin: 0 auto; /* Ortala */
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 @media (max-width: 1200px) {
+
     .profile-img-card,
     .personal-info form,
     .address-info form {
@@ -100,6 +97,7 @@
 }
 
 @media (max-width: 950px) {
+
     .profile-img-card,
     .personal-info form,
     .address-info form {
@@ -112,6 +110,7 @@
 }
 
 @media (max-width: 850px) {
+
     .profile-img-card,
     .personal-info form,
     .address-info form {
@@ -120,22 +119,23 @@
 }
 
 @media (max-width: 768px) {
+
     .profile-img-card,
     .personal-info form,
     .address-info form {
         max-width: 650px !important;
     }
-    
+
     :host ::ng-deep .p-card-title {
         font-size: 15px !important;
     }
 }
 
 @media (max-width: 660px) {
+
     .profile-img-card,
     .personal-info form,
     .address-info form {
         max-width: 550px !important;
     }
 }
-

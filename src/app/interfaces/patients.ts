@@ -16,10 +16,10 @@ export interface Patients {
     bookingFee?:number;
     appointmentType?: string;
     clinicLocation?: string;
-    rating?: number; // 1-5 arası puan
-    comment?: string; // Hastanın yorumu
-    commentDate?: string; // Yorumun yapıldığı tarih
-    isRecommend?: boolean; // Tavsiye durumu (true/false)
+    rating?: number; 
+    comment?: string; 
+    commentDate?: string; 
+    isRecommend?: boolean; 
     consultingFee?: { type: string; price: number };
     paymentMethod?: { type: string; lastDigits: number ;bank :string};
 }

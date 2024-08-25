@@ -63,7 +63,7 @@
 
 section {
   width: 100%;
-  max-width: 1100px; 
+  max-width: 1100px;
   margin: 0 auto;
   box-sizing: border-box;
   text-align: left;
@@ -96,12 +96,12 @@ section h2 {
 
 
 .profile-card {
-  border: 1px solid #e0e0e0; /* Hafif gri border */
-  border-radius: 8px; /* Hafif yuvarlatılmış köşeler */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   padding: 10px;
   margin-bottom: 20px;
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Hafif gölge */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   max-width: 1100px;
   display: flex;
   flex-direction: column;
@@ -111,7 +111,7 @@ section h2 {
   width: 120px;
   height: 100px;
   margin-right: 15px;
-  border: 1px solid #e0e0e0; /* Görselin etrafında hafif gri border */
+  border: 1px solid #e0e0e0;
   border-radius: 4px;
 }
 
@@ -125,10 +125,10 @@ section h2 {
 }
 
 .service-box {
-  border: 1px solid #e0e0e0; /* Hafif gri border */
-  border-radius: 8px; /* Hafif yuvarlatılmış köşeler */
-  padding: 10px 15px; /* İç boşluk */
-  background-color: #f9f9f9; /* Hafif arka plan rengi */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 15px;
+  background-color: #f9f9f9;
   font-size: 14px;
   color: #333;
 }
@@ -145,7 +145,7 @@ section h2 {
 
 .availability-container {
   display: flex;
-  overflow-x: hidden; /* Yatay kaydırma eklendi */
+  overflow-x: hidden;
   gap: 10px;
   scroll-behavior: smooth;
   transition: transform 0.6s ease-in-out;
@@ -153,13 +153,13 @@ section h2 {
 
 .availability-box {
   min-width: 150px;
-  border: 1px solid #d3dce6; /* Hafif gri border */
-  border-radius: 8px; /* Yuvarlatılmış köşeler */
-  padding: 10px 20px; /* İç boşluk */
-  background-color: #fff; /* Beyaz arka plan */
-  display: inline-block; /* İçeriğe göre genişlik */
-  text-align: center; /* Yazıları ortala */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  border: 1px solid #d3dce6;
+  border-radius: 8px;
+  padding: 10px 20px;
+  background-color: #fff;
+  display: inline-block;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .profile-card-inner {
@@ -174,7 +174,7 @@ section h2 {
 }
 
 .profile-card-right {
-  flex: 0 0 200px; /* Adjust width as needed */
+  flex: 0 0 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,7 +184,7 @@ section h2 {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  border: 0; /* Adjust this if you want a border */
+  border: 0;
 }
 
 
@@ -258,7 +258,7 @@ section h2 {
   margin-right: 5px;
 }
 
-.reply-button:hover{
+.reply-button:hover {
   color: #333;
 }
 
@@ -268,7 +268,7 @@ section h2 {
 }
 
 @media (max-width: 1350px) {
-  section{
+  section {
     max-width: 1000px;
   }
 
@@ -283,7 +283,7 @@ section h2 {
 
 
 @media (max-width: 1080px) {
-  section{
+  section {
     max-width: 840px;
   }
 
@@ -297,7 +297,7 @@ section h2 {
 }
 
 @media (max-width: 900px) {
-  section{
+  section {
     max-width: 720px;
   }
 
@@ -309,13 +309,13 @@ section h2 {
     max-width: 720px;
   }
 
-  .page-divider{
+  .page-divider {
     gap: 10px;
   }
 }
 
-@media (max-width: 780px){
-  section{
+@media (max-width: 780px) {
+  section {
     max-width: 600px;
   }
 
@@ -327,7 +327,7 @@ section h2 {
     max-width: 720600pxpx;
   }
 
-  .page-divider{
+  .page-divider {
     gap: 8px;
   }
 

@@ -49,21 +49,15 @@
     padding: 2px 4px;
     margin-left: 4px;
     background-color: #f2f8ff;
-    /* Arka plan rengi */
     border: 1px solid #ccc;
-    /* Sınır rengi */
     border-radius: 5px;
-    /* Yuvarlak köşeler */
     font-size: 14px;
     color: #555;
-    /* Yazı rengi */
     font-weight: 500;
-    /* Yazı kalınlığı */
 }
 
 .field-icon {
     color: #673ab7;
-    /* İkonun rengi (Mor tonları) */
     font-size: 12px;
     margin-right: 5px;
 }
@@ -79,14 +73,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Üst ve alt arasında boşluk bırak */
     height: 100%;
-    /* Tüm kartın yüksekliğini kapla */
 }
 
 .icon-container {
     align-self: flex-end;
-    /* İconları üste yerleştir */
     display: flex;
     gap: 5px;
 }
@@ -94,7 +85,6 @@
 .accepting-patients,
 .consultation-buttons {
     align-self: flex-end;
-    /* Diğer kısımları alta yerleştir */
 }
 
 .icon-button {
@@ -140,11 +130,8 @@
     padding: 4px 6px;
     width: 160px;
     align-items: center;
-    /* Dikeyde ortalama */
     justify-content: center;
-    /* Yatayda ortalama */
     text-align: center;
-    /* Yazıyı ortala */
     cursor: pointer;
     outline: none;
     display: flex;
@@ -156,19 +143,15 @@
 
 .consultation-button i {
     font-size: 15px;
-    /* İkon boyutu */
     color: #424e5a;
-    /* İkon rengi */
 }
 
 .consultation-button:hover {
     background-color: #d3dce6;
-    /* Hover durumunda arkaplan rengi */
 }
 
 .card-footer {
     grid-column: 1 / -1;
-    /* Footer'ın tüm sütunları kaplamasını sağlar */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -193,7 +176,6 @@
 
 .footer-item:nth-child(2) i {
     background-color: #4850c0;
-    /* Mor-lacivert arası arka plan */
 }
 
 .footer-right {
@@ -206,16 +188,12 @@
     display: inline-flex;
     align-items: center;
     font-size: 14px;
-    /* Genel font boyutunu ayarlayın */
     color: #555;
-    /* Yazı rengi */
 }
 
 .price-info span {
     margin-left: 5px;
-    /* Randevu ücreti ve değerler arasında boşluk bırakır */
     white-space: nowrap;
-    /* Satırın kesilmesini engeller, tüm metni aynı satırda tutar */
 }
 
 .button-container {
@@ -225,17 +203,15 @@
     width: 100%;
 }
 
-:host {
-    ::ng-deep .p-button {
-        width: 170px;
-        display: block;
-        font-size: 13px;
-        font-weight: 400;
-        letter-spacing: 1px;
-        text-align: center;
-        padding: 10px;
-        border-radius: 4px;
-    }
+:host ::ng-deep .p-button {
+    width: 170px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
 }
 
 .doctor-details div i {
@@ -285,14 +261,14 @@
     }
 }
 
-@media (max-width: 900px){
+@media (max-width: 900px) {
     .card-container {
         max-width: 720px;
     }
 }
 
-@media (max-width: 780px){
-    .card-container{
+@media (max-width: 780px) {
+    .card-container {
         max-width: 600px;
     }
 }

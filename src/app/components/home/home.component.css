@@ -8,9 +8,7 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  /* Dikey olarak sıralama */
   grid-gap: 10px;
-  /* Hücreler arası boşluk */
   padding: 5rem 1rem 1rem 1rem;
   margin-left: 4rem;
   max-width: 1600px;
@@ -24,20 +22,16 @@
 .flex {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* 3 sütunlu grid sistemi */
   grid-gap: 20px;
-  /* Hücreler arası boşluk */
   width: 100%;
 }
 
 .column {
   grid-column: span 4;
-  /* Her bir sütun 4 birim genişlik kaplar */
 }
 
 .column.ml-3 {
   grid-column: span 4;
-  /* Orta sütun da 4 birim genişlik kaplar */
 }
 
 @media (max-width: 1700px){
@@ -49,7 +43,6 @@
     margin-left: 10rem;
   }
 }
-
 
 @media (max-width: 1400px){
   .cards{

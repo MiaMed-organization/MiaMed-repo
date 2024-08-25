@@ -8,7 +8,6 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     position: relative;
-    /* Position relative for bookmark */
 }
 
 .img-container {
@@ -18,7 +17,6 @@
     justify-content: center;
     margin-right: 20px;
     position: relative;
-    /* Heart ikonunu img-container içinde konumlandırmak için relative */
 }
 
 .img-container img {
@@ -29,15 +27,11 @@
 
 .heart-icon {
     position: absolute;
-    /* Konumu img-container içinde sabitlemek için absolute */
     top: 10px;
-    /* Üstten 10px boşluk */
     right: 10px;
-    /* Sağdan 10px boşluk */
     color: black;
     background-color: white;
     border-radius: 50%;
-    /* Yuvarlak köşe */
     padding: 5px;
     display: flex;
     justify-content: center;
@@ -98,9 +92,7 @@
 
 .available-today {
     background-color: #d4edda;
-    /* Yeşil arka plan (Bugün) */
     color: #155724;
-    /* Koyu yeşil yazı rengi */
     padding: 5px 10px;
     border-radius: 5px;
     margin-left: 8px;
@@ -109,9 +101,7 @@
 
 .available-tomorrow {
     background-color: #e6be5b;
-    /* Turuncu arka plan (Yarın) */
     color: #8a6d3b;
-    /* Koyu turuncu yazı rengi */
     padding: 5px 10px;
     border-radius: 5px;
     margin-left: 8px;
@@ -120,9 +110,7 @@
 
 .available-other {
     background-color: #f8d7da;
-    /* Kırmızı arka plan (Diğer günler) */
     color: #721c24;
-    /* Koyu kırmızı yazı rengi */
     padding: 5px 10px;
     border-radius: 5px;
     margin-left: 8px;
@@ -269,7 +257,7 @@
 }
 
 @media (max-width: 590px) {
-    .list-card-container{
+    .list-card-container {
         width: 400px;
     }
 

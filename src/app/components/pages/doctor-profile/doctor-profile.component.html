@@ -105,7 +105,6 @@
                     <div class="profile-card" *ngFor="let image of firstDoctor.clinicImages; let index = index">
                         <div class="profile-card-content">
                             <div class="flex profile-card-inner">
-                                <!-- Left Side: Hospital Information -->
                                 <div class="profile-card-left">
                                     <img [src]="'../../../../assets/images/clinics/' + firstDoctor.clinicImages[index]"
                                         alt="Hospital Logo" class="profile-card-logo">
@@ -135,7 +134,6 @@
 
                                 </div>
 
-                                <!-- Right Side: Google Maps Iframe -->
                                 <div class="profile-card-right">
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d754.5998965713842!2d-73.9407165!3d40.84115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f69c695fcef9%3A0xf82f63a3e9c48061!2sColumbia%20University%20Irving%20Medical%20Center!5e0!3m2!1str!2str!4v1724622110243!5m2!1str!2str"
@@ -143,8 +141,6 @@
                                         referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div>
-
-                            <!-- Availability Section -->
 
                         </div>
                     </div>

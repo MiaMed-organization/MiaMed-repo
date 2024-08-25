@@ -18,7 +18,6 @@ export class UpcomingAppointmentComponent implements OnInit{
 
   getPatientData(): void {
     this.patientsService.getPatients().then(patients => {
-      // Fetch the first patient or any specific patient based on your logic
       this.patient = patients[0];
     });
   }
