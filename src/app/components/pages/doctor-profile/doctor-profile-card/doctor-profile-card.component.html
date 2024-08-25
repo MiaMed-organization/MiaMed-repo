@@ -6,7 +6,7 @@
         </a>
     </div>
 
-    <div class="doctor-info mt-3">
+    <div class="doctor-info mt-0">
 
         <div class="available-tag">
             <p-tag value="Müsait" severity="success" />
@@ -23,10 +23,10 @@
         </div>
 
         <p class="font-light my-1 text-xs">{{ doctor.field }}</p>
-        <p class="font-light my-1 text-xs">
+        <p class="font-light mt-0 mb-1 text-xs">
             <i class="pi pi-comments"></i> Diller : {{ doctor.languages }}
         </p>
-        <p class="font-light my-1 text-xs">
+        <p class="font-light my-0 text-xs">
             <i class="pi pi-map-marker"></i> {{ doctor.location }}
 
             <a href="/" class="text-primary no-underline">( Haritalarda göster )</a>
@@ -34,16 +34,20 @@
     </div>
 
     <div class="doctor-details">
-        <p class="font-light my-1 text-xs available-container">
-            <i class="pi pi-clock"></i>
+
+        <div class="font-light my-1 text-xs available-container">
+            <i class="pi pi-clock text-green-500"></i>
             {{ doctor.availability }} müsait
-        </p>
-        <p class="font-light my-1 text-xs">
-            <i class="pi pi-thumbs-up"></i> {{ doctor.recommended }}%
-        </p>
-        <p class="font-light mb-2 text-xs">
-            <i class="pi pi-building"></i> {{ doctor.hospital }}
-        </p>
+        </div>
+
+        <div class="font-light my-1 text-xs">
+            <i class="pi pi-thumbs-up text-purple-500"></i> {{ doctor.recommended }}%
+        </div>
+
+        <div class="font-light my-1 text-xs">
+            <i class="pi pi-building text-pink-400"></i> {{ doctor.hospital }}
+        </div>
+
         <div class="rating-container">
             <span class="rating-box">
                 <p-rating [(ngModel)]=doctor.rating [readonly]="true" [cancel]="false" />
@@ -64,7 +68,8 @@
         </div>
 
         <div class="accepting-patients">
-            <i class="fas fa-check-circle verified text-cyan-500"></i> <span class="font-light text-sm ml-1">Hasta Kabul
+            <i class="fas fa-check-circle verified text-cyan-500"></i> <span class="font-light text-sm ml-1">Hasta
+                Kabul
                 Ediyor</span>
         </div>
 
@@ -74,6 +79,7 @@
             </button>
         </div>
     </div>
+
 
     <div class="card-footer">
         <div class="footer-left text-sm">
@@ -90,7 +96,8 @@
         <div class="footer-right">
 
             <div class="price-info">
-                Ücret: <span class="font-medium text-sm">{{doctor.minPrice | currency: 'USD':'symbol':'1.0-0'}} - {{doctor.maxPrice| currency: 'USD':'symbol':'1.0-0'}}</span>
+                Ücret: <span class="font-medium text-sm">{{doctor.minPrice | currency: 'USD':'symbol':'1.0-0'}} -
+                    {{doctor.maxPrice| currency: 'USD':'symbol':'1.0-0'}}</span>
             </div>
 
             <div class="button-container">

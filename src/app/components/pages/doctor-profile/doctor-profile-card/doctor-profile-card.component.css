@@ -13,7 +13,7 @@
 
 .img-container {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
@@ -48,16 +48,22 @@
     align-items: center;
     padding: 2px 4px;
     margin-left: 4px;
-    background-color: #f2f8ff; /* Arka plan rengi */
-    border: 1px solid #ccc; /* Sınır rengi */
-    border-radius: 5px; /* Yuvarlak köşeler */
+    background-color: #f2f8ff;
+    /* Arka plan rengi */
+    border: 1px solid #ccc;
+    /* Sınır rengi */
+    border-radius: 5px;
+    /* Yuvarlak köşeler */
     font-size: 14px;
-    color: #555; /* Yazı rengi */
-    font-weight: 500; /* Yazı kalınlığı */
+    color: #555;
+    /* Yazı rengi */
+    font-weight: 500;
+    /* Yazı kalınlığı */
 }
 
 .field-icon {
-    color: #673ab7; /* İkonun rengi (Mor tonları) */
+    color: #673ab7;
+    /* İkonun rengi (Mor tonları) */
     font-size: 12px;
     margin-right: 5px;
 }
@@ -66,25 +72,29 @@
 .doctor-details {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
 }
 
 .doctor-connections {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Üst ve alt arasında boşluk bırak */
-    height: 100%; /* Tüm kartın yüksekliğini kapla */
+    justify-content: space-between;
+    /* Üst ve alt arasında boşluk bırak */
+    height: 100%;
+    /* Tüm kartın yüksekliğini kapla */
 }
 
 .icon-container {
-    align-self: flex-end; /* İconları üste yerleştir */
+    align-self: flex-end;
+    /* İconları üste yerleştir */
     display: flex;
     gap: 5px;
 }
 
-.accepting-patients, 
+.accepting-patients,
 .consultation-buttons {
-    align-self: flex-end; /* Diğer kısımları alta yerleştir */
+    align-self: flex-end;
+    /* Diğer kısımları alta yerleştir */
 }
 
 .icon-button {
@@ -129,9 +139,12 @@
     border-radius: 7px;
     padding: 4px 6px;
     width: 160px;
-    align-items: center; /* Dikeyde ortalama */
-    justify-content: center; /* Yatayda ortalama */
-    text-align: center; /* Yazıyı ortala */
+    align-items: center;
+    /* Dikeyde ortalama */
+    justify-content: center;
+    /* Yatayda ortalama */
+    text-align: center;
+    /* Yazıyı ortala */
     cursor: pointer;
     outline: none;
     display: flex;
@@ -171,13 +184,9 @@
 
 .footer-item i {
     background-color: #1379ec;
-    /* Lacivert arka plan */
-    border-radius: 50%;
-    /* Yuvarlak şekil */
+    border-radius: 10px;
     padding: 8px;
-    /* İçerik boşluğu */
     color: #fff;
-    /* İkon rengi beyaz */
     font-size: 16px;
     font-weight: 500;
 }
@@ -203,8 +212,10 @@
 }
 
 .price-info span {
-    margin-left: 5px; /* Randevu ücreti ve değerler arasında boşluk bırakır */
-    white-space: nowrap; /* Satırın kesilmesini engeller, tüm metni aynı satırda tutar */
+    margin-left: 5px;
+    /* Randevu ücreti ve değerler arasında boşluk bırakır */
+    white-space: nowrap;
+    /* Satırın kesilmesini engeller, tüm metni aynı satırda tutar */
 }
 
 .button-container {
@@ -227,57 +238,61 @@
     }
 }
 
-
-@keyframes moveBookmark {
-    0% {
-        transform: translateX(0);
-    }
-
-    50% {
-        transform: translateX(-10px);
-        /* Sola hareket */
-    }
-
-    100% {
-        transform: translateX(0);
-    }
+.doctor-details div i {
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 50%;
+    padding: 7px;
 }
 
-@media (max-width: 1200px) {
-    .img-container img {
-        max-width: 200px;
-        /* Orta ekranlar için boyut düzenlemesi */
-    }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 1350px) {
     .card-container {
-        flex-direction: column;
-        align-items: center !important;
-        min-width: 350px;
+        max-width: 1000px;
+    }
+}
+
+
+@media (max-width: 1080px) {
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto;
+        gap: 10px;
     }
 
     .img-container {
-        margin-right: 0;
-        /* Küçük ekranlarda margin sıfırlamak için eklendi */
-        margin-bottom: 10px;
-        /* Küçük ekranlarda aralık eklemek için eklendi */
-    }
-
-    .img-container img {
-        max-width: 200px;
-        /* Küçük ekranlar için boyut düzenlemesi */
+        grid-column: 1 / 2;
     }
 
     .doctor-info {
-        margin-bottom: 10px;
-        /* Küçük ekranlarda aralık eklemek için eklendi */
-        align-self: center !important;
+        grid-column: 2 / 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .doctor-details {
-        max-width: 100%;
-        /* Küçük ekranlarda tam genişlik için eklendi */
-        align-items: center;
+        grid-column: 1 / 2;
+        display: flex;
+        justify-content: flex-start;
+        align-items: justify;
+    }
+
+    .doctor-connections {
+        grid-column: 2 / 3;
+        display: flex;
+        justify-content: flex-end;
+        gap: 50px;
+    }
+}
+
+@media (max-width: 900px){
+    .card-container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 780px){
+    .card-container{
+        max-width: 600px;
     }
 }

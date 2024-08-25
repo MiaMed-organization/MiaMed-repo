@@ -61,6 +61,7 @@
   color: black;
 }
 
+
 section {
   width: 100%;
   max-width: 1100px; 
@@ -152,6 +153,7 @@ section h2 {
   overflow-x: hidden; /* Yatay kaydırma eklendi */
   gap: 10px;
   scroll-behavior: smooth;
+  transition: transform 0.6s ease-in-out;
 }
 
 .availability-box {
@@ -238,4 +240,78 @@ section h2 {
 
 .reply-button:hover{
   color: #333;
+}
+
+:host ::ng-deep.p-button-icon-only {
+  padding: 0.5rem !important;
+  width: 2.5rem;
+}
+
+@media (max-width: 1350px) {
+  section{
+    max-width: 1000px;
+  }
+
+  :host ::ng-deep .p-divider-horizontal.p-divider-left {
+    width: 1000px;
+  }
+
+  .profile-card {
+    max-width: 1000px;
+  }
+}
+
+
+@media (max-width: 1080px) {
+  section{
+    max-width: 840px;
+  }
+
+  :host ::ng-deep .p-divider-horizontal.p-divider-left {
+    width: 840px;
+  }
+
+  .profile-card {
+    max-width: 840px;
+  }
+}
+
+@media (max-width: 900px) {
+  section{
+    max-width: 720px;
+  }
+
+  :host ::ng-deep .p-divider-horizontal.p-divider-left {
+    width: 720px;
+  }
+
+  .profile-card {
+    max-width: 720px;
+  }
+
+  .page-divider{
+    gap: 10px;
+  }
+}
+
+@media (max-width: 780px){
+  section{
+    max-width: 600px;
+  }
+
+  :host ::ng-deep .p-divider-horizontal.p-divider-left {
+    width: 600px;
+  }
+
+  .profile-card {
+    max-width: 720600pxpx;
+  }
+
+  .page-divider{
+    gap: 8px;
+  }
+
+  .page-divider a {
+    padding: 10px 5px;
+  }
 }

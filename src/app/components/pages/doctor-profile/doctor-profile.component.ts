@@ -23,7 +23,7 @@ export class DoctorProfileComponent implements OnInit {
   displayedBio: string = '';
   readonly maxLength: number = 97; // Gösterilecek maksimum karakter sayısı
 
-  @ViewChild('availabilityContainer', { static: false, read: ElementRef }) availabilityContainer!: ElementRef;
+  @ViewChild('scrollContainer', { read: ElementRef }) scrollContainer!: ElementRef;
 
   constructor(private doctorsService: DoctorsService, private patientsService: PatientsService) { }
 
@@ -82,4 +82,11 @@ export class DoctorProfileComponent implements OnInit {
     this.displayedFeedback = this.firstDoctorFeedback.slice(startIndex, endIndex);
   }
 
+  scrollLeft() {
+    this.scrollContainer.nativeElement.scrollBy({ left: -200, behavior: 'smooth' });
+  }
+
+  scrollRight() {
+    this.scrollContainer.nativeElement.scrollBy({ left: 200, behavior: 'smooth' });
+  }
 }

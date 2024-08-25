@@ -33,28 +33,31 @@
 
                 <section id="experience-section">
                     <h2>Deneyimler</h2>
-                  
-                    <div *ngIf="firstDoctor.practiceExperience && firstDoctor.practiceExperience.length > 0; else noExperience">
-                      <div *ngFor="let experience of firstDoctor.practiceExperience">
-                        <div class="profile-card" *ngFor="let i of experience.img; let index = index">
-                          <div class="flex mb-1">
-                            <img [src]="'../../../../assets/images/doctors/' + experience.img[index]"
-                                 alt="Hospital Logo" class="profile-card-logo">
-                            <div class="profile-card-info text-sm">
-                              <h4 class="text-m font-semibold">{{ experience.hospital[index] }}</h4>
-                              <p class="font-medium text-xs">{{ firstDoctor.field }} &bull; {{ firstDoctor.location }}</p>
-                              <p class="font-light text-xs mt-3">{{ experience.timePeriod[index] }} &bull; {{ experience.total[index] }}</p>
-                              <p class="font-light text-sm">{{ experience.experiencedIn[index] }}</p>
+
+                    <div
+                        *ngIf="firstDoctor.practiceExperience && firstDoctor.practiceExperience.length > 0; else noExperience">
+                        <div *ngFor="let experience of firstDoctor.practiceExperience">
+                            <div class="profile-card" *ngFor="let i of experience.img; let index = index">
+                                <div class="flex mb-1">
+                                    <img [src]="'../../../../assets/images/doctors/' + experience.img[index]"
+                                        alt="Hospital Logo" class="profile-card-logo">
+                                    <div class="profile-card-info text-sm">
+                                        <h4 class="text-m font-semibold">{{ experience.hospital[index] }}</h4>
+                                        <p class="font-medium text-xs">{{ firstDoctor.field }} &bull; {{
+                                            firstDoctor.location }}</p>
+                                        <p class="font-light text-xs mt-3">{{ experience.timePeriod[index] }} &bull; {{
+                                            experience.total[index] }}</p>
+                                        <p class="font-light text-sm">{{ experience.experiencedIn[index] }}</p>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
                     </div>
                     <ng-template #noExperience>
-                      <p>Doktorun henüz bir deneyimi bulunmamaktadır.</p>
+                        <p>Doktorun henüz bir deneyimi bulunmamaktadır.</p>
                     </ng-template>
-                  </section>
-                  
+                </section>
+
 
                 <p-divider />
 
@@ -73,14 +76,15 @@
                 <section id="availability-section">
                     <div class="section-header">
                         <h2>Müsaitlik</h2>
-                        <div class="button-container">
-                            <p-button icon="pi pi-chevron-left" [text]="true" severity="secondary"></p-button>
-                            <p-button icon="pi pi-chevron-right" [text]="true" severity="secondary"></p-button>
+                        <div class="button-container ">
+                            <p-button icon="pi pi-chevron-left" (click)="scrollLeft()" severity="secondary" text="true" class="mr-2 scroll-button"></p-button>
+                            <p-button icon="pi pi-chevron-right" (click)="scrollRight()" text="true"
+                                severity="secondary" class="scroll-button"></p-button>
                         </div>
                     </div>
 
-                    <div class="availability-container gap-3">
-                        <div class="availability-box" *ngFor="let availability of [1,2,3,4,5,6,7]">
+                    <div class="availability-container gap-3 mt-2" #scrollContainer>
+                        <div class="availability-box" *ngFor="let availability of [1, 2, 3, 4, 5, 6, 7]">
                             <div class="font-medium text-sm mb-2">
                                 {{ firstDoctor.availability }}
                             </div>
@@ -89,8 +93,8 @@
                             </div>
                         </div>
                     </div>
-
                 </section>
+
 
                 <p-divider />
 
@@ -105,7 +109,8 @@
 
                                 <div class="profile-card-info text-sm">
                                     <h4 class="text-m font-semibold">{{ firstDoctor.hospital }}</h4>
-                                    <p class="font-medium text-xs text-primary mb-5">{{ firstDoctor.minPrice | currency: 'USD':'symbol':'1.0-0'}}
+                                    <p class="font-medium text-xs text-primary mb-5">{{ firstDoctor.minPrice | currency:
+                                        'USD':'symbol':'1.0-0'}}
                                         /Randevu</p>
                                     <p class="font-medium text-xs">
                                         <i class="pi pi-map-marker"></i> {{ firstDoctor.location }}
