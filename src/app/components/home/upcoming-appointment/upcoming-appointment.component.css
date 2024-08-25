@@ -29,7 +29,7 @@
     border-radius: 15px;
 }
 
-.patient-info p{
+.patient-info p {
     font-size: small;
 }
 
@@ -48,28 +48,15 @@ button:hover {
     transition: 0.5s;
 }
 
-:host {
-    ::ng-deep .p-card .p-card-body {
-        padding: 0.6rem 1rem 0.6rem 0.6rem;
-    }
-   
+:host ::ng-deep .p-card .p-card-body {
+    padding: 0.6rem 1rem 0.6rem 0.6rem;
 }
 
-:host {
-    ::ng-deep .p-card .p-card-content
-    {
-        padding: 0rem ;
-    }
-   
-}
-:host {
-    ::ng-deep .p-card .p-card-footer 
-    {
-        padding: 0rem ;
-    }
-   
+:host ::ng-deep .p-card .p-card-content {
+    padding: 0rem;
 }
 
 
-
-
+:host ::ng-deep .p-card .p-card-footer {
+    padding: 0rem;
+}

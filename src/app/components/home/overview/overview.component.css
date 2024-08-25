@@ -1,8 +1,32 @@
-.card{
+.card {
     background-color: white;
     width: 30rem;
     margin: 0.5rem;
     padding: 1.5rem 0.7rem 1.5rem 0.7rem;
     border: 0.4px solid rgb(230, 230, 230);
     border-radius: 1rem;
+}
+
+@media (max-width: 1700px) {
+    .card {
+        width: 29rem;
+    }
+}
+
+@media (max-width: 1550px) {
+    .card {
+        width: 28rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .card {
+        width: 27rem;
+    }
+}
+
+@media (max-width: 1300px) {
+    .card {
+        width: 26rem;
+    }
 }

@@ -4,6 +4,7 @@
     border-radius: 1rem;
     margin-top: 0.5rem;
     margin-left: 0.7rem;
+    width: 30rem;
 }
 
 .caption{
@@ -57,3 +58,21 @@
   color: white;
   transition: 0.5s; 
 }
+
+@media (max-width: 1700px) {
+  .card {
+      width: 28rem;
+  }
+}
+
+@media (max-width: 1550px) {
+  .card {
+      width: 26rem;
+  }
+}
+
+/* @media (max-width: 1400px) {
+  .card {
+      width: 25rem;
+  }
+} */

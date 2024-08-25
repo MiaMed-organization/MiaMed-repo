@@ -1,46 +1,60 @@
-.card{
+.card {
     padding: 0rem 0.5rem 0rem 0.5rem;
     border: 0.4px solid rgb(230, 230, 230);
     border-radius: 1rem;
     margin-top: 0.5rem;
+    width: 27rem;
 }
 
-.card tr:hover{
+.card tr:hover {
     background-color: rgb(240, 252, 255);
-  }
+}
 
-.card .showAll a:hover{
+.card .showAll a:hover {
     color: black !important;
     transition: color 0.2s;
 
 }
 
-.card tr .view button{
+.card tr .view button {
     border-radius: 50%;
-}  
+}
 
-.card tr .view button:hover{
+.card tr .view button:hover {
     background-color: #0e82fd !important;
     color: white;
     transition: 0.5s;
-} 
+}
 
-.caption{
+.caption {
     background-color: white !important;
 }
 
 .rounded-img {
     border-radius: 10px;
-  }
-  
-  
-.patient-name{
+}
+
+
+.patient-name {
     font-weight: 600;
 }
 
-:host {
-    ::ng-deep .p-card .p-card-body {
-        padding: 0rem;
+:host :ng-deep .p-card .p-card-body {
+    padding: 0rem;
+}
+
+@media (max-width: 1700px) {
+    .card {
+        width: 26rem;
     }
-   
+
+    .view button {
+        margin-right: 0.5rem !important;
+    }
+}
+
+@media (max-width: 1550px) {
+    .card {
+        width: 24rem;
+    }
 }

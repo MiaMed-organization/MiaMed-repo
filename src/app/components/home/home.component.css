@@ -1,36 +1,76 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  overflow: hidden;
-}
-
 .container {
   display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .main-content {
   flex-grow: 1;
+  align-items: center;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: column; /* Dikey olarak sıralama */
+  grid-gap: 10px; /* Hücreler arası boşluk */
   padding: 5rem 1rem 1rem 1rem;
-  overflow-y: auto; 
-  margin-left: 11.5rem; 
+  margin-left: 4rem;
+  max-width: 1600px;
+  width: 100%;
 }
 
-.main-content.sidebar-open {
-  margin-left: 19rem;
+.cards{
+  margin-left: 6rem;
 }
 
-.main-content .cards,
-.main-content .app-appointment,
-.main-content .app-overview {
-  margin-bottom: 1rem;
+.flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* 3 sütunlu grid sistemi */
+  grid-gap: 20px; /* Hücreler arası boşluk */
+  width: 100%;
 }
 
-.app-appointment {
-  flex-grow: 1;
+.column {
+  grid-column: span 4; /* Her bir sütun 4 birim genişlik kaplar */
+}
+
+.column.ml-3 {
+  grid-column: span 4; /* Orta sütun da 4 birim genişlik kaplar */
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    grid-template-columns: repeat(8, 1fr); /* 8 sütunlu grid sistemi */
+  }
+
+  .column {
+    grid-column: span 8; /* Sütun genişliğini 8 birime çıkar */
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    grid-template-columns: repeat(4, 1fr); /* 4 sütunlu grid sistemi */
+  }
+
+  .column {
+    grid-column: span 4; /* Sütun genişliğini 4 birime çıkar */
+  }
+
+  .flex {
+    grid-template-columns: 1fr; /* Tek sütun yap */
+    grid-gap: 10px; /* Daha küçük boşluklar */
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr; /* Tek sütunlu grid sistemi */
+    padding: 0 10px; /* Kenarlardan boşluk bırakır */
+  }
+
+  .column {
+    grid-column: span 1; /* Tam genişlik kaplar */
+  }
+
+  .flex {
+    grid-template-columns: 1fr; /* Tek sütun yap */
+  }
 }

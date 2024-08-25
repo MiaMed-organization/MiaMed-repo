@@ -2,22 +2,24 @@
 
 <div class="container">
     <app-menu class="menu"></app-menu>
-    
+
     <div class="main-content">
+        <!-- <app-cards> componentini flex yapısının üstüne taşıyoruz -->
         <app-cards></app-cards>
-        <div class="flex">
+
+        <div class="flex cards">
             <div class="column">
                 <app-appointment></app-appointment>
             </div>
-            <div class="column ml-3">
+
+            <div class="column ">
                 <app-overview></app-overview>
                 <app-upcoming-appointment></app-upcoming-appointment>
             </div>
-            <div class="column ml-3">
+
+            <div class="column">
                 <app-invoices></app-invoices>
             </div>
         </div>
     </div>
-
-    
 </div>
