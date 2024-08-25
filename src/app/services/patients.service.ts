@@ -11,7 +11,7 @@ export class PatientsService {
       {
         id: '1',
         appointmentId: '#Apt0001',
-        name: 'Adrian Marshall',
+        name: 'Adrian Bird',
         image: 'patient1.jpeg',
         appointmentDate: '10 Haziran 2024',
         appointmentTime: '10:45',

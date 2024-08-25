@@ -5,72 +5,64 @@
 }
 
 .main-content {
-  flex-grow: 1;
   align-items: center;
   display: flex;
-  flex-direction: column; /* Dikey olarak sıralama */
-  grid-gap: 10px; /* Hücreler arası boşluk */
+  flex-direction: column;
+  /* Dikey olarak sıralama */
+  grid-gap: 10px;
+  /* Hücreler arası boşluk */
   padding: 5rem 1rem 1rem 1rem;
   margin-left: 4rem;
   max-width: 1600px;
   width: 100%;
 }
 
-.cards{
+.cards {
   margin-left: 6rem;
 }
 
 .flex {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* 3 sütunlu grid sistemi */
-  grid-gap: 20px; /* Hücreler arası boşluk */
+  grid-template-columns: 1fr 1fr 1fr;
+  /* 3 sütunlu grid sistemi */
+  grid-gap: 20px;
+  /* Hücreler arası boşluk */
   width: 100%;
 }
 
 .column {
-  grid-column: span 4; /* Her bir sütun 4 birim genişlik kaplar */
+  grid-column: span 4;
+  /* Her bir sütun 4 birim genişlik kaplar */
 }
 
 .column.ml-3 {
-  grid-column: span 4; /* Orta sütun da 4 birim genişlik kaplar */
+  grid-column: span 4;
+  /* Orta sütun da 4 birim genişlik kaplar */
+}
+
+@media (max-width: 1700px){
+  .main-content{
+    margin-left: 5rem;
+  }
+
+  .cards{
+    margin-left: 10rem;
+  }
+}
+
+
+@media (max-width: 1400px){
+  .cards{
+    margin-left: 4rem !important;
+  }
+}
+
+@media (max-width: 1300px){
+  .main-content{
+    margin-right: 4rem;
+  }
 }
 
 @media (max-width: 1200px) {
-  .main-content {
-    grid-template-columns: repeat(8, 1fr); /* 8 sütunlu grid sistemi */
-  }
 
-  .column {
-    grid-column: span 8; /* Sütun genişliğini 8 birime çıkar */
-  }
-}
-
-@media (max-width: 992px) {
-  .main-content {
-    grid-template-columns: repeat(4, 1fr); /* 4 sütunlu grid sistemi */
-  }
-
-  .column {
-    grid-column: span 4; /* Sütun genişliğini 4 birime çıkar */
-  }
-
-  .flex {
-    grid-template-columns: 1fr; /* Tek sütun yap */
-    grid-gap: 10px; /* Daha küçük boşluklar */
-  }
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    grid-template-columns: 1fr; /* Tek sütunlu grid sistemi */
-    padding: 0 10px; /* Kenarlardan boşluk bırakır */
-  }
-
-  .column {
-    grid-column: span 1; /* Tam genişlik kaplar */
-  }
-
-  .flex {
-    grid-template-columns: 1fr; /* Tek sütun yap */
-  }
 }

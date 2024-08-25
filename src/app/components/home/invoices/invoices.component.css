@@ -34,13 +34,16 @@
     border-radius: 10px;
 }
 
-
 .patient-name {
     font-weight: 600;
 }
 
-:host :ng-deep .p-card .p-card-body {
+:host ::ng-deep .p-card .p-card-body {
     padding: 0rem;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-header {
+    background: transparent;
 }
 
 @media (max-width: 1700px) {
@@ -53,8 +56,19 @@
     }
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1600px) {
     .card {
-        width: 24rem;
+        width: 23rem;
+    }
+}
+
+@media (max-width: 1400px){
+    .card {
+        width: 21rem;
+        padding: 0rem 0.2rem 0rem 0.2rem;
+    }
+
+    .view button {
+        margin-right: 0rem !important;
     }
 }

@@ -3,7 +3,7 @@ body {
     padding: 0;
 }
 
-.card{
+.card {
     background-color: white;
     width: 17rem;
     margin: 0.7rem;
@@ -27,14 +27,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
 }
 
 .card-text {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
+
 }
 
 .card-avatar {
@@ -46,6 +46,8 @@ body {
 .card-text h2 {
     font-size: 1rem;
     margin: 0;
+    white-space: nowrap;
+
 }
 
 .card-text span,
@@ -53,15 +55,45 @@ i {
     font-size: 0.8rem;
 }
 
-@media (max-width: 1700px){
-    .card{
+@media (max-width: 1700px) {
+    .card {
         width: 16rem;
     }
 }
 
-@media (max-width: 1550px){
-    .card{
+@media (max-width: 1600px) {
+    .card {
         width: 15rem;
-        padding: 0.5rem 0.7rem 0.5rem 0.7rem;
+    }
+}
+
+@media (max-width: 1500px) {
+    .card {
+        margin: 0.7rem 0.4rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    .card {
+        width: 14rem;
+    }
+
+    :host ::ng-deep .p-avatar.p-avatar-xl {
+        width: 3rem;
+        height: 3.rem;
+        font-size: 1rem;
+    }
+
+    .card-text h2 {
+        font-size: 0.9rem;
+    }
+
+    .card-text span,
+    i {
+        font-size: 0.7rem;
+    }
+
+    h3{
+        font-size: 1rem !important;
     }
 }

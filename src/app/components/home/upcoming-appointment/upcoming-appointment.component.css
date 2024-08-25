@@ -48,6 +48,10 @@ button:hover {
     transition: 0.5s;
 }
 
+:host ::ng-deep .p-card{
+    width: 30rem;
+}
+
 :host ::ng-deep .p-card .p-card-body {
     padding: 0.6rem 1rem 0.6rem 0.6rem;
 }
@@ -59,4 +63,29 @@ button:hover {
 
 :host ::ng-deep .p-card .p-card-footer {
     padding: 0rem;
+}
+
+
+@media (max-width: 1700px) {
+    :host ::ng-deep .p-card{
+        width: 29rem;
+    }
+}
+
+@media (max-width: 1600px) {
+    :host ::ng-deep .p-card{
+        width: 28rem;
+    }
+}
+
+@media (max-width: 1500px) {
+    :host ::ng-deep .p-card{
+        width: 25rem;
+    }
+}
+
+@media (max-width: 1400px) {
+    :host ::ng-deep .p-card{
+        width: 24rem;
+    }
 }
