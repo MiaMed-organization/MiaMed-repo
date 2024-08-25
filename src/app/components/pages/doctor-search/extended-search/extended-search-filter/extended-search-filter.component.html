@@ -47,7 +47,7 @@
                         <span>${{ minPrice }}</span>
                         <span>${{ maxPrice }}</span>
                     </div>
-                    <p-slider [(ngModel)]="rangeValues" [range]="true" styleClass="w-14rem mt-2 mb-2"
+                    <p-slider [(ngModel)]="rangeValues" [range]="true" styleClass="mt-2 mb-2" class="price-slider"
                         (onChange)="updatePriceRange()"></p-slider>
                     <div class="text-center">
                         Ücret: <span class="font-medium"> ${{ rangeValues[0] }} - ${{ rangeValues[1] }}</span>

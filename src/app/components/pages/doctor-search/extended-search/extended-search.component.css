@@ -22,29 +22,36 @@ app-menu {
   position: fixed;
   top: var(--navbar-height);
   bottom: 0;
-  width: 200px; /* Menü genişliğini ayarlayın */
+  width: 200px;
   z-index: 1000;
 }
 
 .page-container {
   margin-top: var(--navbar-height);
-  margin-left: 200px; /* Menü genişliği ile aynı */
   padding: 20px;
   flex: 1;
   overflow: auto;
   height: calc(100vh - var(--navbar-height));
+  align-items: center;
+  justify-content: center;
 }
 
 .content-container {
   display: flex;
   justify-content: center;
-  overflow: auto;
+  align-items: flex-start;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .search-filter-container {
   margin-right: 10px;
   padding-top: 20px;
   padding-left: 5px;
+  flex-shrink: 0;
 }
 
 .doctor-cards-container {
@@ -54,13 +61,47 @@ app-menu {
   gap: 10px;
   overflow: auto;
   flex: 1;
+  max-width: 900px;
 }
 
+:host ::ng-deep .p-breadcrumb {
+  border: none;
+}
 
-:host ::ng-deep .p-breadcrumb{
-    border: none;
+:host ::ng-deep .p-component {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1600px) {
+  .content-container {
+    justify-content: center;
+    padding: 0 15px;
+    width: 100%;
   }
-  
-  :host ::ng-deep .p-component{
-    font-size: 0.9rem;
+
+  .search-filter-container {
+    flex: 0 0 250px;
+    margin-right: 20px;
   }
+
+  .doctor-cards-container {
+    flex: 1;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-filter-container {
+    margin-bottom: 10px;
+  }
+
+  .doctor-cards-container {
+    max-width: 100%;
+  }
+}
+

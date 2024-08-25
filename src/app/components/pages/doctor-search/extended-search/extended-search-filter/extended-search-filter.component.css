@@ -40,24 +40,22 @@
 
 .filter-group .justify-content-between {
     margin-bottom: 5px;
-    /* Üstteki min-max değerleri ile slider arasına boşluk ekler */
 }
 
 .filter-group .w-full {
     width: 100%;
-    /* Genişliği tam olarak ayarlar */
 }
 
 .filter-group .text-center {
     width: 100%;
-    /* Metni ortalar */
     font-size: 14px;
-    /* Yazı boyutunu ayarlar */
 }
 
+.price-slider{
+    width: 14rem;
+}
 
-:host {
-    ::ng-deep .p-button {
+:host ::ng-deep .p-button {
         width: 180px;
         display: block;
         font-size: 12px;
@@ -67,13 +65,6 @@
         padding: 10px 15px;
         border-radius: 4px;
     }
-}
-
-:host {
-    ::ng-deep .p-inputtext {
-        padding: 0.5rem 0.5rem;
-    }
-}
 
 :host ::ng-deep .p-checkbox-label {
     margin-left: 8px;
@@ -92,22 +83,59 @@
     padding: 0.5rem 0;
 }
 
-:host ::ng-deep .p-datepicker table td {
-    padding: 0rem;
-}
-
-:host ::ng-deep .p-link {
-    font-size: 0.9rem;
-}
-
-:host ::ng-deep .p-datepicker table {
-    font-size: 0.85rem;
-}
-
 :host ::ng-deep .p-rating .p-rating-item.p-rating-item-active .p-rating-icon {
     color: #e6be5b;
 }
 
 :host ::ng-deep .p-rating .p-rating-item .p-rating-icon {
     color: #dddddd;
+}
+
+@media (max-width: 992px) {
+    :host ::ng-deep .p-card {
+        margin-left: 0.6rem;
+        width: 600px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 540px;
+    }
+
+    :host::ng-deep .p-inputtext {
+        width: 540px;
+    }
+
+    .price-slider{
+        width: 540px;
+    }
+}
+
+@media (max-width: 720px) {
+    :host ::ng-deep .p-card {
+        margin-left: 0.6rem;
+        width: 480px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 400px;
+    }
+
+    .price-slider{
+        width: 400px;
+    }
+}
+
+@media (max-width: 590px) {
+    :host ::ng-deep .p-card {
+        margin-left: 0.6rem;
+        width: 400px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 350px;
+    }
+
+    .price-slider{
+        width: 350px;
+    }
 }

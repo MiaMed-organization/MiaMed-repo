@@ -23,7 +23,6 @@ app-menu {
   top: var(--navbar-height);
   bottom: 0;
   width: 200px;
-  /* Menü genişliğini ayarlayın */
   z-index: 1000;
 }
 
@@ -40,18 +39,12 @@ app-menu {
 .content-container {
   display: flex;
   justify-content: center;
-  /* İçeriği yatayda ortalar */
   align-items: flex-start;
-  /* İçeriği üstte hizalar */
   margin: 0 auto;
-  /* Container'ı yatayda ortalar */
   width: 100%;
   max-width: 1200px;
-  /* İsteğe bağlı: İçeriğin maksimum genişliğini ayarlayabiliriz */
   padding: 20px;
-  /* İçerik etrafına boşluk ekler */
   box-sizing: border-box;
-  /* Padding dahil genişlik hesaplanır */
 }
 
 .search-filter-container {
@@ -83,39 +76,32 @@ app-menu {
   .content-container {
     justify-content: center;
     padding: 0 15px;
-    /* Küçük ekranlarda kenarlardan boşluk bırakmak için */
     width: 100%;
   }
 
   .search-filter-container {
     flex: 0 0 250px;
-    /* Filtreyi belirli bir genişlikte tut */
     margin-right: 20px;
   }
 
   .doctor-cards-container {
     flex: 1;
     max-width: 700px;
-    /* Küçük ekranlar için doktor kartlarının genişliğini ayarla */
   }
 }
 
 @media (max-width: 992px) {
   .content-container {
     flex-direction: column;
-    /* Küçük ekranlarda filtre ve kartları üst üste yerleştir */
     align-items: center;
-    /* İçeriği ortala */
   }
 
   .search-filter-container {
     margin-bottom: 10px;
-    /* Filtreyi kartların üstünde tut ve araya boşluk ekle */
   }
 
   .doctor-cards-container {
     max-width: 100%;
-    /* Kartların genişliğini küçük ekranlarda %100 yap */
   }
 }
 
