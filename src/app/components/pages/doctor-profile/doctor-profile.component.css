@@ -61,18 +61,13 @@
   color: black;
 }
 
-
 section {
   width: 100%;
   max-width: 1100px; 
   margin: 0 auto;
-  /* Her bölümün tam genişlikte olmasını sağlar */
   box-sizing: border-box;
-  /* Padding dahil genişliği hesaplar */
   text-align: left;
-  /* İçeriği sola hizalar */
   clear: both;
-  /* Her bölümün alt alta olmasını sağlar */
 }
 
 section h2 {
@@ -113,8 +108,8 @@ section h2 {
 }
 
 .profile-card-logo {
-  width: 85px;
-  height: auto;
+  width: 120px;
+  height: 100px;
   margin-right: 15px;
   border: 1px solid #e0e0e0; /* Görselin etrafında hafif gri border */
   border-radius: 4px;
@@ -165,6 +160,31 @@ section h2 {
   display: inline-block; /* İçeriğe göre genişlik */
   text-align: center; /* Yazıları ortala */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.profile-card-inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-card-left {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-card-right {
+  flex: 0 0 200px; /* Adjust width as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card-right iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  border: 0; /* Adjust this if you want a border */
 }
 
 

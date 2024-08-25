@@ -77,7 +77,8 @@
                     <div class="section-header">
                         <h2>Müsaitlik</h2>
                         <div class="button-container ">
-                            <p-button icon="pi pi-chevron-left" (click)="scrollLeft()" severity="secondary" text="true" class="mr-2 scroll-button"></p-button>
+                            <p-button icon="pi pi-chevron-left" (click)="scrollLeft()" severity="secondary" text="true"
+                                class="mr-2 scroll-button"></p-button>
                             <p-button icon="pi pi-chevron-right" (click)="scrollRight()" text="true"
                                 severity="secondary" class="scroll-button"></p-button>
                         </div>
@@ -103,34 +104,52 @@
 
                     <div class="profile-card" *ngFor="let image of firstDoctor.clinicImages; let index = index">
                         <div class="profile-card-content">
-                            <div class="flex mb-2 profile-card-left">
-                                <img [src]="'../../../../assets/images/clinics/' + firstDoctor.clinicImages[index]"
-                                    alt="Hospital Logo" class="profile-card-logo">
+                            <div class="flex profile-card-inner">
+                                <!-- Left Side: Hospital Information -->
+                                <div class="profile-card-left">
+                                    <img [src]="'../../../../assets/images/clinics/' + firstDoctor.clinicImages[index]"
+                                        alt="Hospital Logo" class="profile-card-logo">
 
-                                <div class="profile-card-info text-sm">
-                                    <h4 class="text-m font-semibold">{{ firstDoctor.hospital }}</h4>
-                                    <p class="font-medium text-xs text-primary mb-5">{{ firstDoctor.minPrice | currency:
-                                        'USD':'symbol':'1.0-0'}}
-                                        /Randevu</p>
-                                    <p class="font-medium text-xs">
-                                        <i class="pi pi-map-marker"></i> {{ firstDoctor.location }}
-                                    </p>
-                                </div>
-                            </div>
+                                    <div class="profile-card-info text-sm">
 
-                            <div class="flex clinic-availability ">
-                                <div class="availability-container gap-3">
-                                    <div class="availability-box" *ngFor="let availability of [1, 2]">
-                                        <div class="font-medium text-sm mb-1">{{ firstDoctor.availability }}</div>
-                                        <div class="font-light text-xs">{{ firstDoctor.availableTime }}</div>
+                                        <h4 class="text-m font-semibold">{{ firstDoctor.hospital }}</h4>
+                                        <p class="font-medium text-xs text-primary mb-5">{{ firstDoctor.minPrice |
+                                            currency: 'USD':'symbol':'1.0-0'}} /Randevu</p>
+                                        <p class="font-medium text-xs">
+                                            <i class="pi pi-map-marker"></i> {{ firstDoctor.location }}
+                                        </p>
+
+                                        <div class="flex clinic-availability mt-2">
+                                            <div class="availability-container gap-3">
+                                                <div class="availability-box" *ngFor="let availability of [1, 2]">
+                                                    <div class="font-medium text-sm mb-1">{{ firstDoctor.availability }}
+                                                    </div>
+                                                    <div class="font-light text-xs">{{ firstDoctor.availableTime }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
+
+
+                                </div>
+
+                                <!-- Right Side: Google Maps Iframe -->
+                                <div class="profile-card-right">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d754.5998965713842!2d-73.9407165!3d40.84115!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f69c695fcef9%3A0xf82f63a3e9c48061!2sColumbia%20University%20Irving%20Medical%20Center!5e0!3m2!1str!2str!4v1724622110243!5m2!1str!2str"
+                                        width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
                             </div>
+
+                            <!-- Availability Section -->
+
                         </div>
                     </div>
-
-
                 </section>
+
 
                 <p-divider />
 
