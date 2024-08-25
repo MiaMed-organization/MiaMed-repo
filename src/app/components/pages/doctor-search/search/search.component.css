@@ -22,29 +22,43 @@ app-menu {
   position: fixed;
   top: var(--navbar-height);
   bottom: 0;
-  width: 200px; /* Menü genişliğini ayarlayın */
+  width: 200px;
+  /* Menü genişliğini ayarlayın */
   z-index: 1000;
 }
 
 .page-container {
   margin-top: var(--navbar-height);
-  margin-left: 200px; /* Menü genişliği ile aynı */
   padding: 20px;
   flex: 1;
   overflow: auto;
   height: calc(100vh - var(--navbar-height));
+  align-items: center;
+  justify-content: center;
 }
 
 .content-container {
   display: flex;
   justify-content: center;
-  overflow: auto;
+  /* İçeriği yatayda ortalar */
+  align-items: flex-start;
+  /* İçeriği üstte hizalar */
+  margin: 0 auto;
+  /* Container'ı yatayda ortalar */
+  width: 100%;
+  max-width: 1200px;
+  /* İsteğe bağlı: İçeriğin maksimum genişliğini ayarlayabiliriz */
+  padding: 20px;
+  /* İçerik etrafına boşluk ekler */
+  box-sizing: border-box;
+  /* Padding dahil genişlik hesaplanır */
 }
 
 .search-filter-container {
   margin-right: 10px;
   padding-top: 20px;
   padding-left: 5px;
+  flex-shrink: 0;
 }
 
 .doctor-cards-container {
@@ -54,6 +68,7 @@ app-menu {
   gap: 10px;
   overflow: auto;
   flex: 1;
+  max-width: 900px;
 }
 
 :host ::ng-deep .p-breadcrumb {
@@ -63,3 +78,44 @@ app-menu {
 :host ::ng-deep .p-component {
   font-size: 0.9rem;
 }
+
+@media (max-width: 1600px) {
+  .content-container {
+    justify-content: center;
+    padding: 0 15px;
+    /* Küçük ekranlarda kenarlardan boşluk bırakmak için */
+    width: 100%;
+  }
+
+  .search-filter-container {
+    flex: 0 0 250px;
+    /* Filtreyi belirli bir genişlikte tut */
+    margin-right: 20px;
+  }
+
+  .doctor-cards-container {
+    flex: 1;
+    max-width: 700px;
+    /* Küçük ekranlar için doktor kartlarının genişliğini ayarla */
+  }
+}
+
+@media (max-width: 992px) {
+  .content-container {
+    flex-direction: column;
+    /* Küçük ekranlarda filtre ve kartları üst üste yerleştir */
+    align-items: center;
+    /* İçeriği ortala */
+  }
+
+  .search-filter-container {
+    margin-bottom: 10px;
+    /* Filtreyi kartların üstünde tut ve araya boşluk ekle */
+  }
+
+  .doctor-cards-container {
+    max-width: 100%;
+    /* Kartların genişliğini küçük ekranlarda %100 yap */
+  }
+}
+

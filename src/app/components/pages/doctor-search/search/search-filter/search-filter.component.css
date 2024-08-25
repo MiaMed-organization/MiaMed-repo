@@ -9,7 +9,7 @@
     padding: 10px;
 }
 
-.card-header{
+.card-header {
     width: 100%;
     border-bottom: 1px solid #f0f0f0;
     padding-bottom: 0.5rem;
@@ -24,34 +24,33 @@
 .button-container {
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     gap: 5px;
     margin-top: 10px;
     width: 100%;
 }
 
-.date-picker .p-datepicker{
+.date-picker .p-datepicker {
     scale: 0.3;
 }
 
-:host {
-    ::ng-deep .p-button {
-        width: 180px;
-        display: block;
-        font-size: 12px;
-        font-weight: 500;
-        letter-spacing: 1px;
-        text-align: center;
-        padding: 10px 15px;
-        border-radius: 4px;
-    }
+:host ::ng-deep .p-button {
+    width: 180px;
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-top: 1rem;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 4px;
 }
 
-:host{
-    ::ng-deep .p-inputtext{
-      padding: 0.5rem 0.5rem;
-    }
-  }  
+
+:host::ng-deep .p-inputtext {
+    padding: 0.5rem 0.5rem;
+}
+
 
 :host ::ng-deep .p-checkbox-label {
     margin-left: 8px;
@@ -62,8 +61,8 @@
     margin-top: 10px;
 }
 
-:host ::ng-deep .p-card .p-card-body{
-   padding: 0.5rem !important;
+:host ::ng-deep .p-card .p-card-body {
+    padding: 0.5rem !important;
 }
 
 :host ::ng-deep .p-card .p-card-content {
@@ -82,4 +81,47 @@
     font-size: 0.85rem;
 }
 
+@media (max-width: 992px) {
+    :host ::ng-deep .p-card {
+        margin-left: 0.6rem;
+        width: 600px;
+    }
 
+    :host ::ng-deep .p-button {
+        width: 540px;
+    }
+
+    :host::ng-deep .p-inputtext {
+        width: 540px;
+    }
+}
+
+@media (max-width: 720px) {
+    :host ::ng-deep .p-card {
+        margin-left: 0.6rem;
+        width: 480px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 400px;
+    }
+
+    :host::ng-deep .p-inputtext {
+        width: 400px;
+    }
+}
+
+@media (max-width: 590px) {
+    :host ::ng-deep .p-card {
+        margin-left: 0.6rem;
+        width: 400px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 350px;
+    }
+
+    :host::ng-deep .p-inputtext {
+        width: 350px;
+    }
+}

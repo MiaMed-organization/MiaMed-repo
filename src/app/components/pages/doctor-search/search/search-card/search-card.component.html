@@ -1,5 +1,6 @@
 <div>
     <div class="list-card-container">
+        
         <div class="img-container">
             <a>
                 <img [src]="'../../../../../assets/images/doctors/' + doctor.image" [alt]="doctor.name"
@@ -7,15 +8,19 @@
             </a>
             <i class="pi pi-bookmark bookmark-icon"></i>
         </div>
+
         <div class="doctor-info">
+
             <div class="name-container">
                 <a class="text-lg font-semibold">{{ doctor.name }}</a>
             </div>
+
             <p class="font-light my-1 text-xs">{{ doctor.field }}</p>
             <p class="font-light my-1 text-xs text-cyan-500">
                 <i [ngClass]="['pi', doctor.icon]" class="mr-1"></i> {{doctor.department}}
             </p>
-            <div class="card flex">
+
+            <div class="card flex rating">
                 <p-rating [(ngModel)]=" doctor.rating " [readonly]="true" [cancel]="false" />
                 <span class="font-light text-xs ml-1 mt-1">({{ doctor.feedback }})</span>
             </div>
@@ -36,22 +41,28 @@
         </div>
 
         <div class="doctor-details mr-2">
+
             <p class="font-light my-1 text-xs">
                 <i class="pi pi-thumbs-up"></i> {{ doctor.recommended }}%
             </p>
+
             <p class="font-light my-1 text-xs">
                 <i class="pi pi-comment"></i> {{ doctor.feedback }}
             </p>
+
             <p class="font-light my-1 text-xs">
                 <i class="pi pi-map-marker"></i> {{ doctor.location }}
             </p>
+
             <p class="font-light my-1 text-xs">
                 <i class="pi pi-money-bill"></i> ${{ doctor.minPrice }} - ${{doctor.maxPrice}}
             </p>
+
             <div class="button-container">
                 <p-button label="Profile Git" [outlined]="true" class="profile-button"></p-button>
                 <p-button label="Randevu Al" class="appointment-button"></p-button>
             </div>
+
         </div>
     </div>
 </div>
