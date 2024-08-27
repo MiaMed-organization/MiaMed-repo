@@ -72,3 +72,29 @@
         margin-right: 0rem !important;
     }
 }
+
+@media (max-width: 1250px) {
+    .card {
+      width: 55rem;
+      padding: 0rem 0.5rem 0.5rem 0.5rem;
+      margin-left: 0.5rem;
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    .card {
+      width: 45rem;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .card {
+      width: 40rem;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .card {
+      width: 31rem;
+    }
+  }

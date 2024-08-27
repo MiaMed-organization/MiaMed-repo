@@ -77,12 +77,37 @@
 
 @media (max-width: 1500px) {
   .card {
-      width: 25rem;
+    width: 25rem;
   }
 }
 
 @media (max-width: 1400px) {
-  .card{
-    padding: 0rem 0.2rem 0.2rem 0.2rem;
+  .card {
+    padding: 0rem 0.3rem 0.3rem 0.3rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .card {
+    width: 55rem;
+    padding: 0rem 0.5rem 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .card {
+    width: 45rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .card {
+    width: 40rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .card {
+    width: 31rem;
   }
 }

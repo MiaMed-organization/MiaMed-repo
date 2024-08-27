@@ -1,41 +1,40 @@
-
-<div class="card flex justify-content-center" style="position: relative;" >
+<div class="card flex justify-content-center" style="position: relative;">
     <p-card [style]="{ backgroundColor: '#0E82FD', color: 'white', position: 'relative'}">
 
         <img src="../../../../assets/images/dashboard-circle-bg.png" alt="dashboard-circle-bg.png"
             class="background-img">
 
-        <ng-template pTemplate="body" >
+        <ng-template pTemplate="body">
             <div style="position: relative; z-index: 1;">
                 <h4 class="ml-2 my-0">Yaklaşan Görüşme !</h4>
             </div>
 
-            <div class="patient-info flex items-center" style=" position: relative; z-index: 1;">
+            <div class="patient-info flex items-center" style="position: relative; z-index: 1;">
+
                 <img [src]="'../../../../assets/images/patients/' + patient.image" class="patient-img"/>
-                <div>
+                <div class="patient-details">
                     <p>{{ patient.appointmentId }}</p>
                     <p style="margin: 0;">{{ patient.name }}</p>
                 </div>
-                <div style="margin-left: auto; text-align: right;">
-                    <p>{{ patient.visitType }}</p>
-                    <p style="margin: 0;">{{ patient.appointmentDate }}, {{ patient.appointmentTime }}</p>
-                </div>
+            </div>
+
+            <div class="patient-details-row text-sm" style="text-align: left; margin-top: 1rem;">
+                <p>{{ patient.visitType }}</p>
+                <p style="margin: 0;">{{ patient.appointmentDate }}, {{ patient.appointmentTime }}</p>
             </div>
             
         </ng-template>
 
-        <ng-template pTemplate="footer" >
-            
+        <ng-template pTemplate="footer">
             <hr>
-            <div class="flex justify-content-between items-center" style="position: relative; z-index: 1;" >
-                <div class="flex items-center mt-2">
-                    <i class="pi pi-video mr-2"></i>
-                    <p class="flex m-0 text-sm">Video Görüşmesi</p>
-                </div>
-                <div class="flex gap-2">
+            <div class="flex justify-content-between items-center" style="position: relative; z-index: 1;">
+                <div class="flex gap-2 footer-container">
+                    <div class="flex items-center mt-2">
+                        <i class="pi pi-video mr-2"></i>
+                        <p class="flex m-0 text-sm footer-text">Video Görüşmesi</p>
+                    </div>
                     <button label="Chat Now" class="text-color-surface-800 border-none border-round">Mesaj At</button>
-                    <button label="Start Appointment" class="text-color-surface-800 border-none border-round">Randevuyu
-                        Başlat</button>
+                    <button label="Start Appointment" class="text-color-surface-800 border-none border-round">Randevuyu Başlat</button>
                 </div>
             </div>
         </ng-template>

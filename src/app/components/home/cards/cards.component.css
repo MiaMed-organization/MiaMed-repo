@@ -21,14 +21,22 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    padding: 0;
 }
 
 .card-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    width: 100%;
+    padding: 0;
 }
+
+.card-avatar {
+    margin-left: auto;
+}
+
 
 .card-text {
     display: flex;
@@ -80,7 +88,7 @@ i {
 
     :host ::ng-deep .p-avatar.p-avatar-xl {
         width: 3rem;
-        height: 3.rem;
+        height: 3rem;
         font-size: 1rem;
     }
 
@@ -93,7 +101,56 @@ i {
         font-size: 0.7rem;
     }
 
-    h3{
+    h3 {
         font-size: 1rem !important;
+    }
+}
+
+@media (max-width: 1250px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 55rem;
+    }
+
+    :host ::ng-deep .p-avatar.p-avatar-xl {
+        width: 4rem;
+        height: 4rem;
+        font-size: 2rem;
+    }
+
+    .card-text h2 {
+        font-size: 1rem;
+    }
+
+    .card-text span,
+    i {
+        font-size: 0.8rem;
+    }
+
+    h3 {
+        font-size: 1.2rem !important;
+    }
+}
+
+@media (max-width: 1000px) {
+    .card {
+        width: 45rem;
+    }
+}
+
+
+@media (max-width: 900px) {
+    .card {
+        width: 40rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .card {
+        width: 31rem;
     }
 }

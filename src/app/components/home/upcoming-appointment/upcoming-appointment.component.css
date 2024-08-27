@@ -1,5 +1,6 @@
 .card {
     margin-top: 0.7rem;
+    margin-left: 0.5rem;
     padding: 0 !important;
 }
 
@@ -48,7 +49,7 @@ button:hover {
     transition: 0.5s;
 }
 
-:host ::ng-deep .p-card{
+:host ::ng-deep .p-card {
     width: 30rem;
 }
 
@@ -67,25 +68,100 @@ button:hover {
 
 
 @media (max-width: 1700px) {
-    :host ::ng-deep .p-card{
+    :host ::ng-deep .p-card {
         width: 29rem;
     }
 }
 
 @media (max-width: 1600px) {
-    :host ::ng-deep .p-card{
+    :host ::ng-deep .p-card {
         width: 28rem;
     }
 }
 
 @media (max-width: 1500px) {
-    :host ::ng-deep .p-card{
-        width: 25rem;
+    :host ::ng-deep .p-card {
+        width: 27rem;
     }
 }
 
 @media (max-width: 1400px) {
-    :host ::ng-deep .p-card{
+    :host ::ng-deep .p-card {
         width: 24rem;
+    }
+}
+
+@media (max-width: 1250px) {
+
+    .patient-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .patient-img {
+        margin-right: 1rem;
+    }
+
+    .patient-details {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .patient-details-row {
+        width: 100%;
+        text-align: left;
+        margin-top: 1rem;
+    }
+
+    .patient-img {
+        width: 60px;
+    }
+
+    :host ::ng-deep .p-card {
+        width: 27rem;
+        height: 23.3rem;
+    }
+
+    :host ::ng-deep .p-card .p-card-footer {
+        margin-top: 1rem;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-text {
+        margin-bottom: 1rem !important;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-container button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    :host ::ng-deep .p-card {
+        width: 22rem;
+    }
+}
+
+@media (max-width: 900px) {
+    :host ::ng-deep .p-card {
+        width: 19rem;
+    }
+}
+
+@media (max-width: 800px) {
+    :host ::ng-deep .p-card {
+        width: 15rem;
     }
 }
