@@ -21,21 +21,26 @@
       <span class="font-light text-xs ml-1 mt-1">({{ doctor.feedback }})</span>
     </div>
 
-    <p class="font-light my-3 text-xs">
-      <i class="pi pi-map-marker"></i> Konum, {{ doctor.location }}
-    </p>
+    <div>
+      <p class="font-light my-3 text-xs">
+        <i class="pi pi-map-marker"></i> Konum, {{ doctor.location }}
+      </p>
+  
+      <p class="font-light my-3 text-xs">
+        <i class="pi pi-clock"></i> Müsaitlik, {{ doctor.availability }}
+      </p>
+  
+      <p class="font-light my-3 text-xs">
+        <i class="pi pi-money-bill"></i> Ücret, ${{ doctor.minPrice }} - ${{ doctor.maxPrice }}
+      </p>
+    </div>
 
-    <p class="font-light my-3 text-xs">
-      <i class="pi pi-clock"></i> Müsaitlik, {{ doctor.availability }}
-    </p>
-
-    <p class="font-light my-3 text-xs">
-      <i class="pi pi-money-bill"></i> Ücret, ${{ doctor.minPrice }} - ${{ doctor.maxPrice }}
-    </p>
 
   </div>
-  <div class="flex gap-1">
+
+  <div class="flex gap-1 button-container">
     <p-button label="Profile Git" [outlined]="true"></p-button>
     <p-button label="Randevu Al"></p-button>
   </div>
+
 </div>

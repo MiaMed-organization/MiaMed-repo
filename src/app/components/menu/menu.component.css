@@ -9,7 +9,6 @@ body {
 .container {
     display: flex;
     margin-top: 2rem;
-    height: calc(100vh - 67px);
 }
 
 nav {

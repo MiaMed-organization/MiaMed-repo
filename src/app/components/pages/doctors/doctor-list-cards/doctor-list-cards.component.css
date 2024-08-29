@@ -6,7 +6,7 @@
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 1000px;
+    width: 950px;
     position: relative;
 }
 
@@ -118,8 +118,7 @@
     width: 100%;
 }
 
-:host {
-    ::ng-deep .p-button {
+:host ::ng-deep .p-button {
         width: 180px;
         display: block;
         font-size: 12px;
@@ -128,5 +127,122 @@
         text-align: center;
         padding: 10px 15px;
         border-radius: 4px;
+    }
+
+@media (max-width: 1700px){
+    .list-card-container {
+        width: 800px;
+    }
+}
+
+@media (max-width: 1500px){
+    .list-card-container {
+        width: 750px;
+    }
+}
+
+@media (max-width: 1450px){
+    .list-card-container {
+        width: 700px;
+    }
+}
+
+@media (max-width: 1300px){
+    .list-card-container {
+        width: 1000px;
+    }
+
+    .img-container img {
+        max-height: 140px;
+    }
+}
+
+@media (max-width: 1200px){
+    .list-card-container {
+        width: 900px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 170px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 1100px){
+    .list-card-container {
+        width: 800px;
+    }
+}
+
+@media (max-width: 1000px){
+    .list-card-container {
+        width: 700px;
+    }
+}
+
+@media (max-width: 900px){
+    .list-card-container {
+        width: 650px;
+    }
+}
+
+@media (max-width: 800px){
+    .list-card-container {
+        width: 590px;
+    }
+}
+
+@media (max-width: 700px){
+    .list-card-container {
+        display: flex;
+        min-width: 480px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .img-container img{
+        max-height: 120px;
+    }
+
+    .img-container,
+    .doctor-info,
+    .doctor-details {
+        width: 100%;
+        text-align: center;
+    }
+
+    .img-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .name-container{
+        display: block;
+    }
+
+    .rating{
+        display: block !important;
+    }
+
+    .doctor-details {
+        align-items: center;
+        margin-top: 20px;
+        max-width: none;
+    }
+
+    .button-container {
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    :host ::ng-deep .p-button {
+        width: 400px;
+    }
+
+    .button-container {
+        margin-top: 1rem;
     }
 }

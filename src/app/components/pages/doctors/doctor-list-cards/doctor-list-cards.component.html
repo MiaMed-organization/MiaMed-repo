@@ -15,7 +15,7 @@
             <p class="font-light my-1 text-xs text-cyan-500">
                 <i [ngClass]="['pi', doctor.icon]" class="mr-1"></i> {{doctor.department}}
             </p>
-            <div class="card flex">
+            <div class="card flex rating">
                 <p-rating [(ngModel)]=" doctor.rating " [readonly]="true" [cancel]="false" />
                 <span class="font-light text-xs ml-1 mt-1">({{ doctor.feedback }})</span>
             </div>
@@ -36,6 +36,7 @@
         </div>
 
         <div class="doctor-details mr-2">
+
             <p class="font-light my-1 text-xs">
                 <i class="pi pi-thumbs-up"></i> {{ doctor.recommended }}%
             </p>
@@ -48,6 +49,7 @@
             <p class="font-light my-1 text-xs">
                 <i class="pi pi-money-bill"></i> ${{ doctor.minPrice }} - ${{doctor.maxPrice}}
             </p>
+
             <div class="button-container">
                 <p-button label="Profile Git" [outlined]="true" class="profile-button"></p-button>
                 <p-button label="Randevu Al" class="appointment-button"></p-button>

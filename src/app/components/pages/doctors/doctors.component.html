@@ -34,16 +34,20 @@
             </ng-template>
           </div>
         </div>
-        
+
         <div class="pagination-container">
           <button (click)="onPageChange(currentPage - 1)" [disabled]="currentPage === 1">Önceki</button>
           <span class="text-sm">Sayfa {{ currentPage }}</span>
-          <button (click)="onPageChange(currentPage + 1)" [disabled]="currentPage * pageSize >= doctors.length">Sonraki</button>
+          <button (click)="onPageChange(currentPage + 1)"
+            [disabled]="currentPage * pageSize >= doctors.length">Sonraki</button>
         </div>
       </div>
 
       <div class="right-side">
-        <!-- This area is reserved for the map -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10246.136283312242!2d19.89485085010527!3d50.057558952103115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b9ee3e3bad3%3A0xccb4a99cbd977475!2sSpecialist%20Hospital.%20J.Dietla!5e0!3m2!1str!2str!4v1724789965577!5m2!1str!2str"
+          width="" height="" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
   </div>
