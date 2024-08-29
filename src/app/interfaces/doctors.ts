@@ -9,9 +9,9 @@ export interface Doctors {
     consultationFee?:number;
     location?: string;
     hospital?: string; 
+    gender?: string;
     languages?: string[];
     minPrice?: number;
-    department?: string;
     maxPrice?: number;
     availableDay?: string;
     availableTime?: string; 

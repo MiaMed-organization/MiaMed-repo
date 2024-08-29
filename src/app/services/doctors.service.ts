@@ -8,10 +8,12 @@ export class DoctorsService {
 
   getDoctorsData(): Doctors[] {
     return [
+
       {
         id: '1',
         name: 'Dr. Ruby Perrin',
         image: 'doctor-01.jpg',
+        gender: 'Kadın',
         availability: '22 Mart Cuma',
         minPrice: 300,
         maxPrice: 500,
@@ -27,7 +29,6 @@ export class DoctorsService {
         services: ['Kalp muayenesi', 'EKG', 'Tansiyon ölçümü'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Kardiyoloji',
         availableDay: 'Bugün',
         experience: 10,
         consultation: [
@@ -42,8 +43,8 @@ export class DoctorsService {
             hospital: ['Cambridge University Hastanesi', 'Hill Medical Hastanesi'],
             timePeriod: ['Eylül 2020 - Ocak 2024', 'Mart 2016 - Ağustos 2020'],
             total: ['2 yıl 3 ay', '4 yıl 5 ay'],
-            experiencedIn: ['Birinci sınıf sağlık hizmetleri ve acil tıp alanlarında özel uzmanlığa sahip.', 
-                            'Çok çeşitli tıbbi ortamlarda deneyim sahibidir.']
+            experiencedIn: ['Birinci sınıf sağlık hizmetleri ve acil tıp alanlarında özel uzmanlığa sahip.',
+              'Çok çeşitli tıbbi ortamlarda deneyim sahibidir.']
           }
         ]
       },
@@ -51,6 +52,7 @@ export class DoctorsService {
         id: '2',
         name: 'Dr. John Doe',
         image: 'doctor-02.jpg',
+        gender: 'Erkek',
         availability: '23 Mart Cumartesi',
         minPrice: 800,
         maxPrice: 1000,
@@ -66,7 +68,6 @@ export class DoctorsService {
         services: ['Cilt kontrolü', 'Alerji testi', 'Egzama tedavisi'],
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Dermatoloji',
         availableDay: 'Yarın',
         experience: 8,
         consultation: [
@@ -81,8 +82,8 @@ export class DoctorsService {
             hospital: ['New York Presbyterian Hospital', 'Mount Sinai Hospital'],
             timePeriod: ['Şubat 2018 - Mart 2022', 'Nisan 2013 - Ocak 2018'],
             total: ['4 yıl 1 ay', '5 yıl 9 ay'],
-            experiencedIn: ['Acil tıp ve yoğun bakım ünitelerinde deneyim sahibi.', 
-                            'Tanı ve tedavi süreçlerinde uzmandır.']
+            experiencedIn: ['Acil tıp ve yoğun bakım ünitelerinde deneyim sahibi.',
+              'Tanı ve tedavi süreçlerinde uzmandır.']
           }
         ]
       },
@@ -90,6 +91,7 @@ export class DoctorsService {
         id: '3',
         name: 'Dr. Jane Smith',
         image: 'doctor-03.jpg',
+        gender: 'Kadın',
         availability: '24 Mart Pazar',
         minPrice: 100,
         maxPrice: 300,
@@ -105,7 +107,6 @@ export class DoctorsService {
         services: ['Göz kontrolü', 'Göz testi'],
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Göz Hastalıkları',
         availableDay: 'Haftaiçi',
         experience: 5,
         consultation: [
@@ -120,15 +121,16 @@ export class DoctorsService {
             hospital: ['UCLA Medical Center', 'Stanford Children\'s Health'],
             timePeriod: ['Ocak 2019 - Şubat 2023', 'Mart 2015 - Aralık 2018'],
             total: ['4 yıl 1 ay', '3 yıl 9 ay'],
-            experiencedIn: ['Çocuk sağlığı ve hastalıkları alanında uzmanlaşmış.', 
-                            'Erken teşhis ve tedavi konusunda deneyimlidir.']
+            experiencedIn: ['Çocuk sağlığı ve hastalıkları alanında uzmanlaşmış.',
+              'Erken teşhis ve tedavi konusunda deneyimlidir.']
           }
         ]
       },
       {
         id: '4',
-        name: 'Dr. Alan Brown',
+        name: 'Dr. Emily Brown',
         image: 'doctor-04.jpg',
+        gender: 'Kadın',
         availability: '25 Mart Pazartesi',
         minPrice: 700,
         maxPrice: 800,
@@ -144,7 +146,6 @@ export class DoctorsService {
         services: ['Diş kontrolü', 'Dolgu muayenesi'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Diş Hekimliği',
         availableDay: 'Bu ay',
         experience: 7,
         consultation: [
@@ -159,15 +160,16 @@ export class DoctorsService {
             hospital: ['Texas Dental Clinic', 'San Antonio Oral Surgery'],
             timePeriod: ['Ocak 2016 - Aralık 2022', 'Şubat 2010 - Aralık 2015'],
             total: ['6 yıl', '5 yıl 10 ay'],
-            experiencedIn: ['Diş cerrahisi ve estetik diş hekimliği alanında uzman.', 
-                            'Ağız sağlığı ve diş tedavilerinde geniş deneyim.']
+            experiencedIn: ['Diş cerrahisi ve estetik diş hekimliği alanında uzman.',
+              'Ağız sağlığı ve diş tedavilerinde geniş deneyim.']
           }
         ]
       },
       {
         id: '5',
-        name: 'Dr. Emily White',
+        name: 'Dr. Alan White',
         image: 'doctor-05.jpg',
+        gender: 'Erkek',
         availability: '26 Mart Salı',
         minPrice: 800,
         maxPrice: 950,
@@ -183,7 +185,6 @@ export class DoctorsService {
         services: ['Kemik kontrolü', 'Ortopedik muayene'],
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Ortopedi',
         availableDay: 'Bugün',
         experience: 3,
         consultation: [
@@ -199,8 +200,8 @@ export class DoctorsService {
             hospital: ['Nevada Orthopedic Clinic', 'Sunrise Hospital and Medical Center'],
             timePeriod: ['Nisan 2019 - Ocak 2023', 'Şubat 2016 - Mart 2019'],
             total: ['3 yıl 9 ay', '3 yıl 1 ay'],
-            experiencedIn: ['Spor yaralanmaları ve rehabilitasyon alanında uzman.', 
-                            'Ortopedik cerrahi ve kas-iskelet sistemi tedavilerinde deneyimlidir.']
+            experiencedIn: ['Spor yaralanmaları ve rehabilitasyon alanında uzman.',
+              'Ortopedik cerrahi ve kas-iskelet sistemi tedavilerinde deneyimlidir.']
           }
         ]
       },
@@ -208,6 +209,7 @@ export class DoctorsService {
         id: '6',
         name: 'Dr. Sarah Green',
         image: 'doctor-06.jpg',
+        gender: 'Kadın',
         availability: '27 Mart Çarşamba',
         minPrice: 150,
         maxPrice: 300,
@@ -223,7 +225,6 @@ export class DoctorsService {
         services: ['Beyin kontrolü', 'Refleks testi'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Nöroloji',
         availableDay: 'Yarın',
         experience: 9,
         consultation: [
@@ -238,15 +239,16 @@ export class DoctorsService {
             hospital: ['George Washington University Hospital', 'Virginia Mason Medical Center'],
             timePeriod: ['Haziran 2014 - Ağustos 2019', 'Eylül 2009 - Mayıs 2014'],
             total: ['5 yıl 2 ay', '4 yıl 8 ay'],
-            experiencedIn: ['Nöroloji alanında geniş bir yelpazede hastalıklar tedavi etmiştir.', 
-                            'Beyin cerrahisi ve nörolojik hastalıklar konusunda uzmandır.']
+            experiencedIn: ['Nöroloji alanında geniş bir yelpazede hastalıklar tedavi etmiştir.',
+              'Beyin cerrahisi ve nörolojik hastalıklar konusunda uzmandır.']
           }
         ]
       },
       {
         id: '7',
-        name: 'Dr. Michael Blue',
+        name: 'Dr. Eva Blue',
         image: 'doctor-07.jpg',
+        gender: 'Kadın',
         availability: '28 Mart Perşembe',
         minPrice: 400,
         maxPrice: 500,
@@ -262,7 +264,6 @@ export class DoctorsService {
         services: ['Kulak kontrolü', 'Burun muayenesi'],
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'KBB',
         availableDay: 'Haftaiçi',
         experience: 6,
         consultation: [
@@ -277,8 +278,8 @@ export class DoctorsService {
             hospital: ['Oregon Health & Science University', 'Legacy Emanuel Medical Center'],
             timePeriod: ['Temmuz 2018 - Kasım 2022', 'Ekim 2014 - Haziran 2018'],
             total: ['4 yıl 4 ay', '3 yıl 8 ay'],
-            experiencedIn: ['KBB alanında çeşitli tedavi ve cerrahi işlemler yapmıştır.', 
-                            'Kulak, burun, boğaz hastalıkları üzerine geniş deneyim sahibi.']
+            experiencedIn: ['KBB alanında çeşitli tedavi ve cerrahi işlemler yapmıştır.',
+              'Kulak, burun, boğaz hastalıkları üzerine geniş deneyim sahibi.']
           }
         ]
       },
@@ -286,6 +287,7 @@ export class DoctorsService {
         id: '8',
         name: 'Dr. David Black',
         image: 'doctor-08.jpg',
+        gender: 'Erkek',
         availability: '29 Mart Cuma',
         minPrice: 300,
         maxPrice: 500,
@@ -301,7 +303,6 @@ export class DoctorsService {
         services: ['Estetik muayenesi', 'Cilt kontrolü'],
         icon: 'pi-chart-bar',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Plastik Cerrahi',
         availableDay: 'Bu ay',
         experience: 4,
         consultation: [
@@ -316,15 +317,16 @@ export class DoctorsService {
             hospital: ['Mayo Clinic', 'Phoenix Children\'s Hospital'],
             timePeriod: ['Nisan 2017 - Şubat 2021', 'Mart 2012 - Mart 2017'],
             total: ['3 yıl 10 ay', '5 yıl'],
-            experiencedIn: ['Estetik cerrahi alanında uzman, doğal sonuçlar elde etmeye odaklanır.', 
-                            'Çeşitli estetik prosedürler konusunda geniş deneyime sahip.']
+            experiencedIn: ['Estetik cerrahi alanında uzman, doğal sonuçlar elde etmeye odaklanır.',
+              'Çeşitli estetik prosedürler konusunda geniş deneyime sahip.']
           }
         ]
       },
       {
         id: '9',
-        name: 'Dr. Nancy Red',
+        name: 'Dr. Steven Red',
         image: 'doctor-09.jpg',
+        gender: 'KAdın',
         availability: '30 Mart Cumartesi',
         minPrice: 900,
         maxPrice: 1500,
@@ -340,7 +342,6 @@ export class DoctorsService {
         services: ['Çocuk kontrolü', 'Büyüme testi'],
         icon: 'pi-heart',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Pediatri',
         availableDay: 'Bugün',
         experience: 10,
         consultation: [
@@ -355,15 +356,16 @@ export class DoctorsService {
             hospital: ['Children\'s Hospital Colorado', 'Rocky Mountain Hospital for Children'],
             timePeriod: ['Ocak 2015 - Eylül 2021', 'Mart 2010 - Aralık 2014'],
             total: ['6 yıl 8 ay', '4 yıl 9 ay'],
-            experiencedIn: ['Çocuk sağlığı ve hastalıkları alanında geniş deneyim sahibi.', 
-                            'Pediatri alanında uzmanlaşmış, geniş bir hasta kitlesi ile çalışmıştır.']
+            experiencedIn: ['Çocuk sağlığı ve hastalıkları alanında geniş deneyim sahibi.',
+              'Pediatri alanında uzmanlaşmış, geniş bir hasta kitlesi ile çalışmıştır.']
           }
         ]
       },
       {
         id: '10',
-        name: 'Dr. Steven Purple',
+        name: 'Dr. Nancy Purple',
         image: 'doctor-10.jpg',
+        gender: 'Kadın',
         availability: '31 Mart Pazar',
         minPrice: 650,
         maxPrice: 800,
@@ -375,11 +377,10 @@ export class DoctorsService {
         feedback: 12,
         recommended: 55,
         bio: 'Çocuk ve ergen ruh sağlığı konusunda uzmanlaşmış bir psikiyatrist. Genç bireylerin zorlukları aşmalarına ve potansiyellerini gerçekleştirmelerine yardımcı olmayı amaçlar.',
-        field: 'Psikiyatri',
+        field: 'Kalp Hastalıkları',
         services: ['Diş kontrolü', 'Psikolojik muayene'],
         icon: 'pi-eye',
         clinicImages: ['clinic-01.jpg', 'clinic-02.jpg', 'clinic-03.jpg', 'clinic-04.jpg'],
-        department: 'Psikiyatri',
         availableDay: 'Yarın',
         experience: 2,
         consultation: [
@@ -395,8 +396,8 @@ export class DoctorsService {
             hospital: ['University of Utah Health', 'Primary Children\'s Hospital'],
             timePeriod: ['Ekim 2020 - Mart 2022', 'Haziran 2018 - Eylül 2020'],
             total: ['1 yıl 5 ay', '2 yıl 3 ay'],
-            experiencedIn: ['Çocuk ve ergen ruh sağlığı konusunda uzmanlaşmış.', 
-                            'Genç bireylerle çalışma konusunda geniş deneyime sahip.']
+            experiencedIn: ['Çocuk ve ergen ruh sağlığı konusunda uzmanlaşmış.',
+              'Genç bireylerle çalışma konusunda geniş deneyime sahip.']
           }
         ]
       }
@@ -410,4 +411,23 @@ export class DoctorsService {
   getDoctorCount(): number {
     return this.getDoctorsData().length;
   }
+
+  filterDoctors(filters: any): Doctors[] {
+    let filteredDoctors = this.getDoctorsData();
+
+    if (filters.selectedGenders && filters.selectedGenders.length) {
+      filteredDoctors = filteredDoctors.filter(doctor => filters.selectedGenders.includes(doctor.gender));
+    }
+
+    if (filters.selectedFields && filters.selectedFields.length) {
+      filteredDoctors = filteredDoctors.filter(doctor => filters.selectedFields.includes(doctor.field));
+    }
+
+    if (filteredDoctors.length === 0) {
+      return null; 
+    }
+
+    return filteredDoctors;
+  }
+
 }

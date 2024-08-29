@@ -15,9 +15,9 @@
                 <a class="text-lg font-semibold">{{ doctor.name }}</a>
             </div>
 
-            <p class="font-light my-1 text-xs">{{ doctor.field }}</p>
+            <p class="font-light my-1 text-xs text-gray-600">{{doctor.hospital}} - {{ doctor.field }}</p>
             <p class="font-light my-1 text-xs text-cyan-500">
-                <i [ngClass]="['pi', doctor.icon]" class="mr-1"></i> {{doctor.department}}
+                <i [ngClass]="['pi', doctor.icon]" class="mr-1"></i> {{doctor.field}}
             </p>
 
             <div class="card flex rating">

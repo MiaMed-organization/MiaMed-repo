@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { DoctorsService } from '../../../../../services/doctors.service';
 
 @Component({
@@ -9,32 +9,38 @@ import { DoctorsService } from '../../../../../services/doctors.service';
 export class SearchFilterComponent {
   selectedDate: Date | undefined;
   selectedGenders: string[] = [];
-  selectedSpecialists: string[] = [];
   selectedFields: string[] = [];
-  fields: { name: string, value: string, label: string }[] = [];
+  fields: any[] = []; 
 
   minDate: Date;
 
   constructor(private doctorsService: DoctorsService) { }
 
+  @Output() filtersChanged = new EventEmitter<any>();
+
   ngOnInit(): void {
-    this.doctorsService.getDoctors().then((doctors) => {
-      const fieldSet = new Set<string>();
-      doctors.forEach(doctor => {
-        if (!fieldSet.has(doctor.field)) {
-          fieldSet.add(doctor.field);
-          this.fields.push({ name: doctor.field, value: doctor.field, label: doctor.field });
-        }
-      });
+     this.doctorsService.getDoctors().then(doctors => {
+      const allFields = doctors.map(doctor => doctor.field);
+      this.fields = [...new Set(allFields)]; // Benzersiz alanları alın
+      this.fields = this.fields.map(field => ({ name: field, value: field, label: field }));
     });
 
     this.minDate = new Date();
   }
  
-  search() {
-    console.log('Search clicked');
-    console.log('Selected Date:', this.selectedDate);
-    console.log('Selected Genders:', this.selectedGenders);
-    console.log('Selected Specialists:', this.selectedSpecialists);
+  search():void {
+    const filters = {
+      selectedGenders: this.selectedGenders,
+      selectedFields: this.selectedFields,
+      selectedDate: this.selectedDate
+    };
+
+    this.filtersChanged.emit(filters);
   }
+
+
+  reset(): void {
+    window.location.reload();  // Sayfayı yeniler
+  }
+  
 }
