@@ -13,22 +13,61 @@ export class ExtendedSearchComponent implements OnInit{
   items: MenuItem[] | undefined;
   home: MenuItem | undefined;
   paginatedDoctors: any[] = [];
-  first: number = 0;
+  noResultsFound: boolean = false;
+
+  filters = {
+    selectedGenders: [],
+    selectedAvailableDays: [],
+    minPrice: 0,
+    maxPrice: 10000,
+    selectedFields: [],
+    selectedExperience: [],
+    selectedConsultations: [],
+    selectedRatings: [],
+    selectedLanguages: []
+  };
 
 
   constructor(private doctorsService: DoctorsService) { }
 
   ngOnInit(): void {
-    this.doctorsService.getDoctors().then((data) => {
+    this.doctorsService.getDoctors().then(data => {
       this.doctors = data;
-      this.paginate({ first: 0, rows: 10 });
+      this.paginatedDoctors = this.doctors.slice(0, 5); // İlk 5 doktoru göster
     });
 
-    this.items = [{ icon: 'pi pi-home', route: '/home' }, { label: 'Doktor Ara', route: '/search' }, { label: 'Kapsamlı Doktor Ara', route: '/extended-search' }];
+    this.items = [
+      { icon: 'pi pi-home', route: '/home' },
+      { label: 'Doktor Ara', route: '/search' },
+      { label: 'Kapsamlı Doktor Ara', route: '/extended-search' }
+    ];
   }
 
-  paginate(event: any) {
-    this.first = event.first;
-    this.paginatedDoctors = this.doctors.slice(this.first, this.first + event.rows);
+  // loadInitialDoctors(): void {
+  //   this.doctorsService.getDoctors().then(data => {
+  //     this.doctors = data;
+  //     this.paginatedDoctors = this.doctors.slice(0, 5);
+  //   });
+  // }
+
+  onFilterChange(filters: any): void {
+    this.filters = filters;
+    const filteredDoctors = this.doctorsService.filterDoctors(this.filters);
+
+    if (filteredDoctors === null || filteredDoctors.length === 0) {
+      this.noResultsFound = true;
+      this.paginatedDoctors = [];
+    } else {
+      this.noResultsFound = false;
+      this.doctors = filteredDoctors;
+      this.paginate({ first: 0, rows: 5 });
+    }
   }
+
+  paginate(event: any): void {
+    const start = event.first;
+    const end = start + event.rows;
+    this.paginatedDoctors = this.doctors.slice(start, end);
+  }
+
 }

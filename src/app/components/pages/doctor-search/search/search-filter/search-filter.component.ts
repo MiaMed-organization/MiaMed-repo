@@ -7,6 +7,9 @@ import { DoctorsService } from '../../../../../services/doctors.service';
   styleUrls: ['./search-filter.component.css']
 })
 export class SearchFilterComponent {
+
+  @Output() filtersChanged = new EventEmitter<any>();
+
   selectedDate: Date | undefined;
   selectedGenders: string[] = [];
   selectedFields: string[] = [];
@@ -16,12 +19,10 @@ export class SearchFilterComponent {
 
   constructor(private doctorsService: DoctorsService) { }
 
-  @Output() filtersChanged = new EventEmitter<any>();
-
   ngOnInit(): void {
      this.doctorsService.getDoctors().then(doctors => {
       const allFields = doctors.map(doctor => doctor.field);
-      this.fields = [...new Set(allFields)]; // Benzersiz alanları alın
+      this.fields = [...new Set(allFields)]; // Benzersiz alanlar
       this.fields = this.fields.map(field => ({ name: field, value: field, label: field }));
     });
 
@@ -40,7 +41,7 @@ export class SearchFilterComponent {
 
 
   reset(): void {
-    window.location.reload();  // Sayfayı yeniler
+    window.location.reload(); 
   }
   
 }

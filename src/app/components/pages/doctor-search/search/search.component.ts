@@ -25,7 +25,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.doctorsService.getDoctors().then(data => {
       this.doctors = data;
-      this.paginatedDoctors = this.doctors.slice(0, 5); // İlk 5 doktoru göster
+      this.paginatedDoctors = this.doctors.slice(0, 5); 
     });
 
     this.items = [
@@ -41,12 +41,12 @@ export class SearchComponent implements OnInit {
     const filteredDoctors = this.doctorsService.filterDoctors(this.filters);
 
     if (filteredDoctors === null || filteredDoctors.length === 0) {
-      this.noResultsFound = true; // Sonuç bulunamazsa bayrağı kaldır
-      this.paginatedDoctors = []; // Doktorları temizle
+      this.noResultsFound = true; 
+      this.paginatedDoctors = []; 
     } else {
-      this.noResultsFound = false; // Sonuç bulunursa bayrağı kaldır
+      this.noResultsFound = false; 
       this.doctors = filteredDoctors;
-      this.paginate({ first: 0, rows: 5 }); // Sayfalama işlemini güncelle
+      this.paginate({ first: 0, rows: 5 }); 
     }
   }
 

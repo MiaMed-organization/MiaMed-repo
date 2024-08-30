@@ -28,10 +28,15 @@
 
       <div class="content-container">
         <div class="search-filter-container">
-          <app-extended-search-filter></app-extended-search-filter>
+          <app-extended-search-filter (filtersChanged)="onFilterChange($event)"></app-extended-search-filter>
         </div>
 
         <div class="doctor-cards-container">
+
+          <div *ngIf="noResultsFound" class="no-results-message">
+            Uyguladığınız filtrelemeye uygun bir doktor bulunamadı.
+          </div>
+          
           <div *ngFor="let doctor of paginatedDoctors" class="doctor-card">
             <app-extended-card [doctor]="doctor"></app-extended-card>
           </div>

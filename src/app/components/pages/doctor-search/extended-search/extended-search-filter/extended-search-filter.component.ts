@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { DoctorsService } from '../../../../../services/doctors.service';
 
 @Component({
@@ -7,6 +7,9 @@ import { DoctorsService } from '../../../../../services/doctors.service';
   styleUrls: ['./extended-search-filter.component.css']
 })
 export class ExtendedSearchFilterComponent implements OnInit {
+
+  @Output() filtersChanged = new EventEmitter<any>();
+
   selectedGenders: string[] = [];
   selectedFields: string[] = [];
   selectedAvailableDays: string[] = [];
@@ -85,15 +88,26 @@ export class ExtendedSearchFilterComponent implements OnInit {
     this.sections[section] = !this.sections[section];
     console.log(this.sections[section]);  
   }
+
+  search(): void {
+    const filters = {
+      selectedGenders: this.selectedGenders,
+      selectedAvailableDays: this.selectedAvailableDays,
+      minPrice: this.rangeValues[0],
+      maxPrice: this.rangeValues[1],
+      selectedFields: this.selectedFields,
+      selectedExperience: this.selectedExperience,
+      selectedConsultations: this.selectedConsultations,
+      selectedRatings: this.selectedRatings,
+      selectedLanguages: this.selectedLanguages
+    };
+
+    console.log('Filters:', filters); 
+    
+    this.filtersChanged.emit(filters);
+  }
   
-  resetFilters() {
-    this.selectedGenders = [];
-    this.selectedFields = [];
-    this.selectedAvailableDays = [];
-    this.selectedExperience = [];
-    this.selectedConsultations = [];
-    this.selectedRatings = [];
-    this.selectedLanguages = [];
-    this.rangeValues = [20, 80];
+  reset(): void {
+    window.location.reload(); 
   }
 }

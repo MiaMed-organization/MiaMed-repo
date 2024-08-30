@@ -413,21 +413,63 @@ export class DoctorsService {
   }
 
   filterDoctors(filters: any): Doctors[] {
+
     let filteredDoctors = this.getDoctorsData();
 
+    console.log('Initial Doctors Count:', filteredDoctors.length); 
+
+    // Cinsiyet filtresi
     if (filters.selectedGenders && filters.selectedGenders.length) {
-      filteredDoctors = filteredDoctors.filter(doctor => filters.selectedGenders.includes(doctor.gender));
+        filteredDoctors = filteredDoctors.filter(doctor => filters.selectedGenders.includes(doctor.gender));
     }
 
-    if (filters.selectedFields && filters.selectedFields.length) {
-      filteredDoctors = filteredDoctors.filter(doctor => filters.selectedFields.includes(doctor.field));
+    // Müsaitlik zamanı filtresi
+    if (filters.selectedAvailableDays && filters.selectedAvailableDays.length) {
+        filteredDoctors = filteredDoctors.filter(doctor => filters.selectedAvailableDays.includes(doctor.availableDay));
+    }
+  
+    // Deneyim filtresi
+    if (filters.selectedExperience && filters.selectedExperience.length) {
+        filteredDoctors = filteredDoctors.filter(doctor => {
+            const experienceYears = doctor.experience;
+            return filters.selectedExperience.some(expRange => {
+                if (expRange === '1-5') {
+                    return experienceYears >= 1 && experienceYears <= 5;
+                } else if (expRange === '5-10') {
+                    return experienceYears > 5 && experienceYears <= 10;
+                } else if (expRange === '10+') {
+                    return experienceYears > 10;
+                }
+                return false;
+            });
+        });
     }
 
-    if (filteredDoctors.length === 0) {
-      return null; 
+    // Online danışmanlık filtresi
+    if (filters.selectedConsultations && filters.selectedConsultations.length) {
+        filteredDoctors = filteredDoctors.filter(doctor => 
+            filters.selectedConsultations.some(consultation => 
+                doctor.consultation.map(c => c.type).includes(consultation)
+            )
+        );
+    }
+
+    // Dil filtresi
+    if (filters.selectedLanguages && filters.selectedLanguages.length) {
+        filteredDoctors = filteredDoctors.filter(doctor => 
+            filters.selectedLanguages.some(language => doctor.languages.includes(language))
+        );
+    }
+
+    // Değerlendirme filtresi
+    if (filters.selectedRatings && filters.selectedRatings.length) {
+        filteredDoctors = filteredDoctors.filter(doctor => filters.selectedRatings.includes(doctor.rating));
     }
 
     return filteredDoctors;
-  }
+}
+
+
+
 
 }
