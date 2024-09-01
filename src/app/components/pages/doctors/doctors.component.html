@@ -8,7 +8,7 @@
           <p class="font-semibold text-m ">{{ doctorCount }} Doktor bulundu</p>
 
           <div class="dropdown-container flex align-items-center">
-            <p-dropdown [options]="sort" [(ngModel)]="sortedBy" optionLabel="name" [style]="{'width':'180px'}"
+            <p-dropdown [options]="sort" [(ngModel)]="sortedBy" (onChange)="onSortChange()" [style]="{'width':'180px'}"
               placeholder="Şuna göre sırala"></p-dropdown>
 
             <button id="gridButton" class="icon-button" [ngClass]="{'active': viewMode === 'grid'}"
